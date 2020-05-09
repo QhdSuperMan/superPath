@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>
+      <script>
+        Function.prototype.MyCall = function (context) {
+          if (typeof (context) !== "object") {
+            return "[object " + typeof (context) + "]"
+          }
+          if (context === null) {
+            return "[object null]"
+          }
+          if (context === undefined) {
+            return "[object undefined]"
+          }
+          var a = Symbol('test')
+          context.a = this
+          return context.a(Array.prototype.slice.call(arguments, 1))
+        }
+
+        var a = Object.prototype.toString.MyCall({},1111)
+        console.log(a)
+      </script>
+    </div>
+  </body>
+
+</html>
