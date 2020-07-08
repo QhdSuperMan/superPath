@@ -1,26 +1,50 @@
 <template>
   <div class="hello">
-    {{ msg }}
-    {{ test }}
-    <button @click="sayHello">111</button>
+    <p>
+      计算属性: {{ computedTest }}
+    </p>
+    <p>
+      全局minxin
+    </p>
+    <button @click="sayHello('ddd')">点击</button>
+    <testComponent ref='son' :fatherData='{id: 55}' />
   </div>
 </template>
 
 <script lang="ts">
-import 'reflect-metadata'
-import { Component, Prop, Vue, Watch,Provide } from 'vue-property-decorator';
-
-@Component
+import { demo } from "./demo";
+import "reflect-metadata";
+import minxi from "./mixin";
+import testComponent from "./test.vue";
+import { Component, Prop, Vue, Provide, Ref } from "vue-property-decorator";
+@Component({
+  // 引入子组件
+  components: {
+    testComponent
+  },
+  mixins: [minxi]
+})
 export default class HelloWorld extends Vue {
-  @Prop({ default: 1 }) msg!: string | number | boolean | undefined;
-  @Provide() test = '11'
+  @Prop() msg: string | number | boolean | undefined;
+  @Provide() test = "11";
   sayHello(): string {
-   this.test += '11'
-   return "1"
+    // this.$Message(1111);
+    // this.son.sonMethods(11);
+    // @Ref() son: Object;
+    // console.log(new minxi())
+    return "1";
   }
-  @Watch('msg' , {immediate: true, deep: true })
-  onMsgeChaneg( val: string, oldVal: string) {
-    console.log(val, oldVal)
+  message = "Hello!";
+  get computedTest() {
+    return "computedTest" + this.message;
+  }
+  @Ref() readonly son!: HTMLElement;
+
+  // @Watch("message", { immediate: true, deep: true })
+  // onMsgeChaneg(val: string, oldVal: string) {
+  // }
+  mounted() {
+    demo("ddd", "dsd");
   }
 }
 </script>

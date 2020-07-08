@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="file" id='f' />
+
+    <script>
+      document.getElementById('f').addEventListener('change', function (e) {
+        var file = this.files[0];
+        const reader = new FileReader();
+        reader.onload = function () {
+          const content = reader.result;
+          console.log(content);
+        }
+        reader.readAsArrayBuffer(file);
+      // FileReader.readAsText(Blob)：将Blob转化为文本字符串
+      // FileReader.readAsArrayBuffer(Blob)： 将Blob转为ArrayBuffer格式数据
+      // FileReader.readAsDataURL(): 将Blob转化为Base64格式的Data URL
+      }, false);
+    </script>
+
+  </body>
+
+</html>

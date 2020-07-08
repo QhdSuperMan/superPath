@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.jq22.com/demo/css3xt-150601224745/ -->
+<html lang="zh">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>纯CSS3炫酷元素边框线条动画特效</title>
+		<link rel="stylesheet" type="text/css" href="./纯CSS3炫酷元素边框线条动画特效_files/normalize.css">
+		<link rel="stylesheet" type="text/css" href="./纯CSS3炫酷元素边框线条动画特效_files/default.css">
+		<script src="./纯CSS3炫酷元素边框线条动画特效_files/saved_resource"></script>
+		<style>
+			.bb,
+			.bb::before,
+			.bb::after {
+
+				position: absolute;
+
+				top: 0;
+
+				bottom: 0;
+
+				left: 0;
+
+				right: 0;
+
+			}
+
+
+
+			.bb {
+
+				width: 200px;
+
+				height: 200px;
+
+				margin: auto;
+
+				background: url("img/Button-White-Large.png") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
+
+				color: #69ca62;
+
+				box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+
+			}
+
+			.bb::before,
+			.bb::after {
+
+				content: '';
+
+				z-index: -1;
+
+				margin: -5%;
+
+				box-shadow: inset 0 0 0 2px;
+
+				animation: clipMe 8s linear infinite;
+
+			}
+
+			.bb::before {
+
+				animation-delay: -4s;
+
+			}
+
+			.bb:hover::after,
+			.bb:hover::before {
+
+				background-color: rgba(255, 0, 0, 0.3);
+
+			}
+
+
+
+			@keyframes clipMe {
+
+				0%,
+				100% {
+
+					clip: rect(0px, 220.0px, 2px, 0px);
+					color: red;
+
+				}
+
+				25% {
+
+					clip: rect(0px, 2px, 220.0px, 0px);
+					color: yellow;
+				}
+
+				50% {
+
+					clip: rect(218.0px, 220.0px, 220.0px, 0px);
+					color: green;
+				}
+
+				75% {
+
+					clip: rect(0px, 220.0px, 220.0px, 218.0px);
+					color: pink;
+				}
+
+			}
+
+			html,
+
+			body {
+
+				height: 100%;
+
+			}
+
+
+
+			body {
+
+				position: relative;
+
+				background-color: #0f222b;
+
+			}
+
+
+
+			*,
+
+			*::before,
+
+			*::after {
+
+				box-sizing: border-box;
+
+			}
+		</style>
+		<!--[if IE]>
+
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+
+	<![endif]-->
+	</head>
+
+	<body>
+		<div class="htmleaf-container">
+			<header class="htmleaf-header">
+				<h1>纯CSS3炫酷元素边框线条动画特效 <span>A CSS3 border animation effect</span></h1>
+			</header>
+			<div class="bb"></div>
+		</div>
+
+	</body>
+
+</html>
