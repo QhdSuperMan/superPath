@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排序</title>
+  </head>
+  <a href="https://www.cnblogs.com/onepixel/p/7674659.html">经典排序</a>
+
+  <body>
+    <script>
+      // // 冒泡排序
+      // function maopao (box) {
+      //   for(var i = 0; i < box.length;i++) {
+      //     for(var j = i + 1; j < box.length; j++) {
+      //       if (box[i] > box[j]) {
+      //         var temp = box[i]
+      //         box[i] = box[j]
+      //         box[j] = temp
+      //       }
+      //     }
+      //   }
+      // }
+      // maopao(item)
+
+
+
+      // 选择排序  原理是依次找到最大最下的放到数组的前面（循环未排序的数组）
+      function selectionSort(box) {
+        var len = box.length
+        var min = 0
+        var item = null
+        for (var i = 0; i < len; i++) {
+          min = i
+          for (var j = i + 1; j < len; j++) {
+            if (box[j] > box[min]) {
+              min = j
+            }
+          }
+          item = box[min]
+          box[min] = box[i]
+          box[i] = item
+        }
+        return box
+      }
+      // console.log(selectionSort(item))
+
+
+
+
+      // //  插入排序   从未排序中拿出一个元素，插到未排序中 （循环已排序数组）
+      function insertSort(box) {
+        var len = box.length
+        var preIndex = 0
+        var current = null
+        for (var i = 0; i < len; i++) {
+          preIndex = i - 1
+          current = box[i]
+          while (preIndex >= 0 && box[preIndex] > current) {
+            box[preIndex + 1] = box[preIndex]
+            preIndex--
+          }
+          box[preIndex + 1] = current
+        }
+        return box
+      }
+      // console.log(insertSort(item))
+
+
+
+      // var item = [10, 3, 2, 6, 5, 4, 8, 7, 9]
+      // 希尔排序  原理是插入排序减少增量比较
+      function shellSort(arr) {
+        var len = arr.length
+        var step
+        for (var step = Math.floor(len / 2); step > 0; step = Math.floor(step / 2)) {
+          for (var i = step; i < len; i++) {
+            var j = i
+            var currnt = arr[i]
+            while (i - step >= 0 && arr[i - step] < arr[i]) {
+              arr[i] = arr[i - step]
+              j = i - step
+            }
+            arr[j] = currnt
+          }
+        }
+        return arr
+      }
+      // console.log(shellSort(item))
+
+
+
+      var item = [10, 3, 2, 6, 5, 4, 8, 7, 9]
+      // 归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为2-路归并。 
+      function mergeSort(arr) {
+        var len = arr.length
+        if (len < 2) {
+          return arr
+        }
+        var Middle = Math.floor(len / 2)
+        var left = arr.slice(0, Middle)
+        var right = arr.slice(Middle, len)
+        return mergeArray(mergeSort(left), mergeSort(right))
+      }
+
+      function mergeArray(left, right) {
+        var result = []
+        while (left.length && right.length) {
+          if (left[0] < right[0]) {
+            result.push(left.shift())
+          } else {
+            result.push(right.shift())
+          }
+        }
+        if (left.length) {
+          result = result.concat(left)
+        }
+        if (right.length) {
+          result = result.concat(right)
+        }
+        return result
+      }
+      // console.log(mergeSort(item))
+
+
+
+      // 快速排序
+      var item = [3, 9, 8, 6, 1]
+      var quickSort = function (ary, left, right) {
+        if (left >= right) {
+          return ary;
+        }
+        var i = left,
+          j = right;
+        base = ary[left];
+        while (i < j) {
+          // 从右边起，寻找比基数小的数  为什么(j--)在前面 我的理解是保证标志位不是最值(最大值或者最小值)，再去找相应的中间位置
+          while (i < j && ary[j] >= base) {
+            j--;
+          }
+          // 从左边起，寻找比基数大的数
+          while (i < j && ary[i] <= base) {
+            i++
+          }
+          if (i < j) {
+            var temp = ary[i];
+            ary[i] = ary[j];
+            ary[j] = temp;
+          }
+        }
+        ary[left] = ary[i];
+        ary[i] = base;
+        quickSort(ary, left, i - 1);
+        quickSort(ary, i + 1, right);
+        return ary;
+      }
+      // console.log(quickSort(item, 0, item.length - 1))
+
+
+
+      // 计数排序  适合少量排序
+      Array.prototype.countSort = function () {
+        let len = this.length
+        if (len < 2) {
+          return
+        }
+        // 桶数组
+        var suportArr = new Array(len + 1);
+        // 结果数组
+        var resArr = new Array(len);
+        // 初始化桶数组
+        for (i = 0; i < suportArr.length; i++) {
+          suportArr[i] = 0;
+        }
+        // 待排序数组中的数组出现，在桶子对应位置+1代表这个数出现的个数+1了
+        for (let i = 0; i < len; i++) {
+          suportArr[arr[i]]++;
+        }
+        debugger
+        // 从第1项开始，桶数组加上前一个桶的个数，现在辅助数组的意义变成了每一项的排名了。
+        for (let i = 1; i < suportArr.length; i++) {
+          suportArr[i] += suportArr[i - 1];
+        }
+        // 根据辅助数组的排名，从后往前赋值
+        for (let i = len - 1; i >= 0; i--) {
+          resArr[suportArr[arr[i]] - 1] = arr[i];
+          suportArr[arr[i]]--;
+        }
+        // 这里this不能直接赋值数组，我们就只能采取splice剪切数组再替换新的
+        this.splice(0, this.length, resArr)
+      }
+      // let arr = [2, 9, 5, 7, 1, 1, 6, 3, 3, 4]
+      // arr.countSort()
+      // console.log("c排序后：", arr.toString())
+    </script>
+  </body>
+
+</html>
