@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <script>
+      // 利用对象实现判断
+      var pattern = "aaaa",
+      str = "dog dog dog dog"
+      var wordPattern = function (pattern, s) {
+        var patternBox = pattern.split('')
+        var sBox = s.split(' ')
+        var length = patternBox.length
+        if (length !== sBox.length) {
+          return false
+        }
+        var obj = {}
+        var two = {}
+        var str = ''
+        var twoStr = ''
+        for (var i = 0; i < length; i++) {
+          var a = patternBox[i]
+          str += a
+          if (!obj[sBox[i]] && !two[a]) {
+            obj[sBox[i]] = a
+            two[a] = 1
+          }
+          twoStr += obj[sBox[i]]
+          if (twoStr !== str) {
+            return false
+          }
+        }
+        return true
+      };
+      console.log(wordPattern(pattern, str))
+      // 利用对象实现判断
+      // var pattern = "aaaa",
+      //   str = "dog dog dog dog"
+      // var wordPattern = function (pattern, s) {
+      //   var patternBox = pattern.split('')
+      //   var sBox = s.split(' ')
+      //   var obj = {}
+      //   var twoObj = {}
+      //   var threeObj = {}
+      //   var length = patternBox.length
+      //   if (length !== sBox.length) {
+      //     return false
+      //   }
+      //   for (var i = 0; i < length; i++) {
+      //     if (obj[patternBox[i]] !== undefined) {
+      //       obj[patternBox[i]] +=  i
+      //     } else {
+      //       obj[patternBox[i]] = i + ''
+      //     }
+      //     if (twoObj[sBox[i]] !== undefined) {
+      //       twoObj[sBox[i]] +=  i
+      //     } else {
+      //       twoObj[sBox[i]] = i + ''
+      //     }
+      //     threeObj[patternBox[i]] = sBox[i]
+
+      //   }
+      //   return true
+      // };
+      // console.log(wordPattern(pattern, str))
+    </script>
+  </body>
+
+</html>

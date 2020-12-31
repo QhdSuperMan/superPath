@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var s = 'ae';
+      t = 'aea'
+  
+      var findTheDifference = function (s, t) {
+        let i = -1,r = 0
+        while (++i < s.length) {
+          r ^= s.charCodeAt(i) ^ t.charCodeAt(i)
+        }
+        return String.fromCharCode(r ^ t.charCodeAt(i))
+      };
+
+
+      // 分治法排序
+      var findTheDifferenceTwo = function (s, t) {
+        s = s.split('').sort().join('') // 排序
+        t = t.split('').sort().join('') // 排序
+        if (s === '') {
+          return t[0]
+        }
+        var current
+        var result = t[0]
+        var length = t.length
+
+        function deep(middle, start, end) {
+          current = s[middle]
+          if (middle <= start) {
+            return result
+          }
+          for (var i = middle - 1; i >= 0; i--) {
+            if (s[i] !== current) { // 换字母
+              if (t[i + 1] !== s[i + 1]) {
+                result = t[i + 1]
+                return deep(i - Math.floor((i - start) / 2), start, i)
+              } else {
+                return deep(middle + Math.floor((end - middle) / 2), middle, end)
+              }
+              break;
+            }
+          }
+          return deep(middle + Math.floor((end - middle) / 2), middle, end)
+        }
+        return deep(Math.floor(length / 2), 0, length)
+      };
+      console.log(findTheDifference(s, t))
+    </script>
+  </body>
+
+</html>

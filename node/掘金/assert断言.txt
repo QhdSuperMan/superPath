@@ -1,0 +1,54 @@
+---
+theme: juejin
+highlight: juejin
+---
+### 1.断言分为严格模式和非严格模式(传统模式)
+在我看来严格模式就是默认校验类型，非严格模式也有相应的方法校验类型
+*	严格模式
+```
+    const assert = require('assert').strict;
+    try {
+      assert.equal(1, '1', '不相等')
+    } catch (error) {
+      console.log(error) // 报错
+    }
+```
+* 非严格模式
+```
+    const assert = require('assert');
+    try {
+      assert.equal(1, '1', '不相等')
+    } catch (error) {
+      console.log(error) // 不报
+    }
+```
+### 2.非严格模式的api
+##### 判断两个值是否相等
+```
+	assert.equal(actual, expected, [message])
+```
+* actual：实际值
+* expected：预期值
+* message：自定义异常信息
+
+### 3.其他api
+* notEqual 判断不相等
+* assert.strictEqual(actual, expected, [message])        判断两个值是否相等并且数据类型相等
+* assert.notStrictEqual(actual, expected, [message])     判断两个值不相等或者数据类型不相等
+* assert.deepEqual(actual, expected, [message])          深层次比较相等（object深度比较）
+* assert.notDeepEqual(actual, expected, [message])       深层次比较不相等
+* assert.ok(value, [message])                            直接判断某个值是否为真
+##### 4.判断该函数中是否会抛出一个异常
+throws方法用于执行一个函数中的代码并判断该函数中是否会抛出一个异常，如果判断结果为真（函数中抛出异常），则不抛出AssertionError异常，如果判断为假（函数中不抛出异常），则抛出AssertionError异常。
+
+```
+	assert.throws(block, [error], [message])
+```
+* block：一个函数
+* error：为一个返回true或返回false的函数，用于控制是否抛出在第一个参数值函数中指定抛出的异常，如果第二个参数值返回false，则抛出该异常
+* message：用于在AssertionError异常中添加一个附加的自定义错误信息（仅在抛出AssertionError异常时有效），可以不书写第二个参数而直接指定第三个参数
+
+doesNotThrow方法用于执行一个函数中的代码并判断该函数是否不会抛出一个异常，如果判断为真（函数中不抛出异常），则正常执行该函数，如果判断为假（函数中抛出异常），则抛出该异常或AssertionError异常（根据doesNotThrow方法中的第二个参数而定）。
+```
+	assert.doesNotThrow(block, [error], [message])
+```

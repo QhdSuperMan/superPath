@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <a href="https://leetcode-cn.com/problems/candy/solution/dong-tai-gui-hua-qu-jian-dan-shuang-zhi-ca1bl/">大佬解题</a>
+
+  <body>
+    <script>
+      // 双向指针
+      var box = [6, 5, 4, 3, 2, 1]
+      // var candy = function (ratings) {
+      //   var length = ratings.length
+      //   var arr = new Array(length).fill(1)
+      //   var i = 0
+      //   var j = length
+      //   while (i < length) {
+      //     if (ratings[++i] > ratings[i - 1]) arr[i] = Math.max(arr[i - 1] + 1, arr[i])
+      //     if (ratings[--j] > ratings[j + 1]) arr[j] = Math.max(arr[j + 1] + 1, arr[j])
+      //   }
+      //   console.log(arr)
+      //   return arr.reduce((a, b) => a + b)
+      // };
+
+
+      var candy = function (ratings) {
+        if (ratings.length === 0) return 0
+        let i = 0,
+          r = 1,
+          n = 1,
+          m = 0,
+          prev2
+        while (++i < ratings.length) {
+          debugger
+          const cur = ratings[i],
+            prev = ratings[i - 1]
+          if (cur > prev) {
+            if (prev < prev2) n = 1
+            r += ++n
+          } else if (cur === prev) {
+            n = 1
+            m = 0
+            r++
+          } else {
+            if (prev > prev2) m = 0
+            if (++m === n) m++
+            r += m
+          }
+          prev2 = prev // 上上一人，与prev比较。递减 → 递增 重置 n 递增 → 递减 重置 m
+        }
+        return r
+      };
+      console.log(candy(box))
+    </script>
+  </body>
+
+</html>

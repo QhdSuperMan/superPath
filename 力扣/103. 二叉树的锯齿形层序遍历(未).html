@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var root = [3, 9, 20, null, null, 15, 7];
+      var zigzagLevelOrder = function (root) {
+        let q = root ? [root] : [],
+          r = []
+        while (q.length) {
+          let l = q.length
+          r.push([])
+          while (l--) {
+            let n = q.shift()
+            r.length & 1 ? r[r.length - 1].push(n.val) :
+              r[r.length - 1].unshift(n.val)
+            n.left && q.push(n.left)
+            n.right && q.push(n.right)
+          }
+        }
+        return r
+      };
+      zigzagLevelOrder(root)
+    </script>
+  </body>
+</html>

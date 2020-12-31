@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+
+    <script>
+      // 科学补位法
+      var monotoneIncreasingDigits = function (N) {
+        var ones = 111111111
+        var result = 0
+        var i = 0
+        while (i < 9) {
+          while(result + ones > N) {
+            ones = parseInt(ones / 10)
+          }
+          result += ones
+          i++
+        }
+        return result
+      };
+      // console.log(monotoneIncreasingDigits(1234))
+
+      // 数组比较法
+      var arrSort = function(N) {
+        var arr = (N + '').split('')
+        var length = arr.length
+        var current
+        for(var i = length - 1; i > 0 ; i--) {
+          if (arr[i] < arr[i - 1]) {
+            current = i
+            arr[i - 1] -= 1
+          }
+        }
+        if (current) {
+          arr.splice(current, length, ...(new Array(length - current).fill(9)))
+        }
+        return arr.join('')
+      }
+      console.log(arrSort(7852))
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,122 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>WebSocket Demo</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      var config = {
+        url: 'ws://10.0.1.11:9520/webws', // url
+        reconnection: true, // 是否断线重连
+        reconnectionTime: 3000, // 多长时间重连 
+        heartbeat: true, // 是否开启心跳检测
+        heartbeatMessage: '在嘛',
+        heartbeatTime: 3000, // 超过这个时间浏览器没回代表浏览器挂掉 重连
+      }
+
+      function Socket(obj, event) {
+        event = event ? event : {}
+        this.url = obj.url
+        this.event = event
+        this.init()
+        this.connectStatus = false // 当前连接状态
+        this.currentTimes = 0 // 当前重连次数
+        this.resetTimes = obj.resetTimes ? obj.resetTimes : 3 // 最大重连次数
+        this.resetTime = obj.resetTime ? obj.resetTime : 3000 // 超过多少时间重连
+        this.reconnectionTime = obj.reconnectionTime ? obj.reconnectionTime : 3000 // 超过多少时间重连
+        this.reconnectionStatus = false // 重连状态
+        this.heartbeatTime = obj.heartbeatTime ? obj.heartbeatTime : 3000 // 心跳检测消息发送的频率
+        this.heartbeatMessage = obj.heartbeatMessage ? obj.heartbeatMessage : "你还活着吗"
+        this.heartbeat = obj.heartbeat
+      }
+      Socket.prototype = {
+        init: function () { // 初始化方法
+          this.createWebsocket()
+        },
+        initEvent() { //初始化事件
+          var that = this
+          this.websocket.onclose = function () {
+            console.log('链接关闭');
+            that.reconnect();
+            that.event.onclose && that.event.onclose()
+          };
+          this.websocket.onerror = function () {
+            console.log('发生异常了');
+            that.reconnect();
+            that.event.onerror && that.event.onerror()
+          };
+          this.websocket.onopen = function () {
+            //心跳检测重置
+            console.log('连接成功')
+            that.currentTimes = 0
+            that.connectStatus = true
+            that.event.onopen && that.event.onopen()
+            if (that.heartbeat) {
+              that.heartCheck()
+            }
+          };
+          that.websocket.onmessage = function (event) {
+            //拿到任何消息都说明当前连接是正常的
+            that.event.onmessage && that.event.onmessage(event)
+            if (that.heartbeat) {
+              that.heartCheck()
+            }
+          }
+        },
+        reconnect: function () { // 重新连接
+          if (this.reconnectionStatus) {
+            return
+          }
+          console.log('连接失败，重连次数' + this.currentTimes);
+          if (this.currentTimes > this.resetTimes) {
+            return
+          }
+          this.reconnectionStatus = true
+          var that = this
+          setTimeout(function () {
+            console.log('重连开始')
+            that.currentTimes++
+            that.createWebsocket()
+            that.reconnectionStatus = false
+          }, this.resetTime)
+        },
+        heartCheck: function () { // 心跳检测
+          this.hearTime && clearTimeout(this.hearTime)
+          this.reconnectTime && clearTimeout(this.reconnectTime)
+          var that = this
+          this.hearTime = setTimeout(function () {
+            that.websocket.send(that.heartbeatMessage)
+            that.reconnectTime = setTimeout(function () {
+              console.log('服务器不响应  进入重连')
+              that.connectStatus = false
+              that.reconnect()
+            }, that.reconnectionTime)
+          }, this.heartbeatTime)
+        },
+        createWebsocket: function () { // 创建连接
+          try {
+            if ('WebSocket' in window) {
+              this.websocket = new WebSocket(this.url);
+            } else if ('MozWebSocket' in window) {
+              this.websocket = new MozWebSocket(this.url);
+            } else {
+              this.websocket = new SockJS(this.url);
+            }
+            this.initEvent()
+          } catch (e) {
+            if (this.currentTimes < this.resetTimes) {
+              setTimeout(function () {
+                this.currentTimes++
+                this.createWebsocket();
+              })
+            }
+          }
+        }
+      }
+      window.a = new Socket(config)
+    </script>
+  </body>
+
+</html>
