@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-19 15:02:47
+ * @LastEditTime: 2021-02-19 15:36:53
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var n = 10
+      var cuttingRope = function (n) {
+        let arr = [0, 0, 1, 2, 4];
+        if (n < 5) return arr[n];
+        const max = 1e9 + 7;
+        let res = 1;
+        while (n >= 5) {
+          res = res % max * 3;
+          n = n - 3;
+        }
+        return res * n % max;
+      };
+      console.log(cuttingRope(n))
+    </script>
+  </body>
+
+</html>

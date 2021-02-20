@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-04 10:53:26
+ * @LastEditTime: 2021-02-19 09:58:12
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var N = 21,
+        K = 17,
+        W = 10
+      var newGame = function (N, K, W) {
+        if (K == 0) {
+          return 1.0;
+        }
+        var s = 0
+        var dp = new Array(K + W).fill(0);
+        for (var  i = K; i <= N && i < K + W; i++) {
+          dp[i] = 1.0;
+          s += dp[i]
+        }
+        for (var i = K - 1; i >= 0; i--) {
+          dp[i] = s / W
+          s = s - dp[i + W] + dp[i]
+        }
+        return dp[0];
+      };
+      console.log(newGame(N, K, W))
+    </script>
+  </body>
+
+</html>

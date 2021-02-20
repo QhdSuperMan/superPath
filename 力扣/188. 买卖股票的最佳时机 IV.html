@@ -1,3 +1,10 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2020-12-28 11:09:56
+ * @LastEditTime: 2021-02-20 11:20:31
+ * @info: 描述
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,19 +18,10 @@
     <script>
       var k = 4,
         prices = [2, 4, 3, 6, 5, 0, 3];
-      // var maxProfit = function (k, prices) {
-      //   var length = prices.length
-      //   var dp = [0]
-      //   for (var i = 1; i < length; i++) {
-      //     dp.push(prices[i] - prices[i - 1])
-      //   }
-      //   console.log(dp)
-      // };
       var maxProfit = function (k, prices) {
         if (!prices.length) {
           return 0;
         }
-        debugger
         const n = prices.length;
         k = Math.min(k, Math.floor(n / 2));
         const buy = new Array(n).fill(0).map(() => new Array(k + 1).fill(0));
@@ -34,7 +32,7 @@
         for (let i = 1; i <= k; ++i) {
           buy[0][i] = sell[0][i] = -Number.MAX_VALUE;
         }
-
+        console.log(buy, sell)
         for (let i = 1; i < n; ++i) {
           buy[i][0] = Math.max(buy[i - 1][0], sell[i - 1][0] - prices[i]);
           for (let j = 1; j <= k; ++j) {
@@ -45,9 +43,6 @@
 
         return Math.max(...sell[n - 1]);
       };
-
-
-
       console.log(maxProfit(k, prices))
     </script>
   </body>

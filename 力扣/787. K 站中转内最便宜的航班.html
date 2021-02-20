@@ -1,0 +1,87 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-01-27 15:10:18
+ * @LastEditTime: 2021-01-28 14:30:24
+ * @info: 描述
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var n = 10,
+        edges = [
+          [3, 4, 4],
+          [2, 5, 6],
+          [4, 7, 10],
+          [9, 6, 5],
+          [7, 4, 4],
+          [6, 2, 10],
+          [6, 8, 6],
+          [7, 9, 4],
+          [1, 5, 4],
+          [1, 0, 4],
+          [9, 7, 3],
+          [7, 0, 5],
+          [6, 5, 8],
+          [1, 7, 6],
+          [4, 0, 9],
+          [5, 9, 1],
+          [8, 7, 3],
+          [1, 2, 6],
+          [4, 1, 5],
+          [5, 2, 4],
+          [1, 9, 1],
+          [7, 8, 10],
+          [0, 4, 2],
+          [7, 2, 8]
+        ],
+        src = 6,
+        dst = 0,
+        K = 7
+
+      var n = 3,
+        edges = [
+          [0, 1, 2],
+          [1, 2, 1],
+          [2, 0, 10]
+        ],
+        src = 1,
+        dst = 2,
+        K = 1
+      var findCheapestPrice = function (n, flights, src, dst, K) {
+        let dp = new Array(K + 1).fill("_").map(_ => new Array(n).fill(Number.MAX_SAFE_INTEGER));
+
+        for (let flight of flights) {
+          if (flight[0] === src) {
+            dp[0][flight[1]] = flight[2];
+          }
+          if (flight[1] === src) {
+            dp[0][src] = 0;
+          }
+        }
+
+        for (var k = 1; k <= K; k++) {
+          for (let flight of flights) {
+            // console.log(dp[k][flight[1]], dp[k - 1][flight[0]], flight[2], dp)
+            dp[k][flight[1]] = Math.min(dp[k][flight[1]], dp[k - 1][flight[0]] + flight[2])
+            // console.log(dp[k][flight[1]], dp[k - 1][flight[0]], flight[2], dp)
+          }
+          dp[k][dst] = Math.min(dp[k - 1][dst], dp[k][dst])
+        }
+        console.log(dp)
+        return dp[K][dst] === Number.MAX_SAFE_INTEGER ? -1 : dp[K][dst]
+      };
+      console.log(findCheapestPrice(n, edges, src, dst, K))
+    </script>
+  </body>
+
+</html>
