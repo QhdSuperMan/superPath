@@ -1,0 +1,49 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-23 17:47:18
+ * @LastEditTime: 2021-02-24 11:30:02
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var customers = [3],
+        grumpy = [1],
+        X = 1
+      var maxSatisfied = function (customers, grumpy, X) {
+        var right = 0
+        var n = grumpy.length
+        var result = 0
+        var sum = 0
+        var Satisfied = 0
+        for (var i = 0; i < n; i++) {
+          if (grumpy[i] === 0) {
+            Satisfied += customers[i]
+          }
+        }
+        while (right < X) {
+          sum += customers[right] * grumpy[right]
+          right++
+        }
+        result = sum
+        while (right < n) {
+          sum = sum - customers[right - X] * grumpy[right - X] + customers[right] * grumpy[right]
+          result = Math.max(sum, result)
+          right++
+        }
+        return result + Satisfied
+      };
+      console.log(maxSatisfied(customers, grumpy, X))
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-24 11:37:08
+ * @LastEditTime: 2021-02-24 14:10:35
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var a = [
+        [1, 1, 0],
+        [1, 0, 1],
+        [0, 0, 0]
+      ]
+      var b = [
+        [1, 0, 0],
+        [0, 1, 0],
+        [1, 1, 1]
+      ]
+
+      var flipAndInvertImage = function (A) {
+        var n = A.length
+        var n2 = A[0].length
+        for (var i = 0; i < n; i++) {
+          var left = 0
+          var right = n2 - 1
+          while (left <= right) {
+            if (A[i][left] === A[i][right]) {
+              A[i][left] = A[i][right] = A[i][left] ? 0 : 1
+            }
+            left++
+            right--
+          }
+        }
+        return A
+      };
+      console.log(flipAndInvertImage(a))
+    </script>
+  </body>
+
+</html>
