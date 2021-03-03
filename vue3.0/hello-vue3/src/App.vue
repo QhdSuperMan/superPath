@@ -1,15 +1,24 @@
 <!--
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
- * @Date: 2020-04-20 17:51:18
- * @LastEditTime: 2021-03-03 16:15:15
+ * @Date: 2021-03-03 16:59:08
+ * @LastEditTime: 2021-03-03 17:21:08
  * @info: 描述
 -->
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
+
+<script>
+import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  }
+}
+</script>
 
 <style>
 #app {
@@ -18,18 +27,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  margin-top: 60px;
 }
 </style>
