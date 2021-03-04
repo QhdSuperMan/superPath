@@ -10,6 +10,7 @@
   "dependencies": {
     "@smallwei/avue": "^2.5.0",
     "core-js": "^3.6.4",
+    "element3": "^0.0.39",
     "reflect-metadata": "^0.1.13",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
@@ -29,6 +30,7 @@
     "@vue/eslint-config-typescript": "^5.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "mockjs": "^1.1.0",
     "typescript": "~3.8.3",
     "vue-template-compiler": "^2.6.11"
   }

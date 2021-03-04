@@ -1,0 +1,33 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-03 10:27:11
+ * @LastEditTime: 2021-03-03 11:10:11
+ * @info: 描述
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var num = 60
+      var countBits = function (num) {
+        var dp = new Array(num)
+        dp[0] = 0
+        for (var i = 1; i <= num; i++) {
+          dp[i] = i%2 === 1 ? dp[i - 1] + 1 : dp[i/2]
+        }
+        return dp
+      };
+      console.log(countBits(num))
+    </script>
+  </body>
+
+</html>

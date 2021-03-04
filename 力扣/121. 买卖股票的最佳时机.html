@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-19 16:56:29
+ * @LastEditTime: 2021-02-19 17:38:43
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var prices = [7,6,4,3,1]
+      var maxProfit = function (prices) {
+        var n = prices.length
+        var max = 0
+        var min = prices[0]
+
+        for (var i = 1; i < n; i++) {
+          min = Math.min(min, prices[i])
+          max = Math.max(max , prices[i] - min)
+        }
+        return  dp[i-1][1]
+      };
+      console.log(maxProfit(prices))
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,45 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-02 16:14:36
+ * @LastEditTime: 2021-02-03 18:31:03
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var s = "AABABBA",
+        k = 1;
+      var characterReplacement = function (s, k) {
+        const num = new Array(26).fill(0);
+        const n = s.length;
+        let maxn = 0, // 当前窗口的最长子串
+          left = 0, // 左滑块
+          right = 0; // 右滑块
+        // 窗口规则(重)： 当前窗口一直保持着最长的子串;
+        // k + maxn ; 最长子串 = 当前窗口的最长子串 + 可替补的子串
+        //如果不是则 left++ 移动窗口
+        while (right < n) {
+          num[s[right].charCodeAt() - 'A'.charCodeAt()]++;
+          maxn = Math.max(maxn, num[s[right].charCodeAt() - 'A'.charCodeAt()])
+          right++;
+          if (right - left > k + maxn) { // 窗口比最长子串要长，所以left++ 右移窗口
+            num[s[left].charCodeAt() - 'A'.charCodeAt()]--;
+            left++;
+          }
+        }
+        return right - left;
+      };
+      console.log(characterReplacement(s, k))
+    </script>
+  </body>
+
+</html>

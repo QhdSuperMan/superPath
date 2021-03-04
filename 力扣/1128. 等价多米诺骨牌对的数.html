@@ -1,0 +1,41 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-01-26 11:40:56
+ * @LastEditTime: 2021-01-26 16:51:26
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <a href="https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/solution/chao-bai-fen-zhi-95jie-ti-chao-ji-jian-d-g6ax/">is me</a>
+    <script>
+      var dominoes = [
+        [1, 2],
+        [1, 2],
+        [1, 1],
+        [1, 2],
+        [2, 2]
+      ]
+      var numEquivDominoPairs = function (dominoes) {
+        const num = new Array(100).fill(0);
+        let ret = 0;
+        for (const domino of dominoes) {
+          const val = domino[0] < domino[1] ? domino[0] * 10 + domino[1] : domino[1] * 10 + domino[0];
+          ret += num[val];
+          num[val]++;
+        }
+        return ret;
+      };
+      console.log(numEquivDominoPairs(dominoes))
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,43 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-22 17:03:16
+ * @LastEditTime: 2021-02-22 17:15:04
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var matrix = [
+        [1, 2, 3, 4],
+        [5, 1, 2, 3],
+        [6, 5, 1, 2]
+      ]
+      var isToeplitzMatrix = function (matrix) {
+        var dp = matrix[0]
+        var n = matrix.length
+        var n2 = dp.length - 1
+        for (var i = 1; i < n; i++) {
+          for (var j = 0; j < n2; j++) {
+            if (dp[j] !== matrix[i][j + 1]) {
+              return false
+            }
+          }
+          dp.unshift(matrix[i][0])
+        }
+        console.log(matrix)
+        return true
+      };
+      console.log(isToeplitzMatrix(matrix))
+    </script>
+  </body>
+
+</html>

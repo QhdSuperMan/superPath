@@ -1,0 +1,44 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-19 11:33:10
+ * @LastEditTime: 2021-02-19 14:53:24
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var days = [1, 4, 6, 7, 8, 20],
+        costs = [7, 2, 15]
+      var mincostTickets = function (days, costs) {
+        let n = days.length,
+          dp = new Array(n).fill(0),
+          maxDay = days[n - 1],
+          k = 0;
+        dp[0] = 0;
+        for (var i = 1; i <= maxDay; i++) {
+          if (days[k] === i) { // 当前日子需要买票
+            var n1 = dp[i - 1] + costs[0]
+            var n2 = i > 7 ? dp[i - 7] + costs[1] : costs[1]
+            var n3 = i > 30 ? dp[i - 30] + costs[2] : costs[2]
+            dp[i] = Math.min(n1, n2, n3)
+            k++
+          } else {
+            dp[i] = dp[i - 1] // 不买票今天花费是昨天的花费
+          }
+        }
+        return dp[maxDay]
+      };
+      console.log(mincostTickets(days, costs))
+    </script>
+  </body>
+
+</html>

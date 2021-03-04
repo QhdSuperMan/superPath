@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-19 16:01:50
+ * @LastEditTime: 2021-02-19 16:13:02
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums = [-100000]
+      var maxSubArray = function (nums) {
+        var n = nums.length
+        var dp = new Array(n).fill(0)
+        var result = nums[0]
+        dp[0] = nums[0]
+        for (var i = 1; i < n; i++) {
+          dp[i] = Math.max(nums[i], nums[i] + dp[i - 1])
+          result = Math.max(result, dp[i])
+        }
+        return result
+      };
+      console.log(maxSubArray(nums))
+    </script>
+  </body>
+
+</html>

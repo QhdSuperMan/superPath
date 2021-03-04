@@ -1,45 +1,49 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-02-23 17:47:18
+ * @LastEditTime: 2021-02-24 11:30:02
+ * @info: 描述
+-->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        var customers = [2, 6, 6, 9], grumpy = [0, 0, 1, 1], X = 0;
-        var maxSatisfied = function (customers, grumpy, X) {
-            var right = 0
-            var n = grumpy.length
-            var result = 0
-            var Satisfied = 0
-            for (var i = 0; i < n; i++) {
-                if (grumpy[i] === 0) {
-                    Satisfied += customers[i]
-                }
-            }
-            while (right < n) {
-                if (grumpy[right] === 1) {
-                    result = Math.max(result, compute(right, right + X - 1))
-                }
-                right++
-            }
-            function compute(left, right) {
-                var result = 0
-                right = right > n - 1 ? n - 1 : right
-                for (var i = left; i <= right; i++) {
-                    if (grumpy[i] === 1) {
-                        result += customers[i]
-                    }
-                }
-                return result
-            }
-            return result + Satisfied
-        };
-        console.log(maxSatisfied(customers, grumpy, X))
+      var customers = [3],
+        grumpy = [1],
+        X = 1
+      var maxSatisfied = function (customers, grumpy, X) {
+        var right = 0
+        var n = grumpy.length
+        var result = 0
+        var sum = 0
+        var Satisfied = 0
+        for (var i = 0; i < n; i++) {
+          if (grumpy[i] === 0) {
+            Satisfied += customers[i]
+          }
+        }
+        while (right < X) {
+          sum += customers[right] * grumpy[right]
+          right++
+        }
+        result = sum
+        while (right < n) {
+          sum = sum - customers[right - X] * grumpy[right - X] + customers[right] * grumpy[right]
+          result = Math.max(sum, result)
+          right++
+        }
+        return result + Satisfied
+      };
+      console.log(maxSatisfied(customers, grumpy, X))
     </script>
-</body>
+  </body>
 
 </html>
