@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var matrix = [
+      [1, 2, 3],
+      [4, 5, 6]
+    ]
+    var b = [
+      [1, 4],
+      [2, 5],
+      [3, 6]
+    ]
+    var transpose = function (matrix) {
+      return matrix[0].map((v, i) => matrix.map((a, j) => a[i]))
+    };
+    console.log(transpose(matrix))
+  </script>
+</body>
+
+</html>

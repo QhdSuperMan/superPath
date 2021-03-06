@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var s = "226"
+    var numDecodings = function (s) {
+      var n = s.length;
+      var dp = new Array(n)
+      var a = s[0]
+      dp[0] = ((a < 26 && a > 0) ? 1 : 0)
+      for (var i = 1; i < n; i++) {
+        a = Number(s[i - 1] + s[i])
+        dp[i] = dp[i - 1] + ((a <= 26 && a > 0) ? 1 : 0)
+      }
+      return dp[i - 1]
+    };
+    console.log(numDecodings(s))
+  </script>
+</body>
+
+</html>
