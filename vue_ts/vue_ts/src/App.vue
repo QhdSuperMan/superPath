@@ -1,9 +1,12 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2020-04-20 17:51:18
+ * @LastEditTime: 2021-03-03 16:15:15
+ * @info: 描述
+-->
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>

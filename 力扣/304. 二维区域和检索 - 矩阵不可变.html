@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-03 10:17:08
+ * @LastEditTime: 2021-03-03 10:26:15
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var matrix = [
+        [3, 0, 1, 4, 2],
+        [5, 6, 3, 2, 1],
+        [1, 2, 0, 1, 5],
+        [4, 1, 0, 1, 7],
+        [1, 0, 3, 0, 5]
+      ]
+      var NumMatrix = function (matrix) {
+        const m = matrix.length;
+        if (m > 0) {
+          const n = matrix[0].length;
+          this.sums = new Array(m).fill(0).map(() => new Array(n + 1).fill(0));
+          for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+              this.sums[i][j + 1] = this.sums[i][j] + matrix[i][j];
+            }
+          }
+        }
+      };
+
+      NumMatrix.prototype.sumRegion = function (row1, col1, row2, col2) {
+        let sum = 0;
+        for (let i = row1; i <= row2; i++) {
+          sum += this.sums[i][col2 + 1] - this.sums[i][col1];
+        }
+        return sum;
+      };
+
+      NumMatrix(matrix)
+    </script>
+  </body>
+
+</html>
