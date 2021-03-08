@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "server": "nodemon -e ts -w ./server/ -x ts-node ./server/index.ts",
+    "start": "nodemon ./server/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -22,7 +24,9 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "express": "^4.17.1",
-    "mockjs": "^1.1.0", 
+    "less": "^4.1.1",
+    "less-loader": "5.0.0",
+    "mockjs": "^1.1.0",
     "typescript": "~3.9.3"
   },
   "browserslist": [
