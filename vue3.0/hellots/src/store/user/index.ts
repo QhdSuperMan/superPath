@@ -3,10 +3,6 @@ import { Module } from 'vuex'
 interface UserInterface {
     token: string
 }
-interface UserInterface {
-    token: string
-}
-
 const user: Module<UserInterface, any> = {
     state: {
         token: '666'

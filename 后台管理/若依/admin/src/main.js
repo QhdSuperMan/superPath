@@ -1,3 +1,10 @@
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-03 13:57:17
+ * @LastEditTime: 2021-03-11 17:36:44
+ * @info: 描述
+ */
 import Vue from 'vue'
 
 import Cookies from 'js-cookie'
@@ -63,6 +70,18 @@ Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // set element-ui default size
 })
 
+const loadView = (view) => { // 路由懒加载
+  return (resolve) => require([`@/views/${view}`], resolve)
+}
+setTimeout(()=> {
+  var obj = {
+    path: '/gen',
+    component: loadView('dashboard/BarChart'),
+    hidden: true,
+  }
+  router.addRoutes([obj])
+  console.log(obj,11111)
+},1000)
 Vue.config.productionTip = false
 
 new Vue({

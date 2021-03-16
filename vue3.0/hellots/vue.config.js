@@ -112,24 +112,24 @@ module.exports = {
 
         // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
 
-        // proxy: {
+        proxy: {
 
-        //     '/api': {
+            '/api': {
 
-        //         target: "http://app.rmsdmedia.com",
+                target: "http://localhost:8888",
 
-        //         changeOrigin: true,
+                changeOrigin: true,
 
-        //         secure: false,
+                secure: false,
 
-        //         pathRewrite: {
+                pathRewrite: {
 
-        //             "^/api": ""
+                    "^/api": ""
 
-        //         }
+                }
 
-        //     },
-
+            },
+        }
         //     '/foo': {
 
         //         target: '<other_url>'

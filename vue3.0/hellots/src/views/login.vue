@@ -57,7 +57,8 @@
 </template>
 
 <script>
-import { useStore,mapGetters } from 'vuex'
+import { useStore,mapGetters,  } from 'vuex'
+import { useContext, getCurrentInstance } from 'vue'
 import { computed } from 'vue'
 export default {
   name: "Login",
@@ -89,7 +90,7 @@ export default {
   },
   created () {
     var obj = useStore()
-    console.log(this.getToken)
+    console.log(this.getToken,useContext(), getCurrentInstance())
   },
   computed: {
     ...mapGetters(['getToken'])
