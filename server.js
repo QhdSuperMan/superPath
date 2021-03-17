@@ -15,8 +15,3 @@ function gitAction() {
     });
   })
 }
-
-gitAction()
-setInterval(() => {
-  gitAction()
-}, 86400000)

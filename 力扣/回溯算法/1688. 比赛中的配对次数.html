@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-17 14:12:37
+ * @LastEditTime: 2021-03-17 14:30:21
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var n = 1111111111111
+      var numberOfMatches = function (n) {
+        if (n < 2) {
+          return 0
+        }
+        if (n === 2) {
+          return 1
+        }
+        var a = parseInt(n / 2)
+        return a + numberOfMatches(a + n % 2)
+      };
+
+      console.log(numberOfMatches(n))
+    </script>
+  </body>
+
+</html>
