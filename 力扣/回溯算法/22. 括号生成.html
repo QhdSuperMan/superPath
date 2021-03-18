@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-18 10:27:13
+ * @LastEditTime: 2021-03-18 11:52:03
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var n = 3
+      var generateParenthesis = function (n) {
+        var result = []
+
+        function computed(left, right, s) {
+          if (s.length === 2 * n) {
+            result.push(s)
+            return
+          }
+          if (left > 0) {
+            computed(left - 1, right, s += '(')
+          }
+          if (left < right) {
+            computed(left, right - 1, s += ')')
+          }
+        }
+        computed(n, n, '')
+        return result
+      };
+      console.log(generateParenthesis(n))
+    </script>
+  </body>
+
+</html>

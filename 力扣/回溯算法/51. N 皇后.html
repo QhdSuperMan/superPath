@@ -1,0 +1,65 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-18 14:01:45
+ * @LastEditTime: 2021-03-18 17:09:12
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var n = 4
+      var dp = new Array(n).fill(1).map(() => new Array(n).fill(1))
+      console.log(dp)
+      var solveNQueens = function (n) {
+        var result = []
+        var strModule
+
+        function queen(index, str) {
+          debugger
+          if (index === n) {
+            for (var i = 0; i < n; i++) {
+              if (isplace([index, i], str)) {
+                strArr[i] = 'Q'
+                result.push((str + strArr.join('')).split('&'))
+                strArr[i] = '.'
+                return
+              }
+            }
+          }
+          for (var i = 0; i < n; i++) {
+            if (isplace([index, i], str)) {
+              queen(index + 1, str + i)
+            }
+          }
+        }
+
+        function isplace(inPrice, outPlace) {
+          outPlace = outPlace.split('&')
+          var n = outPlace.length
+          for (var i = 0; i < n; i++) {
+            if (outPlace[i][0] === inPrice[0] || outPlace[i][1] === inPrice[1] || (Math.abs(outPlace[i][1] - inPrice[
+                1]) === Math.abs(outPlace[i][0] - inPrice[0]))) {
+              return false
+            }
+          }
+          return true
+        }
+        queen(0, '')
+        return result
+      };
+
+      console.log(solveNQueens(n))
+    </script>
+
+  </body>
+
+</html>
