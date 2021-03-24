@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-22 16:41:19
- * @LastEditTime: 2021-03-22 16:55:36
+ * @LastEditTime: 2021-03-24 14:17:00
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -19,36 +19,33 @@
       var s = "aab"
       //  [["a","a","b"],["aa","b"]]
       var partition = function (s) {
-        const res = [];
-
-        function dfs(temp, start) {
-          if (start == s.length) {
-            res.push(temp.slice());
+        const dfs = (i) => {
+          if (i === n) {
+            ret.push(ans.slice());
             return;
           }
-          for (let i = start; i < s.length; i++) {
-            if (isPali(s, start, i)) {
-              temp.push(s.substring(start, i + 1));
-              dfs(temp, i + 1);
-              temp.pop();
+          for (let j = i; j < n; ++j) {
+            if (f[i][j]) {
+              ans.push(s.slice(i, j + 1));
+              dfs(j + 1);
+              ans.pop();
             }
           }
         }
-        dfs([], 0);
-        return res;
-      };
 
-      function isPali(s, l, r) {
-        while (l < r) {
-          if (s[l] != s[r]) {
-            return false;
+        const n = s.length;
+        const f = new Array(n).fill(0).map(() => new Array(n).fill(true));
+        let ret = [],
+          ans = [];
+        for (let i = n - 1; i >= 0; --i) {
+          for (let j = i + 1; j < n; ++j) {
+            debugger
+            f[i][j] = (s[i] === s[j]) && f[i + 1][j - 1];
           }
-          l++;
-          r--;
         }
-        return true;
-      }
-
+        dfs(0);
+        return ret;
+      };
 
       console.log(partition(s));
     </script>
