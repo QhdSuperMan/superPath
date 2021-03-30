@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-09 11:39:14
- * @LastEditTime: 2021-03-09 11:47:58
+ * @LastEditTime: 2021-03-24 16:43:20
  * @info: 封装axios
  */
 import axios from 'axios'
@@ -10,7 +10,7 @@ const baseURL: string = '/api/'
 const server = axios.create({
   baseURL: baseURL,
   timeout: 1000,
-  headers: { 'X-Custom-Header': 'foobar' }
+  // headers: { 'X-Custom-Header': 'foobar' }
 });
 // 添加请求拦截器
 server.interceptors.request.use(function (config) {
@@ -34,5 +34,4 @@ server.interceptors.response.use(function (response) {
 
 export default function inItAxios(app: any) {
   app.config.globalProperties.$axios = server
-  console.log(app)
 }

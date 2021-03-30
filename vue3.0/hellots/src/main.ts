@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-05 10:59:39
- * @LastEditTime: 2021-03-11 18:15:56
+ * @LastEditTime: 2021-03-30 16:10:32
  * @info: 描述
  */
 import { RouteRecordRaw } from 'vue-router'
@@ -11,9 +11,9 @@ import App from './App.vue'
 const app = createApp(App)
 import router from './router'
 import store from './store'
-import 'element3/lib/theme-chalk/index.css'
+import ElementPlus from 'element-plus';
+import 'element-plus/lib/theme-chalk/index.css';
 import '@/style/reset.css'
-import Element3 from 'element3'
 import initCompent from '@/utils/compents'
 import server from '@/server/server'
 import '@/permission'
@@ -34,4 +34,4 @@ setTimeout(() => {
 
 app.config.globalProperties.$test = Node
 app.use(server)
-app.use(initCompent).use(store).use(router).use(Element3).mount('#app')
+app.use(initCompent).use(store).use(router).use(ElementPlus).mount('#app')

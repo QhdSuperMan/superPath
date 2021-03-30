@@ -1,0 +1,3 @@
+// @ts-ignore 单行忽略
+// @ts-nocheck 忽略全文
+// 取消忽略全文  @ts-check

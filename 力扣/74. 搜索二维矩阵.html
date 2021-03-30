@@ -1,0 +1,48 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-30 10:59:37
+ * @LastEditTime: 2021-03-30 11:15:34
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var matrix = [
+          [1, 3, 5, 7],
+          [10, 11, 16, 20],
+          [23, 30, 34, 60]
+        ],
+        target = 3
+      var searchMatrix = function (matrix, target) {
+        var n = matrix.length
+        var n2 = matrix[0].length
+        if (n == 0 || n2 == 0) return false;
+        var i = 0
+        while (i < n) {
+          if (matrix[i][n2 - 1] < target) {
+            i++
+          } else {
+            for (var j = n2 - 1; j >= 0; j--) {
+              if (matrix[i][j] === target) {
+                return true
+              }
+            }
+            return false
+          }
+        }
+        return false
+      };
+      console.log(searchMatrix(matrix, target))
+    </script>
+  </body>
+
+</html>
