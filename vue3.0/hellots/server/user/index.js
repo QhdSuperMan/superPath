@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-24 16:41:00
- * @LastEditTime: 2021-03-30 19:21:52
+ * @LastEditTime: 2021-04-09 11:40:28
  * @info: 描述
  */
 const Mock = require('mockjs')
@@ -10,11 +10,11 @@ const express = require('express')
 var router = express.Router();
 router.post('/login', function (req, res, next) {
   var user = {
-    name: '超人'
+    usename: '超人'
   }
   res.send(JSON.stringify({ code: 200, data: user }))
 })
-router.post('/getNav', function (req, res, next) {
+router.get('/getNav', function (req, res, next) {
   var obj = [
     {
       name: '用户新增',

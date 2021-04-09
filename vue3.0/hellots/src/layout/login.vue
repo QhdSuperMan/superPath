@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { useStore, mapGetters } from "vuex";
+import { useStore, mapGetters, mapMutations } from "vuex";
 import { useContext, getCurrentInstance } from "vue";
 import { computed } from "vue";
 export default {
@@ -56,10 +56,6 @@ export default {
       redirect: undefined
     };
   },
-  created() {
-    var obj = useStore();
-    // console.log(this.getToken, useContext(), getCurrentInstance());
-  },
   computed: {
     ...mapGetters(["getToken"])
   },
@@ -75,13 +71,19 @@ export default {
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
-          // this.loading = true;
-          this.$axios.post('/login').then(result => {
-            console.log(result);
+          this.$axios.post("/login").then(({ data }) => {
+            if (data.code === 200) {
+              this.$store.commit("SET_TOKEN", data.data)
+              // this.setToken(data.data);
+              this.$router.push('/home')
+            }
           });
         }
       });
-    }
+    },
+    ...mapMutations({
+      setToken: "SET_TOKEN"
+    })
   }
 };
 </script>

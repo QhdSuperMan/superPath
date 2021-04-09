@@ -2,11 +2,12 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-05 10:59:39
- * @LastEditTime: 2021-03-30 16:10:32
+ * @LastEditTime: 2021-04-09 11:45:40
  * @info: 描述
  */
-import { RouteRecordRaw } from 'vue-router'
+// @ts-nocheck
 import { createApp } from 'vue'
+import { devtools } from '@/devtools.ts';
 import App from './App.vue'
 const app = createApp(App)
 import router from './router'
@@ -15,23 +16,8 @@ import ElementPlus from 'element-plus';
 import 'element-plus/lib/theme-chalk/index.css';
 import '@/style/reset.css'
 import initCompent from '@/utils/compents'
-import server from '@/server/server'
+import server from '@/server/index'
 import '@/permission'
-const loadView  = (str:string) => {
-  // dsabled
-  console.log()
-  return () => import('@/views/'+ str)
-}
-
-setTimeout(() => {
-  var obj:RouteRecordRaw= {
-    path: '/test',
-    name: 'test',
-    component: loadView('index'),
-  }
-  router.addRoute(obj)
-}, 2000)
-
 app.config.globalProperties.$test = Node
 app.use(server)
-app.use(initCompent).use(store).use(router).use(ElementPlus).mount('#app')
+app.use(devtools).use(initCompent).use(store).use(router).use(ElementPlus).mount('#app')

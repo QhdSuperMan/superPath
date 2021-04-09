@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-09 11:39:14
- * @LastEditTime: 2021-03-24 16:43:20
+ * @LastEditTime: 2021-04-09 11:33:34
  * @info: 封装axios
  */
 import axios from 'axios'
@@ -30,8 +30,11 @@ server.interceptors.response.use(function (response) {
   return Promise.reject(error);
 });
 
+export default server
 
 
-export default function inItAxios(app: any) {
-  app.config.globalProperties.$axios = server
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $axios: string
+  }
 }

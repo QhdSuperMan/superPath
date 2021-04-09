@@ -1,0 +1,43 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-04-08 09:56:01
+ * @LastEditTime: 2021-04-08 10:34:50
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums = [3,4,5,1, 2]
+      var findMin = function (nums) {
+        var min = nums[0]
+        var left = 1
+        var right = nums.length - 1
+        
+        if (nums[right] < min + right) {
+          while (left <= right) {
+            if (nums[right - 1] > nums[right]) {
+              return nums[right]
+            }
+            if (nums[left] < min) {
+              return nums[left]
+            }
+            right--
+            left++
+          }
+        } 
+        return min
+      };
+      console.log(findMin(nums))
+    </script>
+  </body>
+
+</html>

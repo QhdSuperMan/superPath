@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-09 10:37:52
- * @LastEditTime: 2021-03-30 19:09:39
+ * @LastEditTime: 2021-04-07 08:31:49
  * @info: 描述
 -->
 <template>
@@ -10,10 +10,10 @@
     <headCompents />
     <div>
       <el-container>
-        <el-aside width="200px">
-          <asideCompents />
-        </el-aside>
-        <el-main>Main</el-main>
+        <asideCompents />
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </div>
   </div>
