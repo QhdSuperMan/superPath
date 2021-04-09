@@ -2,13 +2,14 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-09 10:37:52
- * @LastEditTime: 2021-04-09 14:29:12
+ * @LastEditTime: 2021-04-09 16:53:56
  * @info: 描述
  */
 
 import { Module } from 'vuex'
 import router from '@/router/index'
 import { RouteRecordRaw } from 'vue-router'
+import layout from '@/layout/index.vue'
 interface UserInterface {
     userData: any,
     routerBox: Array<any>
@@ -58,7 +59,8 @@ function dealRouter(arr: Array<any>) {
         var obj: RouteRecordRaw = {
             path: val.comments,
             name: val.name,
-            component: loadView(val.comments),
+            children: val.children && val.children.length ? dealRouter(val.children) : [],
+            component: val.children && val.children.length ? layout : loadView(val.comments),
         }
         router.addRoute(obj)
         result.push(obj)
