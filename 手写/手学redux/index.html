@@ -1,0 +1,78 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-04-14 20:05:13
+ * @LastEditTime: 2021-04-14 20:32:40
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function createStore(state) {
+        var state = JSON.parse(JSON.stringify(state))
+        var listeners = []
+
+        function subscribe(callBack) {
+          listeners.push(callBack)
+        }
+
+        function getState(key) {
+          return state[key]
+        }
+
+        function dispatch(action) {
+          state = reducer(state, action);
+          for (let i = 0; i < listeners.length; i++) {
+            const listener = listeners[i];
+            listener(state);
+          }
+        }
+
+        function reducer(state, action) {
+          switch (action.type) {
+            case 'add':
+              return {
+                ...state,
+                index: ++state.index
+              };
+            case 'minus':
+              return {
+                ...state,
+                index: --state.index
+              };
+            default:
+              return state;
+          }
+        }
+        return {
+          getState,
+          subscribe,
+          dispatch
+        }
+      }
+      var store = createStore({
+        index: 1
+      })
+      console.log(store)
+      store.subscribe((a) => {
+        console.log('改变了')
+      })
+      store.dispatch({
+        type: 'add'
+      })
+      store.dispatch({
+        type: 'add'
+      })
+      console.log(store.getState('index'))
+    </script>
+  </body>
+
+</html>
