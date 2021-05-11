@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-04-15 15:46:53
- * @LastEditTime: 2021-04-15 20:29:53
+ * @LastEditTime: 2021-04-16 10:04:07
  * @info: 描述
  */
 class Complie {
@@ -36,7 +36,7 @@ class Complie {
       return a[b]
     }, this.$data)
   }
-  setDataValue (expr, val) {
+  setDataValue(expr, val) {
     return expr.split('.').reduce((data, currentVal, index, arr) => {
       if (index == arr.length - 1) {
         data[currentVal] = val;
@@ -49,19 +49,17 @@ class Complie {
       const { name, value } = val
       if (name === 'v-model') {
         var that = this
-        Dep.target = new Watcher(value, this.vm, (val) => {
+        new Watcher(value, this.vm, (val) => {
           node.value = val
         })
-        node.value = this.getDataValue(value)
         node.addEventListener('input', function (val) {
           that.setDataValue(value, val.target.value)
         })
       }
       if (name === 'v-text') {
-        Dep.target = new Watcher(value, this.vm, (val) => {
+        new Watcher(value, this.vm, (val) => {
           node.innerText = val
         })
-        node.innerText = this.getDataValue(value)
       }
     })
   }

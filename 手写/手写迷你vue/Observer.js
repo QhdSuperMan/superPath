@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-04-15 18:07:16
- * @LastEditTime: 2021-04-15 20:34:58
+ * @LastEditTime: 2021-04-16 10:03:42
  * @info: 描述
  */
 class Observer {
@@ -52,8 +52,13 @@ class Watcher {
       return a[b]
     }, this.$data)
     Dep.target = null;
-    this.cb()
+    this.cb(oldVal)
     return oldVal;
+  }
+  getDataValue(str) {
+    return str.split('.').reduce((a, b) => {
+      return a[b]
+    }, this.$data)
   }
   update() {
     this.cb(this.getDataValue(this.expr))
