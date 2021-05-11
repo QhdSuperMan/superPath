@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-04-14 20:38:34
- * @LastEditTime: 2021-04-15 10:16:00
+ * @LastEditTime: 2021-05-11 17:50:41
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -16,44 +16,41 @@
 
   <body>
     <script>
-      class PubSub {
+      class EventEmitter {
         constructor() {
-          this.subscribers = [];
+          this.events = {};
         }
-        subscribe(topic, callback) {
-          let callbacks = this.subscribers[topic];
-          if (!callbacks) {
-            this.subscribers[topic] = [callback];
+        // 实现订阅
+        on(type, callBack) {
+          if (!this.events) this.events = Object.create(null);
+
+          if (!this.events[type]) {
+            this.events[type] = [callBack];
           } else {
-            callbacks.push(callback);
+            this.events[type].push(callBack);
           }
         }
-        publish(topic, ...args) {
-          let callbacks = this.subscribers[topic] || [];
-          callbacks.forEach(callback => callback(...args));
+        // 删除订阅
+        off(type, callBack) {
+          if (!this.events[type]) return;
+          this.events[type] = this.events[type].filter(item => {
+            return item !== callBack;
+          });
         }
-      } //
-
-      class Subject {
-        constructor() {
-          this.observers = [];
+        // 只执行一次订阅事件
+        once(type, callBack) {
+          function fn() {
+            callBack();
+            this.off(type, fn);
+          }
+          this.on(type, fn);
         }
-        add(observer) {
-          this.observers.push(observer);
-        }
-        notify(...args) {
-          this.observers.forEach(observer => observer.update(...args));
+        // 触发事件
+        emit(type, ...rest) {
+          this.events[type] &&
+            this.events[type].forEach(fn => fn.apply(this, rest));
         }
       }
-      class
-      Observer {
-        update(...args) {
-          console.log(...args);
-        }
-      } // 创建观察者ob1 let ob1 =
-      new Observer(); // 创建观察者ob2 let ob2 = new Observer(); // 创建目标sub let sub = new
-      Subject(); // 目标sub添加观察者ob1 （目标和观察者建立了依赖关系） sub.add(ob1); // 目标sub添加观察者ob2
-      sub.add(ob2); // 目标sub触发SMS事件（目标主动通知观察者） sub.notify('I fired `SMS` event');
     </script>
   </body>
 
