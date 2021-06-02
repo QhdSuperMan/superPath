@@ -1,0 +1,39 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-04-14 16:54:55
+ * @LastEditTime: 2021-04-14 17:26:39
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var a = new Promise((reslove, reject) => {
+        setTimeout(_ => {
+          reslove(2)
+        }, 50)
+      })
+      a.then(val => {
+        return new Promise((reslove, reject) => {
+          setTimeout(_ => {
+            reslove(1)
+          }, 50)
+        }).then(val => {
+          console.log(val)
+          return 'promise里面的promise'
+        })
+      }).then(val => {
+        console.log(val,111)
+      })
+    </script>
+  </body>
+
+</html>

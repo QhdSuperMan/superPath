@@ -9,7 +9,9 @@
     "start": "nodemon ./server/index.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "element-plus": "^1.0.2-beta.36",
     "element3": "^0.0.39",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
@@ -27,7 +29,8 @@
     "less": "^4.1.1",
     "less-loader": "5.0.0",
     "mockjs": "^1.1.0",
-    "typescript": "~3.9.3"
+    "typescript": "~3.9.3",
+    "vue-devtools": "^5.1.4"
   },
   "browserslist": [
     "> 1%",

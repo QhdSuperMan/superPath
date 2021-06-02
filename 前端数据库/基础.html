@@ -1,0 +1,98 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-05-10 17:24:47
+ * @LastEditTime: 2021-05-10 18:38:46
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var request = window.indexedDB.open('superDatabase', 89);
+      request.onupgradeneeded = function (event) {
+        console.log('数据库打开成功');
+        window.db = event.target.result;
+        if (!db.objectStoreNames.contains('person')) {
+          window.objectStore = db.createObjectStore('person', {
+            keyPath: 'id'
+          });
+        } else {
+          window.objectStore = db.objectStoreNames.contains('person')
+        }
+        // objectStore.createIndex("name", "name", { unique: false });
+      };
+      request.onsuccess = function (event) {
+        window.db = event.target.result
+        console.log(window.db)
+        add();
+      };
+
+      function add() {
+        var id = Math.floor(Math.random() * 10000)
+        var request = db.transaction(['person'], 'readwrite')
+          .objectStore('person')
+          .add({
+            id: id,
+            name: '张三' + id,
+            age: 24,
+            email: 'zhangsan@example.com' + id
+          });
+
+        request.onsuccess = function (event) {
+          console.log('数据写入成功');
+        };
+
+        request.onerror = function (event) {
+          console.log('数据写入失败');
+        }
+        read(id)
+      }
+
+      function read(id) {
+        var transaction = db.transaction(['person']);
+        var objectStore = transaction.objectStore('person');
+        var request = objectStore.get(id);
+
+        request.onerror = function (event) {
+          console.log('事务失败');
+        };
+
+        request.onsuccess = function (event) {
+          if (request.result) {
+            console.log('Name: ' + request.result.name);
+            console.log('Age: ' + request.result.age);
+            console.log('Email: ' + request.result.email);
+          } else {
+            console.log('未获得数据记录');
+          }
+          readAll();
+        };
+      }
+
+      function readAll() {
+        var objectStore = db.transaction('person').objectStore('person');
+        var result = []
+        objectStore.openCursor().onsuccess = function (event) {
+          var cursor = event.target.result;
+
+          if (cursor) {
+            result.push(cursor.value)
+            cursor.continue();
+          } else {
+            console.log('没有更多数据了！');
+            console.log(result)
+          }
+        };
+      }
+    </script>
+  </body>
+
+</html>

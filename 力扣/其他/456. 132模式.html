@@ -1,0 +1,44 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-03-24 15:14:58
+ * @LastEditTime: 2021-03-24 15:42:49
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums = [3, 1, 4, 2]
+      // i < j < k 和 nums[i] < nums[k] < nums[j] 。
+      var find132pattern = function (nums) {
+        var n = nums.length
+        min = nums[0]
+        for (var i = 1; i < n; i++) {
+          if (nums[i] > min && hehe(i, min)) {
+            return true
+          }
+          min = Math.min(min, nums[i])
+        }
+
+        function hehe(j, min) {
+          for (var i = j + 1; i < n; i++) {
+            if (nums[i] < nums[j] && nums[i] > min) {
+              return true
+            }
+          }
+        }
+        return false
+      };
+      console.log(find132pattern(nums))
+    </script>
+  </body>
+
+</html>

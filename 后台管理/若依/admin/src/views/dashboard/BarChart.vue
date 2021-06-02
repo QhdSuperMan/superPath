@@ -1,5 +1,8 @@
 <template>
-  <div :class="className" :style="{height:height,width:width}" />
+  <!-- <div :class="className" :style="{height:height,width:width}" /> -->
+<div>
+  111111
+</div>
 </template>
 
 <script>
@@ -31,6 +34,7 @@ export default {
     }
   },
   mounted() {
+    debugger
     this.$nextTick(() => {
       this.initChart()
     })
