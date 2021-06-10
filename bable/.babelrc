@@ -1,16 +1,12 @@
-{
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "chrome": "58",
-          "ie": "10"
-        }
-      },
-    ]
-  ],
-  "plugins": [
-
-  ]
-}
+ {
+   "presets": [
+     [
+       "es2015",
+       {
+         "targets": {
+           "edge": "8"
+         }
+       }
+     ]
+   ]
+ }

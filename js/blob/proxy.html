@@ -1,0 +1,47 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-08 17:09:02
+ * @LastEditTime: 2021-06-10 10:22:27
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用Proxy实现Vue数据劫持</title>
+  </head>
+
+  <body>
+    <script>
+      var demo = {
+        id: '1',
+        name: {
+          label: '傻',
+          value: '1'
+        }
+      }
+      let proxy = new Proxy(demo, {
+        set(target, key, value, receiver) {
+          console.log(target, key, value, receiver);
+          if ( typeof(target[key]) == 'object') {
+
+          }  else {
+            return Reflect.set(target, key, value, receiver); 
+          }
+        },
+        get(target, key, value, receiver) {
+          return Reflect.get(target, key, value, receiver);
+        }
+      })
+      console.log(Reflect)
+
+      function demo() {
+
+      }
+    </script>
+  </body>
+
+</html>
