@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-18 15:38:57
- * @LastEditTime: 2021-06-18 17:21:22
+ * @LastEditTime: 2021-06-22 17:16:12
  * @info: 描述
  */
 /* global Vue */
@@ -12,10 +12,21 @@ var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
 /**
  * Actual demo
  */
-new Vue({
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
+var vm = new Vue({
 
   el: '#demo',
-
+  store: store,
   data: {
     branches: ['master', 'dev'],
     currentBranch: 'master',
@@ -60,3 +71,4 @@ new Vue({
     }
   }
 })
+console.log(vm)

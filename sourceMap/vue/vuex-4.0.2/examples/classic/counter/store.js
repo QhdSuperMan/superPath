@@ -1,3 +1,10 @@
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-18 15:51:20
+ * @LastEditTime: 2021-06-22 14:11:24
+ * @info: 描述
+ */
 import { createStore } from 'vuex'
 
 // root state object.
@@ -23,8 +30,8 @@ const mutations = {
 // actions are functions that cause side effects and can involve
 // asynchronous operations.
 const actions = {
-  increment: ({ commit }) => commit('increment'),
-  decrement: ({ commit }) => commit('decrement'),
+  // increment: ({ commit }) => commit('increment'),
+  // decrement: ({ commit }) => commit('decrement'),
   incrementIfOdd ({ commit, state }) {
     if ((state.count + 1) % 2 === 0) {
       commit('increment')

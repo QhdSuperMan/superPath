@@ -1,3 +1,10 @@
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-18 15:51:20
+ * @LastEditTime: 2021-06-22 10:54:46
+ * @info: 描述
+ */
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
@@ -31,6 +38,8 @@ module.exports = {
     chunkFilename: '[id].chunk.js',
     publicPath: '/__build__/'
   },
+
+  devtool: 'source-map',
 
   module: {
     rules: [
