@@ -1,0 +1,30 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-28 15:07:21
+ * @LastEditTime: 2021-06-28 15:09:34
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 作用1  数组扁平化
+
+    var a = [1]
+    var b = [2,3]
+    console.log(a.push(...b)) // [1,2,3]
+
+    // 作用2 参数转数组
+    function demo(...args) {
+      console.log(args) // [1,2,3]
+    }
+    demo(1,2,3)
+  </script>
+</body>
+</html>

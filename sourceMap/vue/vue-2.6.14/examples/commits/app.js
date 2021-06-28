@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-18 15:38:57
- * @LastEditTime: 2021-06-22 17:16:12
+ * @LastEditTime: 2021-06-23 09:22:01
  * @info: 描述
  */
 /* global Vue */
@@ -18,7 +18,7 @@ const store = new Vuex.Store({
     count: 0
   },
   mutations: {
-    increment (state) {
+    increment(state) {
       state.count++
     }
   }
@@ -37,9 +37,6 @@ var vm = new Vue({
     this.fetchData()
   },
 
-  watch: {
-    currentBranch: 'fetchData'
-  },
 
   filters: {
     truncate: function (v) {
@@ -52,6 +49,10 @@ var vm = new Vue({
   },
 
   methods: {
+    clickC() {
+      this.currentBranch += 1
+      console.log(vm)
+    },
     fetchData: function () {
       var self = this
       if (navigator.userAgent.indexOf('PhantomJS') > -1) {
