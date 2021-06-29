@@ -1,0 +1,49 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-28 15:40:13
+ * @LastEditTime: 2021-06-28 15:46:11
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      Function.prototype.apply2 = function (context, arr) {
+        var context = context || window;
+        context.fn = this;
+
+        var result;
+        if (!arr) {
+          result = context.fn();
+        } else {
+          var args = [];
+          for (var i = 0, len = arr.length; i < len; i++) {
+            args.push('arr[' + i + ']');
+          }
+          result = eval('context.fn(' + args + ')') // 帅哥们  这句啥原理啊
+        }
+
+        delete context.fn
+        return result;
+      }
+
+      var obj = {
+        id: 1111
+      }
+
+      function demo(a) {
+        console.log(this[a],arguments)
+      }
+      demo.apply2(obj, ['id', 1])
+    </script>
+  </body>
+
+</html>

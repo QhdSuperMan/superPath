@@ -1,0 +1,38 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-23 17:49:57
+ * @LastEditTime: 2021-06-23 17:53:27
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function cartesian(arr) {
+        if (arr.length < 2) return arr[0] || [];
+        return [].reduce.call(arr, function (col, set) {
+          let res = [];
+          col.forEach(c => {
+            set.forEach(s => {
+              let t = [].concat(Array.isArray(c) ? c : [c]);
+              t.push(s);
+              res.push(t);
+            })
+          });
+          return res;
+        });
+      }
+
+      console.log(cartesian([[1,2],[3,4],[5,6]]))
+    </script>
+  </body>
+
+</html>

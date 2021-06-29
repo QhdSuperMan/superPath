@@ -1,10 +1,19 @@
-let x: [string, number, any] = ['4',41, {}]
-var a: number[] = [1]
-var b: Array<number> = [1]
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2020-12-22 15:07:22
+ * @LastEditTime: 2021-06-23 15:36:44
+ * @info: 描述
+ */
+// enum Status {
+//   Draft,
+//   Published
+// }
 
-enum Color {Red = 1, Green = 2, Blue = 4}
-
-
-function f({ a="", b=0 } = {}): void {
-  console.log(a,b)
+// 也可指定值
+enum Status {
+  Draft,
+  Published
 }
+const str = 'Draft';
+const a: Status = Status[str];

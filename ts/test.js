@@ -1,13 +1,20 @@
-var x = ['4', 41, {}];
-var a = [1];
-var b = [1];
-var Color;
-(function (Color) {
-    Color[Color["Red"] = 1] = "Red";
-    Color[Color["Green"] = 2] = "Green";
-    Color[Color["Blue"] = 4] = "Blue";
-})(Color || (Color = {}));
-function f(_a) {
-    var _b = _a === void 0 ? {} : _a, _c = _b.a, a = _c === void 0 ? "" : _c, _d = _b.b, b = _d === void 0 ? 0 : _d;
-    console.log(a, b);
-}
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2020-12-22 15:07:22
+ * @LastEditTime: 2021-06-23 15:39:53
+ * @info: 描述
+ */
+// enum Status {
+//   Draft,
+//   Published
+// }
+// 也可指定值
+var Status;
+(function (Status) {
+    Status[Status["Draft"] = 0] = "Draft";
+    Status[Status["Published"] = 1] = "Published";
+})(Status || (Status = {}));
+var str = 'Draft';
+var a = Status[str];
+console.log(a, Status)

@@ -2,13 +2,14 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-24 16:41:00
- * @LastEditTime: 2021-04-09 16:55:59
+ * @LastEditTime: 2021-06-22 15:26:34
  * @info: 描述
  */
 const Mock = require('mockjs')
 const express = require('express')
 var router = express.Router();
 router.post('/login', function (req, res, next) {
+  console.log(req)
   var user = {
     usename: '超人'
   }

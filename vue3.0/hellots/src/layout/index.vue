@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-09 10:37:52
- * @LastEditTime: 2021-04-09 17:59:50
+ * @LastEditTime: 2021-06-22 15:14:34
  * @info: 描述
 -->
 <template>
@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 // @ts-nocheck
-import { ref } from "vue";
+import { ref,reactive } from "vue";
 import headCompents from "./header/header";
 import asideCompents from "./nav/nav";
 import { defineComponent } from "vue";
