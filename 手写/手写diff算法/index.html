@@ -1,0 +1,115 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-22 20:41:10
+ * @LastEditTime: 2021-06-22 22:20:01
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \albb\手写\手写diff算法\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='root'>
+
+    </div>
+    <script>
+        const root = document.querySelector('#root');
+
+        const newVnode = h('ul', { id: 'container' },
+            h('li', { style: { backgroundColor: '#AA0000' }, key: 'E' }, 'E1'),
+            h('li', { style: { backgroundColor: '#440000' }, key: 'B' }, 'B1'),
+            h('li', { style: { backgroundColor: '#110000' }, key: 'f' }, 's1'),
+            h('li', { style: { backgroundColor: '#AA0000' }, key: 'D' }, 'D1'),
+            h('li', { style: { backgroundColor: '#770000' }, key: 'A' }, 'A1'),
+        );
+        const oldVnode = h('ul', { id: 'container' },
+            h('li', { style: { backgroundColor: '#110000' }, key: 'A' }, 'A'),
+            h('li', { style: { backgroundColor: '#440000' }, key: 'B' }, 'B'),
+            h('li', { style: { backgroundColor: '#770000' }, key: 'C' }, 'C'),
+            h('li', { style: { backgroundColor: '#AA0000' }, key: 'D' }, 'D'),
+        )
+
+        mount(oldVnode, root)
+        setTimeout(() => {
+            patch(oldVnode, newVnode)
+        }, 1000);
+
+        function patch(oldVnode, newVnode) {
+            console.log(oldVnode, newVnode)
+            //如果类型不一样，直接替换
+            if (newVnode.type !== oldVnode.type) {//
+                return oldVnode.domElement.parentNode.replaceChild(creatRealDom(newVnode), oldVnode.domElement)
+            }
+            // if (newVnode.text !== undefined) {
+            //     return oldVnode.domElement.textContent = newVnode.text
+            // }
+        }
+
+        function h(tag, attr, ...children) {
+            let key = attr["key"]
+            let props = {}
+            for (var i in attr) {
+                if (i !== 'key') {
+                    props[i] = attr[i]
+                }
+            }
+            return convertVnode(tag, props, key, children.map((child) => {
+                return typeof child == 'string' || typeof child == 'number' ?
+                    convertVnode(undefined, undefined, undefined, undefined, child) : child
+            }))
+        }
+
+        function convertVnode(type, props = {}, key, children = [], text, domElement) {
+            return {
+                _type: 'VNODE_TYPE',
+                type, props, key, children, text, domElement
+            }
+        }
+
+        function updateAttr(vnode, oldprops = []) {
+            let newprops = vnode.props
+            for (let attr in newprops) {
+                if (attr === 'style') {
+                    let styleObj = newprops[attr]
+                    for (let styleName in styleObj) {//styleObj样式对象
+                        vnode.domElement.style[styleName] = styleObj[styleName]
+                    }
+                } else {//一般样式直接弄
+                    vnode.domElement[attr] = newprops[attr]
+                }
+            }
+        }
+
+
+        function creatRealDom(vnode) {
+            let { type, children } = vnode
+            if (type) {
+                let dom = vnode.domElement = document.createElement(type)
+                updateAttr(vnode)
+                if (Array.isArray(children)) {
+                    children.forEach((child) => dom.appendChild(creatRealDom(child)))
+                }
+            } else {
+                vnode.domElement = document.createTextNode(vnode.text)
+            }
+            return vnode.domElement
+        }
+
+
+        function mount(vnode, container) {
+            let realDom = creatRealDom(vnode)
+            container.appendChild(realDom)
+        }
+
+    </script>
+</body>
+
+</html>
