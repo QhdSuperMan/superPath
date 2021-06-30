@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-28 17:11:40
- * @LastEditTime: 2021-06-28 17:41:54
+ * @LastEditTime: 2021-06-29 09:31:09
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -19,8 +19,8 @@
       // new 干了几件事
       /**
        * 1 创建一个空对象  this指向这个对象
-       * 2 放回this
-       * @return {*}
+       * 2 新对象需要能够访问到构造函数的属性，所以需要重新指定它的原型；
+       * 构造函数可能会显示返回；
        */
 
       function objectFactory() {
@@ -40,8 +40,6 @@
       }
       let p = objectFactory(person, '布兰', 12)
       console.log(p) // { name: '布兰', age: 12 }
-      var a = "sss\""
-      console.log("sss\"",a)
     </script>
   </body>
 

@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-29 15:07:13
+ * @LastEditTime: 2021-06-29 16:13:14
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var coins = [1, 2, 5],
+        amount = 11
+      var coinChange = function (coins, amount) {
+        if (amount === 0) return 0;
+        //初始化长度为amount+1，值为无穷大的数组
+        let dp = Array(amount + 1).fill(Infinity)
+        dp[0] = 0;
+        for (let i = 0; i < dp.length; i++) {
+          for (let j = 0; j < coins.length; j++) {
+            // 如果差值小于零
+            if (i - coins[j] < 0) continue;
+            // 每一个金额最低需要几个硬币
+            var prev =  dp[i - coins[j]]
+            dp[i] = Math.min(dp[i], prev + 1);
+          }
+        }
+        if (dp[amount] === Infinity) return -1;
+        else return dp[amount]
+      };
+      console.log(coinChange(coins, amount))
+    </script>
+  </body>
+
+</html>
