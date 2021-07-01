@@ -1,19 +1,53 @@
-/*
- * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
- * @Date: 2020-12-22 15:07:22
- * @LastEditTime: 2021-06-23 15:36:44
- * @info: 描述
- */
-// enum Status {
-//   Draft,
-//   Published
-// }
+// Disposable Mixin
+class Disposable {
+    isDisposed: boolean;
+    dispose() {
+        this.isDisposed = true;
+    }
 
-// 也可指定值
-enum Status {
-  Draft,
-  Published
 }
-const str = 'Draft';
-const a: Status = Status[str];
+
+// Activatable Mixin
+class Activatable {
+    isActive: boolean;
+    activate() {
+        this.isActive = true;
+    }
+    deactivate() {
+        this.isActive = false;
+    }
+}
+
+class SmartObject implements Disposable, Activatable {
+    constructor() {
+    }
+
+    interact() {
+        this.activate();
+    }
+
+    // Disposable
+    isDisposed: boolean = false;
+    dispose: () => void;
+    // Activatable
+    isActive: boolean = false;
+    activate: () => void;
+    deactivate: () => void;
+}
+applyMixins(SmartObject, [Disposable, Activatable]);
+
+let smartObj = new SmartObject();
+console.log(smartObj)
+// setTimeout(() => smartObj.interact(), 1000);
+
+////////////////////////////////////////
+// In your runtime library somewhere
+////////////////////////////////////////
+
+function applyMixins(derivedCtor: any, baseCtors: any[]) {
+    baseCtors.forEach(baseCtor => {
+        Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+            derivedCtor.prototype[name] = baseCtor.prototype[name];
+        });
+    });
+}
