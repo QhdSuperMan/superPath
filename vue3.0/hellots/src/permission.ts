@@ -1,20 +1,12 @@
 /*
  * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
+ * @LastEditors: Please set LastEditors
  * @Date: 2021-03-09 10:37:52
- * @LastEditTime: 2021-04-09 14:41:18
+ * @LastEditTime: 2021-07-01 22:11:26
  * @info: 描述
  */
 import router from '@/router'
 import store from '@/store/index'
-<<<<<<< HEAD
-
-
-router.beforeEach((to: any, from: any, next: Function) => {
-    console.log(from, to)
-    console.log(store)
-    next()
-=======
 import axios from '@/server/server'
 
 router.beforeEach((to: any, from: any, next: Function) => {
@@ -36,5 +28,4 @@ router.beforeEach((to: any, from: any, next: Function) => {
     } else {
         next()
     }
->>>>>>> 1b8a96c013285b2c7a99a08cb5aaf0cd3bac8876
 })
