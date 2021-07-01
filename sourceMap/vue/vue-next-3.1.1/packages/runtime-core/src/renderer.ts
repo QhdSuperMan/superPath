@@ -88,6 +88,7 @@ import { isAsyncWrapper } from './apiAsyncComponent'
 import { isCompatEnabled } from './compat/compatConfig'
 import { DeprecationTypes } from './compat/compatConfig'
 import { registerLegacyRef } from './compat/ref'
+import { ClassImplements } from '@babel/types'
 
 export interface Renderer<HostElement = RendererElement> {
   render: RootRenderFunction<HostElement>
