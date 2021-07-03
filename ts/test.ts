@@ -1,10 +1,16 @@
-let x: [string, number, any] = ['4',41, {}]
-var a: number[] = [1]
-var b: Array<number> = [1]
 
-enum Color {Red = 1, Green = 2, Blue = 4}
+// 混合类型核
 
 
-function f({ a="", b=0 } = {}): void {
-  console.log(a,b)
+class minClass2<T>{
+    public list:T[] = [];
+    add(value:T):void{
+        this.list.push(value);
+    }
 }
+
+//调用泛型类
+//实例化类  并且制定了类的T代表的类型是number
+var m1 = new minClass2<number>();
+m1.add('ssss')
+

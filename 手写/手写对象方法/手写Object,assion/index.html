@@ -1,0 +1,39 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-29 10:20:40
+ * @LastEditTime: 2021-06-29 10:43:26
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      Object.assign2 = function (target, ...source) {
+        if (target == null) {
+          throw new TypeError('Cannot convert undefined or null to object')
+        }
+        let ret = Object(target)
+        source.forEach(function (obj) {
+          if (obj != null) {
+            for (let key in obj) {// 可枚举属性，包括原型对象的枚举属性
+              if (obj.hasOwnProperty(key)) {
+                ret[key] = obj[key]
+              }
+            }
+          }
+        })
+        return ret
+      }
+      
+    </script>
+  </body>
+
+</html>

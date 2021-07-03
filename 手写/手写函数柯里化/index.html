@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-28 15:02:00
+ * @LastEditTime: 2021-06-28 15:06:13
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function add(a, b, c) {
+        return a + b + c
+      }
+
+      function curry(fn) {
+        let judge = (...args) => {
+          if (args.length == fn.length) return fn(...args)
+          return (...arg) => judge(...args, ...arg)
+        }
+        return judge
+      }
+      let addCurry = curry(add)
+      addCurry(1)(2)(3)
+    </script>
+  </body>
+
+</html>

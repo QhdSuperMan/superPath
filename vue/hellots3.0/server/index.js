@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-03-03 17:53:56
- * @LastEditTime: 2021-03-30 19:23:30
+ * @LastEditTime: 2021-06-22 15:29:41
  * @info: 描述
  */
 // nodemon upgrade
@@ -11,7 +11,7 @@ const app = new express()
 global.$app = app
 
 app.all('*', function (req, res, next) {
-  // res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Origin", '*');
   // res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
   // res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
   // res.header("Access-Control-Allow-Credentials", "true");

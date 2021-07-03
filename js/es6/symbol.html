@@ -1,0 +1,33 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-27 16:41:34
+ * @LastEditTime: 2021-06-27 16:55:22
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+<!-- 唯一的值 -->
+  <body>
+    <script>
+      var a = Symbol()
+      var b = Symbol()
+      var obj = {
+        [a]: 1,
+        [b]: 1,
+        a: 3,
+      }
+      console.log(a, b, obj, obj[a])
+      for (i in obj) {
+        console.log(i, 2222222222)
+      }
+    </script>
+  </body>
+
+</html>

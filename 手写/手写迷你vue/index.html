@@ -1,0 +1,50 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-04-15 15:39:02
+ * @LastEditTime: 2021-04-15 20:07:37
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <input type="text" v-model='user.name'>
+      <!-- <div>
+        <input type="text" v-model='user.name'>
+        {{ user.name }}
+      </div>-->
+      <span v-text='user.name'></span>
+    </div>
+    <script src="./Compile.js"></script>
+    <script src="./Observer.js"></script>
+    <script>
+      class Vue {
+        constructor(options) {
+          this.$el = options.el
+          this.$data = options.data
+          this.$options = options
+          new Observer(this.$data, this)
+          new Complie(this.$el, this)
+        }
+      }
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          text: 'text数据',
+          user: {
+            name: 'model数据'
+          }
+        }
+      })
+    </script>
+  </body>
+
+</html>

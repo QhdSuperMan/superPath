@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-28 16:14:49
+ * @LastEditTime: 2021-06-29 10:06:05
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      /**
+        bind() 除了 this 外，还可传入多个参数；
+        bing 创建的新函数可能传入多个参数；
+        新函数可能被当做构造函数调用；
+        函数可能有返回值；
+      */
+      Function.prototype.bind2 = function (context) {
+        var self = this
+        var args = Array.prototype.slice.call(arguments, 1)
+        var father = function () {}
+        var result = function () {
+          var args2 = Array.from(arguments)
+          return self.apply((this instanceof father) ? this : this, args.concat(args2))
+        }
+        father.prototype  = this.prototype
+        result.prototype  = new father()
+        return result
+      }
+      //测试
+      obj = {
+        c: 2
+      }
+
+      function a(x, y, z) {
+        console.log(this, x, y, z)
+      }
+      // a.myBind(obj, 1, 2)(3) //{c:2,func:[function a]} 1 2 3
+      var p = new(a.bind2(obj, 1, 2, 3))
+      var q = a.bind2(obj, 1, 2, 3)()
+    </script>
+  </body>
+
+</html>

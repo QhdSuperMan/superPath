@@ -2,13 +2,13 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-04-09 16:23:19
- * @LastEditTime: 2021-04-09 17:05:34
+ * @LastEditTime: 2021-04-13 11:32:16
  * @info: 描述
 -->
 <template>
   <div>
-    <template v-for='(val) in routerBox' >
-      <el-submenu v-if='val.children.length' :index='val.path' :key='val.path' >
+    <template v-for='(val) in routerBox'>
+      <el-submenu v-if='val.children.length' :index='val.path' :key='val.path'>
         <template #title>{{ val.name }}</template>
         <nav-item :routerBox='val.children' />
       </el-submenu>
@@ -18,14 +18,20 @@
 </template>
 
 <script lang="ts" setup >
-import { computed, getCurrentInstance,useContext, defineComponent,defineProps } from "vue";
+import {
+  computed,
+  getCurrentInstance,
+  useContext,
+  defineComponent,
+  defineProps
+} from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useStore } from "vuex";
 defineComponent({
-  name: 'nav-item',
+  name: "nav-item"
 });
-defineProps(['routerBox'])
-console.log(getCurrentInstance(), useContext())
+defineProps(["routerBox"]);
+console.log(getCurrentInstance(), useContext());
 const store = useStore();
 </script>
 

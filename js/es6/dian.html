@@ -1,0 +1,58 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-28 15:07:21
+ * @LastEditTime: 2021-06-29 11:21:35
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 作用1  数组扁平化
+
+      // var a = [1]
+      // var b = [2, 3]
+      // console.log(a.push(...b)) // [1,2,3]
+
+      // // 作用2 参数转数组
+      // function demo(...args) {
+      //   console.log(args) // [1,2,3]
+      // }
+      // demo(1, 2, 3)
+
+
+
+      // function flatter(arr) {
+      //   if (!arr.length) return;
+      //   while (arr.some((item) => Array.isArray(item))) {
+      //     arr = [].concat(...arr);
+      //   }
+      //   return arr;
+      // }
+      // function flatter (arr) {
+      //   var result = []
+      //   for(var i = 0; i < arr.length; i++) {
+      //     if (Array.isArray(arr[i])) {
+      //       result = result.concat(flatter(arr[i]))
+      //     } else {
+      //       result.push(arr[i])
+      //     }
+      //   }
+      //   return result
+      // }
+      function flatter(arr) {
+        return arr.reduce((prev, next) => prev.concat(Array.isArray(next) ? flatter(next) : next), [])
+      }
+      console.log(flatter([1, 2, [1, [2, 3, [4, 5, [6]]]]]));
+    </script>
+  </body>
+
+</html>
