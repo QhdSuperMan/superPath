@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <test message='hello world' @click='clickTest'>
+      <template v-slot:default='testDefaultSlot'>
+        test
+        {{ testDefaultSlot }}
+        <son>
+          <!-- <template v-slot:default='sonDefaultSlot'>
+            son
+            {{ sonDefaultSlot }}
+            <grandson>
+              <template v-slot:default='defaultSlot'>
+                grandson
+                {{ defaultSlot }}
+              </template>
+            </grandson>
+          </template> -->
+        </son>
+      </template>
+
+
+    </test>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component('test', {
+      render(h, context) {
+        return h('div', {
+          attrs: {
+            id: 1
+          },
+          props: {
+            renderProps: '111'
+          }
+        }, [this.$scopedSlots.default({
+          key: '猪屎一个'
+        })])
+      }
+    })
+
+    Vue.component('grandson', {
+      render(h) {
+        console.log(this)
+        return h('div', 'grandson')
+      }
+    })
+
+
+    Vue.component('son', {
+      render(h) {
+        console.log(this)
+        return h('div', {
+          props: {
+            renderProps: '111'
+          },
+          scopedSlots: {
+            default: props => this.$scopedSlots.default(props)
+          }
+        }, this.$slots.default)
+      }
+    })
+
+    var vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          defaultSlot: {},
+          sonDefaultSlot: {},
+          testDefaultSlot: {}
+        }
+      },
+      methods: {
+        clickTest() {
+          console.log(111)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
