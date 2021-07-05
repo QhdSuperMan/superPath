@@ -1,8 +1,8 @@
 <!--
  * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
+ * @LastEditors: Please set LastEditors
  * @Date: 2021-04-09 16:23:19
- * @LastEditTime: 2021-04-13 11:32:16
+ * @LastEditTime: 2021-07-05 23:47:26
  * @info: 描述
 -->
 <template>
@@ -31,7 +31,6 @@ defineComponent({
   name: "nav-item"
 });
 defineProps(["routerBox"]);
-console.log(getCurrentInstance(), useContext());
 const store = useStore();
 </script>
 

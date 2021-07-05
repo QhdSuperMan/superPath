@@ -1,8 +1,8 @@
 <!--
  * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
+ * @LastEditors: Please set LastEditors
  * @Date: 2021-03-09 10:37:52
- * @LastEditTime: 2021-06-22 15:14:34
+ * @LastEditTime: 2021-07-06 00:02:24
  * @info: 描述
 -->
 <template>
@@ -10,14 +10,15 @@
     <headCompents />
     <div>
       <el-container>
-        <asideCompents style='width: 200px;' />
-        <el-main class='main'>
-          <router-view v-slot="{ Component }">
-            <transition  name='fade-transform' mode='out-in'>
-              <component :is="Component" />
-            </transition>
-          </router-view>
-          
+        <asideCompents style="width: 200px" />
+        <el-main class="main">
+          <keep-alive include="roleList">
+            <router-view v-slot='{ Component }'>
+              <transition name="fade-transform" mode="out-in">
+                <component :is="Component" />
+              </transition>
+            </router-view>
+          </keep-alive>
         </el-main>
       </el-container>
     </div>
@@ -26,7 +27,7 @@
 
 <script lang="ts" setup>
 // @ts-nocheck
-import { ref,reactive } from "vue";
+import { ref, reactive } from "vue";
 import headCompents from "./header/header";
 import asideCompents from "./nav/nav";
 import { defineComponent } from "vue";
@@ -34,10 +35,10 @@ const show: Boolean = ref(true);
 defineComponent({
   components: {
     headCompents,
-    asideCompents
-  }
+    asideCompents,
+  },
 });
-const beforeEnter = val => {
+const beforeEnter = (val) => {
   console.log("触发过渡");
 };
 </script>
