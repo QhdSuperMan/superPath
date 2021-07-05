@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-29 10:11:19
+ * @LastEditTime: 2021-06-29 10:16:29
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // instanceof 就是判断构造函数的 prototype 属性是否出现在实例的原型链上。
+      function instanceOf(left, right) {
+        let proto = left.__proto__
+        while (true) {
+          if (proto === null) return false
+          if (proto === right.prototype) { // 同理
+          if (proto['constructor'] === right) { // 同理
+            return true
+          }
+          proto = proto.__proto__
+        }
+      }
+
+    </script>
+  </body>
+
+</html>

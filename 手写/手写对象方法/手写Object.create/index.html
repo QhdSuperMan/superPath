@@ -1,0 +1,32 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-29 10:23:11
+ * @LastEditTime: 2021-06-29 10:36:01
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      Object.create2 = function (prototype) {
+        function demo () {}
+        demo.prototype = prototype
+        return new demo()
+      }
+      var obj = {
+        id: 1
+      }
+      console.log(Object.create(obj))
+      console.log(Object.create2(obj))
+    </script>
+  </body>
+
+</html>

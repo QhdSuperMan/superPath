@@ -1,53 +1,17 @@
-// Disposable Mixin
-class Disposable {
-    isDisposed: boolean;
-    dispose() {
-        this.isDisposed = true;
+namespace s {
+    export interface Y {
+        name: string
     }
-
+    export class Z { }
 }
 
-// Activatable Mixin
-class Activatable {
-    isActive: boolean;
-    activate() {
-        this.isActive = true;
-    }
-    deactivate() {
-        this.isActive = false;
+// ... elsewhere ...
+namespace s {
+    export var Y: number;
+    export namespace Z {
+        export class C { }
     }
 }
+// type s = string;
+var sss: s.Y
 
-class SmartObject implements Disposable, Activatable {
-    constructor() {
-    }
-
-    interact() {
-        this.activate();
-    }
-
-    // Disposable
-    isDisposed: boolean = false;
-    dispose: () => void;
-    // Activatable
-    isActive: boolean = false;
-    activate: () => void;
-    deactivate: () => void;
-}
-applyMixins(SmartObject, [Disposable, Activatable]);
-
-let smartObj = new SmartObject();
-console.log(smartObj)
-// setTimeout(() => smartObj.interact(), 1000);
-
-////////////////////////////////////////
-// In your runtime library somewhere
-////////////////////////////////////////
-
-function applyMixins(derivedCtor: any, baseCtors: any[]) {
-    baseCtors.forEach(baseCtor => {
-        Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
-            derivedCtor.prototype[name] = baseCtor.prototype[name];
-        });
-    });
-}

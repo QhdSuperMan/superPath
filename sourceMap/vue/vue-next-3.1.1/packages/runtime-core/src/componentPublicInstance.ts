@@ -204,6 +204,9 @@ export type ComponentPublicInstance<
   M &
   ComponentCustomProperties
 
+type Record<K extends keyof any, T> = {
+    [P in K]: T;
+};
 export type PublicPropertiesMap = Record<
   string,
   (i: ComponentInternalInstance) => any
@@ -221,7 +224,7 @@ const getPublicInstance = (
   if (isStatefulComponent(i)) return i.exposed ? i.exposed : i.proxy
   return getPublicInstance(i.parent)
 }
-
+// Object.assign
 const publicPropertiesMap: PublicPropertiesMap = extend(Object.create(null), {
   $: i => i,
   $el: i => i.vnode.el,
