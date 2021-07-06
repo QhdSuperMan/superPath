@@ -92,7 +92,9 @@ module.exports = {
 
     //  调整内部的 webpack 配置
 
-    configureWebpack: () => { }, //(Object | Function)
+    configureWebpack: () => { 
+        devtools: 'source-map'
+    }, //(Object | Function)
 
     chainWebpack: () => { },
 
