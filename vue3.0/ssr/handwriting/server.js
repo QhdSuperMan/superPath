@@ -1,27 +1,23 @@
-/*
- * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
- * @Date: 2021-07-05 14:34:33
- * @LastEditTime: 2021-07-05 14:42:38
- * @info: 描述
- */
 const express = require("express");
 const app = express();
-const Vue = require("vue");
-const vueServerRender = require("vue-server-renderer").createRenderer();
 
-app.get('*', (request, response) => {
-  const vueApp = new Vue({
-    data: {
-      message: "hello ssr"
-    },
-    template: `<h1>{{message}}</h1>`
-  });
+const App = require('./src/entry-server.js');
+
+let path = require("path");
+const vueServerRender = require("vue-server-renderer").createRenderer({
+  template: require("fs").readFileSync(path.join(__dirname, "./index.html"), "utf-8")
+});
+
+app.get('*', async (request, response) => {
   response.status(200);
   response.setHeader("Content-type", "text/html;charset-utf-8");
-  vueServerRender.renderToString(vueApp).then((html) => {
+
+  let { url } = request;
+  let vm;
+  vm = await App({ url })
+  vueServerRender.renderToString(vm).then((html) => {
     response.end(html);
-  }).catch(err => console.log(err))
+  }).catch(err => console.log(err,11))
 })
 
 app.listen(3001, () => {
