@@ -1,8 +1,15 @@
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-07-06 10:48:38
+ * @LastEditTime: 2021-07-06 11:07:38
+ * @info: 描述
+ */
 const devServer = require("./build/dev-server.js");
 const express = require("express");
 const app = express();
 const vueRender = require("vue-server-renderer");
-
+console.log(vueRender)
 app.get('*',(request,respones) => {
     respones.status(200);
     respones.setHeader("Content-Type","text/html;charset-utf-8;");

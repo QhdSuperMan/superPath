@@ -12,7 +12,6 @@ module.exports = (cb) => {
     var mfs = new Mfs();
     
     webpackComplier.outputFileSystem = mfs;
-    
     webpackComplier.watch({},async (error,stats) => {
         if(error) return console.log(error);
         stats = stats.toJson();
