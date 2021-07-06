@@ -1,8 +1,8 @@
 /*
  * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
+ * @LastEditors: Please set LastEditors
  * @Date: 2021-03-09 10:37:52
- * @LastEditTime: 2021-04-09 14:41:18
+ * @LastEditTime: 2021-07-05 23:51:09
  * @info: 描述
  */
 import router from '@/router'
@@ -14,6 +14,7 @@ router.beforeEach((to: any, from: any, next: Function) => {
         if (!store.getters.getToken.usename) {
             next('/login?fullPath=' + to.fullPath)
         } else {
+            next()
             if (store.getters.getRouters.length === 0) {
                 axios.get('/getNav').then(({ data }) => {
                     if (data.code == 200) {

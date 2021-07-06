@@ -1,3 +1,17 @@
-var value: unknown = 1
+namespace s {
+    export interface Y {
+        name: string
+    }
+    export class Z { }
+}
 
-type Result = | { success: true, value: unknown } | { success: false, error: Error };
+// ... elsewhere ...
+namespace s {
+    export var Y: number;
+    export namespace Z {
+        export class C { }
+    }
+}
+// type s = string;
+var sss: s.Y
+
