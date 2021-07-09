@@ -1,0 +1,25 @@
+{
+  "name": "tailwindcss-purgecss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "surge -p dist/ -d https://nuxt-tailwindcss-purgecss.surge.sh",
+    "post-update": "yarn upgrade --latest"
+  },
+  "dependencies": {
+    "nuxt": "^2.2.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.6.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  }
+}

@@ -1,3 +1,10 @@
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-07-06 14:30:23
+ * @LastEditTime: 2021-07-08 15:51:38
+ * @info: 描述
+ */
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -34,7 +41,12 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
   ],
-
+  router: {
+    base: '/portal'
+  },
+  hooks: function (){
+    console.log('hook')
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
   ],
