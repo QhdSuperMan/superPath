@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const enum ShapeFlags {
   ELEMENT = 1,
   FUNCTIONAL_COMPONENT = 1 << 1,
@@ -13,3 +14,22 @@ const enum ShapeFlags {
 }
 var a = 4  & ShapeFlags.STATEFUL_COMPONENT
 var b: ShapeFlags = ShapeFlags.STATEFUL_COMPONENT
+=======
+namespace s {
+    export interface Y {
+        name: string
+    }
+    export class Z { }
+}
+
+// ... elsewhere ...
+namespace s {
+    export var Y: number;
+    export namespace Z {
+        export class C { }
+    }
+}
+// type s = string;
+var sss: s.Y
+
+>>>>>>> 1e5f194eee01c4d94c30e7e5e77cc0b0ebe173fd

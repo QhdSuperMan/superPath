@@ -1,8 +1,8 @@
 /*
  * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
+ * @LastEditors: Please set LastEditors
  * @Date: 2021-03-09 10:37:52
- * @LastEditTime: 2021-03-30 14:32:15
+ * @LastEditTime: 2021-07-05 23:56:37
  * @info: 描述
  */
 import { createRouter, RouteRecordRaw, createWebHashHistory } from 'vue-router'
@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
         path: '/home',
         name: 'home',
         component: () => import('../layout/Home.vue'),
-      }
+      },
     ]
   },
   {

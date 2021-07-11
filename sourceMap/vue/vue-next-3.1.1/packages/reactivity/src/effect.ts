@@ -193,7 +193,7 @@ export function trigger(
     // never been tracked
     return
   }
-
+  debugger
   const effects = new Set<ReactiveEffect>()
   const add = (effectsToAdd: Set<ReactiveEffect> | undefined) => {
     if (effectsToAdd) {

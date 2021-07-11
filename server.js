@@ -1,12 +1,11 @@
 /*
  * @Author: 吴玉荣
- * @LastEditors: 吴玉荣
+ * @LastEditors: Please set LastEditors
  * @Date: 2021-03-16 16:54:57
- * @LastEditTime: 2021-03-18 18:09:33
+ * @LastEditTime: 2021-07-01 22:18:29
  * @info: 描述
  */
 require('shelljs/global');
-console.log(111)
 exec('git add .', function (status, output) {
   console.log('添加代码到版本控制')
   exec('git commit -m "自动测试"', function (status, output) {

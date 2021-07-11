@@ -1,6 +1,14 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-22 17:11:49
+ * @LastEditTime: 2021-07-05 11:28:56
+ * @info: 描述
+-->
 <script src="../../dist/vue.global.js"></script>
 
 <div id="demo">
+<<<<<<< HEAD
   <h1>Latest Vue.js Commits {{ currentBranch }}</h1>
   <son :branch='currentBranch'></son>
 </div>
@@ -14,6 +22,15 @@
     getCurrentInstance
   } = Vue
   const API_URL = `https://api.github.com/repos/vuejs/vue-next/commits?per_page=3&sha=`
+=======
+  <h1 @click='change'>Latest Vue.js Commits {{ obj.name }}</h1>
+  <son :fatherdata='currentBranch' />
+</div>
+
+<script>
+const { createApp, ref, watchEffect, reactive } = Vue
+const API_URL = `https://api.github.com/repos/vuejs/vue-next/commits?per_page=3&sha=`
+>>>>>>> 1e5f194eee01c4d94c30e7e5e77cc0b0ebe173fd
 
   const truncate = v => {
     const newline = v.indexOf('\n')
@@ -33,6 +50,7 @@
   }
 
 
+<<<<<<< HEAD
   const formatDate = v => v.replace(/T|Z/g, ' ')
   createApp({
     components: {
@@ -58,6 +76,40 @@
         truncate,
         formatDate
       }
+=======
+const son = {
+  setup() {
+
+  },
+  template: '<span>父亲传过来的数据：{{ fatherdata }}</span>',
+  props: ['fatherdata']
+}
+
+createApp({
+  components: {
+    son
+  },
+  setup() {
+    const currentBranch = ref('master')
+    const obj = reactive({ name: 1 })
+    const commits = ref(null)
+
+    // watchEffect(() => {
+      
+    // })
+    const change = ()=> {
+      console.log(currentBranch.value = currentBranch.value !== 'master' ? 'master' : 'dev')
+      obj.name = obj.name  !== 1 ? 1 : 2
+    }
+    return {
+      branches: ['master', 'sync'],
+      currentBranch,
+      commits,
+      truncate,
+      formatDate,
+      change,
+      obj
+>>>>>>> 1e5f194eee01c4d94c30e7e5e77cc0b0ebe173fd
     }
   }).mount('#demo')
 </script>
