@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "express": "^4.17.1",
+    "webpack-dev-middleware": "^5.0.0"
+  }
+}

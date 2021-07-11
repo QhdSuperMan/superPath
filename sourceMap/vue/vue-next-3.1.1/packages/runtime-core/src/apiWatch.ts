@@ -173,7 +173,6 @@ function doWatch(
   let getter: () => any
   let forceTrigger = false
   let isMultiSource = false
-
   if (isRef(source)) {
     getter = () => (source as Ref).value
     forceTrigger = !!(source as Ref)._shallow

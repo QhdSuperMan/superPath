@@ -22,11 +22,11 @@
 </script>
 <!-- item script -->
 <script>
-const { reactive, computed, toRefs } = Vue
+const { reactive, computed, toRefs, getCurrentInstance } = Vue
 
 const TreeItem = {
   name: 'TreeItem', // necessary for self-reference
-  template: '#item-template',
+  template: '<span>{{ isFolder }} 1111111111115555<span>',
   props: {
     model: Object
   },
@@ -53,6 +53,7 @@ const TreeItem = {
     function addChild() {
       props.model.children.push({ name: 'new stuff' })
     }
+    console.log(state)
 
     return {
       ...toRefs(state),

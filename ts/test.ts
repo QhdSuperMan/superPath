@@ -1,16 +1,15 @@
-
-// 混合类型核
-
-
-class minClass2<T>{
-    public list:T[] = [];
-    add(value:T):void{
-        this.list.push(value);
-    }
+const enum ShapeFlags {
+  ELEMENT = 1,
+  FUNCTIONAL_COMPONENT = 1 << 1,
+  STATEFUL_COMPONENT = 1 << 2,
+  TEXT_CHILDREN = 1 << 3,
+  ARRAY_CHILDREN = 1 << 4,
+  SLOTS_CHILDREN = 1 << 5,
+  TELEPORT = 1 << 6,
+  SUSPENSE = 1 << 7,
+  COMPONENT_SHOULD_KEEP_ALIVE = 1 << 8,
+  COMPONENT_KEPT_ALIVE = 1 << 9,
+  COMPONENT = ShapeFlags.STATEFUL_COMPONENT | ShapeFlags.FUNCTIONAL_COMPONENT
 }
-
-//调用泛型类
-//实例化类  并且制定了类的T代表的类型是number
-var m1 = new minClass2<number>();
-m1.add('ssss')
-
+var a = 4  & ShapeFlags.STATEFUL_COMPONENT
+var b: ShapeFlags = ShapeFlags.STATEFUL_COMPONENT
