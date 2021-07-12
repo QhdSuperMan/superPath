@@ -65,6 +65,7 @@ export const devtoolsComponentRemoved = /*#__PURE__*/ createDevtoolsComponentHoo
 function createDevtoolsComponentHook(hook: DevtoolsHooks) {
   return (component: ComponentInternalInstance) => {
     if (!devtools) return
+    debugger
     devtools.emit(
       hook,
       component.appContext.app,

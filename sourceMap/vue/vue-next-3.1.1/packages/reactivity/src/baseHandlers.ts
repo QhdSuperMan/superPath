@@ -107,7 +107,6 @@ function createGetter(isReadonly = false, shallow = false) {
     if (isSymbol(key) ? builtInSymbols.has(key) : isNonTrackableKeys(key)) {
       return res
     }
-
     if (!isReadonly) {
       track(target, TrackOpTypes.GET, key)
     }

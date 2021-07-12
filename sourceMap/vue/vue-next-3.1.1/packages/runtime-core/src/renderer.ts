@@ -1597,6 +1597,7 @@ function baseCreateRenderer(
           parentSuspense,
           isSVG
         )
+        
         if (__DEV__) {
           endMeasure(instance, `patch`)
         }

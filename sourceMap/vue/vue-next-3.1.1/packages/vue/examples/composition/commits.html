@@ -8,6 +8,21 @@
 <script src="../../dist/vue.global.js"></script>
 
 <div id="demo">
+<<<<<<< HEAD
+  <h1>Latest Vue.js Commits {{ currentBranch }}</h1>
+  <son :branch='currentBranch'></son>
+</div>
+
+<script>
+  const {
+    createApp,
+    ref,
+    watchEffect,
+    reactive,
+    getCurrentInstance
+  } = Vue
+  const API_URL = `https://api.github.com/repos/vuejs/vue-next/commits?per_page=3&sha=`
+=======
   <h1 @click='change'>Latest Vue.js Commits {{ obj.name }}</h1>
   <son :fatherdata='currentBranch' />
 </div>
@@ -15,14 +30,53 @@
 <script>
 const { createApp, ref, watchEffect, reactive } = Vue
 const API_URL = `https://api.github.com/repos/vuejs/vue-next/commits?per_page=3&sha=`
+>>>>>>> 1e5f194eee01c4d94c30e7e5e77cc0b0ebe173fd
 
-const truncate = v => {
-  const newline = v.indexOf('\n')
-  return newline > 0 ? v.slice(0, newline) : v
-}
+  const truncate = v => {
+    const newline = v.indexOf('\n')
+    return newline > 0 ? v.slice(0, newline) : v
+  }
 
-const formatDate = v => v.replace(/T|Z/g, ' ')
+  const son = {
+    setup(props) {
+      console.log(getCurrentInstance())
+      const sonData = ref(props.fatherDataf)
+      return {
+        sonData
+      }
+    },
+    template: `<span>1111111111 {{ sonData }} {{ branch }}</span>`,
+    props: ['branch']
+  }
 
+
+<<<<<<< HEAD
+  const formatDate = v => v.replace(/T|Z/g, ' ')
+  createApp({
+    components: {
+      son
+    },
+    setup() {
+      console.log(getCurrentInstance())
+      const currentBranch = ref('master')
+      const commits = ref(null)
+
+      // watchEffect(() => {
+      //   fetch(`${API_URL}${currentBranch.value}`)
+      //     .then(res => res.json())
+      //     .then(data => {
+      //       commits.value = data
+      //     })
+      // })
+
+      return {
+        branches: ['master', 'sync'],
+        currentBranch,
+        commits,
+        truncate,
+        formatDate
+      }
+=======
 const son = {
   setup() {
 
@@ -55,24 +109,28 @@ createApp({
       formatDate,
       change,
       obj
+>>>>>>> 1e5f194eee01c4d94c30e7e5e77cc0b0ebe173fd
     }
-  }
-}).mount('#demo')
+  }).mount('#demo')
 </script>
 
 <style>
   #demo {
     font-family: 'Helvetica', Arial, sans-serif;
   }
+
   a {
     text-decoration: none;
     color: #f66;
   }
+
   li {
     line-height: 1.5em;
     margin-bottom: 20px;
   }
-  .author, .date {
+
+  .author,
+  .date {
     font-weight: bold;
   }
 </style>
