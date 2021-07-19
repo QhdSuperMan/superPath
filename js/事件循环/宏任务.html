@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-07-12 17:31:47
+ * @LastEditTime: 2021-07-12 17:38:41
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      console.log('script start');
+
+      setTimeout(function () {
+        console.log('setTimeout');
+      }, 0);
+
+      Promise.resolve().then(function () {
+        console.log('promise1');
+      }).then(function () {
+        console.log('promise2');
+      });
+      console.log('script end');
+      /**
+        1. 执行宏任务 script
+        2. 把setTimeout 加入宏任务队列
+        3. 把promise加入微任务队列
+        4. 执行完 script任务执行查看微任务队列，不为空执行promise
+        5. 执行完promise执行下一次宏任务
+        */
+    </script>
+  </body>
+
+</html>

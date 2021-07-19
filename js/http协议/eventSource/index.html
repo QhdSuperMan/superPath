@@ -1,0 +1,59 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-07-13 17:10:09
+ * @LastEditTime: 2021-07-13 17:17:44
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    因为是服务器->客户端的，所以它不能处理客户端请求流
+    因为是明确指定用于传输UTF-8数据的，所以对于传输二进制流是低效率的，即使你转为base64的话，反而增加带宽的负载，得不偿失。
+    <script>
+      var evtSource = new EventSource("http://localhost:3000");
+      let eventList = document.getElementsByTagName('body')[0]
+      // evtSource.onmessage = function(e) {
+      //     console.log(1111,e);
+      //     var newElement = document.createElement("li");
+      //     const eventList = document.getElementsByTagName('body')[0]
+      //     // console.log(eventList);
+      //     newElement.innerHTML = "message: " + e.data;
+      //     eventList.appendChild(newElement);
+      // }
+
+      evtSource.addEventListener("ping", function (e) {
+        console.log(2222, e);
+        var newElement = document.createElement("li");
+        let eventList = document.getElementsByTagName('body')[0]
+        var obj = JSON.parse(e.data);
+        newElement.innerHTML = "ping at " + obj.date;
+        eventList.appendChild(newElement);
+
+      }, false);
+
+      evtSource.addEventListener("error", function (e) {
+        console.log("服务器发送给客户端的数据为:" + e.data);
+      });
+
+      //只要和服务器连接，就会触发open事件
+      evtSource.addEventListener("open", function () {
+        console.log("和服务器建立连接");
+      });
+
+      //处理服务器响应报文中的load事件
+      evtSource.addEventListener("load", function (e) {
+        console.log("服务器发送给客户端的数据为:" + e.data);
+      });
+    </script>
+  </body>
+
+</html>

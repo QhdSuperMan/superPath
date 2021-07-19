@@ -1,0 +1,2 @@
+HSTS 原理 strict-transport-security 字段返回一个时间  这段时间内只能发起https请求
+HTTP/3 协议使用UDP+QUIC代替TCP协议管理数据流的可靠传输，同时将报文头部压缩算法升级为QPACK、加密层协议升级为TLS 1.3版本。由于QUIC 协议相当于 TCP + TLS 1.3 合并，TCP 握手包可以携带TLS 握手包数据，相比HTTPS 建立连接时的六次握手过程(TCP 三次握手 + TLS 1.3 三次握手)，QUIC只需要三次握手过程（每个建立连接的握手包携带一个TLS 协商密钥的握手包）即可，减少了交互次数。

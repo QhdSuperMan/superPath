@@ -1,0 +1,63 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-07-12 17:50:40
+ * @LastEditTime: 2021-07-12 18:09:59
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      console.log('script start')
+
+      async function async1() {
+        await async2()
+        console.log('async1 end')
+      }
+      async function async2() {
+        console.log('async2 end')
+      }
+      async1()
+
+      setTimeout(function () {
+        console.log('setTimeout')
+      }, 0)
+
+      new Promise(resolve => {
+          console.log('Promise')
+          resolve()
+        })
+        .then(function () {
+          console.log('promise1')
+        })
+        .then(function () {
+          console.log('promise2')
+        })
+
+      console.log('script end')
+
+
+      /*  
+      1. 执行宏任务 script 输出(script start)
+      2. 执行函数async1 加入执行栈，依次执行async2  输出(async2 end)，await是promise  加入微任务队列
+      3. setTimeout加入宏任务队列
+      4. 执行Promise同步代码 输出(Promise)  .then依次加入微任务队列  
+      5. 宏任务script 执行完毕 输出(script end)
+      6. 执行微任务 await async2() 输出 (async1 end)
+      7。 执行微任务 输出(promise1)(promise2)
+      8  微任务执行完毕 执行宏任务setTimeout  输出(setTimeout)
+
+      */
+    </script>
+  </body>
+
+</html>

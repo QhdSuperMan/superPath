@@ -1,28 +1,23 @@
 '''
 Author: your name
 Date: 2021-06-29 22:34:00
-LastEditTime: 2021-06-30 21:09:22
-LastEditors: Please set LastEditors
+LastEditTime: 2021-07-12 16:56:18
+LastEditors: 吴玉荣
 Description: In User Settings Edit
 FilePath: \albb\python\class\class.py
 '''
 
-class Penson:
-    def __init__(self) -> None:
-        pass
-class Stuent(Penson):
-    dress = '北京'
-    def __init__(self,name,age):
-        super().__init__()
-        self.name = name
-        self.age = age
-    def eat (self):
-        print('吃饭')
-    @staticmethod
-    def staticmeth(cls):
-        pass
+class Solution:
+    def hIndex(self, citations):
+        n = len(citations)
+        left = 0; right = n - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if citations[mid] >= n - mid:
+                right = mid - 1
+            else:
+                left = mid + 1
+        return n - left
 
-stud = Stuent('张
-三',52)
-studs = Stuent('李四',52)
-print(stud.name, studs.name)
+print(Solution().hIndex([0,1,3,5,6]))
+

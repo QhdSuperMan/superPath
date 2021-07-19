@@ -2,5 +2,9 @@
   "devDependencies": {
     "express": "^4.17.1",
     "webpack-dev-middleware": "^5.0.0"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "shelljs": "^0.8.4"
   }
 }
