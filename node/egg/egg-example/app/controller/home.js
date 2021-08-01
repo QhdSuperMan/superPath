@@ -13,7 +13,6 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    console.log(11,ctx.status)
     ctx.body = 'hi, egg5665666';
   }
 }

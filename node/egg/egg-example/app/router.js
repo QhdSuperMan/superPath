@@ -15,6 +15,9 @@ module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
   const three = app.middleware.three();
-  app.router.get('/news', three, controller.news.list);
+  app.router.get('/news', controller.news.list);
+  app.router.post('/form/post', controller.news.form); 
+  app.router.get('/service', controller.service.init); 
+  // app.router.get('/news/:id', three, controller.news.list);
   // router.get('/news', controller.news.list);
 };

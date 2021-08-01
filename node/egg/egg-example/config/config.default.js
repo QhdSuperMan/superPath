@@ -42,6 +42,9 @@ module.exports = appInfo => {
       'one',
       'two'
     ],
+    one: {
+      id: [1,2,3]
+    }
   };
 
   return {
