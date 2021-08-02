@@ -1,18 +1,16 @@
-import _ from 'lodash';
-import './style.css'
-import printMe from './print.js';
-function component () {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
-
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-
-  return element;
+/*
+ * @Author: your name
+ * @Date: 2021-07-13 22:07:42
+ * @LastEditTime: 2021-07-13 23:02:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \albb\webpack\src\index.js
+ */
+function getComponent() {
+  return import('lodash')
 }
-
-document.body.appendChild(component());
+getComponent().then(({ default: _ }) => {
+  const element = document.createElement('div');
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ')
+  document.body.appendChild(element);
+});
