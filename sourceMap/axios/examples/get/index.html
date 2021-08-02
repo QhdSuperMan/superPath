@@ -1,26 +1,63 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-07-19 16:06:56
+ * @LastEditTime: 2021-07-21 11:38:58
+ * @info: 描述
+-->
 <!doctype html>
 <html>
+
   <head>
     <title>axios - get example</title>
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   </head>
+
   <body class="container">
     <h1>axios.get</h1>
     <ul id="people" class="list-unstyled"></ul>
 
     <script src="/axios.min.js"></script>
     <script>
-      axios.get('/get/server')
+      axios.interceptors.request.use(function (config) {
+        // Do something before request is sent
+        return config;
+      }, function (error) {
+        // Do something with request error
+        return Promise.reject(error);
+      });
+
+      // Add a response interceptor
+      axios.interceptors.response.use(function (response) {
+        // Any status code that lie within the range of 2xx cause this function to trigger
+        // Do something with response data
+        return response;
+      }, function (error) {
+        // Any status codes that falls outside the range of 2xx cause this function to trigger
+        // Do something with response error
+        return Promise.reject(error);
+      });
+      axios.get('/get/server', {
+          params: {
+            ID: 12345
+          },
+          selfParams: {
+            h: 1
+          }
+        })
         .then(function (response) {
           document.getElementById('people').innerHTML = response.data.map(function (person) {
             return (
               '<li class="row">' +
-                '<img src="https://avatars.githubusercontent.com/u/' + person.avatar + '?s=50" class="col-md-1"/>' +
-                '<div class="col-md-3">' +
-                  '<strong>' + person.name + '</strong>' +
-                  '<div>Github: <a href="https://github.com/' + person.github + '" target="_blank">' + person.github + '</a></div>' +
-                  '<div>Twitter: <a href="https://twitter.com/' + person.twitter + '" target="_blank">' + person.twitter + '</a></div>' +
-                '</div>' +
+              '<img src="https://avatars.githubusercontent.com/u/' + person.avatar +
+              '?s=50" class="col-md-1"/>' +
+              '<div class="col-md-3">' +
+              '<strong>' + person.name + '</strong>' +
+              '<div>Github: <a href="https://github.com/' + person.github + '" target="_blank">' + person
+              .github + '</a></div>' +
+              '<div>Twitter: <a href="https://twitter.com/' + person.twitter + '" target="_blank">' + person
+              .twitter + '</a></div>' +
+              '</div>' +
               '</li><br/>'
             );
           }).join('');
@@ -30,4 +67,5 @@
         });
     </script>
   </body>
+
 </html>

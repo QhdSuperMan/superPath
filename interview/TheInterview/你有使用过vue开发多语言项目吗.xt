@@ -1,0 +1,3 @@
+采用i18n来解决国际化问题，关于语言环境的存储方案，看到有同学解答localStorage的方式， 
+个人认为这种还是采用Cookie的存储方法，通过路由实现不同模块加载不同的国际化配置文件 问题来源于GitHub，
+查看更多答案，请查看https://github.com/haizlin/fe-interview/issues/559

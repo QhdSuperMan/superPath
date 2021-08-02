@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
@@ -70,8 +71,8 @@ module.exports = function(grunt) {
         src: ['test/unit/**/*.js']
       },
       options: {
-        timeout: 30000,
-      },
+        timeout: 30000
+      }
     },
 
     watch: {
@@ -93,7 +94,7 @@ module.exports = function(grunt) {
     var bower = grunt.file.readJSON('bower.json');
     var fields = this.data.fields || [];
 
-    for (var i=0, l=fields.length; i<l; i++) {
+    for (var i = 0, l = fields.length; i < l; i++) {
       var field = fields[i];
       bower[field] = npm[field];
     }

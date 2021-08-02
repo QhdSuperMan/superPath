@@ -130,10 +130,12 @@
           params: !acceptsData(method.value) ? getParams() : undefined,
           data: acceptsData(method.value) ? getData() : undefined,
           method: method.value,
-          headers: getHeaders()
+          headers: getHeaders(),
+          selfParams: {id: 11}
         };
 
         request.innerHTML = JSON.stringify(options, null, 2);
+debugger
 
         axios(options)
           .then(function (res) {
