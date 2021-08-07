@@ -21,5 +21,13 @@ module.exports = {
   validate: {
     enable: true,
     package: 'egg-validate',
+  },
+  mysql: {
+    enable: true,
+    package: 'egg-mysql',
+  },
+  assets: {
+    enable: true,
+    package: 'egg-view-assets',
   }
 };
