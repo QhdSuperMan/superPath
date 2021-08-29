@@ -1,7 +1,8 @@
-import traceback
 
-try:
-    print('`````')
-    print(1/0)
-except:
-    traceback.print_exc()
+
+n3 = True
+print(type(n3))
+
+if (type(n3) == "<class 'bool'>") {
+    print(2)
+}

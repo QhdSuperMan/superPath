@@ -1,14 +1,22 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-01 21:51:46
+ * @LastEditTime: 2021-08-01 22:59:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \egg-example\app\service\user.js
+ */
 const Service = require('egg').Service;
 
 class UserService extends Service {
-  async find (uid) {
-    console.log('find')
-    const user = { id: 1 }
+  async find() {
+    console.log('find');
+    const user = { id: 1 };
     return user;
   }
-  async findTwo (uid) {
-    console.log('findTwo')
-    const user = { id: 1 }
+  async findTwo() {
+    console.log('findTwo');
+    const user = { id: 1 };
     return user;
   }
 }

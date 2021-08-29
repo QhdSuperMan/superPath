@@ -4,3 +4,8 @@ vscode命令行不能运行脚本命令
 
 explorer 打开脚本   例如
 explorer 'C:\PerfLogs'
+
+
+
+cd ~  家目录  cd ~/.ssh
+C:\Users\Admin\AppData\Local

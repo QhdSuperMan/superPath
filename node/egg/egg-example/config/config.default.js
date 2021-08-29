@@ -30,21 +30,21 @@ module.exports = appInfo => {
     mapping: {
       '.tpl': 'nunjucks',
     },
-  }
+  };
   config.news = {
     pageSize: 5,
     serverUrl: 'https://hacker-news.firebaseio.com/v0',
-  }
+  };
   // add your user config here
   const userConfig = {
     myAppName: 'egg',
     middleware: [
       'one',
-      'two'
+      'two',
     ],
     one: {
-      id: [1,2,3]
-    }
+      id: [ 1, 2, 3 ],
+    },
   };
 
   return {
