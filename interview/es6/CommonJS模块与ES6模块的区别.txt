@@ -12,4 +12,4 @@ ES6模块
     循环加载时，ES6模块是动态引用。只要两个模块之间存在某个引用，代码就能够执行。
 
 
-例子  D:\albb\node\es\require\循环引用\c.js
+例子  albb\node\es\require\循环引用\c.js

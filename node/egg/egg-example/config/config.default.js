@@ -7,8 +7,8 @@
  * @FilePath: \albb\node\egg\egg-example\config\config.default.js
  */
 /* eslint valid-jsdoc: "off" */
-
 'use strict';
+const path = require('path')
 
 /**
  * @param {Egg.EggAppInfo} appInfo app info
@@ -42,9 +42,36 @@ module.exports = appInfo => {
       'one',
       'two',
     ],
+    view: {
+      root: path.join(appInfo.baseDir, 'app/assets'),
+      mapping: {
+        '.js': 'assets',
+      },
+    },
+    assets: {
+      root: path.join(appInfo.baseDir, 'app/assets'),
+      // templatePath: path.join(appInfo.baseDir, 'app/view/template.html'),
+      templateViewEngine: 'nunjucks',
+      devServer: {
+        debug: false,
+        command: 'roadhog dev',
+        port: 8089,
+        env: {
+          BROWSER: 'none',
+          ESLINT: 'none',
+          SOCKET_SERVER: 'http://127.0.0.1:8000',
+          PUBLIC_PATH: 'http://127.0.0.1:8000',
+        },
+      },
+    },
     one: {
+<<<<<<< HEAD
       id: [ 1, 2, 3 ],
     },
+=======
+      id: [1, 2, 3]
+    }
+>>>>>>> bbbddd6a89bb6798b3dd368969074194b9739a04
   };
 
   return {

@@ -1,0 +1,38 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-03 10:00:04
+ * @LastEditTime: 2021-08-03 11:25:49
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums = [1,2,3,4]
+      var findUnsortedSubarray = function (nums) {
+        var sortArr = nums.concat([]).sort((a, b) => a - b)
+        var i = 0,
+          j = nums.length - 1,
+          n = nums.length
+        while (i < n && sortArr[i] == nums[i]) {
+          i++
+        }
+        while (j > i && sortArr[j] == nums[j]) {
+          j--
+        }
+        return j - i + 1
+      };
+      console.log(findUnsortedSubarray(nums))
+    </script>
+  </body>
+
+</html>

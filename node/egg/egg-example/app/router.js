@@ -16,8 +16,14 @@ module.exports = app => {
   router.get('/', controller.home.index);
   const three = app.middleware.three();
   app.router.get('/news', controller.news.list);
+<<<<<<< HEAD
   app.router.post('/form/post', controller.news.form);
   app.router.get('/service', controller.service.init);
+=======
+  app.router.post('/form/post', controller.news.form); 
+  app.router.get('/service', controller.service.init); 
+  app.router.get('/service/render', controller.service.render); 
+>>>>>>> bbbddd6a89bb6798b3dd368969074194b9739a04
   // app.router.get('/news/:id', three, controller.news.list);
   // router.get('/news', controller.news.list);
 };
