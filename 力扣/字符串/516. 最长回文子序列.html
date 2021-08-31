@@ -1,0 +1,45 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-12 10:02:28
+ * @LastEditTime: 2021-08-12 18:58:01
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var s = "bbbab";
+      // bbbab
+      // babbb
+      // dp[i][j] 是 从j到i 最长的公共子序列
+      var longestPalindromeSubseq = function (s) {
+        var ss = s.split('').reverse().join('')
+        var len = s.length
+        var dp = new Array(len + 1).fill('').map(() => new Array(len + 1).fill(0))
+        for (var i = 1; i <= len; i++) {
+          var mText = s[i - 1]
+          for (var j = 1; j <= len; j++) {
+            var nText = ss[j - 1]
+            if (mText === nText) { // 上一个字符相等 说明 dp[i - 1][j - 1] 字符串text1 和 字符串text2 加上一个公共字符
+              dp[i][j] = dp[i - 1][j - 1] + 1
+            } else {
+              dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1])
+            }
+          }
+        }
+        return dp[len][len]
+      };
+      console.log(longestPalindromeSubseq(s))
+    </script>
+  </body>
+
+</html>

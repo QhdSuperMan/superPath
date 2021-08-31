@@ -1,0 +1,39 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-10 16:59:32
+ * @LastEditTime: 2021-08-11 14:44:37
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums = [2,4,6,8,10]
+      var numberOfArithmeticSlices = function (nums) {
+        var dp = new Array(nums.length).fill(0)
+        var continuous = 0
+        for (var i = 2; i < nums.length; i++) {
+          if (nums[i] - nums[i - 1] === nums[i - 1] - nums[i - 2]) {
+            dp[i] = dp[i] + continuous + dp[i - 1] + 1
+            continuous++
+          } else {
+            continuous = 0
+            dp[i] = dp[i- 1]
+          }
+        }
+        return dp[dp.length - 1]
+      };
+      console.log(numberOfArithmeticSlices(nums))
+    </script>
+  </body>
+
+</html>

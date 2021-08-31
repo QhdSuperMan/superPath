@@ -1,0 +1,44 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-12 18:27:09
+ * @LastEditTime: 2021-08-13 09:54:55
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var text1 = "abcde",
+        text2 = "ace"
+      var longestCommonSubsequence = function (text1, text2) {
+        var m = text1.length
+        var n = text2.length
+        var dp = new Array(m + 1).fill().map(() => new Array(n + 1).fill(0))
+
+        for (var i = 1; i <= m; i++) {
+          var one = text1[i - 1]
+          for (var j = 1; j <= n; j++) {
+            var two = text2[j - 1]
+            if (one === two) {
+              dp[i][j] = dp[i - 1][j - 1] + 1
+            } else {
+              dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j])
+            }
+          }
+        }
+        return dp[m][n]
+      };
+      console.log(longestCommonSubsequence(text1, text2))
+    </script>
+  </body>
+
+</html>

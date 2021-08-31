@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-26 19:43:09
+ * @LastEditTime: 2021-08-27 10:57:26
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <!-- <iframe id="postWindow" src="test.html" style="display:none"></iframe> -->
+
+  <body>
+    <button id='btn' onclick="openNewPage()">打开新页面</button>
+    <script>
+      function openNewPage() {
+        var otherWindow = window.open('http://127.0.0.1:8081/test.html')9
+        console.log(otherWindow)
+        setTimeout(function () {
+          otherWindow.postMessage('message', 'http://127.0.0.1:8081')
+          otherWindow.location.replace('http://127.0.0.1:8080/')
+          otherWindow.alert('上面的')
+        }, 100)
+        setTimeout(function () {
+          console.log(otherWindow)
+          otherWindow.alert('sssssssssss')
+        }, 2000)
+        window.addEventListener('message', function () {
+          console.log('获取到数据', arguments)
+        })
+      }
+      
+    </script>
+  </body>
+
+</html>

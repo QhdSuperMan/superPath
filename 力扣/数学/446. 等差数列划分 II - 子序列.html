@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-11 15:06:12
+ * @LastEditTime: 2021-08-11 17:17:48
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums = [2, 4, 6, 8, 10]
+      var numberOfArithmeticSlices = function (nums) {
+        let ans = 0;
+        const n = nums.length;
+        const f = new Map();
+        for (let i = 0; i < n; ++i) {
+          f[i] = new Map();
+        }
+        for (let i = 0; i < n; ++i) {
+          for (let j = 0; j < i; ++j) {
+            const d = nums[i] - nums[j];
+            const cnt = f[j].get(d) || 0;
+            ans += cnt;
+            f[i].set(d, (f[i].get(d) || 0) + cnt + 1);
+          }
+        }
+        return ans;
+      };
+      console.log(numberOfArithmeticSlices(nums))
+    </script>
+  </body>
+
+</html>

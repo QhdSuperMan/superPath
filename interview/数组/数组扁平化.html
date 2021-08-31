@@ -1,0 +1,63 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-24 11:04:04
+ * @LastEditTime: 2021-08-24 11:39:47
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var a = [
+        [1, 2, 3, [4], 5], 6
+      ]
+      // 方法1  reduce
+      // function flatten(arr) {
+      //   return arr.reduce((a, b) => {
+      //     return a.concat(Array.isArray(b) ? reduceFunc(b) : b)
+      //   }, [])
+      // }
+      // 方法2  调用数组的toString方法，将数组变为字符串然后再用split分割还原为数组
+      // function flatten(arr) {
+      //   return arr.toString().split(',')
+      // }
+      // 方法3. join & split 和上面的toString一样，join也可以将数组转换为字符串
+
+      // function flatten(arr) {
+      //     return arr.join(',').split(',').map(function(item) {
+      //         return parseInt(item);
+      //     })
+      // }
+      // 4. 递归 递归的遍历每一项， 若为数组则继续遍历， 否则concat
+      // function flatten(arry) {
+      //   let res = [];
+      //   arry.map(item => {
+      //     if (Array.isArray(item)) {
+      //       res = res.concat(reduce(item))
+      //     } else {
+      //       res.push(item);
+      //     }
+      //   })
+      //   return res;
+      // }
+      // 5.扩展运算符 es6的扩展运算符能将二维数组变为一维
+      function reduce(arr) {
+        while (arr.some(item => Array.isArray(item))) {
+          arr = [].concat(...arr);
+        }
+        return arr;
+      }
+      console.log(flatten(a))
+    </script>
+  </body>
+
+</html>
