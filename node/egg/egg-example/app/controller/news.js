@@ -10,50 +10,50 @@
 const Controller = require('egg').Controller;
 
 class NewsController extends Controller {
-  async list () {
+  async list() {
     const ctx = this.ctx;
     const page = ctx.query.page || 1;
     // const newsList = await ctx.service.new.list(page);
-    var newsList = [
+    const newsList = [
       {
         url: 'haha',
         title: '哈哈',
-        time: 1627709793
+        time: 1627709793,
       },
       {
         url: 'heihei',
         title: '嘿嘿',
-        time: 1627709793
+        time: 1627709793,
       },
       {
         url: 'xixi',
         title: '嘻嘻',
-        time: 1627709793
-      }
-    ]
-    console.log(ctx.request.body,ctx.ips)
-    var html = '`<a href="http://www.domain.com">google</a><script>evilcode…</script>`'
+        time: 1627709793,
+      },
+    ];
+    console.log(ctx.request.body, ctx.ips);
+    const html = '`<a href="http://www.domain.com">google</a><script>evilcode…</script>`';
     const xssStr = '<script>alert("abc") </script>';
     await ctx.render('news/list.tpl', { list: newsList, html, xssStr });
   }
-  async form () {
+  async form() {
     const ctx = this.ctx;
     const createRule = {
       username: {
         type: 'email',
       },
       password: {
-        type: 'password'
+        type: 'password',
       },
     };
     try {
       ctx.validate(createRule);
     } catch (error) {
-      console.log('报错了')
+      console.log('报错了');
       ctx.body = error;
       return;
     }
-    ctx.body ='注册成功'
+    ctx.body = '注册成功';
   }
 }
 

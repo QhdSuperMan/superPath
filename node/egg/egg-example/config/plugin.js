@@ -16,10 +16,21 @@ module.exports = {
   // }
   nunjucks: {
     enable: true,
-    package: 'egg-view-nunjucks'
+    package: 'egg-view-nunjucks',
   },
   validate: {
     enable: true,
     package: 'egg-validate',
+  },
+<<<<<<< HEAD
+=======
+  mysql: {
+    enable: true,
+    package: 'egg-mysql',
+  },
+  assets: {
+    enable: true,
+    package: 'egg-view-assets',
   }
+>>>>>>> bbbddd6a89bb6798b3dd368969074194b9739a04
 };
