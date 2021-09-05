@@ -1,0 +1,40 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-08-26 11:18:43
+ * @LastEditTime: 2021-08-27 11:02:40
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var people = people = [3, 2, 2, 1],
+        limit = 3
+      var numRescueBoats = function (people, limit) {
+        let ans = 0;
+        people.sort((a, b) => a - b);
+        let light = 0,
+          heavy = people.length - 1;
+        while (light <= heavy) {
+          if (people[light] + people[heavy] <= limit) {
+            ++light;
+          }
+          --heavy;
+          ++ans;
+        }
+        return ans;
+      };
+      console.log(numRescueBoats(people, limit))
+    </script>
+  </body>
+
+</html>
