@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.shortcuts import HttpResponse,render
-
-def login(request):
-    return HttpResponse('hello world')
+from django.shortcuts import HttpResponse, render
+from blog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', login)
+    path('index', views.hello),
 ]
