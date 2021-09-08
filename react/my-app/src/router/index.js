@@ -16,8 +16,16 @@ const routers = [
     comments: React.lazy(() => import('../page/info')) 
   },
   {
-    path: '/about',
-    comments:  React.lazy(() => import('../page/about')) 
+    path: '/context',
+    comments:  React.lazy(() => import('../page/context')) 
+  },
+  {
+    path: '/ref',
+    comments:  React.lazy(() => import('../page/ref')) 
+  },
+  {
+    path: '/Fragments',
+    comments:  React.lazy(() => import('../page/Fragments')) 
   }
 ]
 
