@@ -26,6 +26,10 @@ const routers = [
   {
     path: '/Fragments',
     comments:  React.lazy(() => import('../page/Fragments')) 
+  },
+  {
+    path: '/inDepth',
+    comments:  React.lazy(() => import('../page/inDepth')) 
   }
 ]
 
