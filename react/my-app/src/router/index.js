@@ -30,7 +30,11 @@ const routers = [
   {
     path: '/inDepth',
     comments:  React.lazy(() => import('../page/inDepth')) 
-  }
+  },
+  {
+    path: '/hooks',
+    comments:  React.lazy(() => import('../page/hooks')) 
+  },
 ]
 
 export default routers
