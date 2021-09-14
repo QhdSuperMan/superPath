@@ -6,5 +6,5 @@ export function useFriendStatus() {
     useEffect((props) => {
         console.log('副作用1', count)
     })
-    return count
+    return [count,setCount]
 }
