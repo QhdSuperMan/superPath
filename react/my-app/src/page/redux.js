@@ -18,10 +18,10 @@ function mapStateToProps(state) {
         value: state.count
     }
 }
-const increaseAction = { type: 'increase' }
 function mapDispatchToProps(dispatch) {
+    console.log(dispatch)
     return {
-        onIncreaseClick: () => dispatch(increaseAction)
+        onIncreaseClick: () => dispatch( { type: 'increase' })
     }
 }
 function counter(state = { count: 0 }, action) {

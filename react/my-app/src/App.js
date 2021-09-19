@@ -2,7 +2,6 @@ import './App.css';
 import React, {Suspense } from 'react'
 import { Route, HashRouter } from 'react-router-dom'
 import routers from './router/index.js'
-console.log(routers)
 class App extends React.Component {
   render() {
     return (

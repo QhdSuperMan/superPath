@@ -50,8 +50,6 @@ export default class App extends Component {
         menuStyle: false,
       })
     }
-    console.log(sessionStorage.getItem('menuStyle'))
-    console.log(sessionStorage.getItem('menuStyle') === 'true')
     if (sessionStorage.getItem('menuStyle') === 'true') {
       this.setState({
         menuStyle: true,
