@@ -1,12 +1,8 @@
 <!--
  * @Author: 吴玉荣
- * @LastEditors: Please set LastEditors
+ * @LastEditors: 吴玉荣
  * @Date: 2021-04-09 16:23:19
-<<<<<<< HEAD
- * @LastEditTime: 2021-07-02 10:23:05
-=======
- * @LastEditTime: 2021-07-05 23:47:26
->>>>>>> 64e624cb30088d751a7dc04fe6bad12c02c4b995
+ * @LastEditTime: 2021-09-13 16:19:15
  * @info: 描述
 -->
 <template>

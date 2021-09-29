@@ -13,17 +13,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   </head>
- 
+
   <body>
     核心思想是通过对象调用方法绑定this
     <script>
-      Function.prototype.myCall = function (context) {
-        var that = context || window
-        that.func = this
-        var args = Array.from(arguments).slice(1)
-        const res = arguments.length > 1 ? that.func(...args) : that.func()
-        delete that.func //避免造成全局污染
-        return res
+      // Function.prototype.myCall = function (context) {
+      //   var that = context || window
+      //   that.func = this
+      //   var args = Array.from(arguments).slice(1)
+      //   const res = arguments.length > 1 ? that.func(...args) : that.func()
+      //   delete that.func //避免造成全局污染
+      //   return res
+      // }
+      Function.prototype.myCall = function (context, ...args) {
+        var context = context || window;
+        let fn = Symbol('fn');
+        context.fn = this;
+        let result = context.fn(...args)
+        delete context.fn
+        return result;
       }
       var obj = {
         id: 1111
@@ -31,9 +39,10 @@
 
       function demo(a) {
         console.log(this[a])
+        console.log(arguments)
       }
-      demo('id')
-      demo.myCall(obj, 'id')
+      // demo('id')
+      demo.myCall(obj, 'id', 1)
     </script>
   </body>
 

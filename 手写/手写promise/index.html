@@ -46,27 +46,27 @@
           executor(resolve.bind(this), reject.bind(this))
         }
       }
-      Promise.prototype.resolvePromise = function (promise, x, resolve, reject) {
-        if (x === promise) {
-          return reject(new TypeError('Chaining cycle detected for promise'));
+      Promise.prototype.resolvePromise = function (nextPromise, result, resolve, reject) {
+        if (result === nextPromise) {
+          return reject(new TypeError('Chaining cycle detected for nextPromise'));
         }
-        if (x !== null && typeof (x) === 'object' || typeof (x) === 'function') {
+        if (result !== null && typeof (result) === 'object' || typeof (result) === 'function') {
           try {
-            var then = x.then
+            var then = result.then
             if (typeof (then) === 'function') {
-              then.call(x, y => {
-                this.resolvePromise(promise, y, resolve, reject);
+              then.call(result, y => {
+                this.resolvePromise(nextPromise, y, resolve, reject);
               }, err => {
                 reject(err)
               })
             } else {
-              resolve(x)
+              resolve(result)
             }
           } catch (error) {
             reject(error)
           }
         } else {
-          resolve(x)
+          resolve(result)
         }
       }
       Promise.prototype.catch = function (func) {
@@ -88,13 +88,11 @@
             reject(err);
           })
       }
-      window.aaa = 0
       Promise.prototype.then = function (onFulfilled, onRejected) {
         onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value;
         onRejected = typeof onRejected === 'function' ? onRejected : err => {
           throw err;
         }
-        console.log(++window.aaa)
         var nextPromise = new Promise((resolve, reject) => {
           if (this.status === 'fulfilled') {
             var result = resolve(onFulfilled(this.value))

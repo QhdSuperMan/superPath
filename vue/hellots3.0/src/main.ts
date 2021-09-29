@@ -23,7 +23,7 @@ app.config.globalProperties.$test = Node
 
 app.use(server)
 app.use(devtools).use(initCompent).use(store).use(router).use(ElementPlus).mount('#app')
-
+console.log(app)
 // if (process.env.NODE_ENV === 'development') {
 //   if ('__VUE_DEVTOOLS_GLOBAL_HOOK__' in window) {
 //   // 这里__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue赋值一个createApp实例

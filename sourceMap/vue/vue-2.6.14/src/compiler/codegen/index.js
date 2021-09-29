@@ -211,10 +211,11 @@ export function genFor (
   }
 
   el.forProcessed = true // avoid recursion
-  return `${altHelper || '_l'}((${exp}),` +
+  var result = `${altHelper || '_l'}((${exp}),` +
     `function(${alias}${iterator1}${iterator2}){` +
       `return ${(altGen || genElement)(el, state)}` +
     '})'
+  return result
 }
 
 export function genData (el: ASTElement, state: CodegenState): string {
