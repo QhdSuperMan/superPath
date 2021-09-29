@@ -22,8 +22,6 @@ module.exports = {
     enable: true,
     package: 'egg-validate',
   },
-<<<<<<< HEAD
-=======
   mysql: {
     enable: true,
     package: 'egg-mysql',
@@ -32,5 +30,4 @@ module.exports = {
     enable: true,
     package: 'egg-view-assets',
   }
->>>>>>> bbbddd6a89bb6798b3dd368969074194b9739a04
 };

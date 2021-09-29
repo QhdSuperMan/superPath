@@ -1,3 +1,5 @@
+const path = require('path')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
 module.exports = {
 
     // 选项
@@ -92,7 +94,7 @@ module.exports = {
 
     //  调整内部的 webpack 配置
 
-    configureWebpack: () => { 
+    configureWebpack: () => {
         devtools: 'source-map'
     }, //(Object | Function)
 
@@ -151,7 +153,13 @@ module.exports = {
     pwa: {},
     // 三方插件的选项
     pluginOptions: {
-        // ...
+        // 预渲染
+        PrerenderSPAPlugin: new PrerenderSPAPlugin({
+            // Required - The path to the webpack-outputted app to prerender.
+            staticDir: path.join(__dirname, 'dist'),
+            // Required - Routes to render.
+            routes: ['/', '/about', '/some/deep/nested/route'],
+        })
     }
 }
 

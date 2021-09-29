@@ -1,3 +1,10 @@
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-18 15:38:57
+ * @LastEditTime: 2021-09-09 14:45:07
+ * @info: 描述
+ */
 /* @flow */
 
 import { isObject, isDef, hasSymbol } from 'core/util/index'

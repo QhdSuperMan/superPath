@@ -2,39 +2,48 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-18 15:38:57
- * @LastEditTime: 2021-06-22 18:30:16
+ * @LastEditTime: 2021-09-09 15:31:53
  * @info: 描述
 -->
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Vue.js github commits example</title>
     <style>
       #demo {
         font-family: 'Helvetica', Arial, sans-serif;
       }
+
       a {
         text-decoration: none;
         color: #f66;
       }
+
       li {
         line-height: 1.5em;
         margin-bottom: 20px;
       }
-      .author, .date {
+
+      .author,
+      .date {
         font-weight: bold;
       }
+
     </style>
     <!-- Delete ".min" for console warnings in development -->
     <script src="../../dist/vue.js"></script>
     <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
   </head>
+
   <body>
     <div id="demo">
       {{ currentBranch }}
-      <button @click='clickC' >点击</button>
+      <button @click='clickC'>点击</button>
+      <test :branches='branches' ></test>
     </div>
     <script src="mock.js"></script>
     <script src="app.js"></script>
   </body>
+
 </html>

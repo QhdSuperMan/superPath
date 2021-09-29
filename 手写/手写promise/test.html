@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function myPromise(executor) {
+        this.value = ''
+        this.status = 'pending'
+        this.resloveBox = []
+        this.rejectBox = []
+
+        function reslove(value) {
+          this.value = value
+          this.status = 'fulfilled'
+          if (this.status = 'pending') {
+            this.resloveBox.forEach(val => {
+              val()
+            });
+          }
+
+        }
+
+        function reject(value) {
+          this.value = value
+          this.status = 'rejected'
+          if (this.status = 'pending') {
+            this.rejectBox.forEach(val => {
+              val()
+            });
+          }
+        }
+        executor(reslove, reject)
+      }
+
+
+      myPromise.prototype.then = function (onFulfilled, onRejected) {
+        onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value
+        onRejected = typeof onRejected === 'function' ? onRejected : err => {
+          throw err;
+        }
+        var newPromise = new myPromise(function (resolve, reject) {
+          if (this.status = 'fulfilled') {
+            var result = resolve(onFulfilled(this.value))
+            resolve(this.value)
+          }
+          if (this.status = 'rejected') {
+            var result = resolve(onFulfilled(this.value))
+            reject(this.value)
+          }
+          if (this.status = 'pending') {
+            this.resloveBox.push(onFulfilled)
+            this.rejectBox.push(onRejected)
+          }
+        })
+      }
+
+      var a = new Promise((reslove, reject) => {
+        setTimeout(_ => {
+          reslove(2)
+        }, 50)
+      })
+      console.log(a.then().then())
+    </script>
+  </body>
+
+</html>

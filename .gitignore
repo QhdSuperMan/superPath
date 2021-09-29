@@ -1,2 +1,6 @@
 node_modules/
 vue3.0/vue/
+
+后台管理若依/
+sourceMap/
+vue-element-admin-master/

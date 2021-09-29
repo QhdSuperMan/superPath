@@ -32,15 +32,15 @@ const routers = [
     comments:  React.lazy(() => import('../page/inDepth')) 
   },
   {
-    path: '/hooks',
+    path: '/hookss',
     comments:  React.lazy(() => import('../page/hooks')) 
   },
   {
-    path: '/redux',
+    path: '/reduxs',
     comments:  React.lazy(() => import('../page/redux')) 
   },
   {
-    path: '/handRedux',
+    path: '/handReduxs',
     comments:  React.lazy(() => import('../page/handRedux')) 
   },
   {

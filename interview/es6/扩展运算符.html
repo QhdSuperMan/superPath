@@ -1,0 +1,59 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-09-13 10:53:24
+ * @LastEditTime: 2021-09-13 11:00:08
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      const person = {
+        name: 'Lydia',
+        age: 21,
+        obj: {
+          index: 0
+        }
+      }
+
+      const changeAge = (x = {
+        ...person
+      }) => {
+        console.log(x === person)
+        x.age++
+      }
+      const changeAgeAndName = (x = {
+        ...person
+      }) => {
+        x.age++
+        x.obj.index = 10
+        // x.name = 'Sarah';
+      }
+      changeAge(person)
+      changeAgeAndName()
+      console.log(person)
+
+      function Parent5() {
+        this.name = 'parent5';
+        this.play = [1, 2, 3];
+      }
+
+      function Child5() {
+        Parent5.call(this);
+        this.type = 'child5';
+      }
+      Child5.prototype = Object.create(Parent5.prototype);
+      Child5.prototype.constructor = Child5;
+    </script>
+  </body>
+
+</html>

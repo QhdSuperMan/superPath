@@ -22,17 +22,16 @@
         新函数可能被当做构造函数调用；
         函数可能有返回值；
       */
-      Function.prototype.bind2 = function (context) {
-        var self = this
-        var args = Array.prototype.slice.call(arguments, 1)
-        var father = function () {}
-        var result = function () {
-          var args2 = Array.from(arguments)
-          return self.apply((this instanceof father) ? this : this, args.concat(args2))
+      Function.prototype.bind = function (context, ...args) {
+        if (typeof this !== "function") {
+          throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
         }
-        father.prototype  = this.prototype
-        result.prototype  = new father()
-        return result
+        var self = this;
+        var fbound = function () {
+          self.apply(this instanceof self ? this : context, args.concat(Array.prototype.slice.call(arguments)));
+        }
+        fbound.prototype = Object.create(self.prototype);
+        return fbound;
       }
       //测试
       obj = {
