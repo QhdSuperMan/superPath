@@ -65,13 +65,8 @@ module.exports = appInfo => {
       },
     },
     one: {
-<<<<<<< HEAD
-      id: [ 1, 2, 3 ],
-    },
-=======
       id: [1, 2, 3]
     }
->>>>>>> bbbddd6a89bb6798b3dd368969074194b9739a04
   };
 
   return {
