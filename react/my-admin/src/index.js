@@ -4,11 +4,11 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from '@/store/index.js'
-import useRoute from '@/layout/router'
+import UseRoute from '@/router/router'
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <useRoute />
+      <UseRoute />
     </React.StrictMode>,
   </Provider>,
   document.getElementById('root')
