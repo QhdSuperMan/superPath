@@ -5,7 +5,6 @@ import routerConfig from './router.config'
 const Container = React.lazy(() => import('@/layout/container'))
 const NotFound = React.lazy(() => import('@/layout/notFound'))
 @connect((state, props) => {
-  console.log(state)
   return {
     userinfo: state.userinfo
   }
@@ -34,21 +33,24 @@ class RouterDefend extends React.Component {
         }
       }
     }
+    return {
+      path: '/',
+      component: {
+        component: NotFound
+      }
+    }
   }
   render () {
-    console.log(this.props, this)
     const { location, config } = this.props;
     const routerObj = this.getRouter(location.pathname)
-    console.log(routerObj)
     if (routerObj.path === '/') {
-      if (this.userinfo && this.userinfo.token) {
+      if (this.props.userinfo && this.props.userinfo.token) {
         return <div>
           <Route path='/' >
             <Container >
               <Switch>
                 <Route path={routerObj.path} component={routerObj.component.component} />
                 <Redirect path="/" exact to="/home" />
-                <Route path="*" component={NotFound} />
               </Switch>
             </Container>
           </Route>
@@ -56,8 +58,15 @@ class RouterDefend extends React.Component {
       } else {
         return <Redirect path="/" exact to="/login" />
       }
+    } else if (routerObj.path === '/login' && this.props.userinfo && this.props.userinfo.token) {
+      return <Redirect path="/login" exact to="/home" />
     } else {
-      return <Route path={routerObj.path} component={routerObj.component.component} />
+      return <div>
+        <Switch>
+          <Route path={routerObj.path} component={routerObj.component.component} />
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </div>
     }
   }
 }
