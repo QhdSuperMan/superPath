@@ -7,146 +7,177 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <a href="https://segmentfault.com/a/1190000023226394?utm_source=sf-similar-article"></a>
+  <a
+    href="https://segmentfault.com/a/1190000023226394?utm_source=sf-similar-article"
+  ></a>
 
   <body>
     <script>
-      //  pending fulfilled rejected 
+      //  pending fulfilled rejected
       class Promise {
         constructor(executor) {
-          this.status = 'pending'
-          this.value = ''
-          this.fulfilledBox = [] // 成功回调数组
-          this.rejectedBox = [] // 失败回调数组
+          this.status = "pending";
+          this.value = "";
+          this.fulfilledBox = []; // 成功回调数组
+          this.rejectedBox = []; // 失败回调数组
           function resolve(value) {
-            if (this.status === 'pending') {
-              this.value = value
-              this.status = 'fulfilled'
-              this.fulfilledBox.forEach(val => {
-                val && val()
+            if (this.status === "pending") {
+              this.value = value;
+              this.status = "fulfilled";
+              this.fulfilledBox.forEach((val) => {
+                val && val();
               });
             }
           }
 
           function reject(value) {
-            if (this.status === 'pending') {
-              this.value = value
-              this.status = 'rejected'
-              this.rejectedBox.forEach(val => {
-                val && val()
+            if (this.status === "pending") {
+              this.value = value;
+              this.status = "rejected";
+              this.rejectedBox.forEach((val) => {
+                val && val();
               });
             }
           }
-          executor(resolve.bind(this), reject.bind(this))
+          executor(resolve.bind(this), reject.bind(this));
         }
       }
-      Promise.prototype.resolvePromise = function (nextPromise, result, resolve, reject) {
+      Promise.prototype.resolvePromise = function (
+        nextPromise,
+        result,
+        resolve,
+        reject
+      ) {
         if (result === nextPromise) {
-          return reject(new TypeError('Chaining cycle detected for nextPromise'));
+          return reject(
+            new TypeError("Chaining cycle detected for nextPromise")
+          );
         }
-        if (result !== null && typeof (result) === 'object' || typeof (result) === 'function') {
+        if (
+          (result !== null && typeof result === "object") ||
+          typeof result === "function"
+        ) {
           try {
-            var then = result.then
-            if (typeof (then) === 'function') {
-              then.call(result, y => {
-                this.resolvePromise(nextPromise, y, resolve, reject);
-              }, err => {
-                reject(err)
-              })
+            var then = result.then;
+            if (typeof then === "function") {
+              then.call(
+                result,
+                (y) => {
+                  this.resolvePromise(nextPromise, y, resolve, reject);
+                },
+                (err) => {
+                  reject(err);
+                }
+              );
             } else {
-              resolve(result)
+              resolve(result);
             }
           } catch (error) {
-            reject(error)
+            reject(error);
           }
         } else {
-          resolve(result)
+          resolve(result);
         }
-      }
+      };
       Promise.prototype.catch = function (func) {
-        return this.then(null, func)
-      }
+        return this.then(null, func);
+      };
       Promise.all = function (promises) {
         let count = 0;
         let result = [];
         return new Promise((resolve, reject) => {
-            for (let i = 0; i < promises.length; i++) {
-              promises[i].then(res => {
-                result.push(res);
-                count++;
-                if (count === promises.length) resolve(result);
-              })
-            }
-          })
-          .catch(err => {
-            reject(err);
-          })
-      }
+          for (let i = 0; i < promises.length; i++) {
+            promises[i].then((res) => {
+              result.push(res);
+              count++;
+              if (count === promises.length) resolve(result);
+            });
+          }
+        }).catch((err) => {
+          reject(err);
+        });
+      };
       Promise.prototype.then = function (onFulfilled, onRejected) {
-        onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value;
-        onRejected = typeof onRejected === 'function' ? onRejected : err => {
-          throw err;
-        }
+        onFulfilled =
+          typeof onFulfilled === "function" ? onFulfilled : (value) => value;
+        onRejected =
+          typeof onRejected === "function"
+            ? onRejected
+            : (err) => {
+                throw err;
+              };
         var nextPromise = new Promise((resolve, reject) => {
-          if (this.status === 'fulfilled') {
-            var result = resolve(onFulfilled(this.value))
-            this.resolvePromise(nextPromise, result, resolve, reject)
+          if (this.status === "fulfilled") {
+            var result = resolve(onFulfilled(this.value));
+            this.resolvePromise(nextPromise, result, resolve, reject);
           }
-          if (this.status === 'rejected') {
-            var result = resolve(onRejected(this.value))
-            this.resolvePromise(nextPromise, result, resolve, reject)
+          if (this.status === "rejected") {
+            var result = resolve(onRejected(this.value));
+            this.resolvePromise(nextPromise, result, resolve, reject);
           }
-          if (this.status === 'pending') {
+          if (this.status === "pending") {
             this.fulfilledBox.push(() => {
-              var result = onFulfilled(this.value)
-              this.resolvePromise(nextPromise, result, resolve, reject)
-            })
+              var result = onFulfilled(this.value);
+              this.resolvePromise(nextPromise, result, resolve, reject);
+            });
             this.rejectedBox.push(() => {
-              resolve(onRejected(this.value))
-              this.resolvePromise(nextPromise, result, resolve, reject)
-            })
+              resolve(onRejected(this.value));
+              this.resolvePromise(nextPromise, result, resolve, reject);
+            });
           }
-        })
-        return nextPromise
-      }
-      var a = new Promise((reslove, reject) => {
-        setTimeout(() => {
-          reslove('第一个reslove')
-        }, 1000)
-      })
-      var b = a.then(val => {
-        // console.log('第一个then', val)
-        // return new Promise((reslove, reject) => {
-        //   setTimeout(_ => {
-        //     reslove('第二个reslove')
-        //   }, 1000)
-        // }).then(val => {
-        //   console.log('第二个then', val)
-        //   return 'promise里面的promise'
-        // })
-      })
-      b.then(val => {
-        console.log('第三个then', val)
-      })
-
+        });
+        return nextPromise;
+      };
+      // var a = new Promise((reslove, reject) => {
+      //   setTimeout(() => {
+      //     reslove("第一个reslove");
+      //   }, 1000);
+      // });
+      // var b = a.then((val) => {
+      //   console.log('第一个then', val)
+      //   return new Promise((reslove, reject) => {
+      //     setTimeout(_ => {
+      //       reslove('第二个reslove')
+      //     }, 1000)
+      //   }).then(val => {
+      //     console.log('第二个then', val)
+      //     return 'promise里面的promise'
+      //   })
+      // });
+      // b.then((val) => {
+      //   console.log("第三个then", val);
+      // });
 
       // new Promise((resolve, reject) => {
       //   resolve('YoYo');
       // }).then().then().then().then().then().then().then((res) => {
       //   console.log(res);
       // })
-      Promise.all([a, b]).then(val => {
-        console.log(val)
-      }, err => {
-        console.log(err)
+      // Promise.all([a, b]).then(val => {
+      //   console.log(val)
+      // }, err => {
+      //   console.log(err)
+      // })
+
+      var a = new Promise((reslove, reject) => {
+        setTimeout((_) => {
+          reject(2);
+        }, 1000);
       })
+        .then(() => {
+          return 1;
+        })
+        .then(
+          () => {},
+          (err) => {
+            console.log(err);
+          }
+        );
     </script>
   </body>
-
 </html>
