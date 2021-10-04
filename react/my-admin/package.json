@@ -52,7 +52,6 @@
     "prompts": "2.4.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
-    "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "react-refresh": "^0.8.3",
@@ -153,6 +152,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "babel-plugin-import": "^1.13.3"
+    "babel-plugin-import": "^1.13.3",
+    "react-dev-utils": "^11.0.4"
   }
 }

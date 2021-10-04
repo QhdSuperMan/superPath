@@ -1,6 +1,6 @@
 vscode命令行不能运行脚本命令
 1 以管理员身份打开vscode
-2.执行set-ExecutionPolicy RemoteSigned 
+2.执行                                      
 
 explorer 打开脚本   例如
 explorer 'C:\PerfLogs'
