@@ -11,6 +11,19 @@ export default [
         path: '/user',
         component: React.lazy(() => import('@/page/user'))
       },
+      {
+        path: '/role',
+        children: [
+          {
+            path: '/role/roleList',
+            component: React.lazy(() => import('@/page/role/roleList'))
+          },
+          {
+            path: '/role/roleAdd',
+            component: React.lazy(() => import('@/page/role/roleAdd'))
+          },
+        ]
+      },
     ]
   },
   {

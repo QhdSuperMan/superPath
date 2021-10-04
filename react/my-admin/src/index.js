@@ -7,9 +7,7 @@ import store from '@/store/index.js'
 import UseRoute from '@/router/router'
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
       <UseRoute />
-    </React.StrictMode>,
   </Provider>,
   document.getElementById('root')
 );
