@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "egg-view-nunjucks": "^2.3.0",
+    "history": "^5.0.1",
     "http": "^0.0.1-security",
     "shelljs": "^0.8.4"
   }

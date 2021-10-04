@@ -3,11 +3,10 @@ import header from './css/header.module.scss'
 import { connect } from 'react-redux'
 import { Row, Col, Button, Modal } from 'antd';
 import { createAction } from 'redux-actions'
-import { useHistory } from 'react-router'
+import { history } from '@/utils/base.js'
 import logo from '@/image/logo.png'
 const { confirm } = Modal;
 @connect((state, props) => {
-  console.log(props,state)
   return {
     userinfo: state.userinfo
   }
@@ -24,8 +23,8 @@ class Header extends React.Component {
       okText: '确认',
       cancelText: '取消',
       onOk () {
-        that.props.dispatch(createAction('login out'))()
-        that.props.history.push('/login');
+        that.props.dispatch(createAction('login out')())
+        history.push('/login');
       }
     });
   }

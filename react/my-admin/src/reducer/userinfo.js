@@ -16,7 +16,6 @@ export const userinfo = handleActions({
     return { ...state, token: data.payload }
   },
   'login out' (state, data) {
-    console.lohg(111)
     localStorage.setItem('token', '')
     localStorage.setItem('username', '')
     return { ...state, token: data.payload }
