@@ -43,6 +43,14 @@ const routers = [
     path: '/handReduxs',
     comments:  React.lazy(() => import('../page/handRedux')) 
   },
+  {
+    path: '/highComponent',
+    comments:  React.lazy(() => import('../page/highComponent')) 
+  },
+  {
+    path: '/test',
+    comments:  React.lazy(() => import('../page/test')) 
+  },
 ]
 
 export default routers
