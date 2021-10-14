@@ -19,7 +19,7 @@
   <body>
     <script>
       //  pending fulfilled rejected
-      class Promise {
+      class myPromise {
         constructor(executor) {
           this.status = "pending";
           this.value = "";
@@ -47,7 +47,7 @@
           executor(resolve.bind(this), reject.bind(this));
         }
       }
-      Promise.prototype.resolvePromise = function (
+      myPromise.prototype.resolvePromise = function (
         nextPromise,
         result,
         resolve,
@@ -84,13 +84,13 @@
           resolve(result);
         }
       };
-      Promise.prototype.catch = function (func) {
+      myPromise.prototype.catch = function (func) {
         return this.then(null, func);
       };
-      Promise.all = function (promises) {
+      myPromise.all = function (promises) {
         let count = 0;
         let result = [];
-        return new Promise((resolve, reject) => {
+        return new myPromise((resolve, reject) => {
           for (let i = 0; i < promises.length; i++) {
             promises[i].then((res) => {
               result.push(res);
@@ -102,7 +102,7 @@
           reject(err);
         });
       };
-      Promise.prototype.then = function (onFulfilled, onRejected) {
+      myPromise.prototype.then = function (onFulfilled, onRejected) {
         onFulfilled =
           typeof onFulfilled === "function" ? onFulfilled : (value) => value;
         onRejected =
@@ -111,13 +111,13 @@
             : (err) => {
                 throw err;
               };
-        var nextPromise = new Promise((resolve, reject) => {
+        var nextPromise = new myPromise((resolve, reject) => {
           if (this.status === "fulfilled") {
             var result = resolve(onFulfilled(this.value));
             this.resolvePromise(nextPromise, result, resolve, reject);
           }
           if (this.status === "rejected") {
-            var result = resolve(onRejected(this.value));
+            var result = reject(onRejected(this.value));
             this.resolvePromise(nextPromise, result, resolve, reject);
           }
           if (this.status === "pending") {
@@ -133,14 +133,14 @@
         });
         return nextPromise;
       };
-      // var a = new Promise((reslove, reject) => {
+      // var a = new myPromise((reslove, reject) => {
       //   setTimeout(() => {
       //     reslove("第一个reslove");
       //   }, 1000);
       // });
       // var b = a.then((val) => {
       //   console.log('第一个then', val)
-      //   return new Promise((reslove, reject) => {
+      //   return new myPromise((reslove, reject) => {
       //     setTimeout(_ => {
       //       reslove('第二个reslove')
       //     }, 1000)
@@ -153,12 +153,12 @@
       //   console.log("第三个then", val);
       // });
 
-      // new Promise((resolve, reject) => {
+      // new myPromise((resolve, reject) => {
       //   resolve('YoYo');
       // }).then().then().then().then().then().then().then((res) => {
       //   console.log(res);
       // })
-      // Promise.all([a, b]).then(val => {
+      // myPromise.all([a, b]).then(val => {
       //   console.log(val)
       // }, err => {
       //   console.log(err)
@@ -171,6 +171,9 @@
       })
         .then(() => {
           return 1;
+        },() => {
+          console.log(1)
+          return Promise.reject('66666')
         })
         .then(
           () => {},

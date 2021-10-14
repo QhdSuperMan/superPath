@@ -23,6 +23,7 @@ const store = new Vuex.Store({
     }
   }
 })
+debugger
 var vm = new Vue({
 
   el: '#demo',
