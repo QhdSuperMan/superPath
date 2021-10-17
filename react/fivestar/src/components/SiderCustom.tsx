@@ -94,7 +94,7 @@ class SiderCustom extends Component<SiderCustomProps, SiderCustomState> {
                 style={{ overflowY: 'auto' }}
                 className="sider-custom"
             >
-                <div className="logo" />
+                <div className="logo" />            
                 <SiderMenu
                     menus={[...routes.menus, ...smenus.data]}
                     onClick={this.menuClick}

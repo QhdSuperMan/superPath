@@ -53,12 +53,12 @@ const SiderMenu = ({ menus, ...props }: SiderMenuProps) => {
         result.splice(endIndex, 0, removed);
         return result;
     };
-    const onDragEnd = (result: any) => {
-        // dropped outside the list
+    const onDragEnd = (...result: any) => {
+        // dropped outside the list\\
+        console.log(result, dragItems)
         if (!result.destination) {
             return;
         }
-
         const _items = reorder(dragItems, result.source.index, result.destination.index);
         setDragItems(_items);
     };
