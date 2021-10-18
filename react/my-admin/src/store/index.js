@@ -7,5 +7,6 @@ const createStoreWithMiddleware = applyMiddleware(
   logger,
   // router,
 )(createStore)
-
-export default createStoreWithMiddleware(rootReducer, {})
+const store = createStoreWithMiddleware(rootReducer, {})
+console.log(store)
+export default store

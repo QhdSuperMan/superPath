@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Node {
+      constructor(val) {
+        return {
+          // prev: null,
+          next: null,
+          val: val
+        }
+      }
+    }
+    class ChainTable {
+      head = null;
+      footer = null
+      constructor(data) {
+        this.head = new Node(data)
+        this.footer = this.head
+      }
+      appendNode(val) {
+        var node = new Node(val)
+        this.footer.next = node
+        // node.prev = this.footer
+        this.footer = node
+      }
+      reverse() {
+        var prev = null
+        var current = this.head
+        while (current) {
+          var next = current.next
+          current.next = prev
+          prev = current
+          current = next
+        }
+        this.head = prev
+      }
+      sort() {
+        var current = this.head
+        while (current.next) {
+          var node = current.next
+          while (node) {
+            if (node.val < current.val) {
+              var tmp = node.val
+              node.val = current.val
+              current.val = tmp
+            }
+            node = node.next
+          }
+          current = current.next
+        }
+      }
+    }
+    var a = new ChainTable(1)
+    a.appendNode(4)
+    a.appendNode(3)
+    a.appendNode(5)
+    a.appendNode(2)
+    a.sort()
+    console.log(a)
+  </script>
+</body>
+
+</html>
