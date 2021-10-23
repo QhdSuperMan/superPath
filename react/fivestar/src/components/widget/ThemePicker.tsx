@@ -17,7 +17,6 @@ class ThemePicker extends Component {
         console.log(color);
         this.setState({ background: color.hex });
         localStorage.setItem('@primary-color', color.hex);
-
         (window as any).less.modifyVars({
             '@primary-color': color.hex,
         });
