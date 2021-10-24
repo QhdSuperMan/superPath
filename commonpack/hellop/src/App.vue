@@ -2,22 +2,27 @@
 <template>
 	<div id="app">
 		444
-		<buttoner />
+    <buttoner fatherPros='父亲组件的' @sonAction='sonAction' />
 		<inputer></inputer>
 	</div>
 </template>
 
 <script>
-	import { buttoner, inputer } from "commonp";
+	import main,{inputer} from "npm-practice";
 	export default {
 		name: "App",
 		components: {
-			buttoner,
+			buttoner:main.buttoner,
 			inputer
 		},
 		created() {
-			console.log(buttoner);
-		}
+			console.log(main);
+		},
+    methods: {
+      sonAction () {
+        console.log('子组件的事件')
+      }
+    }
 	};
 </script>
 

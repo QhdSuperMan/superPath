@@ -6,8 +6,8 @@ module.exports = {
     [
       "component",
       {
-        "libraryName": "commonp",
-        "styleLibraryName": "style"
+        "libraryName": "npm-practice",
+        "styleLibraryName": "static/css"
       }
     ]
   ]
