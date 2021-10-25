@@ -8,7 +8,12 @@ module.exports = {
       {
         "libraryName": "commonp",
         "styleLibraryName": "style"
-      }
-    ]
+      },
+      // "component",
+      // {
+      //   "libraryName": "element-ui",
+      //   "styleLibraryName": "theme-chalk"
+      // }
+    ],
   ]
 }
