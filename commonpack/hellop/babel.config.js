@@ -6,14 +6,9 @@ module.exports = {
     [
       "component",
       {
-        "libraryName": "commonp",
-        "styleLibraryName": "style"
-      },
-      // "component",
-      // {
-      //   "libraryName": "element-ui",
-      //   "styleLibraryName": "theme-chalk"
-      // }
-    ],
+        "libraryName": "npm-practice",
+        "styleLibraryName": "static/css"
+      }
+    ]
   ]
 }

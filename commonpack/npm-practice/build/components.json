@@ -1,0 +1,6 @@
+{
+  "inputer": "./src/components/inputer",
+  "buttoner": "./src/components/buttoner",
+  "index": "./src/components/index.js",
+  "base": "./src/components/base"
+}
