@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var TreeNode = {
+        val: 4,
+        left: {
+          val: 2,
+          left: { val: 1, left: null, right: null },
+          right: { val: 3, left: null, right: null },
+        },
+        right: {
+          val: 7,
+          left: { val: 6, left: null, right: null },
+          right: { val: 9, left: null, right: null },
+        },
+      };
+      var kthSmallest = function (root, k) {
+        var result = [];
+        Iterator(root);
+        function Iterator(root) {
+          if (root) {
+            addResult(root);
+            Iterator(root.left);
+            Iterator(root.right);
+          }
+        }
+        function addResult(node) {
+          var j = result.length - 1;
+          while (node.val < result[j] && j >= 0) {
+            result[j + 1] = result[j];
+            j--;
+          }
+          result[j + 1] = node.val;
+        }
+        return result[k - 1]
+      };
+      console.log(kthSmallest(TreeNode, 2));
+    </script>
+  </body>
+</html>

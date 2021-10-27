@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var TreeNode = {
+        val: 4,
+        left: {
+          val: 2,
+          left: { val: 1, left: null, right: null },
+          right: { val: 3, left: null, right: null },
+        },
+        right: {
+          val: 7,
+          left: { val: 6, left: null, right: null },
+          right: { val: 9, left: null, right: null },
+        },
+      };
+      var invertTree = function (root) {
+        if (!root) {
+          return null;
+        }
+        var tmp = root.right;
+        root.right = invertTree(root.left);
+        root.left = invertTree(tmp);
+        return root
+      };
+      console.log(invertTree(TreeNode));
+    </script>
+  </body>
+</html>
