@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    
+    Function.prototype.mybind = function(obj, ...args) {
+      var self = obj ? obj : window
+      var that = this
+      var fn = function(...args1) {
+          return that.apply(this instanceof self ? this : self, args.concat(args1))
+      }
+      fn.prototype = Object(that.prototype)
+      return fn
+    }
+  </script>
+</body>
+
+</html>

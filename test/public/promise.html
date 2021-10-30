@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // // 函数A只返回一个reject异常
+    // function A() {
+    //   return Promise.reject(new Error(Math.random()));
+    // }
+
+    // // 这样会先执行catch，然后执行后面的then
+    // A().then(() => console.log('第一个then'))
+    //   .catch(e => console.error(e))
+    //   .then(() => console.log('第二个then'))
+
+    // // 任意Promise中的catch异常，都会阻断后面代码的执行，并跳转到try中的catch，被捕获 
+    // // 多个Proimise也一样
+    // try {
+    //   A().then(() => console.log('第一个then'))
+    //     .then(() => console.log('第二个then'))
+    // } catch (e) {
+    //   console.error(e);
+    // }
+    Promise.resolve(()=> {
+      console.log(2222)
+    })
+    console.log(1)
+  </script>
+</body>
+
+</html>
