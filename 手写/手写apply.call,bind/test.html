@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
-  <body>
-    <script>
-      var obj = {
-        id: 1111
-      }
+<body>
+  <script>
+    var obj = {
+      id: 1111
+    }
 
-      function log() {
-        console.log('id是：', this.id, arguments)
-        this.id = 22
+    function log() {
+      console.log('id是：', this.id, arguments)
+      this.id = 22
+    }
+    Function.prototype.myApply = function (obj, args) {
+      var a = obj ? obj : window
+      var key = Symbol('asdasdsadasca')
+      a[key] = this // 没有扩展运算符用 arguments 和执行字符串
+      var result = a[key](...args)
+      delete a[key]
+      return result
+    }
+    // log.myApply(obj, [1,2,3])
+    Function.prototype.myCall = function (obj, ...args) {
+      var a = obj ? obj : window
+      var key = Symbol('asdasdsadasca')
+      a[key] = this
+      var result = a[key](...args)
+      delete a[key]
+      return result
+    }
+    // log.myCall(obj, 1,2,3)
+    Function.prototype.myBind = function (content, ...args) {
+      var self = this
+      func = function (...argss) {
+        return self.myApply(this instanceof self ? this : content, args.concat(argss))
       }
-      Function.prototype.myApply = function (obj, args) {
-        var a = obj ? obj : window
-        var key = Symbol('asdasdsadasca')
-        a[key] = this // 没有扩展运算符用 arguments 和执行字符串
-        var result = a[key](...args)
-        delete a[key]
-        return result
-      }
-      // log.myApply(obj, [1,2,3])
-      Function.prototype.myCall = function (obj, ...args) { 
-        var a = obj ? obj : window
-        var key = Symbol('asdasdsadasca')
-        a[key] = this
-        var result = a[key](...args)
-        delete a[key]
-        return result
-      }
-      // log.myCall(obj, 1,2,3)
-      Function.prototype.myBind = function (obj, ...args) {
-        var a = obj ? obj : window
-        var self = this
-        func = function (...argss) {
-          return self.myApply(this instanceof self ? this : obj, argss.concat(args))
-        }
-        func.prototype = Object.create(self.prototype)
-        return func
-      }
-      // log.myBind(obj, 1,2,3)(4,5)
-      var a = log.myBind(obj, 1, 2, 3)
-      console.log(obj, new a())
-    </script>
-  </body>
+      func.prototype = Object.create(self.prototype)
+      return func
+    }
+    // log.myBind(obj, 1,2,3)(4,5)
+    var a = log.myBind(obj, 1, 2, 3)
+    console.log(obj, new a())
+  </script>
+</body>
 
 </html>
