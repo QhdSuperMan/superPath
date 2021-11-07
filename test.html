@@ -7,27 +7,53 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <style>
-
-  </style>
+  <style></style>
 
   <body>
-    <div id='div1'>
-      <div id='div2'>
-
-      </div>
+    <div id="div1">
+      <div id="div2"></div>
     </div>
   </body>
   <script>
-    // https://zhuanlan.zhihu.com/p/45057871
-    
+        const rawWindow = window;
+    const fakeWindow = Object.create(null) as Window;
+    const proxy = new Proxy(fakeWindow, {
+    	set(_: Window, p: PropertyKey, value: any): boolean {
+    		if(sandboxRunning){
+    			if(!rawWindow.hasOwnProperty(p)){
+    				addedPropsMapInSandbox.set(p, value);
+    			} else if(!modifiedPropsOriginalValueMapInSandbox.has(p) {
+    				const originalValue = (rawWindow as any)[p];
+    				modifiedPropsOriginalValueMapInSandbox.set(p, originalValue);
+    			}
+    			currentUpdatedPropsValueMap.set(p, value);
+    			(rawWindow as any)[p] = value;
+    			return true;
+    		}
+    		return true;
+    	}
+    	get(_: Window,  p: PropertyKey): any {
+    		if(p === "top" || p === "window" || p === "self"){
+    			return proxy;
+    		}
+    		const value = (rawWindow as any)[p];
+    		if(typeof === "function" && !isConstructor(value)){
+    			if(value[boundValueSymbol]){
+    				return value[boundValueSymbol];
+    			}
+    			const boundValue = value.bind(rawWindow);
+    			Object.keys(value).forEach(key => (boundValue[key] = value[key]));
+    			Object.defineProperty(value, boundValueSymbol, { enumerable: false, value: boundValue });
+    			return boundValue;
+    		}
+    		return value;
+    	}
+    })
   </script>
-
 </html>
