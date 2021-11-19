@@ -1,3 +1,10 @@
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-10-31 16:01:36
+ * @LastEditTime: 2021-11-19 11:42:46
+ * @info: 描述
+ */
 const Koa = require('koa');
 const app = new Koa();
 const path = require('path')
@@ -15,6 +22,9 @@ router.get('/index.manifest', async (ctx) => {
 //   const htmlContent = await fs.readFileSync('./index.manifest');
 //   ctx.body = htmlContent;
 // });
+app.use(history({
+  index: '/default.html'
+}))
 app.use(staticFiles(path.join(__dirname + '/public/')))
 app.use(router.routes())
 app.listen(3000);
