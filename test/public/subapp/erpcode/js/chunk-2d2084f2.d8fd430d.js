@@ -1,2 +1,0 @@
-(window["webpackJsonp_erpcode"]=window["webpackJsonp_erpcode"]||[]).push([["chunk-2d2084f2"],{a3f0:function(e,c,n){"use strict";n.r(c);var t=function(){var e=this,c=e.$createElement,n=e._self._c||c;return n("div",[e._v(" customerac ")])},r=[],o={},u=o,a=n("2877"),s=Object(a["a"])(u,t,r,!1,null,"866312d0",null);c["default"]=s.exports}}]);
-//# sourceMappingURL=chunk-2d2084f2.d8fd430d.js.map

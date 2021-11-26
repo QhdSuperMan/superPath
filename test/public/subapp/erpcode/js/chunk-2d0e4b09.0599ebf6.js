@@ -1,2 +1,0 @@
-(window["webpackJsonp_erpcode"]=window["webpackJsonp_erpcode"]||[]).push([["chunk-2d0e4b09"],{"90fb":function(e,t,n){"use strict";n.r(t);var r=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",[n("instorageAdd",{attrs:{goBackUrl:e.goBackUrl,titles:e.titles}})],1)},o=[],a=n("555e"),c={data:function(){return{titles:"库存管理",goBackUrl:"/inventory/purchaseinstorage"}},components:{instorageAdd:a["default"]}},s=c,i=n("2877"),d=Object(i["a"])(s,r,o,!1,null,"e419d392",null);t["default"]=d.exports}}]);
-//# sourceMappingURL=chunk-2d0e4b09.0599ebf6.js.map
