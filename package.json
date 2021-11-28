@@ -4,6 +4,7 @@
     "webpack-dev-middleware": "^5.0.0"
   },
   "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
     "egg-view-nunjucks": "^2.3.0",
     "history": "^5.0.1",
     "http": "^0.0.1-security",

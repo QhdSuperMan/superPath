@@ -1,0 +1,32 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-10-31 22:33:03
+ * @LastEditTime: 2021-10-31 22:39:43
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="goto()">点击</button>
+    <script>
+      function goto() {
+        window.history.pushState({
+          id: 1
+        }, '哈哈', '/test.html')
+      }
+      window.onpopstate = function (e) {
+        console.log(e)
+      }
+    </script>
+  </body>
+
+</html>

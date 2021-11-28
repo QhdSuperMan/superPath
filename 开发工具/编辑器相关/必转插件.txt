@@ -1,6 +1,7 @@
 Better Comments   高亮注释
 
-koroFileHeader  头部注释  函数注释  
+koroFileHeader  头部注释  函数注释
+
 配置 
 "fileheader.customMade": {
   "Author": "吴玉荣", // 创建者名字
@@ -9,6 +10,10 @@ koroFileHeader  头部注释  函数注释
   "LastEditTime": "Do not edit" // 文件最后编辑时间
 },
 
+<<<<<<< HEAD:编辑器相关/必转插件.txt
 view in browser // 打开浏览器
+=======
+open in browser // 浏览器
+>>>>>>> e448ec98655dff14212d331ee060953610d99424:开发工具/编辑器相关/必转插件.txt
 Bracket // 括号插件
 indent-rainbow // 缩进插件
