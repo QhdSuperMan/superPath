@@ -84,7 +84,7 @@
           if (this.status === "pending") {
             this.resloveBox.push(() => {
               var result = onFulfilled(this.value);
-              this.dealPromise(nextPromise, result, resolve, reject, );
+              this.dealPromise(nextPromise, result, resolve, reject);
             });
             this.rejectBox.push(() => {
               try {

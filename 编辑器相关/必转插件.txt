@@ -9,6 +9,6 @@ koroFileHeader  头部注释  函数注释
   "LastEditTime": "Do not edit" // 文件最后编辑时间
 },
 
-
+view in browser // 打开浏览器
 Bracket // 括号插件
 indent-rainbow // 缩进插件
