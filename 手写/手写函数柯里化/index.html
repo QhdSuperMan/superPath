@@ -8,18 +8,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
-  <body>
-    <script>
-      function add(a, b, c) {
-        return a + b + c
+<body>
+  <script>
+    function add(a, b, c, d) {
+      return a + b + c + d
+    }
+
+<<<<<<< HEAD
+    function curry(fn) {
+      func = (...args) => {
+        if (args.length === fn.length) return fn(...args)
+        return (...arg) => func(...args, ...arg)
       }
-
+      return func
+      // let judge = (...args) => {
+      //   if (args.length == fn.length) return fn(...args)
+      //   return (...arg) => judge(...args, ...arg)
+      // }
+      // return judge
+    }
+    let addCurry = curry(add)
+    console.log(addCurry(1)(2)(3)(4));
+  </script>
+</body>
+=======
       function curry(fn) {
 
         var func = (...arr) => {
@@ -46,5 +64,6 @@
       console.log(addCurry(1)(2)(3));
     </script>
   </body>
+>>>>>>> e448ec98655dff14212d331ee060953610d99424
 
 </html>

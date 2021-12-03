@@ -13,16 +13,16 @@ var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
  * Actual demo
  */
 
-const store = new Vuex.Store({
-  state: {
-    count: 1
-  },
-  mutations: {
-    increment(state) {
-      state.count++
-    }
-  }
-})
+// const store = new Vuex.Store({
+//   state: {
+//     count: 1
+//   },
+//   mutations: {
+//     increment(state) {
+//       state.count++
+//     }
+//   }
+// })
 debugger
 var vm = new Vue({
 
