@@ -1,0 +1,44 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-12-16 17:17:20
+ * @LastEditTime: 2021-12-17 09:20:04
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var s = "()"
+      var isValid = function (s) {
+        if (!s.length) return true
+        var dp = [s[0]]
+        for (var i = 1; i < s.length; i++) {
+          if (twain(dp[dp.length - 1], s[i])) {
+            dp.pop()
+          } else {
+            dp.push(s[i])
+          }
+        }
+
+        function twain(a, b) {
+          if (a === '(' && b === ')') return true
+          if (a === '{' && b === '}') return true
+          if (a === '[' && b === ']') return true
+          return false
+        }
+        return !dp.length
+      };
+      console.log(isValid(s));
+    </script>
+  </body>
+
+</html>

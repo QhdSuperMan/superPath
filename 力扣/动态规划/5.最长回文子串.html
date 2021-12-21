@@ -1,0 +1,111 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2020-04-20 10:27:46
+ * @LastEditTime: 2021-08-13 09:47:18
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 暴力法
+      // var longestPalindrome = function (s) {
+      //   var len = s.length
+      //   var maxLength = 0
+      //   var maxRight = 0
+      //   for (var right = 1; right < len; right++) {
+      //     for (var left = 0; left < right; left++) {
+      //       if (isPalindrome(left, right) && (right - left) > maxLength) {
+      //         maxLength = right - left
+      //         maxRight = right
+      //       }
+      //     }
+      //   }
+      //   return s.slice(maxRight - maxLength, maxRight + 1)
+
+      //   function isPalindrome(left, right) {
+      //     while (left < right) {
+      //       if (s[left] !== s[right]) {
+      //         return false
+      //       }
+      //       left++
+      //       right--
+      //     }
+      //     return true
+      //   }
+      // };
+      // 中心法
+      // var longestPalindrome = function (s) {
+      //   var len = s.length
+      //   var maxlength = 0
+      //   var maxI = i = 0
+      //   for (var i = 0; i < len; i++) {
+      //     var max1 = isPalindrome(i, i)
+      //     var max2 = isPalindrome(i, i + 1)
+      //     if (max1 > maxlength) {
+      //       maxlength = max1
+      //       maxI = i
+      //     }
+      //     if (max2 > maxlength) {
+      //       maxlength = max2
+      //       maxI = i
+      //     }
+      //   }
+
+      //   function isPalindrome(left, right) {
+      //     while (left >= 0 && right < len) {
+      //       if (s[left] === s[right]) {
+      //         left--
+      //         right++
+      //       } else {
+      //         return right - left - 1
+      //       }
+      //     }
+      //     return right - left - 1
+      //   }
+      //   if (maxlength % 2) {
+      //     return s.slice(maxI - (maxlength - 1) / 2, maxI + (maxlength - 1) / 2 + 1)
+      //   } else {
+      //     return s.slice(maxI - maxlength / 2 + 1, maxI + maxlength / 2 + 1)
+      //   }
+      // };
+
+      // 动态规划
+      var s = "aacabdkacaa"
+      var longestPalindrome = function (s) {
+        var len = s.length
+        var maxlength = 0
+        var maxI = 0
+        var dp = new Array(len).fill().map(() => new Array(len).fill(''))
+        for (var i = 0; i < len; i++) {
+          dp[i][i] = true
+        }
+        for (var i = 1; i < len; i++) {// i是right j 是left
+          for (var j = 0; j < i; j++) {
+            if (s[i] === s[j]) {
+              if (dp[i - 1][j + 1] || j == i -1) {
+                dp[i][j] = true
+                if (i - j > maxlength) {
+                  maxlength = i - j
+                  maxI = j
+                }
+              }
+            }
+          }
+        }
+        return s.slice(maxI, maxI + maxlength + 1)
+      };
+
+      console.log(longestPalindrome(s))
+    </script>
+  </body>
+
+</html>

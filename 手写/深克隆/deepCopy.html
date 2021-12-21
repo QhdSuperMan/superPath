@@ -1,0 +1,75 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-11-26 14:24:05
+ * @LastEditTime: 2021-12-07 14:08:15
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function deepClone(obj, cache = new WeakMap()) {
+        var typeBox = ["[object Array]", "[object Object]", "[object Map]", "[object Set]"]
+        var type = Object.prototype.toString.call(obj)
+        if (!typeBox.includes(type)) return obj // 不是上面四个类型不用处理
+        if (cache.get(obj)) return cache.get(obj) // 防止循环引用，程序进入死循环
+        let cloneObj = new obj.constructor() // 找到所属原型上的constructor，所属原型上的constructor指向当前对象的构造函数
+        cache.set(obj, cloneObj) // 缓存拷贝的对象，用于处理循环引用的情况
+        if (type === "[object Map]") { // 处理map
+          obj.forEach((val, key) => {
+            cloneObj.set(deepClone(key, cache), deepClone(val, cache))
+          })
+          return cloneObj
+        }
+        if (type === "[object Set]") { // 处理set
+          obj.forEach((val) => {
+            cloneObj.add(deepClone(val, cache))
+          })
+          return cloneObj
+        }
+        for (let key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            cloneObj[key] = deepClone(obj[key], cache) // 递归拷贝
+          }
+        }
+        return cloneObj
+      }
+      var mapKey = {
+        key: 1
+      }
+      var mapValue = {
+        value: 1
+      }
+      var map = new Map()
+      map.set(mapKey, mapValue)
+      var set = new Set([1, 2, 3])
+      // 测试
+      const obj = {
+        name: 'Jack',
+        id: new Date(),
+        map: map,
+        set: set,
+        address: {
+          s: {
+            k: 1
+          },
+          x: 100,
+          y: 200
+        }
+      }
+      obj.a = obj // 循环引用
+      const newObj = deepClone(obj)
+      console.log(newObj) // false
+    </script>
+  </body>
+
+</html>

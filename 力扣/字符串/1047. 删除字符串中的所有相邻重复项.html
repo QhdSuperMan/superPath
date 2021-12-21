@@ -1,0 +1,36 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-12-17 09:28:03
+ * @LastEditTime: 2021-12-17 09:37:37
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var s = "abbaca"
+      var removeDuplicates = function (s) {
+        var arr = [s[0]]
+        for (var i = 1; i < s.length; i++) {
+          if (arr[arr.length - 1] === s[i]) {
+            arr.pop()
+          } else {
+            arr.push(s[i])
+          }
+        }
+        return arr.join('')
+      };
+      console.log(removeDuplicates(s))
+    </script>
+  </body>
+
+</html>

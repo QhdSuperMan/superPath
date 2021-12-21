@@ -1,0 +1,58 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-12-14 11:10:27
+ * @LastEditTime: 2021-12-14 14:23:20
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var s = "dvdf"
+      // var lengthOfLongestSubstring = function (s) {
+      //   var dp = s.split('').map(val => new Array())
+      //   dp[0].push(s[0])
+      //   var max = 1
+      //   var current = 0
+      //   for (var i = 1; i < s.length; i++) {
+      //     if (dp[current].includes(s[i])) {
+      //       current++
+      //       dp[current] = dp[current - 1].splice(1)
+      //       i--
+      //     } else {
+      //       dp[current].push(s[i])
+      //       max = Math.max(max, dp[current].length)
+      //     }
+      //   }
+      //   return max
+      // };
+      // console.log(lengthOfLongestSubstring(s));
+      var lengthOfLongestSubstring = function (s) {
+        if (!s) return 0
+        var wicketStr = ''
+        var max = 0
+        for (var i = 0; i < s.length; i++) {
+          var index = wicketStr.indexOf(s[i])
+          wicketStr += s[i]
+          if (index !== -1) {
+            wicketStr = wicketStr.slice(index + 1)
+          } else {
+            max = Math.max(max, wicketStr.length)
+          }
+        }
+        return max
+      };
+      console.log(lengthOfLongestSubstring(s));
+    </script>
+  </body>
+
+</html>

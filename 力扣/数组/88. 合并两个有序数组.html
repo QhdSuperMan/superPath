@@ -1,0 +1,50 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-12-17 11:38:19
+ * @LastEditTime: 2021-12-17 11:50:01
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums1 = [1, 2, 3, 0, 0, 0],
+        m = 3,
+        nums2 = [2, 5, 6],
+        n = 3
+      var merge = function (nums1, m, nums2, n) {
+        // var len = m + n
+        var p1 = 0,
+          p2 = 0
+        var dp = []
+        var cur
+        while (p1 < m || p2 < n) {
+          if (p1 === m) {
+            cur = nums2[p2++]
+          } else if (p2 === n) {
+            cur = nums1[p1++]
+          } else if (nums1[p1] <= nums2[p2]) {
+            cur = nums1[p1++]
+          } else {
+            cur = nums2[p2++]
+          }
+          dp.push(cur)
+        }
+        for (let i = 0; i != m + n; ++i) {
+          nums1[i] = dp[i];
+        }
+      };
+      console.log(merge(nums1, m, nums2, n));
+    </script>
+  </body>
+
+</html>
