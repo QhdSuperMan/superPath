@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2020-04-20 10:27:46
- * @LastEditTime: 2021-12-17 11:32:23
+ * @LastEditTime: 2021-08-13 09:47:18
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -88,14 +88,14 @@
         for (var i = 0; i < len; i++) {
           dp[i][i] = true
         }
-        for (var right = 1; right < len; right++) { // i是right j 是left
-          for (var left = 0; left < right; left++) {
-            if (s[right] === s[left]) {
-              if (dp[right - 1][left + 1] || left == right - 1) {
-                dp[right][left] = true
-                if (right - left > maxlength) {
-                  maxlength = right - left
-                  maxI = left
+        for (var i = 1; i < len; i++) {// i是right j 是left
+          for (var j = 0; j < i; j++) {
+            if (s[i] === s[j]) {
+              if (dp[i - 1][j + 1] || j == i -1) {
+                dp[i][j] = true
+                if (i - j > maxlength) {
+                  maxlength = i - j
+                  maxI = j
                 }
               }
             }
