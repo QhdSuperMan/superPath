@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var head = {
+      val: 1,
+      next: {
+        val: 2,
+        next: {
+          val: 3,
+          next: {
+            val: 4,
+            next: {
+              val: 5,
+              next: null
+            }
+          }
+        }
+      }
+    }
+    var k = 2
+    const myReverse = (head, tail) => {
+      debugger
+      let prev = tail.next;
+      let p = head;
+      while (prev !== tail) {
+        const nex = p.next;
+        p.next = prev;
+        prev = p;
+        p = nex;
+      }
+      return [tail, head];
+    }
+    var reverseKGroup = function (head, k) {
+      const hair = {
+        val: 0,
+        next: null
+      };
+      hair.next = head;
+      let pre = hair;
+      while (head) {
+        let tail = pre;
+        // 查看剩余部分长度是否大于等于 k
+        for (let i = 0; i < k; ++i) {
+          tail = tail.next;
+          if (!tail) {
+            return hair.next;
+          }
+        }
+        const nex = tail.next;
+        [head, tail] = myReverse(head, tail);
+        // 把子链表重新接回原链表
+        pre.next = head;
+        tail.next = nex;
+        pre = tail;
+        head = tail.next;
+      }
+      return hair.next;
+    };
+    // var reverseKGroup = function (head, k) {
+    //   var current = head
+    //   var reserveNode = head
+    //   var prev = null
+    //   var index = 0
+    //   while (current) {
+    //     if (index === k) {
+    //       reverse(reserveNode, prev, k)
+    //       prev = current
+    //       reserveNode = current
+    //       index = 0
+    //     }
+    //     current = current.next
+    //     index++
+    //   }
+    //   // [0,1,2,3,4,5]
+    //   function reverse(currentNode, prev, k) {
+    //     while (k) {
+    //       var next = currentNode.next
+    //       currentNode = next
+    //       k--
+    //     }
+    //   }
+    //   return head
+    // };
+
+    console.log(reverseKGroup(head, k));
+  </script>
+</body>
+
+</html>
