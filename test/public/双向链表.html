@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function dbLinkedList() {
+        var length = 0;
+        var head = null;
+        var tail = null;
+        function getNode(ele) {
+          return {
+            ele: ele,
+            next: null,
+            prev: null,
+          };
+        }
+
+        this.insert = function (pos, ele) {
+          if (pos >= 0 && pos <= length) {
+            var nodes = getNode(ele);
+            var current = head;
+            var previous,
+              index = 0;
+            if (pos == 0) {
+              if (!head) {
+                head = nodes;
+                tail = nodes;
+              } else {
+                nodes.next = current;
+                current.prev = nodes;
+                head = nodes;
+              }
+            } else if (pos == length) {
+              current = tail;
+              current.next = nodes;
+              nodes.prev = current;
+              tail = nodes;
+            } else {
+              while (index++ < pos) {
+                previous = current;
+                current = current.next;
+              }
+              nodes.next = current;
+              previous.next = nodes;
+              current.prev = nodes;
+              nodes.prev = previous;
+            }
+            length++;
+            return true;
+          } else {
+            return false;
+          }
+        };
+
+        this.append = function (ele) {
+          return this.insert(length, ele);
+        };
+
+        this.removeAt = function (pos) {
+          if (pos > -1 && pos < length) {
+            var current = head,
+              previous,
+              index = 0;
+            //移除第一项
+            if (pos == 0) {
+              head = current.next;
+              //如果只有一项，更新tail
+              if (length == 1) {
+                tail = null;
+              } else {
+                head.prev = null;
+              }
+            } else if (pos == length - 1) {
+              current = tail;
+              tail = current.prev;
+              tail.next = null;
+            } else {
+              while (index++ < pos) {
+                previous = current;
+                current = current.next;
+              }
+              //前面的next，指向当前项的next，即干掉当前项
+              previous.next = current.next;
+              current.next.prev = previous;
+            }
+            length--;
+            return current.ele;
+          } else {
+            return null;
+          }
+        };
+        this.indexOf = function (ele) {
+          var current = head;
+          var index = -1;
+          while (current) {
+            index++;
+            if (current.ele === ele) {
+              return index;
+            }
+            current = current.next;
+          }
+          return -1;
+        };
+
+        this.remove = function (ele) {
+          var index = this.indexOf(ele);
+          return this.removeAt(index);
+        };
+        this.toString = function () {
+          var current = head;
+          var str = "";
+          var index = 0;
+          console.log(head)
+          while (current) {
+            str = str + current.ele + "-" + index + "\n";
+            index++;
+            current = current.next;
+          }
+          console.log(str);
+        };
+        this.size = function () {
+          return length;
+        };
+        this.isEmpty = function () {
+          return !length;
+        };
+        this.getHead = function () {
+          return head;
+        };
+      }
+
+      var list = new dbLinkedList();
+
+      list.append("a");
+      list.append("b");
+      list.append("c");
+      list.insert(2, "bgb");
+      list.append("d");
+      list.append("大大");
+      list.remove("c");
+      console.log(list.toString())
+    </script>
+  </body>
+</html>
