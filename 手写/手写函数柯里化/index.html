@@ -20,7 +20,6 @@
       return a + b + c + d
     }
 
-<<<<<<< HEAD
     function curry(fn) {
       func = (...args) => {
         if (args.length === fn.length) return fn(...args)
@@ -37,33 +36,5 @@
     console.log(addCurry(1)(2)(3)(4));
   </script>
 </body>
-=======
-      function curry(fn) {
-
-        var func = (...arr) => {
-          if (arr.length === fn.length) return fn(...arr)
-          return (...arr1) => func(...arr, ...arr1)
-        }
-        return func
-
-
-
-
-
-
-
-
-
-        // let judge = (...args) => {
-        //   if (args.length == fn.length) return fn(...args)
-        //   return (...arg) => judge(...args, ...arg)
-        // }
-        // return judge
-      }
-      let addCurry = curry(add)
-      console.log(addCurry(1)(2)(3));
-    </script>
-  </body>
->>>>>>> e448ec98655dff14212d331ee060953610d99424
 
 </html>
