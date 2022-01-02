@@ -1,6 +1,6 @@
 setImmediate(function () {
   console.log("setImmediate");
-}, 14)
+}, 4)
 setTimeout(function () {
   console.log("setTimeout");
 }, 14)
