@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-12-22 11:27:41
+ * @LastEditTime: 2021-12-22 13:52:34
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums = [-1, 0, 3, 5, 9, 12],
+        target = 9
+      var search = function (nums, target) {
+        function deepSearch(nums, left, right, target) {
+          if (left > right) {
+            return -1
+          }
+          var middle = left + Math.floor(right - left)
+          if (nums[middle] === target) {
+            return middle
+          } else if (nums[middle] > target) {
+            return deepSearch(nums, left, middle - 1, target)
+          } else {
+            return deepSearch(nums, middle + 1, right, target)
+          }
+        }
+        return deepSearch(nums, 0, nums.length - 1, target)
+      };
+      console.log(search(nums, target));
+    </script>
+  </body>
+
+</html>
