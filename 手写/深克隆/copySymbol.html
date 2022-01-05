@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var obj = {};
+      var a = Symbol("a"); // 创建新的symbol类型
+      var b = Symbol.for("b"); // 从全局的symbol注册?表设置和取得symbol
+
+      obj[a] = "localSymbol";
+      obj[b] = "globalSymbol";
+
+      var objectSymbols = Object.getOwnPropertySymbols(obj);
+
+      console.log(objectSymbols.length); // 2
+      console.log(objectSymbols); // [Symbol(a), Symbol(b)]
+      console.log(objectSymbols[0]);
+    </script>
+  </body>
+</html>
