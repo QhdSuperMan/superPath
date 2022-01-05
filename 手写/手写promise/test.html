@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,6 +16,7 @@
         this.resloveBox = [];
         this.rejectBox = [];
         var that = this;
+
         function reslove(value) {
           that.value = value;
           if (that.status === "pending") {
@@ -40,8 +42,13 @@
         nextPromise,
         result,
         resolve,
-        reject
+        rejectF
       ) {
+        if (result === nextPromise) {
+          return reject(
+            new TypeError("Chaining cycle detected for nextPromise")
+          );
+        }
         try {
           if (
             Object.prototype.toString.call(result) === "[object Object]" &&
@@ -67,11 +74,11 @@
         onFulfilled =
           typeof onFulfilled === "function" ? onFulfilled : (value) => value;
         onRejected =
-          typeof onRejected === "function"
-            ? onRejected
-            : (err) => {
-                throw err;
-              };
+          typeof onRejected === "function" ?
+          onRejected :
+          (err) => {
+            throw err;
+          };
         var nextPromise = new myPromise((resolve, reject) => {
           if (this.status === "fulfilled") {
             var result = onFulfilled(this.value);
@@ -129,10 +136,10 @@
       //     }
       //   );
       var a = new myPromise((reslove, reject) => {
-        setTimeout((_) => {
-          reject(2);
-        }, 1000);
-      })
+          setTimeout((_) => {
+            reject(2);
+          }, 1000);
+        })
         .then(() => {
           return 1
         })
@@ -144,4 +151,5 @@
         );
     </script>
   </body>
+
 </html>
