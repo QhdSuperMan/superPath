@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-11-23 11:28:40
- * @LastEditTime: 2021-11-26 15:41:55
+ * @LastEditTime: 2022-01-10 11:43:17
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -17,6 +17,13 @@
 
   <body>
     <script>
+      var a = {}
+      'ER:1,PR:2,HRE2:3,K167:4'.split(',').reduce((obj, item) => {
+        const [key, value] = item.split(':')
+        obj[key] = value
+        return obj
+      }, a)
+
       function Parent(name) {
         this.name = name
       }
@@ -38,7 +45,6 @@
       console.log(child) // xiaoming
       child.eat() // xiaoming is eating
       child.study() // xiaoming is studying
-
     </script>
   </body>
 
