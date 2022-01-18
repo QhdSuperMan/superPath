@@ -1,6 +1,6 @@
 /*!
  * Vue.js v2.6.14
- * (c) 2014-2021 Evan You
+ * (c) 2014-2022 Evan You
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -3224,7 +3224,7 @@
       }
       return
     }
-
+    debugger
     // async component
     var asyncFactory;
     if (isUndef(Ctor.cid)) {
@@ -3466,6 +3466,7 @@
       // direct component options / constructor
       vnode = createComponent(tag, data, context, children);
     }
+    debugger
     if (Array.isArray(vnode)) {
       return vnode
     } else if (isDef(vnode)) {

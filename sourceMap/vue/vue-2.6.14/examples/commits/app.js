@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-18 15:38:57
- * @LastEditTime: 2021-09-09 15:31:03
+ * @LastEditTime: 2022-01-18 11:31:32
  * @info: 描述
  */
 /* global Vue */
@@ -23,14 +23,13 @@ var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
 //     }
 //   }
 // })
-debugger
 var vm = new Vue({
 
   el: '#demo',
   // store: store,
   data: {
-    branches: ['master', 'dev'],
-    currentBranch: 0,
+    // branches: ['master', 'dev'],
+    // currentBranch: 0,
     // commits: null
   },
 
@@ -44,10 +43,18 @@ var vm = new Vue({
   //   }
   // },
   components: {
-    test: {
-      props: ['branches'],
-      template: '<div><p v-for="val in branches" :key >{{ val  }}</p></div>'
-    }
+    // test: {
+    //   props: ['branches'],
+    //   template: '<div><p v-for="val in branches" :key >{{ val  }}</p></div>'
+    // }
+    asyncaaa: function (resolve, reject) {
+      setTimeout(function () {
+        // 向 `resolve` 回调传递组件定义
+        resolve({
+          template: '<div>I am async!</div>'
+        })
+      }, 1000)
+    },
   },
   methods: {
     clickC() {

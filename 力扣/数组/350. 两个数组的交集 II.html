@@ -1,0 +1,50 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-01-12 16:55:20
+ * @LastEditTime: 2022-01-12 17:10:27
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var nums1 = [1, 2, 2, 1],
+        nums2 = [2, 2]
+      var intersect = function (nums1, nums2) {
+        var map = new Map(),
+          result = [],
+          length1 = nums1.length,
+          length2 = nums2.length;
+          for (var i = 0; i < length1; i++) {
+            var item = map.get(nums1[i])
+            if (item) {
+              item.push(nums1[i])
+              map.set(nums1[i], item)
+            } else {
+              map.set(nums1[i], [nums1[i]])
+            }
+          }
+        for (var i = 0; i < length2; i++) {
+          var item = map.get(nums2[i])
+          if (item && item.length) {
+            item.pop()
+            map.set(nums2[i], item)
+            result.push(nums2[i])
+          }
+        }
+        return result
+      };
+      console.log(intersect(nums1, nums2));
+    </script>
+  </body>
+
+</html>
