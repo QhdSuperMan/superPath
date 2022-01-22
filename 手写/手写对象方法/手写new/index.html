@@ -2,46 +2,44 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-28 17:11:40
- * @LastEditTime: 2021-06-29 09:31:09
+ * @LastEditTime: 2022-01-12 10:58:00
  * @info: 描述
 -->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
 
-<body>
-  <script>
-    // new 干了几件事
-    /**
-     * 1 创建一个空对象  this指向这个对象
-     * 2 新对象需要能够访问到构造函数的属性，所以需要重新指定它的原型；
-     * 构造函数可能会显示返回；
-     */
+  <body>
+    <script>
+      // new 干了几件事
+      /**
+       * 1 创建一个空对象  this指向这个对象
+       * 2 新对象需要能够访问到构造函数的属性，所以需要重新指定它的原型；
+       * 构造函数可能会显示返回；
+       */
 
-    function objectFactory(Constructor, ...args) {
-      var obj = Object.create(Constructor.prototype)
-      var result = Constructor.apply(obj, args)
-      if (typeof (result) === null) result = obj
-      if (typeof (result) === undefined) result = obj
-      if (typeof (result) !== 'object') result = obj
-      return result
-    };
+      function objectFactory(Constructor, ...args) {
+        var obj = Object.create(Constructor.prototype)
+        var result = Constructor.apply(obj, args)
+        if (result === null || typeof (result) !== 'object') result = obj
+        return result
+      };
 
-    function person(name, age) {
-      this.name = name
-      this.age = age
-    }
-    person.prototype.id = {
-      id: 1
-    }
-    let p = objectFactory(person, '布兰', 12)
-    console.log(p) // { name: '布兰', age: 12 }
-  </script>
-</body>
+      function person(name, age) {
+        this.name = name
+        this.age = age
+      }
+      person.prototype.id = {
+        id: 1
+      }
+      let p = objectFactory(person, '布兰', 12)
+      console.log(p) // { name: '布兰', age: 12 }
+    </script>
+  </body>
 
 </html>

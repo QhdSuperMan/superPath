@@ -124,7 +124,7 @@ export function createComponent (
     }
     return
   }
-
+  debugger
   // async component
   let asyncFactory
   if (isUndef(Ctor.cid)) {

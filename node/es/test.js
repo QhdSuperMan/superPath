@@ -1,10 +1,4 @@
-setTimeout(function(){
-  console.log('setTimeout')
-},0)
+function async demo () {
 
-
-setImmediate(function(){
-  console.log('setImmediate')
-},0)
-
-console.log(1)
+  
+}

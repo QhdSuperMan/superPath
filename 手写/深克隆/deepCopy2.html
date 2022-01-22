@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = { id: 1 };
+
+      function deepCopy(sourceObj) {
+        var typeBox = [
+          "[object Array]",
+          "[object Object]",
+          "[object Map]",
+          "[object Set]",
+          //   "[object Symbol]",
+        ];
+        function getType(obj) {
+          return Object.prototype.toString.call(obj);
+        }
+        if (typeBox.includes(getType(sourceObj))) {
+          // 是循环结构才复制
+          let copyObj = new sourceObj.constructor(); // 找到原型创建复制对象
+          let catchObj = new WeakMap(); // 循环引用的容器
+          let loopList = [
+            {
+              parent: copyObj,
+              key: undefined,
+              data: sourceObj,
+            },
+          ];
+          while (loopList.length) {
+            let { parent, key, data } = loopList.pop();
+            console.log(parent, key, data);
+            let res = parent
+            if (typeBox.includes(getType(data)) {
+
+            }
+        } else {
+          throw new Error("不是循环结构不能复制");
+        }
+      }
+      console.log(deepCopy(a));
+    </script>
+  </body>
+</html>
