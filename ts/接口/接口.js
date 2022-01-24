@@ -1,14 +1,3 @@
-var Clock = /** @class */ (function () {
-    function Clock() {
-        this.current = new Date();
-        this.say(this.current);
-    }
-    Clock.prototype.say = function (h) {
-        return h.toString();
-    };
-    return Clock;
-}());
-console.log(new Clock());
 // 校验接口
 function createSquare(config) {
     return { color: 'sss', area: 1, a: 1 };

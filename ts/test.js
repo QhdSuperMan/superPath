@@ -1,21 +1,13 @@
 /*
- * @Author: your name
- * @Date: 2021-07-01 22:20:47
- * @LastEditTime: 2021-07-01 22:53:31
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \albb\ts\test.js
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-12-06 14:15:40
+ * @LastEditTime: 2022-01-21 11:27:17
+ * @info: 描述
  */
-namespace s {
-    export interface Y { }
-    export class Z { }
-}
-
-// ... elsewhere ...
-namespace s {
-    export var Y: number;
-    export namespace Z {
-        export class C { }
-    }
-}
-type s = string;
+var color;
+(function (color) {
+    color["red"] = "a";
+    color["green"] = "b";
+    color["blue"] = "c";
+})(color || (color = {}));
