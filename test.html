@@ -26,9 +26,48 @@
   </div>
 </body>
 <script>
-  var a = [1, 2, 3, 4, 5, 6, 7, 8]
-  a.sort(() => Math.random() > 0.5 ? 1 : -1)
-  console.log(a);
+  "use strict";
+
+  require("core-js/modules/es.regexp.exec.js");
+
+
+
+  function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+    return _setPrototypeOf(o, p);
+  }
+
+  var Father = /*#__PURE__*/ function () {
+    function Father() {
+      this.a = 1;
+    }
+
+    var _proto = Father.prototype;
+
+    _proto.test = function test() {};
+
+    return Father;
+  }();
+
+  var Demo = /*#__PURE__*/ function (_Father) {
+    Demo.prototype = Object.create(_Father.prototype);
+    Demo.prototype.constructor = Demo;
+    Object.setPrototypeOf(Demo.prototype, _Father.prototype)
+
+    function Demo() {
+      var _this;
+      _this = _Father.call(this) || this;
+      _this.b = 2;
+      return _this;
+    }
+
+    return Demo;
+  }(Father);
+
+  var a = new Demo();
 </script>
 
 </html>
