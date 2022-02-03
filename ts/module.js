@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 /*
  * @Author: your name
  * @Date: 2021-06-30 22:50:52
@@ -17,4 +17,4 @@ var ZipCodeValidator = /** @class */ (function () {
     };
     return ZipCodeValidator;
 }());
-exports["default"] = ZipCodeValidator;
+exports.default = ZipCodeValidator;

@@ -1,0 +1,38 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-01-18 14:44:37
+ * @LastEditTime: 2022-01-18 14:50:30
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function myNew(func, ...args) {
+        if (!func instanceof Function) new Error('第一个参数请输入函数')
+        var o = Object.create(demo.prototype)
+        var result = func.apply(o, args)
+        if (result === null) result = o
+        if (typeof (result) !== 'object') result = o
+        return result
+      }
+
+      function demo(a, b) {
+        this.a = a
+        this.b = b
+      }
+      console.log(myNew(demo, 1, 2, 3));
+    </script>
+
+  </body>
+
+</html>

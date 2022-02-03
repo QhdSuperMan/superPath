@@ -1,73 +1,50 @@
 <!--
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
- * @Date: 2021-10-14 15:03:46
- * @LastEditTime: 2021-10-19 15:23:44
+ * @Date: 2021-12-06 14:15:40
+ * @LastEditTime: 2022-01-21 16:10:54
  * @info: 描述
 -->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<style>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
 
-</style>
+  <body>
+    <style>
+      .box {}
 
-<body>
-  <div id='div1'>
-    <div id='div2'>
+      .parent {
+        width: 200px;
+        height: 100px;
+        background: #168bf5;
+        /* 虽然设置了z-index，但是没有设置position，z-index无效，.parent还是普通元素，没有产生层叠上下文 */
+        z-index: 1;
+      }
 
-    </div>
-  </div>
-</body>
-<script>
-  "use strict";
+      .child {
+        width: 100px;
+        height: 200px;
+        background: #32d19c;
+        position: relative;
+        z-index: -1;
+      }
+    </style>
+    </head>
 
-  require("core-js/modules/es.regexp.exec.js");
-
-
-
-  function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-    return _setPrototypeOf(o, p);
-  }
-
-  var Father = /*#__PURE__*/ function () {
-    function Father() {
-      this.a = 1;
-    }
-
-    var _proto = Father.prototype;
-
-    _proto.test = function test() {};
-
-    return Father;
-  }();
-
-  var Demo = /*#__PURE__*/ function (_Father) {
-    Demo.prototype = Object.create(_Father.prototype);
-    Demo.prototype.constructor = Demo;
-    Object.setPrototypeOf(Demo.prototype, _Father.prototype)
-
-    function Demo() {
-      var _this;
-      _this = _Father.call(this) || this;
-      _this.b = 2;
-      return _this;
-    }
-
-    return Demo;
-  }(Father);
-
-  var a = new Demo();
-</script>
+    <body>
+      <div class="box">
+        <div class="parent">
+          parent
+          <div class="child">child</div>
+        </div>
+      </div>
+    </body>
+  </body>
 
 </html>

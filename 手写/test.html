@@ -1,0 +1,62 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-01-19 15:05:20
+ * @LastEditTime: 2022-01-19 17:02:53
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // 第 31 题：改造下面的代码，使之输出0 - 9，写出你能想到的所有解法。
+      // for (var i = 0; i < 10; i++) {
+      //   setTimeout(() => {
+      //     console.log(i);
+      //   }, 1000)
+      // }
+      // 1 利用第三个参数
+      for (var i = 0; i < 10; i++) {
+        setTimeout((i) => {
+          console.log(i);
+        }, 1000, i)
+      }
+      // 2 自调函数
+      for (var i = 0; i < 10; i++) {
+        (function (i) {
+          setTimeout((i) => {
+            console.log(i);
+          }, 1000, i)
+        })(i)
+      }
+      // 3 let
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          console.log(i);
+        }, 1000)
+      }
+      // 4 bind函数
+      for (var i = 0; i < 10; i++) {
+        setTimeout(console.log.bind(null, i), 1000)
+      }
+      // call
+      for (var i = 0; i < 10; i++) {
+        function a(i) {
+          return () => {
+            console.log(i)
+          }
+        }
+        setTimeout(a.call(null, i), 1000)
+      }
+    </script>
+  </body>
+
+</html>

@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-29 10:23:11
- * @LastEditTime: 2021-06-29 10:36:01
+ * @LastEditTime: 2022-01-18 14:54:12
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -17,15 +17,21 @@
   <body>
     <script>
       Object.create2 = function (prototype) {
-        function demo () {}
+        function demo() {}
         demo.prototype = prototype
         return new demo()
+      }
+      Object.create3 = function (prototype) {
+        var obj = {}
+        obj.__proto__ = prototype
+        return obj
       }
       var obj = {
         id: 1
       }
       console.log(Object.create(obj))
       console.log(Object.create2(obj))
+      console.log(Object.create3(obj))
     </script>
   </body>
 

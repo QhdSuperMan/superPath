@@ -93,26 +93,28 @@ class Test extends two{
 var a = new Test()
 console.log(a)
  */
-//? 高阶用法
-var Greeter = /** @class */ (function () {
-    function Greeter() {
-    }
-    Greeter.prototype.greet = function () {
+//? 高阶用法  类赋值
+/**
+ *
+class Greeter {
+    static standardGreeting = "Hello, there";
+    greeting: string;
+    greet() {
         if (this.greeting) {
             return "Hello, " + this.greeting;
         }
         else {
             return Greeter.standardGreeting;
         }
-    };
-    Greeter.standardGreeting = "Hello, there";
-    return Greeter;
-}());
-debugger;
-var greeter1;
+    }
+}
+let greeter1: Greeter;
 greeter1 = new Greeter();
 console.log(greeter1.greet());
-var greeterMaker = Greeter;
+
+let greeterMaker: typeof Greeter = Greeter;
 greeterMaker.standardGreeting = "Hey there!";
-var greeter2 = new greeterMaker();
+
+let greeter2: Greeter = new greeterMaker();
 console.log(greeter2.greet());
+ */
