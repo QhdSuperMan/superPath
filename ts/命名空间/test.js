@@ -19,6 +19,6 @@ validators["Letters only"] = new Validation.LettersOnlyValidator();
 for (var _i = 0, strings_1 = strings; _i < strings_1.length; _i++) {
     var s = strings_1[_i];
     for (var name_1 in validators) {
-        console.log("\"".concat(s, "\" - ").concat(validators[name_1].isAcceptable(s) ? "matches" : "does not match", " ").concat(name_1));
+        console.log("\"" + s + "\" - " + (validators[name_1].isAcceptable(s) ? "matches" : "does not match") + " " + name_1);
     }
 }

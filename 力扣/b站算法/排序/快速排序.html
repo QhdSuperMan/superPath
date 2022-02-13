@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1, 4, 5, 1, 2, 3, 5, 3];
+      function quickSort(arr, l, r) {
+        if (l < r) {
+          var [left, right] = partition(arr, l, r);
+          quickSort(arr, l, left - 1);
+          quickSort(arr, right + 1, r);
+        }
+      }
+      function partition(arr, l, r) {
+        var less = l - 1;
+        var more = r;
+        while (l < more) {
+          if (arr[l] > arr[r]) {
+            more--;
+            [arr[l], arr[more]] = [arr[more], arr[l]];
+          } else if (arr[l] < arr[r]) {
+            less++;
+            [arr[less], arr[l]] = [arr[l], arr[less]];
+            l++;
+          } else {
+            l++;
+          }
+        }
+        [arr[more], arr[r]] = [arr[r], arr[more]];
+        return [less + 1, more];
+      }
+
+      quickSort(arr, 0, arr.length - 1);
+      console.log(arr);
+    </script>
+  </body>
+</html>
