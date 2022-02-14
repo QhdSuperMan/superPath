@@ -1,5 +1,7 @@
 div {
   color: blue;
   background-color: red;
+  display: flex;
+backface-visibility: hidden;
   /* background: url('./icon.png'); */
 }

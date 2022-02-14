@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-06-18 15:38:57
- * @LastEditTime: 2022-01-18 11:31:32
+ * @LastEditTime: 2022-02-10 19:23:26
  * @info: 描述
  */
 /* global Vue */
@@ -28,8 +28,8 @@ var vm = new Vue({
   el: '#demo',
   // store: store,
   data: {
-    // branches: ['master', 'dev'],
-    // currentBranch: 0,
+    branches: ['master', 'dev'],
+    currentBranch: 0,
     // commits: null
   },
 
@@ -43,23 +43,23 @@ var vm = new Vue({
   //   }
   // },
   components: {
-    // test: {
-    //   props: ['branches'],
-    //   template: '<div><p v-for="val in branches" :key >{{ val  }}</p></div>'
-    // }
-    asyncaaa: function (resolve, reject) {
-      setTimeout(function () {
-        // 向 `resolve` 回调传递组件定义
-        resolve({
-          template: '<div>I am async!</div>'
-        })
-      }, 1000)
-    },
+    test: {
+      props: ['branches'],
+      template: '<div><p v-for="val in branches" :key >{{ val  }}</p></div>'
+    }
+    // asyncaaa: function (resolve, reject) {
+    //   setTimeout(function () {
+    //     // 向 `resolve` 回调传递组件定义
+    //     resolve({
+    //       template: '<div>I am async!</div>'
+    //     })
+    //   }, 1000)
+    // },
   },
   methods: {
     clickC() {
       this.currentBranch += 1
-      this.branches.push('11111')
+      this.branches.push(this.currentBranch)
     },
     // fetchData: function () {
     //   var self = this

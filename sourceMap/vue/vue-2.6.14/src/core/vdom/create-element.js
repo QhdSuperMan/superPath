@@ -124,7 +124,6 @@ export function _createElement (
     // direct component options / constructor
     vnode = createComponent(tag, data, context, children)
   }
-  debugger
   if (Array.isArray(vnode)) {
     return vnode
   } else if (isDef(vnode)) {

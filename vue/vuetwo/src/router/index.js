@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-12-22 15:29:30
- * @LastEditTime: 2022-02-08 15:57:46
+ * @LastEditTime: 2022-02-11 17:39:56
  * @info: 描述
  */
 import Vue from 'vue'
@@ -48,6 +48,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/upload/upload.vue')
+  },
+  {
+    path: '/watch',
+    name: 'watch',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/watch/watch.vue')
   },
 ]
 
