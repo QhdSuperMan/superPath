@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [
+        { id: 1, parentId: null, name: "a" },
+        { id: 2, parentId: null, name: "b" },
+        { id: 3, parentId: 1, name: "c" },
+        { id: 4, parentId: 2, name: "d" },
+        { id: 5, parentId: 1, name: "e" },
+        { id: 6, parentId: 3, name: "f" },
+        { id: 7, parentId: 4, name: "g" },
+        { id: 8, parentId: 7, name: "h" },
+      ];
+
+      //   function arrToTree(arr, pid) {
+      //     var result = [];
+      //     for (let i = 0; i < arr.length; i++) {
+      //       if (arr[i].parentId == pid) {
+      //         arr[i].children = arrToTree(arr, arr[i].id);
+      //         result.push(arr[i]);
+      //       }
+      //     }
+      //     return result;
+      //   }
+      function arrToTree(arr, pid) {
+        var result = [];
+        var map = {};
+        arr.forEach((val) => {
+          map[val.id] = val;
+          val.children = [];
+        });
+        for (let i = 0; i < arr.length; i++) {
+          if (map[arr[i].parentId]) {
+            map[arr[i].parentId].children.push(arr[i]);
+          } else {
+            result.push(arr[i]);
+          }
+        }
+        return result;
+      }
+
+      function treeToArr(tree) {
+        var stack = [...tree];
+        var result = [];
+        while (stack.length) {
+          var item = stack.shift();
+          result.push(item);
+          stack = stack.concat(item.children);
+        }
+        return result;
+      }
+
+      function treeToArr2(tree) {
+        var result = [];
+        for (let i = 0; i < tree.length; i++) {
+          if (tree[i].children.length) {
+            result = result.concat(treeToArr2(tree[i].children));
+          }
+          result.push(tree[i]);
+        }
+        return result;
+      }
+      var tree = arrToTree(arr, null);
+      console.log(treeToArr2(tree));
+    </script>
+  </body>
+</html>

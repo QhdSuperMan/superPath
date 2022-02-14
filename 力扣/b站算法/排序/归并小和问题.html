@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1, 3, 4, 2, 5];
+
+      function sort(arr, l, r) {
+        if (l >= r) return 0;
+        var mid = Math.floor(l + (r - l) / 2);
+        return (
+          sort(arr, l, mid) + sort(arr, mid + 1, r) + merge(arr, l, mid, r)
+        );
+      }
+      function merge(arr, l, mid, r) {
+        var dp = new Array(r - l + 1);
+        var result = 0;
+        var i = 0;
+        var left = l;
+        var right = mid + 1;
+        while (left <= mid && right <= r) {
+          if (arr[left] < arr[right]) {
+            dp[i++] = arr[left++];
+          } else {
+            result += arr[left] * (r - right + 1);
+            dp[i++] = arr[right++];
+          }
+        }
+        while (left <= mid) {
+          dp[i++] = arr[left++];
+        }
+        while (right <= r) {
+          dp[i++] = arr[right++];
+        }
+        for (let index = 0; index < dp.length; index++) {
+          arr[l + index] = dp[index];
+        }
+        return result;
+      }
+      console.log(sort(arr, 0, arr.length - 1));
+      console.log(arr);
+    </script>
+  </body>
+</html>

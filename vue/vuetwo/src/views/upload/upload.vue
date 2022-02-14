@@ -7,6 +7,8 @@
 -->
 <template>
   <div>
+    <router-link to="/about">ssssaaaasdcsd</router-link>
+    <a href="/about"></a>
     <input type="file" @change="handleFileChange" />
     <el-button @click="handleUpload">上传</el-button>
   </div>

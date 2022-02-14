@@ -13,7 +13,7 @@ function padLeft(value, padding) {
     if (typeof padding === "string") {
         return padding + value;
     }
-    throw new Error("Expected string or number, got '".concat(padding, "'."));
+    throw new Error("Expected string or number, got '" + padding + "'.");
 }
 padLeft("Hello world", '5555'); // returns "    Hello world"
 var pet;

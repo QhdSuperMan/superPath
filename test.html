@@ -2,45 +2,26 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2022-01-28 14:42:39
- * @LastEditTime: 2022-02-10 11:18:20
+ * @LastEditTime: 2022-02-14 09:37:42
  * @info: 描述
 -->
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
-  <body>
-    <script>
-      function demo(...agrs) {
-        this.a = agrs
-        console.log(agrs);
-      }
+<body>
+  <script>
+    
+    
 
-      function myBind(context, ...args) {
-        var self = this
-        var fun = function (...arggs) {
 
-          this instanceof fun ? self.apply(this, [...args, ...arggs]) : self.apply(context, [...args, ...arggs])
-          // if (new.target) {
-          //   self.apply(this, [...args, ...arggs])
-          // } else {
-          //   self.apply(context, [...args, ...arggs])
-          // }
-        }
-        fun.prototype = this.prototype
-        return fun
-      }
-      Function.prototype.myBind = myBind
-      demo.bind(null, 1, 2, 3)(4, 5)
-      demo.myBind(null, 1, 2, 3)(4, 5)
-      console.log(new (demo.myBind(null, 1, 2, 3)));
-    </script>
-  </body>
+  </script>
+</body>
 
 </html>
