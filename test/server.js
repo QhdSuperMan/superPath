@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2021-10-31 16:01:36
- * @LastEditTime: 2021-11-19 11:52:40
+ * @LastEditTime: 2022-02-16 15:52:04
  * @info: 描述
  */
 const Koa = require('koa');
@@ -13,12 +13,12 @@ const fs = require('fs')
 const router = new Router()
 const staticFiles = require('koa-static')
 const { historyApiFallback  } = require('koa2-connect-history-api-fallback');
-router.get('/index.manifest', async (ctx) => {
-  const htmlContent = await fs.readFileSync('./index.manifest');
-  ctx.set('Content-Type', 'mime-type')
-  ctx.body = htmlContent;
+// router.get('/index.manifest', async (ctx) => {
+//   const htmlContent = await fs.readFileSync('./index.manifest');
+//   ctx.set('Content-Type', 'mime-type')
+//   ctx.body = htmlContent;
 
-});
+// });
 // router.get('/test.js', async (ctx) => {
 //   const htmlContent = await fs.readFileSync('./index.manifest');
 //   ctx.body = htmlContent;

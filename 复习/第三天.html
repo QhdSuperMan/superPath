@@ -1,0 +1,53 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-16 11:02:37
+ * @LastEditTime: 2022-02-16 16:15:58
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      webpack构建流程
+      1. 初始化参数 合并shell， webpack.config.js， 默认参数
+      2. 开始编译 通过参数构建compiler对象， 注册插件， 并监听webpack的生命周期事件， 调用compiler的run方法 开始构建
+      3. 确定入口 通过入口文件 构建ast语法树解析依赖， 递归下去
+      4. 编译模块 根据不同文件类型用不同文件的loader编译依赖为module
+      5. 编译完成开始输出 遍历module编译成chunk
+      6. 输出完成 把chunk输出到文件系统
+
+      webpack 的热更新原理 webpack - dev - server webpack - dev - middleware
+
+      webpack 打包是hash码是如何生成的
+      1. hash 没次编译都会生成新的hash
+      2. chunkhash 某个文件改动只会影响跟他关联的hash
+      3. contenthash 根据文件内容生成hash
+
+      如何⽤ webpack来优化前端性能？
+      1. 压缩代码 css - minimizer压缩 css UglifyJsPlugin 压缩js Uglify（ 阿格拉fai）
+      2. 利用 external 库通过cdn加载
+      3. splitchunkplugin 抽取公共代码
+      4. tree - staking 删除无用代码
+
+      webpack构建优化
+      external 不编译插件
+
+      webpack如何实现持久化缓存
+      1. 保持hash值的稳定
+      2. splitchunkplugin 抽取公共代码 因为他们几乎不怎么变
+
+      webpack和vite区别
+      vite开发环境不把所有文件打包，而是利用esmodule技术，按需打包，只打包需要的文件依赖，有按需加载的意思，
+    </script>
+  </body>
+
+</html>

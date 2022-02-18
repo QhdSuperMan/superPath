@@ -1,8 +1,8 @@
 <!--
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
- * @Date: 2022-02-16 14:00:24
- * @LastEditTime: 2022-02-18 11:08:18
+ * @Date: 2022-02-18 09:37:49
+ * @LastEditTime: 2022-02-18 09:45:50
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -17,24 +17,16 @@
 
   <body>
     <script>
-      class Father {
-        a = 1
-        constructor() {
-
-        }
-        fatherFunction() {
-
-        }
+      function Demo() {
+        this.son = 1
       }
-      class Son extends Father {
-        b = 1
-        constructor() {
-          super()
-        }
-        sonFunction() {}
+      function Father() {
       }
-      console.log(new Son());
-      console.dir(Son);
+      Father.prototype.father = 111
+      var demo = new Demo()
+      Object.setPrototypeOf(demo, new Father())
+      Demo.prototype = new Father()
+      console.log(demo, new Demo());
     </script>
   </body>
 

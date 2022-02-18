@@ -1,8 +1,8 @@
 <!--
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
- * @Date: 2022-02-16 14:00:24
- * @LastEditTime: 2022-02-18 11:08:18
+ * @Date: 2022-02-16 16:25:53
+ * @LastEditTime: 2022-02-16 16:50:35
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -17,24 +17,11 @@
 
   <body>
     <script>
-      class Father {
-        a = 1
-        constructor() {
-
-        }
-        fatherFunction() {
-
-        }
-      }
-      class Son extends Father {
-        b = 1
-        constructor() {
-          super()
-        }
-        sonFunction() {}
-      }
-      console.log(new Son());
-      console.dir(Son);
+      Service Worker基本特征
+      无法操作dom localStorage XMLHttpRequest
+      只用用于https的网站
+      一旦被install，就永远存在，除非被uninstall 获取手动删除
+      不要给 service-worker.js 设置缓存  service-worker.js 必须使用相同的名字
     </script>
   </body>
 
