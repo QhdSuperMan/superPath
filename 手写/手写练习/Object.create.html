@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj = {
+      id: 1
+    }
+
+
+    function myCreate(obj, config) {
+      var a = {}
+      a.__proto__ = obj
+      for (var i in config) {
+        Object.defineProperty(a, i, config[i])
+      }
+      return a
+    }
+    console.log(Object.create(obj, {
+      foo: {
+        writable: true,
+        configurable: true,
+        value: "hello"
+      },
+      // bar会成为所创建对象的访问器属性
+      bar: {
+        configurable: false,
+        get: function () {
+          return 10
+        },
+        set: function (value) {
+          console.log("Setting `o.bar` to", value);
+        }
+      }
+    }), );
+    console.log(myCreate(obj, {
+      foo: {
+        writable: true,
+        configurable: true,
+        value: "hello"
+      },
+      // bar会成为所创建对象的访问器属性
+      bar: {
+        configurable: false,
+        get: function () {
+          return 10
+        },
+        set: function (value) {
+          console.log("Setting `o.bar` to", value);
+        }
+      }
+    }), );
+  </script>
+</body>
+
+</html>

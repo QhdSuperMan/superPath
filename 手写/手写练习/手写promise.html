@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function myPromise(fn) {
+      this.status = 'pending'
+      this.resloveBox = []
+      this.rejectBox = []
+      this.value = null
+      var that = this
+
+      function resolve(val) {
+        if (that.status === 'pending') {
+          that.value = val
+          that.status = 'fulfilled'
+          that.resloveBox.forEach(val => {
+            val()
+          })
+        }
+      }
+
+      function reject(val) {
+        if (that.status === 'pending') {
+          that.value = val
+          that.status = 'rejected'
+          that.rejectBox.forEach(val => {
+            val()
+          })
+        }
+      }
+      fn(resolve, reject)
+    }
+    myPromise.prototype.reslovePromise = function (nextPromise, result, resolve, reject) {
+      if (result === nextPromise) {
+        return reject(
+          new TypeError("Chaining cycle detected for nextPromise")
+        );
+      }
+      try {
+        if (result && typeof (result.then) == 'function') {
+          result.then.call(
+            nextPromise,
+            (val) => {
+              this.dealPromise(result, val, resolve, reject);
+            },
+            (err) => {
+              reject(err);
+            }
+          );
+        } else {
+          resolve(result)
+        }
+      } catch (error) {
+        reject(error)
+      }
+
+    }
+    myPromise.prototype.then = function (onFulfilled, onRejected) {
+      onFulfilled = typeof (onFulfilled) === 'function' ? onFulfilled : () => {}
+      onRejected = typeof (onRejected) === 'function' ? onRejected : () => new Error('失败了')
+      var nextPromise = new myPromise((reslove, reject) => {
+        if (this.status === 'pending') {
+          this.resloveBox.push(() => {
+            var result = onFulfilled(this.value)
+            this.reslovePromise(nextPromise, result, reslove, reject)
+          })
+          this.rejectBox.push(() => {
+            var result = onRejected(this.value)
+            this.reslovePromise(nextPromise, result, reslove, reject)
+          })
+        }
+        if (this.status === 'fulfilled') {
+          setTimeout(() => {
+            var result = onFulfilled(this.value)
+            this.reslovePromise(nextPromise, result, reslove, reject)
+          }, 0)
+        }
+        if (this.status === 'rejected') {
+          setTimeout(() => {
+            var result = onRejected(this.value)
+            this.reslovePromise(nextPromise, result, reslove, reject)
+          }, 0)
+        }
+      })
+      return nextPromise
+    }
+    var a = new Promise((reslove, reject) => {
+        setTimeout((_) => {
+          reject(2);
+        }, 1000);
+      })
+      .then(() => {
+        return 1
+      })
+      .then(
+        () => {
+          console.log('原生成功了啊');
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    var a = new myPromise((reslove, reject) => {
+        setTimeout((_) => {
+          reject(2);
+        }, 1000);
+      })
+      .then(() => {
+        return 1
+      })
+      .then(
+        () => {
+          console.log('成功了啊');
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+  </script>
+</body>
+
+</html>
