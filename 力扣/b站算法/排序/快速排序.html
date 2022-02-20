@@ -16,27 +16,28 @@
           quickSort(arr, right + 1, r);
         }
       }
+      // 最小区域从负一开始
+      // 最大从倒数第二个节点开始，最后一个节点要作为标志位
+      // 返回的是中间相等的标志位
       function partition(arr, l, r) {
         var less = l - 1;
         var more = r;
         while (l < more) {
-          if (arr[l] > arr[r]) {
+          if (arr[l] < arr[r]) {
+            less++;
+            [arr[l], arr[less]] = [arr[less], arr[l]];
+            l++;
+          } else if (arr[l] > arr[r]) {
             more--;
             [arr[l], arr[more]] = [arr[more], arr[l]];
-          } else if (arr[l] < arr[r]) {
-            less++;
-            [arr[less], arr[l]] = [arr[l], arr[less]];
-            l++;
           } else {
             l++;
           }
         }
-        [arr[more], arr[r]] = [arr[r], arr[more]];
+        [arr[r], arr[more]] = [arr[more], arr[r]];
         return [less + 1, more];
       }
-
       quickSort(arr, 0, arr.length - 1);
-      console.log(arr);
     </script>
   </body>
 </html>

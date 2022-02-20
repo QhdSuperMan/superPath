@@ -8,7 +8,48 @@
   </head>
   <body>
     <script>
-        
+      var arr = [1, 2, 4, 5, 3, 4, 5, 10, 6];
+      // index跟父节点比较，比父节点大的交换位置
+      // (index - 1) / 2 取整就是父节点
+      function helpInsert(arr, index) {
+        while (arr[index] > arr[Math.floor((index - 1) / 2)]) {
+          [arr[index], arr[Math.floor((index - 1) / 2)]] = [
+            arr[Math.floor((index - 1) / 2)],
+            arr[index],
+          ];
+          index = Math.floor((index - 1) / 2);
+        }
+      }
+      function helpShift(arr, index, size) {
+        var left = index * 2 + 1;
+        while (left < size) {
+          var largest =
+            left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
+          largest = arr[largest] > arr[index] ? largest : index;
+          if (largest == index) {
+            break;
+          }
+          [arr[largest], arr[index]] = [arr[index], arr[largest]];
+          index = largest;
+          left = index * 2 + 1;
+        }
+      }
+      function sort(arr) {
+        var length = arr.length - 1;
+        // 都可以
+        // arr.forEach((val, key) => {
+        //   helpInsert(arr, key);
+        // });
+        for (var i = length; i >= 0; i--) {
+          helpShift(arr, i, length);
+        }
+        arr.forEach((val, key) => {
+          [arr[0], arr[length]] = [arr[length], arr[0]];
+          helpShift(arr, 0, length--);
+        });
+        console.log(arr);
+      }
+      sort(arr);
     </script>
   </body>
 </html>

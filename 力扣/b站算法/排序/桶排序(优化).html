@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [
+        25, 15, 2, 10, 331, 10, 5552, 3, 5, 4, 1, 5, 2, 6, 8, 4, 12, 6, 1, 0,
+        00, 4552, 62, 3,
+      ];
+      function sort(arr) {
+        // 获取到最大的标志位
+        var step = getStep(arr);
+        for (let i = 0; i < step; i++) {
+          var box = new Array(10).fill(0);
+          arr.forEach((val) => {
+            for (let j = getNum(val, i); j <= arr.length; j++) {
+              box[j]++;
+            }
+          });
+          var result = [];
+          for (let z = arr.length - 1; z >= 0; z--) {
+            var index = getNum(arr[z], i);
+            result[--box[index]] = arr[z];
+          }
+          arr = result;
+        }
+        return arr;
+      }
+      function getNum(num, step) {
+        var num = num + "";
+        var result = num[num.length - step - 1];
+        return result ? result : 0;
+      }
+      function getStep(arr) {
+        var largest = Math.max(...arr);
+        return (largest + "").length;
+      }
+      console.log(sort(arr));
+    </script>
+  </body>
+</html>
