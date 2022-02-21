@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    Function.prototype.myCall = function (context, ...args) {
+      let ctx
+      let sym = Symbol('嘿嘿')
+      let result = undefined
+      if (context === null || context === undefined) {
+        ctx = window
+      } else if (typeof (context) === 'object' || typeof (context) === 'function') {
+        ctx = context
+      } else {
+        ctx = new context.constructor(context)
+      }
+      ctx[sym] = this
+      result = ctx[sym](...args)
+      delete ctx[sym]
+      return result
+    }
+    Function.prototype.myApply = function (context, args) {
+      let ctx
+      let sym = Symbol('嘿嘿')
+      let result = undefined
+      if (context === null || context === undefined) {
+        ctx = window
+      } else if (typeof (context) === 'object' || typeof (context) === 'function') {
+        ctx = context
+      } else {
+        ctx = new context.constructor(context)
+      }
+      ctx[sym] = this
+      result = ctx[sym](...args)
+      delete ctx[sym]
+      return result
+    }
+    Function.prototype.myBind = function (context, ...args) {
+      let ctx
+      if (context === null || context === undefined) {
+        ctx = window
+      } else if (typeof (context) === 'object' || typeof (context) === 'function') {
+        ctx = context
+      } else {
+        ctx = new context.constructor(context)
+      }
+      let that = this
+      return function (...argss) {
+        that.apply(new.target ? this : context, args.concat(argss))
+      }
+
+      // let that = this
+      // let result = function (...argss) {
+      //   that.apply(this instanceof that ? this : context, args.concat(argss))
+      // }
+      // result.prototype = this.prototype
+      // return result
+    }
+    var obj = {
+      id: 1
+    }
+
+    function demo(a) {
+      console.log(this, this.a, a);
+    }
+    demo.bind(obj, 2)()
+    demo.myBind(obj, 2)()
+
+    new (demo.bind(obj, 2))
+    new (demo.myBind(obj, 2))
+  </script>
+</body>
+
+</html>
