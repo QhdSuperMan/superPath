@@ -217,24 +217,7 @@
         reject(2)
       }, 1500)
     })
-    a.then((val) => {
-      console.log(val, '第一个then 第一个参数')
-    }).catch(() => {
-      console.log('第一个then catch')
-    }).then((val) => {
-      console.log(val, '第二个then 第一个参数')
-    }, (err) => {
-      console.log(err, '第二个then第二个参数')
-    })
-    b.then((val) => {
-      console.log(val, '第一个then 第一个参数')
-    }).catch(() => {
-      console.log('第一个then catch')
-    }).then((val) => {
-      console.log(val, '第二个then 第一个参数')
-    }, (err) => {
-      console.log(err, '第二个then第二个参数')
-    })
+    
     // console.log(Promise.allSettled([a, b]).then((val) => {
     //   console.log('完成了');
     //   console.log(val);

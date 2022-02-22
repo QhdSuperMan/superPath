@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2020-04-20 10:27:46
- * @LastEditTime: 2021-12-17 11:32:23
+ * @LastEditTime: 2022-02-21 11:00:16
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -79,29 +79,30 @@
       // };
 
       // 动态规划
-      var s = "aacabdkacaa"
+      var s = "aaaa"
       var longestPalindrome = function (s) {
         var len = s.length
-        var maxlength = 0
-        var maxI = 0
-        var dp = new Array(len).fill().map(() => new Array(len).fill(''))
-        for (var i = 0; i < len; i++) {
-          dp[i][i] = true
+        var dp = new Array(len).fill('').map(() => new Array(len).fill(0))
+        for (let i = 0; i < dp.length; i++) {
+          dp[i][i] = 1
         }
-        for (var right = 1; right < len; right++) { // i是right j 是left
-          for (var left = 0; left < right; left++) {
-            if (s[right] === s[left]) {
-              if (dp[right - 1][left + 1] || left == right - 1) {
-                dp[right][left] = true
-                if (right - left > maxlength) {
-                  maxlength = right - left
-                  maxI = left
+        var maxLeft = 0
+        var maxlength = 0
+        //  j到i的最长回文子串  必须先局部在整体
+        for (let i = 0; i < len; i++) {
+          for (let j = 0; j < i; j++) {
+            if (s[i] === s[j]) {
+              if ((dp[i - 1][j + 1] == 1) || (i - 1 == j)) {
+                dp[i][j] = 1
+                if (i - j > maxlength) {
+                  maxlength = i - j
+                  maxLeft = j
                 }
               }
             }
           }
         }
-        return s.slice(maxI, maxI + maxlength + 1)
+        return s.slice(maxLeft, maxLeft + maxlength + 1)
       };
 
       console.log(longestPalindrome(s))

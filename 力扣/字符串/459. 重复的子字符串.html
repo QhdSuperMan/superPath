@@ -1,0 +1,54 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-21 10:07:08
+ * @LastEditTime: 2022-02-21 10:12:16
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var repeatedSubstringPattern = function (s) {
+        let len = 1
+        let length = s.length
+        while (len <= length / 2) {
+          if (demo(len)) {
+            return true
+          } else {
+            len++
+          }
+        }
+
+        function demo(len) {
+          if (length % len === 0) {
+            var step = length / len - 1
+            for (var i = 0; i < step; i++) {
+              let y = 0
+              while (y < len) {
+                if (s[len * i + y] === s[len * (i + 1) + y]) {
+                  y++
+                } else {
+                  return false
+                }
+              }
+            }
+            return true
+          }
+          return false
+        }
+        return false
+      };
+      console.log(repeatedSubstringPattern('abcabcabcabc'));
+    </script>
+  </body>
+
+</html>
