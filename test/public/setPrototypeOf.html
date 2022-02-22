@@ -1,0 +1,33 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-18 09:37:49
+ * @LastEditTime: 2022-02-18 09:45:50
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function Demo() {
+        this.son = 1
+      }
+      function Father() {
+      }
+      Father.prototype.father = 111
+      var demo = new Demo()
+      Object.setPrototypeOf(demo, new Father())
+      Demo.prototype = new Father()
+      console.log(demo, new Demo());
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,66 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-15 14:43:31
+ * @LastEditTime: 2022-02-16 10:54:51
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    css优化
+    选择器尽量不超过三级，尽量简单，尽量不使用标签选择器
+    尽量不使用表达式，表达式的触发频率非常高，页面滚动鼠标点击都出触发
+    合理运用will-change，transform，
+    减少重绘回流
+    尽量不使用@important
+    尽量不使用table布局
+
+    js优化
+    善用事件委托
+    防抖和节流
+    批量操作dom（文档片段）
+    尽量用requestAnimationFrame做动画效果（1 超出浏览器屏幕的不会渲染，2会批量更改dom）
+    js加载优化 defer sync prefetch preload
+    IntersectionObserver
+    不用的对象置为null
+
+    资源优化 prpl
+    资源压缩
+    使用响应式图片(srcset sizes) webp
+    使用iconfont代表图片图标
+    media加载样式
+    dns-prefetch preconnect dns预解析 tcp预握手 defer sync prefetch preload
+
+    webpack 构建优化 （PrefetchPlugin，PreloadPlugin，SplitChunksPlugin，mini-css-extract-plugin css-minimizer tree-shaking）
+    CommonsChunkPlugin => SplitChunksPlugin 提取公共代码 配置（optimization.splitChunks）
+    external cdn加载插件
+    babel-plugin-component 按需引入
+
+    tree-shaking 清除未使用的代码 （esmodule）
+    原理就是
+    Make 阶段，收集模块导出变量并记录到模块依赖关系图 ModuleGraph 变量中
+    Seal 阶段，遍历 ModuleGraph 标记模块导出变量有没有被使用
+    生成产物时，若变量没有被其它模块使用则删除对应的导出语句
+    资源预加载， PrefetchPlugin PreloadPlugin
+    预获取 import(/* webpackPrefetch: true */ './path/to/LoginModal.js');
+    预加载 import(/* webpackPreload: true */ 'ChartingLibrary');
+    css-minimizer 压缩 mini-css-extract-plugin 抽离css
+    HtmlWebpackPlugin 处理html模板的
+    webpack 构建原理 (初始化参数 开始编译 确认入口 编译模块 完成模块编译并输出 输出完成)
+    make阶段 根据entry遍历引入依赖，把每个依赖根据不同的loader处理成module，直到把所有的依赖都处理完
+    seal阶段 遍历moduel集合，根据entry的配置打包成不同的chunk讲，遍历chunk集合转化为assets集合
+    emitAssets 将assets写入集合
+
+  </body>
+  webpack
+
+</html>

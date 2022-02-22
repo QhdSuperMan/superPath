@@ -4,6 +4,8 @@
     "webpack-dev-middleware": "^5.0.0"
   },
   "dependencies": {
+    "axios": "^0.25.0",
+    "cheerio": "^1.0.0-rc.10",
     "connect-history-api-fallback": "^1.6.0",
     "egg-view-nunjucks": "^2.3.0",
     "history": "^5.0.1",

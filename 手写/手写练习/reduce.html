@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    Array.prototype.myReduce = function (fn, result) {
+      let startNumber = 1
+      if (result !== undefined) {
+        startNumber = 0
+      }
+      if (startNumber == 1) {
+        if (this.length >= 2) {
+          result = fn(this[0], this[1])
+          startNumber = 2
+        } else {
+          return this[this.length - 1] ? this[this.length - 1] : new Error('数组参数数量必须大于等于1')
+        }
+      }
+      for (let i = startNumber; i < this.length; i++) {
+        result = fn(result, this[i])
+      }
+      return result
+    }
+    setTimeout(() => {
+      // var a = [].reduce((a, b) => {
+      //   return a + b
+      // });
+      var b = [1].myReduce((a, b) => {
+        return a + b
+      })
+      console.log(b);
+    }, 200)
+  </script>
+</body>
+
+</html>

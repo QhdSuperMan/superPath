@@ -1,11 +1,10 @@
 <!--
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
- * @Date: 2022-01-19 17:59:47
- * @LastEditTime: 2022-01-20 10:05:30
+ * @Date: 2022-02-16 15:48:35
+ * @LastEditTime: 2022-02-16 15:49:45
  * @info: 描述
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,18 +16,10 @@
   </head>
 
   <body>
-    <script>
-      function one() {
-        var a = 1
-
-        function demo() {
-          console.log(a);
-        }
-        demo()
-      }
-
-      function one() {}
-    </script>
+    <script type="module">
+      import { a } from './a.js'
+a()
+</script>
   </body>
 
 </html>

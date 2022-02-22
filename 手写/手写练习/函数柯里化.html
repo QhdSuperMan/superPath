@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function a(a, b, c) {
+      console.log(a + b + c);
+    }
+
+    function demo(fn) {
+      var returnFun = (...args) => {
+        if (args.length === fn.length) return fn.apply(null, args)
+        return (...agrss) => returnFun(...args.concat(agrss))
+      }
+      return returnFun
+    }
+    var b = demo(a)
+    b(1)(2)(3)
+  </script>
+</body>
+
+</html>

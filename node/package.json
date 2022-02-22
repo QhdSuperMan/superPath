@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node ./es/require/es6.js"
+    "start": "babel-node ./es/require/es6.js",
+    "debug": "@powershell -Command $env:DEBUG='http';node test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.25.0",
     "babel-cli": "^6.26.0",
+    "cheerio": "^1.0.0-rc.10",
+    "debug": "^4.3.3",
     "koa": "^2.13.0",
     "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",

@@ -1,0 +1,45 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-17 10:13:39
+ * @LastEditTime: 2022-02-17 10:30:26
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      class ListNode {
+        constructor(key, value) {
+          this.key = key
+          this.value = value
+          this.prev = null
+          this.next = null
+        }
+      }
+
+      class LRUCache {
+        constructor(total) {
+          this.total = total
+          this.count = 0
+          this.hashTable = {} // 存放键值对的
+          this.head = new ListNode()
+          this.tail = new ListNode()
+          this.head.next = this.tail
+          this.tail.prev = this.head
+        }
+      }
+      var a = new LRUCache(2)
+      console.log(a);
+    </script>
+  </body>
+
+</html>

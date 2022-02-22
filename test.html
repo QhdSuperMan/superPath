@@ -1,27 +1,41 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-16 14:00:24
+ * @LastEditTime: 2022-02-18 11:08:18
+ * @info: 描述
+-->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
 
-<body>
-  <script>
-    
-    客户端 发送 syn 1 sep X 
-    服务端 发送 ack X+ 1 syn 1 sep y 
-    客户端 发送 ack Y + 1 seq z
+  <body>
+    <script>
+      class Father {
+        a = 1
+        constructor() {
 
-    客户端 发送  fin 1 ack X seq X
-    服务端 发送  ack X + 1 seq Y
-    服务端 发送  syn 1 seq z
-    客户端 发送  ack z + 1 seq X
+        }
+        fatherFunction() {
 
-
-  </script>
-</body>
+        }
+      }
+      class Son extends Father {
+        b = 1
+        constructor() {
+          super()
+        }
+        sonFunction() {}
+      }
+      console.log(new Son());
+      console.dir(Son);
+    </script>
+  </body>
 
 </html>

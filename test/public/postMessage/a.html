@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-10 11:32:51
+ * @LastEditTime: 2022-02-10 11:45:35
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="test()">发送</button>
+    <script>
+      var targer
+      window.addEventListener("message", function (e) {
+        console.log(e, 1111111111, window);
+        targer = e.source
+      }, false);
+
+      function test() {
+        console.log(targer);
+        targer.postMessage("The user is 'bob' and the password is 'secret'",
+          "*");
+      }
+    </script>
+  </body>
+
+</html>

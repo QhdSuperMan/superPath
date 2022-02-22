@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function deepClone(obj, cache = new WeakMap()) {
+      const typeBox = ["[object Set]", "[object Array]", "[object Object]", "[object Map]"]
+      const type = Object.prototype.toString.call(obj)
+      if (!typeBox.includes(type)) return obj
+      if (cache.has(obj)) return cache.get(obj)
+      var result = new obj.constructor()
+      cache.set(obj, result)
+      if (type === "[object Set]") { // 处理set
+        obj.forEach(val => {
+          result.add(deepClone(val, cache))
+        });
+      }
+      if (type === "[object Map]") { // 处理set
+        obj.forEach((val, key) => {
+          result.set(deepClone(key, cache), deepClone(val, cache))
+        });
+      }
+      for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          result[key] = deepClone(obj[key], cache)
+        }
+      }
+      return result
+    }
+    var mapKey = {
+      key: 1
+    }
+    var mapValue = {
+      value: 1
+    }
+    var map = new Map()
+    map.set(mapKey, mapValue)
+    var set = new Set([1, 2, 3])
+    // 测试
+    const obj = {
+      name: 'Jack',
+      id: new Date(),
+      arr: [1,2,3],
+      map: map,
+      set: set,
+      address: {
+        s: {
+          k: 1
+        },
+        x: 100,
+        y: 200
+      }
+    }
+    obj.a = obj // 循环引用
+    const newObj = deepClone(obj)
+    // var source = deepClone(obj)
+    console.log(newObj);
+  </script>
+</body>
+
+</html>
