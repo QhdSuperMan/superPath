@@ -15,7 +15,7 @@ const cssMinmizer = require("css-minimizer-webpack-plugin")
 module.exports = {
   // mode: 'development',
   mode: 'production',
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   entry: {
     index: './src/index.js',
   },
@@ -23,21 +23,21 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    assetModuleFilename: 'images/[hash][ext][query]',
+    // assetModuleFilename: 'images/[hash][ext][query]',
     // library: {
     //   name: 'webpackNumbers',
     //   type: 'umd',
     // },
     // publicPath: '/',
   },
-  externals: {
-    lodash: {
-      // commonjs: 'lodash',
-      // commonjs2: 'lodash',
-      // amd: 'lodash',
-      root: '___lodash',
-    },
-  },
+  // externals: {
+  //   lodash: {
+  //     // commonjs: 'lodash',
+  //     // commonjs2: 'lodash',
+  //     // amd: 'lodash',
+  //     root: '___lodash',
+  //   },
+  // },
   // optimization: {
   //   usedExports: true,
   // },

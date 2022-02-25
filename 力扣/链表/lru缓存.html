@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * @param {number} capacity
+       */
+      class Node {
+        constructor(key, val) {
+          this.key = key;
+          this.val = val;
+          this.next = null;
+          this.prev = null;
+        }
+      }
+      var LRUCache = function (capacity) {
+        this.capacity = capacity;
+        this.hashMap = new Map();
+        this.head = new Node();
+        this.tail = new Node();
+        this.head.next = this.tail;
+        this.tail.prev = this.head;
+        this.length = 0;
+      };
+      LRUCache.prototype.get = function (key) {
+        if (this.hashMap.has(key)) {
+          var node = this.hashMap.get(key);
+          this.remove(node);
+          this.addhead(node);
+          return node.val;
+        }
+        return -1;
+      };
+      LRUCache.prototype.addTail = function (node) {
+        var prev = this.tail.prev;
+        prev.next = node;
+        node.prev = prev;
+        node.next = this.tail;
+        this.tail.prev = node;
+      };
+      LRUCache.prototype.addhead = function (node) {
+        var nextNode = this.head.next;
+        this.head.next = node;
+        node.prev = this.head;
+        node.next = nextNode;
+        nextNode.prev = node;
+      };
+      LRUCache.prototype.remove = function (node) {
+        var prevNode = node.prev;
+        var nextNode = node.next;
+        prevNode.next = nextNode;
+        nextNode.prev = prevNode;
+      };
+
+      LRUCache.prototype.put = function (key, value) {
+        var node = this.hashMap.get(key);
+        if (!node) {
+          var node = new Node(key, value);
+          if (this.length === this.capacity) {
+            this.hashMap.delete(this.tail.prev.key);
+            this.remove(this.tail.prev);
+            this.length--;
+          }
+          this.length++;
+          this.addhead(node);
+          this.hashMap.set(key, node);
+        } else {
+          node.val = value;
+          this.remove(node)
+          this.addhead(node);
+        }
+      };
+
+      var lRUCache = new LRUCache(2);
+      lRUCache.put(2, 1);
+      lRUCache.put(1, 1);
+      lRUCache.put(2, 3);
+      lRUCache.put(4, 1);
+      lRUCache.get(1);
+      lRUCache.put(2);
+
+      console.log(lRUCache);
+    </script>
+  </body>
+</html>
