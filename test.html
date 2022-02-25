@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2022-02-16 14:00:24
- * @LastEditTime: 2022-02-21 09:25:01
+ * @LastEditTime: 2022-02-24 10:10:47
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -14,28 +14,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   </head>
+  <style>
+
+  </style>
 
   <body>
     <script>
-      class Father {
+      class Demo {
         a = 1
-        constructor() {
-    
-        }
-        fatherFunction() {
-
+        sayHello() {
+          console.log(this.a);
         }
       }
-      class Son extends Father {
-        b = 1
-        constructor() {
-          super()
-        }
-        sonFunction() {}
-      }
-      console.log(new Son(), );
-      console.dir(Son, );
-      console.dir(Father, );
+      new Demo().sayHello()
     </script>
   </body>
 
