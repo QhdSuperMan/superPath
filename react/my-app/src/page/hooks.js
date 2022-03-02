@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef,useCallback } from 'react'
 import { useFriendStatus } from './config/hook.js'
-function Example() {
-    const [count, setCount] = useFriendStatus()
-    const [count2, setCount2] = useState(0);
-    useEffect(() => {
-        console.log('副作用2', count)
-    }, [count2])
-    return (
-        <div>
-            {count}
-            {count2}
-            <button onClick={() => { setCount(count + 1) }}>click</button>
-            <button onClick={() => { setCount2(count2 + 1) }}>click2</button>
-        </div>
-    );
-}
+// function Example() {
+//     const [count, setCount] = useFriendStatus()
+//     const [count2, setCount2] = useState(0);
+//     useEffect(() => {
+//         console.log('副作用2', count)
+//     }, [count2])
+//     return (
+//         <div>
+//             {count}
+//             {count2}
+//             <button onClick={() => { setCount(count + 1) }}>click</button>
+//             <button onClick={() => { setCount2(count2 + 1) }}>click2</button>
+//         </div>
+//     );
+// }
 function Exampletwo(props) {
     // 把最新的 props 保存在一个 ref 中
     const latestProps = useRef(props);
