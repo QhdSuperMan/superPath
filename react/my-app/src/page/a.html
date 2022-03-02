@@ -1,0 +1,41 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-02-24 18:21:55
+ * @LastEditTime: 2022-02-24 18:26:12
+ * @info: 描述
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      var toString = Object.prototype.toString
+      Object.prototype.toString = function () {
+        var type = toString.call(this)
+        if (type === '[object Function]') {
+          try {
+            this()
+          } catch (error) {
+            return '[object Class]'
+          }
+        }
+        return type
+      }
+      class A {}
+      function b() {
+      }
+      console.log(Object.prototype.toString.call(A));
+      console.log(Object.prototype.toString.call(b));
+      console.log(Object.prototype.toString.call('s'));
+    </script>
+  </body>
+
+</html>

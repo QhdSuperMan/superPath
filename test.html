@@ -2,7 +2,7 @@
  * @Author: 吴玉荣
  * @LastEditors: 吴玉荣
  * @Date: 2022-02-16 14:00:24
- * @LastEditTime: 2022-02-21 09:25:01
+ * @LastEditTime: 2022-02-24 10:10:47
  * @info: 描述
 -->
 <!DOCTYPE html>
@@ -14,29 +14,18 @@
     <title>Document</title>
   </head>
   <style>
-    .red {
-      color: red;
-      height: 100px;
-      overflow: hidden;
-      background-color: red;
-      /* display: flex ; */
-      /* float: left; */
-      width: 100%;
-      margin: 10px;
-      /* position :absolute; */
-    }
-    .father {
-      overflow: hidden;
-    }
+
   </style>
+
   <body>
-    <div>
-      <div class="father">
-        <div class="red">
-          <div>444</div>
-        </div>
-      </div>
-      <div class="red"></div>
-    </div>
+    <script>
+      class Demo {
+        a = 1
+        sayHello() {
+          console.log(this.a);
+        }
+      }
+      new Demo().sayHello()
+    </script>
   </body>
 </html>
