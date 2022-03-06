@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "express": "^4.17.1",
+    "rollup-plugin-json": "^4.0.0",
     "webpack-dev-middleware": "^5.0.0"
   },
   "dependencies": {
@@ -11,6 +12,8 @@
     "history": "^5.0.1",
     "http": "^0.0.1-security",
     "koa": "^2.13.4",
-    "shelljs": "^0.8.4"
+    "lodash-es": "^4.17.21",
+    "rollup": "^2.68.0",
+    "shelljs": "^0.8.5"
   }
 }
