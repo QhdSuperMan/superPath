@@ -1,7 +1,14 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "rollup-plugin-json": "^4.0.0",
+=======
+    "webpack": "^5.69.1",
+>>>>>>> dea3279b217de0697d56ac1023e9cdcf542e46d6
     "webpack-dev-middleware": "^5.0.0"
   },
   "dependencies": {
@@ -9,8 +16,10 @@
     "cheerio": "^1.0.0-rc.10",
     "connect-history-api-fallback": "^1.6.0",
     "egg-view-nunjucks": "^2.3.0",
+    "exports-loader": "^3.1.0",
     "history": "^5.0.1",
     "http": "^0.0.1-security",
+    "imports-loader": "^3.1.1",
     "koa": "^2.13.4",
     "lodash-es": "^4.17.21",
     "rollup": "^2.68.0",
