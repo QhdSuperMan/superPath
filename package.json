@@ -4,11 +4,7 @@
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.3",
     "express": "^4.17.1",
-<<<<<<< HEAD
     "rollup-plugin-json": "^4.0.0",
-=======
-    "webpack": "^5.69.1",
->>>>>>> dea3279b217de0697d56ac1023e9cdcf542e46d6
     "webpack-dev-middleware": "^5.0.0"
   },
   "dependencies": {
