@@ -14,18 +14,329 @@
     <title>Document</title>
   </head>
   <style>
-
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    #box {
+      height: 400px;
+      overflow-y: scroll;
+    }
+    #active {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 20px;width: 100%;;
+      background-color: red;
+    }
+    .item {
+      margin-top: 20px;
+    }
   </style>
 
   <body>
+    <div id="box">
+      <h2 class="item">标题1</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        <div>
+          sdcascasdcasdcac
+          <span id="test">
+            test
+          </span>
+        </div>
+      </div>
+      <h2 class="item">标题2</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+      <h2 class="item">标题3</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+      <h2 class="item">标题4</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+      <h2 class="item">标题5</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+      <h2 class="item">标题6</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+      <h2 class="item">标题7</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+      <h2 class="item">标题8</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+      <h2 class="item">标题9</h2>
+      <div>
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcacsdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+        sdcascasdcasdcac
+      </div>
+    </div>
+    <div id="active">
+      标题1
+    </div>
     <script>
-      class Demo {
-        a = 1
-        sayHello() {
-          console.log(this.a);
+      var box = document.getElementById('box')
+      var test = document.getElementById('test')
+      var test = document.getElementById('active')
+      var item = document.getElementsByClassName('item')
+      box.addEventListener('scroll', function(e){
+        var top = e.target.scrollTop
+        var step = false
+        for (let i = 0; i < item.length; i++) {
+          const element = item[i];
+          if (getTop(item[i], box) < top && (!item[i + 1] || (item[i + 1] &&getTop(item[i + 1], box) > top))) {
+            active.innerHTML = item[i].innerHTML
+            step = true
+          }
         }
+        if (!step) {
+          active.innerHTML = ''
+        }
+      })
+
+
+      function getTop(dom, fatherDom) {
+        var top = 0
+        var item = dom
+        while(item !== fatherDom) {
+          top += item.offsetTop
+          item = item.parentNode
+        }
+        return top
       }
-      new Demo().sayHello()
     </script>
   </body>
 </html>
