@@ -1,23 +1,21 @@
 Arguments: 
-  /Users/edy/.nvm/versions/node/v17.7.0/bin/node /Users/edy/.nvm/versions/node/v17.7.0/bin/yarn
+  /Users/edy/.nvm/versions/node/v14.18.0/bin/node /Users/edy/.nvm/versions/node/v14.18.0/bin/yarn
 
 PATH: 
-  /Users/edy/.nvm/versions/node/v17.7.0/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /Users/edy/Library/pnpm:/Users/edy/.nvm/versions/node/v14.18.0/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/edy/Library/pnpm:/usr/local/sbin
 
 Yarn version: 
   1.22.17
 
 Node version: 
-  17.7.0
+  14.18.0
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: http://10.0.0.195:4873/follow-redirects/-/follow-redirects-1.14.8.tgz: ETIMEDOUT
-      at Timeout._onTimeout (/Users/edy/.nvm/versions/node/v17.7.0/lib/node_modules/yarn/lib/cli.js:141543:19)
-      at listOnTimeout (node:internal/timers:559:17)
-      at processTimers (node:internal/timers:502:7)
+  Error: read ECONNRESET
+      at TCP.onStreamRead (internal/stream_base_commons.js:209:20)
 
 npm manifest: 
   {
