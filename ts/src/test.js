@@ -1,16 +1,7 @@
-// function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {   //对入参增加约束
-//   return names.map(n => o[n]);    //过滤的代码不变
-// }
-// interface Person {
-//     name: string;
-//     age: number;
-// }
-// let person: Person = {
-//     name: 'Jarid',
-//     age: 35
-// };
-// let strings: Array<string | number> = pluck(person, ['name','age']); // ok, ["Jarid"]
-// console.log(strings)
-function a(num) {
-    return num;
-}
+/*
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2022-03-03 13:36:30
+ * @LastEditTime: 2022-03-03 13:37:45
+ * @info: 描述
+ */

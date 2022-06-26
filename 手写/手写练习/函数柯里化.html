@@ -14,15 +14,26 @@
       console.log(a + b + c);
     }
 
+    // function demo(fn) {
+    //   var returnFun = (...args) => {
+    //     if (args.length === fn.length) return fn.apply(null, args)
+    //     return (...agrss) => returnFun(...args.concat(agrss))
+    //   }
+    //   return returnFun
+    // }
     function demo(fn) {
-      var returnFun = (...args) => {
-        if (args.length === fn.length) return fn.apply(null, args)
-        return (...agrss) => returnFun(...args.concat(agrss))
+      var returnFun = function(...args) {
+        var result = (...argess) => returnFun(...args.concat(argess))
+        result.sum = function(){
+          return fn.apply(null, args)
+        }
+        return result
       }
       return returnFun
     }
     var b = demo(a)
-    b(1)(2)(3)
+    var c = b(1)(2)(3)
+    console.dir(c.sum());
   </script>
 </body>
 

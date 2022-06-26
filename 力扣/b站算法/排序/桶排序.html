@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [
+        25, 15, 2, 10, 331, 10, 5552, 3, 5, 4, 1, 5, 2, 6, 8, 4, 12, 6, 1, 0,
+        00, 4552, 62, 3,
+      ];
+      function sort(arr) {
+        // 获取到最大的标志位
+        var step = getStep(arr);
+        var barrel = arr;
+        for (let i = 0; i < step; i++) {
+          var item = barrel.flat(1);
+          // 每次都生成新的桶
+          barrel = new Array(10).fill("").map(() => new Array());
+          item.forEach((val) => {
+            barrel[getNum(val, i)].push(val);
+          });
+        }
+        return barrel.flat(1);
+      }
+      function getNum(num, step) {
+        var num = num + "";
+        var result = num[num.length - step - 1];
+        return result ? result : 0;
+      }
+      function getStep(arr) {
+        var largest = Math.max(...arr);
+        return (largest + "").length;
+      }
+      console.log(sort(arr));
+    </script>
+  </body>
+</html>

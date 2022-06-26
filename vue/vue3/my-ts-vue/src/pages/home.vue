@@ -7,22 +7,44 @@
 -->
 <template>
   <div>homesdsdssd</div>
+  <button @click="btnClick">btnClick</button>
+  <button @click="b++">b++</button>
   <div>{{ test }}</div>
+  <div>{{ a }}</div>
+  <div>{{ b }}</div>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed,onRenderTriggered,onRenderTracked, ref,watchEffect  } from "vue";
 import { useHStore } from "@/store/hook";
 const store = useHStore();
-console.log(store);
-const a: string = 1;
+const a: string = ref('a');
+const b: string = ref(1);
 const test = computed(() => {
   return store.state.user.loading;
 });
+const btnClick = ()=> {
+  a.value += 1
+}
+setTimeout(() => {
+  a.value += 1
+  console.log(222);
+  
+},1000)
+watchEffect(() => {
+  a.value+= 2
+  console.log(a.value, 'a.value');
+})
+onRenderTriggered((event) => {
+  console.log(event,'onRenderTriggered'); 
+},null)
+onRenderTracked((event) => {
+    console.log(event,'onRenderTracked');
+},null)
 </script>
 
 <style  lang='less'>
 body {
-  div {
+  & div {
     color: red;
   }
 }

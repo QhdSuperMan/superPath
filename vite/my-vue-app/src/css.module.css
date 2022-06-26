@@ -1,0 +1,6 @@
+.className {
+   color:red; 
+}
+:global(.title) {
+   color: green;
+ }

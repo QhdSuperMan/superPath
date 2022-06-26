@@ -8,19 +8,26 @@
 <template>
   <div class="home">
     <router-link to="/about">router-link跳转</router-link>
-    <br>
+    <br />
     <a href="/about">a跳转</a>
+    <img :src="imgurl" alt="" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-
+import a from "./aa.png";
+console.log(11111, a);
 export default {
   name: "Home",
   components: {
     HelloWorld,
+  },
+  data() {
+    return {
+      imgurl: a,
+    };
   },
 };
 </script>
