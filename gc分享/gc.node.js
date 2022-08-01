@@ -3,7 +3,7 @@
 global.gc();
 console.log('内存1', process.memoryUsage().heapUsed); 
 
-const wm = new Map();
+const wm = new WeakMap();
 let key = new Array(5 * 1024 * 1024);
 wm.set(key, 1);
 
