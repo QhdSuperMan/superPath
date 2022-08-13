@@ -8,7 +8,6 @@
     "webpack-dev-middleware": "^5.0.0"
   },
   "dependencies": {
-    "axios": "^0.25.0",
     "cheerio": "^1.0.0-rc.10",
     "connect-history-api-fallback": "^1.6.0",
     "egg-view-nunjucks": "^2.3.0",
@@ -20,5 +19,8 @@
     "lodash-es": "^4.17.21",
     "rollup": "^2.68.0",
     "shelljs": "^0.8.5"
+  },
+  "optionalDependencies": {
+    "axios": "^0.25.0"
   }
 }
