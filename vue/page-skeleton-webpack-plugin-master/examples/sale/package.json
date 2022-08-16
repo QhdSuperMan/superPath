@@ -1,0 +1,43 @@
+{
+  "name": "sale",
+  "description": "sale page for skeleton plugin",
+  "version": "1.0.0",
+  "author": "cloudIC <844033231@qq.com>",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "rm -rf dist && cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.1.6",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-scm": "^1.0.14",
+    "eslint-plugin-vue": "^4.5.0",
+    "express": "^4.16.3",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "page-skeleton-webpack-plugin": "^0.10.12",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.5",
+    "postcss-nested": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
+    "vue-loader": "^15.2.0",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.9.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-hot-middleware": "^2.22.2"
+  }
+}
