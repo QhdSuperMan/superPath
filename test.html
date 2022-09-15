@@ -1,26 +1,54 @@
+<!--
+ * @Author: 吴玉荣
+ * @LastEditors: 吴玉荣
+ * @Date: 2021-06-28 16:14:49
+ * @LastEditTime: 2021-06-29 10:06:05
+ * @info: 描述
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<style>
-  .b {
-    display: flex;
-  }
-  .aa {
-    background-color: red;
-    /* width: 100%; */
-    overflow: hidden;
-    height: 50px;
-    margin: 10px
-  }
-</style>
 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
 
-<body>
-  tag 1.1
-</body>
+  <body>
+    <script>
+      /**
+        bind() 除了 this 外，还可传入多个参数；
+        bing 创建的新函数可能传入多个参数；
+        新函数可能被当做构造函数调用；
+        函数可能有返回值；
+      */
+      Function.prototype.bind2 = function (context, ...args) {
+        let that = this;
+        let returnFun = function (...argss) {
+          let result
+          // that.apply(new.target ? this : context, [...args, ...argss])
+          that.apply(this instanceof that ? this : context, [...args, ...argss])
+          return result
+        }
+        returnFun.prototype = Object.create(that.prototype)
+        return returnFun
+      }
+      //测试
+      obj = {
+        c: 2
+      }
+
+      function a(x, y, z) {
+        console.log(this, x, y, z)
+      }
+      
+      console.dir(a.bind2(obj, 1, 2)(3));
+      console.dir(a.bind(obj, 1, 2)(3));
+
+      // console.dir(new (a.bind2(obj)));
+      // console.dir(new (a.bind(obj)));
+      
+    </script>
+  </body>
+
 </html>

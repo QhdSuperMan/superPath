@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const data = [{
+      id: 'a',
+      name: 'A',
+      children: [
+        {
+          id: 'b',
+          name: 'B'
+        },
+        {
+          id: 'c',
+          name: 'C',
+          children: [
+            {
+              id: 'e',
+              name: 'E'
+            },
+            {
+              id: 'f',
+              name: 'F'
+            }
+          ]
+        },
+        {
+          id: 'd',
+          name: 'D'
+        }
+      ]
+    }]
+
+    let total = 3
+    function completion (arr, index) {
+      if (index >= total - 1) return
+      for (let i = 0; i < arr.length; i++) {
+        if (!arr[i].children?.length) {
+          arr[i].children = [{
+            id: '补全',
+            name: '补全',
+          }]
+        }
+        completion(arr[i].children, index + 1)
+      }
+    }
+
+    completion(data, 0)
+    console.log('data: ', data);
+  </script>
+</body>
+
+</html>
