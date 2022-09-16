@@ -244,6 +244,41 @@
           return resolve(x);
         }
       }
+
+      var a = new myPromise((reslove, reject) => {
+          setTimeout((_) => {
+            reject(2);
+          }, 1000);
+        })
+        .then((val) => {
+          console.log(val);
+          return 1
+        })
+        .then(
+          (val) => {
+            console.log(val);
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+        var a = new Promise((reslove, reject) => {
+          setTimeout((_) => {
+            reject(2);
+          }, 1000);
+        })
+        .then((val) => {
+          console.log(val);
+          return 1
+        })
+        .then(
+          (val) => {
+            console.log(val);
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
     </script>
   </body>
 
