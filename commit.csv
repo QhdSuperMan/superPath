@@ -1,0 +1,862 @@
+’d7ff41d,吴玉荣,2022-09-09 15:21:09 +0800,压缩图片’
+’14a5c48,吴玉荣,2022-09-09 15:18:58 +0800,优化样式’
+’8399bd7,吴玉荣,2022-09-09 15:15:16 +0800,更换图片’
+’fbd4d4d,吴玉荣,2022-09-09 13:01:30 +0800,样式修改’
+’7b3a303,zhaozhuoboy,2022-09-09 11:08:37 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2’
+’e75790e,zhaozhuoboy,2022-09-09 11:08:34 +0800,调整客户案例文案’
+’ed67942,mingyang.hao,2022-09-09 11:00:51 +0800,Merge branch 'feat/v2' into f_home_index’
+’afec029,mingyang.hao,2022-09-09 11:00:11 +0800,merge-feat/v2’
+’2742471,danny.zhao,2022-09-09 02:58:08 +0000,Merge branch 'feat/v2_wu' into 'feat/v2'’
+’0be16fd,mingyang.hao,2022-09-09 10:56:22 +0800,首页替换图片’
+’a62a795,吴玉荣,2022-09-09 10:56:03 +0800,优化样式’
+’c7b7381,mingyang.hao,2022-09-09 10:49:49 +0800,fix-style’
+’c5f4458,zhaozhuoboy,2022-09-09 10:21:45 +0800,style: 调整样式’
+’4543fa7,zhaozhuoboy,2022-09-09 10:17:32 +0800,ui走查’
+’c8e0a56,zhaozhuoboy,2022-09-08 19:00:12 +0800,调整好内容页面轮播速度’
+’5fe3904,zhaozhuoboy,2022-09-08 18:46:05 +0800,页面中 改为’
+’535446f,zhaozhuoboy,2022-09-08 18:43:35 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2’
+’9bd1134,zhaozhuoboy,2022-09-08 18:43:29 +0800,页面中 改为’
+’202742d,danny.zhao,2022-09-08 10:34:41 +0000,Merge branch 'feat/v2_skx' into 'feat/v2'’
+’903b2f2,shikexin,2022-09-08 18:14:45 +0800,style:好内容 hover简介修改’
+’5ad0779,shikexin,2022-09-08 18:10:41 +0800,style:好内容修改swiper 滚动速率 人物简介滚动条’
+’a1b3189,danny.zhao,2022-09-08 10:03:28 +0000,Merge branch 'f_product' into 'feat/v2'’
+’7216b47,yuky.zhang,2022-09-08 17:50:25 +0800,style: 图片替换’
+’687e2e9,yuky.zhang,2022-09-08 17:47:59 +0800,Merge branch 'feat/v2' into f_product’
+’fce8d0a,yuky.zhang,2022-09-08 17:46:55 +0800,style: 好服务图片替换’
+’9cfa6cb,zhaozhuoboy,2022-09-08 16:43:42 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2’
+’89e9c5c,zhaozhuoboy,2022-09-08 16:43:38 +0800,更换logo’
+’f72c5a5,danny.zhao,2022-09-08 08:38:51 +0000,Merge branch 'f_product' into 'feat/v2'’
+’2aa2e38,yuky.zhang,2022-09-08 16:36:16 +0800,style: 图片替换’
+’dab7a02,yuky.zhang,2022-09-08 16:29:20 +0800,Merge branch 'feat/v2' into f_product’
+’0a4385b,yuky.zhang,2022-09-08 16:28:58 +0800,style: 图片替换’
+’8dbf53f,danny.zhao,2022-09-08 08:26:12 +0000,Merge branch 'feat/v2_skx' into 'feat/v2'’
+’ca22915,shikexin,2022-09-08 16:24:08 +0800,style:好内容样式调整’
+’e1ae290,yuky.zhang,2022-09-08 16:03:11 +0800,style: 样式调整’
+’98fe423,danny.zhao,2022-09-08 07:58:33 +0000,Merge branch 'feat/v2_wu' into 'feat/v2'’
+’48e1170,mingyang.hao,2022-09-08 15:37:06 +0800,替换背景’
+’8356dd6,mingyang.hao,2022-09-08 15:18:48 +0800,修改按钮文字’
+’a4469af,吴玉荣,2022-09-08 15:08:30 +0800,调整样式’
+’bbfd372,mingyang.hao,2022-09-08 14:51:35 +0800,bugfix-div点击有蓝色阴影’
+’daaa966,mingyang.hao,2022-09-08 14:30:59 +0800,Merge branch 'feat/v2' into f_home_index’
+’596ed52,mingyang.hao,2022-09-08 14:29:26 +0800,fix-首页ui’
+’1f631e0,danny.zhao,2022-09-08 06:04:16 +0000,Merge branch 'feat/v2_skx' into 'feat/v2'’
+’8cb49e7,shikexin,2022-09-08 11:48:38 +0800,update:修改好内容样式缩进’
+’d81287b,mingyang.hao,2022-09-08 11:38:57 +0800,fix-首页ui’
+’12fbd6e,shikexin,2022-09-08 11:32:17 +0800,style:修改好内容UI’
+’9a75843,zhaozhuoboy,2022-09-08 10:59:32 +0800,style: 调整代码’
+’112db80,zhaozhuoboy,2022-09-08 10:58:51 +0800,案例详情增加行业标签’
+’fd2e120,zhaozhuoboy,2022-09-08 10:25:09 +0800,fix: safari浏览器样式问题’
+’0a839ec,zhaozhuoboy,2022-09-07 18:46:29 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2’
+’a8f6497,zhaozhuoboy,2022-09-07 18:46:25 +0800,style: ui走查’
+’f0febcf,mingyang.hao,2022-09-07 18:29:14 +0800,Merge branch 'feat/v2' into f_home_index’
+’8f282da,mingyang.hao,2022-09-07 18:28:26 +0800,文案修改’
+’0706f3f,danny.zhao,2022-09-07 10:22:36 +0000,Merge branch 'feat/v2_wu' into 'feat/v2'’
+’422075a,吴玉荣,2022-09-07 18:07:58 +0800,优化样式’
+’47d4ca8,zhaozhuoboy,2022-09-07 17:32:06 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2’
+’3274e77,zhaozhuoboy,2022-09-07 17:32:03 +0800,style: ui走查’
+’2ec01f0,danny.zhao,2022-09-07 03:10:33 +0000,Merge branch 'f_product' into 'feat/v2'’
+’2ee3127,yuky.zhang,2022-09-07 11:06:37 +0800,style: 图片压缩’
+’742ef2c,mingyang.hao,2022-09-07 11:06:10 +0800,Merge branch 'feat/v2' into f_home_index’
+’6042b3a,mingyang.hao,2022-09-07 11:05:37 +0800,合作企业数据更新’
+’c6ff696,yuky.zhang,2022-09-07 11:00:21 +0800,Merge branch 'feat/v2' into f_product’
+’fed5f7b,yuky.zhang,2022-09-07 10:59:48 +0800,style: 好服务好产品图片替换’
+’fc9014e,zhaozhuoboy,2022-09-07 10:53:53 +0800,知己测评页面调整fixedService 组件’
+’8d97e14,mingyang.hao,2022-09-07 10:52:39 +0800,Merge branch 'feat/v2' into f_home_index’
+’a0649ff,mingyang.hao,2022-09-07 10:51:56 +0800,替换图片’
+’be64e1b,yuky.zhang,2022-09-07 10:39:26 +0800,style: 轮播图样式调整’
+’8c3406b,zhaozhuoboy,2022-09-07 09:27:43 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2’
+’17b8826,zhaozhuoboy,2022-09-07 09:27:37 +0800,更换客户头图’
+’0835884,yuky.zhang,2022-09-06 19:13:34 +0800,style: 轮播图样式调整’
+’db336fa,yuky.zhang,2022-09-06 19:04:47 +0800,style: 轮播图样式调整’
+’f7292ca,yuky.zhang,2022-09-06 18:39:10 +0800,style: 设计走查’
+’543ff71,mingyang.hao,2022-09-06 08:30:30 +0000,Merge branch 'f_home_index' into 'feat/v2'’
+’b051bb9,mingyang.hao,2022-09-06 16:29:07 +0800,首页跳转链接更新’
+’e4ccbae,zhaozhuoboy,2022-09-06 16:20:25 +0800,调整logo’
+’2c054a6,mingyang.hao,2022-09-06 16:19:57 +0800,Merge branch 'feat/v2' into f_home_index’
+’22a7815,zhaozhuoboy,2022-09-06 16:18:10 +0800,调整顺序’
+’76a1032,mingyang.hao,2022-09-06 16:11:19 +0800,Merge branch 'feat/v2' into f_home_index’
+’351ca46,danny.zhao,2022-09-06 08:09:51 +0000,Merge branch 'feat/v2_zhuo' into 'feat/v2'’
+’d29590b,zhaozhuoboy,2022-09-06 16:08:45 +0800,调整logo’
+’212005d,danny.zhao,2022-09-06 06:27:08 +0000,Merge branch 'feat/v2_zhuo' into 'feat/v2'’
+’569c857,zhaozhuoboy,2022-09-06 14:23:40 +0800,style: 更新文案’
+’d387416,zhaozhuoboy,2022-09-06 09:57:05 +0800,更新案例详情文案’
+’714c787,zhaozhuoboy,2022-09-05 17:19:31 +0800,更新代码’
+’161349a,mingyang.hao,2022-09-05 17:03:16 +0800,首页文案更新’
+’512afd9,danny.zhao,2022-09-02 03:03:35 +0000,Merge branch 'f_product' into 'feat/v2'’
+’8162a80,yuky.zhang,2022-09-02 11:00:27 +0800,style: 播放器音量样式’
+’d459cf5,yuky.zhang,2022-09-02 10:52:35 +0800,Merge branch 'feat/v2' into f_product’
+’90fe054,yuky.zhang,2022-09-02 10:51:35 +0800,style: 弹框遮罩层色值调整’
+’97c705d,yuky.zhang,2022-09-02 10:27:28 +0800,style: 加入fixedService组件’
+’5a65ad7,danny.zhao,2022-09-02 02:15:39 +0000,Merge branch 'f_product' into 'feat/v2'’
+’8e34d6a,yuky.zhang,2022-09-01 19:01:35 +0800,Merge branch 'feat/v2' into f_product’
+’a110f9c,yuky.zhang,2022-09-01 19:01:11 +0800,style: 图片压缩’
+’66234e1,danny.zhao,2022-09-01 10:40:01 +0000,Merge branch 'f_product' into 'feat/v2'’
+’8ee4642,yuky.zhang,2022-09-01 18:36:43 +0800,Merge branch 'feat/v2' into f_product’
+’b1b50a2,yuky.zhang,2022-09-01 18:35:39 +0800,fix: 代码整理’
+’bd5c414,yuky.zhang,2022-09-01 18:33:10 +0800,fix: 代码整理’
+’aee837c,danny.zhao,2022-09-01 10:20:21 +0000,Merge branch 'feat/v2_wu' into 'feat/v2'’
+’ad55b29,yuky.zhang,2022-09-01 18:19:48 +0800,fix: 图片调整’
+’96a93e7,yuky.zhang,2022-09-01 18:15:16 +0800,fix’
+’1821887,yuky.zhang,2022-09-01 18:12:43 +0800,fix: 代码整理’
+’0b08f6a,吴玉荣,2022-09-01 17:40:23 +0800,添加FixedService’
+’72e8472,吴玉荣,2022-09-01 17:37:58 +0800,添加FixedService’
+’48761e0,zhaozhuoboy,2022-09-01 17:35:59 +0800,新闻动态增加浮动客服咨询组件’
+’b88f416,danny.zhao,2022-09-01 09:31:02 +0000,Merge branch 'f_product' into 'feat/v2'’
+’136e9ed,吴玉荣,2022-09-01 17:30:13 +0800,滚动优化’
+’848a5f1,yuky.zhang,2022-09-01 15:28:52 +0800,feat: 轮播’
+’d7fcc06,yuky.zhang,2022-09-01 15:20:12 +0800,Merge branch 'feat/v2' into f_product’
+’e2528e0,yuky.zhang,2022-09-01 15:19:27 +0800,style’
+’6225094,yuky.zhang,2022-09-01 15:17:47 +0800,style’
+’bee3e12,yuky.zhang,2022-09-01 14:59:04 +0800,style’
+’3f5703e,yuky.zhang,2022-09-01 14:52:50 +0800,style’
+’e4d9a62,yuky.zhang,2022-09-01 11:21:11 +0800,style: 播放器样式’
+’593e1eb,danny.zhao,2022-09-01 03:00:00 +0000,Merge branch 'feat/v2_wu' into 'feat/v2'’
+’bd36747,吴玉荣,2022-09-01 10:45:04 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2_wu’
+’6fa0d68,吴玉荣,2022-09-01 10:42:37 +0800,代码优化’
+’10d0d19,yuky.zhang,2022-08-31 19:02:50 +0800,feat: 视频上传cdn’
+’270ccd4,danny.zhao,2022-08-31 10:58:13 +0000,Merge branch 'feat/v2_skx' into 'feat/v2'’
+’00e102a,shikexin,2022-08-31 18:37:08 +0800,好内容图片压缩’
+’331e85f,yuky.zhang,2022-08-31 17:44:31 +0800,Merge branch 'feat/v2' into f_product’
+’f2242fe,yuky.zhang,2022-08-31 17:44:02 +0800,feat: 按钮事件’
+’a84b03d,yuky.zhang,2022-08-31 17:34:53 +0800,style: 色值替换’
+’93bd516,danny.zhao,2022-08-31 09:30:25 +0000,Merge branch 'feat/v2_skx' into 'feat/v2'’
+’0603d8f,shikexin,2022-08-31 17:24:46 +0800,整体样式代码’
+’f8be8b2,吴玉荣,2022-08-31 16:58:22 +0800,调整导航头部’
+’723f76f,yuky.zhang,2022-08-31 16:49:01 +0800,style: ui’
+’a68b1da,吴玉荣,2022-08-31 16:48:18 +0800,压缩图片’
+’db2c3ea,吴玉荣,2022-08-31 16:29:57 +0800,解决方案贴图完毕’
+’d41c76e,shikexin,2022-08-31 15:48:41 +0800,整理样式’
+’514f331,吴玉荣,2022-08-31 15:29:55 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2_wu’
+’b486c14,吴玉荣,2022-08-31 15:29:48 +0800,解决方案贴图完毕’
+’1958d5b,shikexin,2022-08-31 15:29:03 +0800,Merge branch 'feat/v2' into feat/v2_skx’
+’0c1d1df,shikexin,2022-08-31 15:28:49 +0800,Merge branch 'feat/v2' of https://code.geekbang.org/fe/b.geekbang.org into feat/v2’
+’5f5993c,shikexin,2022-08-31 15:28:16 +0800,‘PC贴图’’
+’c756289,yuky.zhang,2022-08-31 15:05:07 +0800,fix: 更新包’
+’0dec51c,yuky.zhang,2022-08-31 14:54:22 +0800,fix’
+’25e919d,yuky.zhang,2022-08-31 14:48:57 +0800,fix’
+’2182186,yuky.zhang,2022-08-31 14:35:41 +0800,fix: 合并冲突’
+’487a741,yuky.zhang,2022-08-31 14:24:29 +0800,feat: 播放器样式’
+’c4fc8cc,zhaozhuoboy,2022-08-31 13:52:57 +0800,调整view/ 下用到 配色的地方改成’
+’3bb6e16,yuky.zhang,2022-08-31 13:48:34 +0800,Merge branch 'feat/v2' into f_product’
+’ef90562,yuky.zhang,2022-08-31 13:46:36 +0800,feat: 视频播放器’
+’6b63089,zhaozhuoboy,2022-08-31 13:44:45 +0800,更新 geekui’
+’d531bec,zhaozhuoboy,2022-08-31 11:44:27 +0800,合并代码’
+’dd5c01d,zhaozhuoboy,2022-08-31 11:43:05 +0800,style(公司简介): 调整样式’
+’45874d6,zhaozhuoboy,2022-08-31 11:42:15 +0800,feat(公司简介): 移动端开发’
+’ecf2027,吴玉荣,2022-08-31 10:12:40 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2_wu’
+’182e5cc,吴玉荣,2022-08-31 10:12:31 +0800,解决方案页面写完’
+’cbff447,yuky.zhang,2022-08-30 19:32:10 +0800,feat: 视频弹框基本完成’
+’85259cd,shikexin,2022-08-30 17:42:21 +0800,编写好内容’
+’10c65ee,zhaozhuoboy,2022-08-30 17:26:15 +0800,更新代码’
+’2945bc9,zhaozhuoboy,2022-08-30 17:26:06 +0800,style: 调整代码格式’
+’7ea0d92,zhaozhuoboy,2022-08-30 17:17:18 +0800,style: 调整资质荣誉模块样式’
+’0fb89d4,zhaozhuoboy,2022-08-30 17:15:05 +0800,解决冲突’
+’1a4a558,zhaozhuoboy,2022-08-30 17:14:19 +0800,调整代码’
+’5204b48,danny.zhao,2022-08-30 08:55:01 +0000,Merge branch 'feat/v2_zhuo' into 'feat/v2'’
+’ff94ef0,zhaozhuoboy,2022-08-30 16:53:37 +0800,feat: 公司简介PC’
+’839533f,shikexin,2022-08-30 16:10:46 +0800,Merge branch 'feat/v2' into feat/v2_skx’
+’7afc03e,shikexin,2022-08-30 16:10:29 +0800,Merge branch 'feat/v2' of https://code.geekbang.org/fe/b.geekbang.org into feat/v2’
+’87aba6a,shikexin,2022-08-30 16:10:07 +0800,编写官网好内容页面’
+’3458041,yuky.zhang,2022-08-30 15:38:10 +0800,style: pc端贴图’
+’9698737,zhaozhuoboy,2022-08-30 15:21:58 +0800,更新代码’
+’794ab5a,zhaozhuoboy,2022-08-30 15:21:38 +0800,关于我们’
+’1d1b933,mingyang.hao,2022-08-30 06:48:02 +0000,Merge branch 'f_home_index' into 'feat/v2'’
+’dedd2b6,mingyang.hao,2022-08-30 14:34:22 +0800,引入FixedService组件’
+’86f91ca,mingyang.hao,2022-08-30 14:32:21 +0800,Merge branch 'feat/v2' into f_home_index’
+’74c1d50,mingyang.hao,2022-08-30 14:26:50 +0800,首页wap样式调整’
+’f8de120,zhaozhuoboy,2022-08-30 14:10:16 +0800,更新代码’
+’d2176cf,zhaozhuoboy,2022-08-30 13:01:39 +0800,style: 调整代码’
+’aae9130,zhaozhuoboy,2022-08-30 12:58:07 +0800,浮动联系客服’
+’3c7f64b,mingyang.hao,2022-08-30 11:32:53 +0800,Merge branch 'feat/v2' into f_home_index’
+’f02d55c,mingyang.hao,2022-08-30 11:31:35 +0800,首页ui调整’
+’d4ce931,zhaozhuoboy,2022-08-30 11:24:29 +0800,iconfont 本地化’
+’bfe5b0d,yuky.zhang,2022-08-30 10:38:25 +0800,Merge branch 'feat/v2' into f_product’
+’e82f1d4,yuky.zhang,2022-08-30 10:36:50 +0800,feat: 基本完成’
+’bcedc0c,yuky.zhang,2022-08-29 19:29:52 +0800,feat: 好服务h5’
+’d32eb84,mingyang.hao,2022-08-29 18:59:35 +0800,首页样式调整’
+’de498a5,yuky.zhang,2022-08-29 18:48:52 +0800,feat: 好服务h5’
+’967696f,zhaozhuoboy,2022-08-29 16:38:10 +0800,合并代码’
+’6c144da,zhaozhuoboy,2022-08-29 16:36:13 +0800,案例详情移动端完成’
+’5b74d3a,yuky.zhang,2022-08-29 16:28:17 +0800,feat: 好服务pc基本完成’
+’4ca7693,yuky.zhang,2022-08-26 18:58:45 +0800,style: 好服务’
+’acc1a79,zhaozhuoboy,2022-08-26 16:02:57 +0800,调整 lightBlue 使用的位置’
+’69cd53f,zhaozhuoboy,2022-08-26 15:51:37 +0800,案例详情pc完成’
+’d94f11f,yuky.zhang,2022-08-26 15:48:46 +0800,Merge branch 'feat/v2' into f_product’
+’a9c3435,yuky.zhang,2022-08-26 15:47:23 +0800,style: 好产品完成’
+’313b6fc,吴玉荣,2022-08-26 15:38:46 +0800,解决冲突’
+’9bc66fc,mingyang.hao,2022-08-26 15:35:17 +0800,Merge branch 'feat/v2' into f_home_index’
+’8711d32,mingyang.hao,2022-08-26 15:34:26 +0800,首页移动端页面调整’
+’440bf18,吴玉荣,2022-08-26 15:34:00 +0800,提交代码’
+’5c7cf56,zhaozhuoboy,2022-08-26 15:30:41 +0800,合并代码’
+’a7b4958,zhaozhuoboy,2022-08-26 15:30:25 +0800,案例详情’
+’f98c082,吴玉荣,2022-08-26 14:44:50 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2_wu’
+’02b5c71,吴玉荣,2022-08-26 14:44:42 +0800,编写数据’
+’bae5f6c,zhaozhuoboy,2022-08-26 14:26:33 +0800,更新代码’
+’e5093c1,zhaozhuoboy,2022-08-26 14:26:19 +0800,feat: 客户案例移动端’
+’794163f,mingyang.hao,2022-08-26 11:17:04 +0800,首页ui调整’
+’5499fec,mingyang.hao,2022-08-25 18:57:54 +0800,首页ui调整’
+’9a6d3e6,yuky.zhang,2022-08-25 18:36:43 +0800,style: 好产品h5基本完成’
+’83cc99d,吴玉荣,2022-08-25 17:31:48 +0800,Merge branch 'feat/v2' of code.geekbang.org:fe/b.geekbang.org into feat/v2_wu’
+’ed563f0,吴玉荣,2022-08-25 17:31:39 +0800,页面编写’
+’0790b57,yuky.zhang,2022-08-25 17:17:58 +0800,style:好产品基本完成’
+’b37f2de,yuky.zhang,2022-08-25 16:47:18 +0800,Merge branch 'feat/v2' into f_product’
+’57e3848,yuky.zhang,2022-08-25 16:45:44 +0800,style: 好产品’
+’bf3c669,zhaozhuoboy,2022-08-25 16:16:39 +0800,调整底部Contact组件’
+’af45c76,zhaozhuoboy,2022-08-25 16:13:20 +0800,合并代码’
+’27a6cdf,zhaozhuoboy,2022-08-25 16:13:01 +0800,客户案例’
+’820b1f0,zhaozhuoboy,2022-08-25 15:53:57 +0800,更新代码’
+’bd783b3,zhaozhuoboy,2022-08-25 15:52:58 +0800,增加公共按钮样式’
+’15f6833,yuky.zhang,2022-08-25 15:45:00 +0800,fix’
+’1f01072,yuky.zhang,2022-08-25 15:43:51 +0800,style: 研，测’
+’50514b3,yuky.zhang,2022-08-25 11:32:00 +0800,style: banner 样式需改’
+’7ac9f2c,zhaozhuoboy,2022-08-25 09:59:44 +0800,调整好服务路由’
+’1f616b5,shikexin,2022-08-24 16:33:01 +0800,Merge branch 'feat/v2' of https://code.geekbang.org/fe/b.geekbang.org into feat/v2’
+’e3104ba,zhaozhuoboy,2022-08-24 16:24:22 +0800,新增页面’
+’8c52810,danny.zhao,2022-08-23 02:29:26 +0000,Merge branch 'develop' into 'master'’
+’926670f,zhaozhuoboy,2022-08-23 10:28:12 +0800,下线产品刊例’
+’6040e4e,danny.zhao,2022-08-19 03:01:35 +0000,Merge branch 'develop' into 'master'’
+’a17f920,danny.zhao,2022-08-19 03:00:56 +0000,Merge branch 'feat/service-price-show' into 'develop'’
+’8e09a02,zhaozhuoboy,2022-08-17 15:42:35 +0800,feat: 好产品页面添加产品刊例跳链’
+’5123aa8,danny.zhao,2022-07-15 07:34:05 +0000,Merge branch 'develop' into 'master'’
+’a57ac65,danny.zhao,2022-07-15 07:33:30 +0000,Merge branch 'banner-update' into 'develop'’
+’6d0d26a,zhaozhuoboy,2022-07-15 15:32:05 +0800,调整代码’
+’a4141d4,zhaozhuoboy,2022-07-15 14:38:01 +0800,merge: 合并代码’
+’9a3e60a,danny.zhao,2022-06-30 10:35:05 +0000,Merge branch 'develop' into 'master'’
+’be8e6ca,danny.zhao,2022-06-30 10:34:30 +0000,Merge branch 'feat/remove_service_fee' into 'develop'’
+’dbcb23e,zhaozhuoboy,2022-06-23 17:38:12 +0800,去掉升级服务的提示弹窗’
+’19bd3c1,danny.zhao,2022-06-14 10:01:55 +0000,Merge branch 'develop' into 'master'’
+’5ebe0e7,danny.zhao,2022-06-14 10:01:16 +0000,Merge branch 'banner-update' into 'develop'’
+’fc823aa,zhaozhuoboy,2022-06-14 18:00:31 +0800,更新banner’
+’44ad4f8,danny.zhao,2022-06-14 06:08:15 +0000,Merge branch 'develop' into 'master'’
+’f94f537,danny.zhao,2022-06-14 06:06:55 +0000,Merge branch 'banner-update' into 'develop'’
+’5a95ffa,zhaozhuoboy,2022-06-14 14:05:13 +0800,feat: 上家一个banner,下架俩banner’
+’b16dc38,zhaozhuoboy,2022-06-14 13:53:18 +0800,merge: 合并代码’
+’88dfa6a,danny.zhao,2022-05-16 07:59:23 +0000,Merge branch 'develop' into 'master'’
+’87dfeee,danny.zhao,2022-05-16 07:58:57 +0000,Merge branch 'banner-update' into 'develop'’
+’222765f,zhaozhuoboy,2022-05-16 15:50:07 +0800,更新轮播’
+’6fb7978,lynn.zhang,2022-04-28 09:45:30 +0000,Merge branch 'develop' into 'master'’
+’0f3cdcf,lynn.zhang,2022-04-28 09:44:55 +0000,Merge branch 'fe/qrcode' into 'develop'’
+’2560ce5,lynn.zhang,2022-04-28 17:44:30 +0800,调整css顺利’
+’c9e066e,lynn.zhang,2022-04-28 17:30:06 +0800,调整样式顺序’
+’279d1e7,lynn.zhang,2022-04-28 17:06:37 +0800,修改样式展示’
+’5e10eea,lynn.zhang,2022-04-28 16:32:46 +0800,去掉标题’
+’5e1ae7e,lynn.zhang,2022-04-28 16:19:07 +0800,修改样式’
+’2d1ec9b,lynn.zhang,2022-04-28 16:00:36 +0800,样式修改’
+’6f314e7,lynn.zhang,2022-04-28 15:27:11 +0800,样式优化’
+’efb807b,lynn.zhang,2022-04-28 14:09:45 +0800,样式调整’
+’01c2ce8,lynn.zhang,2022-04-28 11:37:12 +0800,文案修改’
+’3563d17,lynn.zhang,2022-04-28 11:16:58 +0800,4.27 号验收修改’
+’86b476a,lynn.zhang,2022-04-27 18:18:40 +0800,修改选中’
+’786674f,lynn.zhang,2022-04-27 14:40:42 +0800,样式优化’
+’4940c4d,lynn.zhang,2022-04-27 14:19:17 +0800,样式优化’
+’95df592,lynn.zhang,2022-04-27 11:27:02 +0800,修改样式’
+’f8bb461,lynn.zhang,2022-04-27 11:10:51 +0800,修改header 点击 不回收bug’
+’1a426b2,lynn.zhang,2022-04-27 10:55:16 +0800,修改头部不显示’
+’7f04242,lynn.zhang,2022-04-27 10:42:42 +0800,修改间距’
+’bdf3ee5,lynn.zhang,2022-04-26 19:01:23 +0800,修改icon’
+’453de02,lynn.zhang,2022-04-26 18:54:11 +0800,调整样式’
+’b583306,lynn.zhang,2022-04-26 16:48:16 +0800,修改移动端 联系我们样式’
+’150772b,lynn.zhang,2022-04-26 11:00:11 +0800,Merge branch 'develop' into fe/qrcode’
+’3ed102c,lynn.zhang,2022-04-25 17:13:55 +0800,merge’
+’e136cc1,lynn.zhang,2022-04-25 17:12:24 +0800,修改官网修改信息’
+’f99229f,lynn.zhang,2022-04-19 10:55:28 +0000,Merge branch 'develop' into 'master'’
+’b99e205,lynn.zhang,2022-04-19 10:30:35 +0000,Merge branch 'fe/qrcode' into 'develop'’
+’fd4590a,lynn.zhang,2022-04-19 16:48:42 +0800,修改名称’
+’906773e,lynn.zhang,2022-04-15 17:05:53 +0800,二维码’
+’dd6c182,tommy.yang,2022-03-30 03:08:31 +0000,Merge branch 'develop' into 'master'’
+’488ffdc,wanyu.wen,2022-03-30 03:02:16 +0000,Merge branch 'f_train' into 'develop'’
+’b409b10,wanyu.wen,2022-03-18 14:20:24 +0800,文案修改、替换图片’
+’d071b24,wanyu.wen,2022-03-17 13:56:33 +0800,style：缩小尺寸’
+’9330427,wanyu.wen,2022-03-16 19:55:49 +0800,feat:去掉禁止组件’
+’4b88fd4,wanyu.wen,2022-03-16 19:49:16 +0800,style:去掉多余样式’
+’a63b209,wanyu.wen,2022-03-16 19:45:54 +0800,style:修改图片样式’
+’717f5ee,wanyu.wen,2022-03-16 17:36:19 +0800,修改弹窗’
+’02a0ab8,wanyu.wen,2022-03-15 16:29:53 +0800,style:修改文案以及样式’
+’6f22cda,wanyu.wen,2022-03-15 15:38:33 +0800,style:修改介绍页样式’
+’ff521f6,tommy.yang,2022-03-15 13:13:56 +0800,样式调整’
+’aa71434,tommy.yang,2022-03-15 13:10:11 +0800,调整跳转逻辑’
+’398d229,wanyu.wen,2022-03-15 11:50:03 +0800,style:修改样式’
+’6644391,danny.zhao,2022-03-14 10:40:05 +0000,Merge branch 'develop' into 'master'’
+’bf53938,danny.zhao,2022-03-14 10:39:36 +0000,Merge branch 'feat/recource-banner' into 'develop'’
+’d9f44e5,zhaozhuoboy,2022-03-14 18:36:27 +0800,课程资源修改banner’
+’87b5ceb,wanyu.wen,2022-03-11 18:59:37 +0800,style:控制样式’
+’89f99a3,wanyu.wen,2022-03-11 18:09:47 +0800,style:ui走查’
+’7101433,danny.zhao,2022-03-10 09:39:05 +0000,Merge branch 'develop' into 'master'’
+’375f28d,danny.zhao,2022-03-10 09:38:24 +0000,Merge branch 'feat/799' into 'develop'’
+’8eec856,wanyu.wen,2022-03-09 14:43:35 +0800,feat:设计页面’
+’809ea61,zhaozhuoboy,2022-03-09 10:49:11 +0800,更换二维码’
+’c2ad8c5,wanyu.wen,2022-03-08 11:59:09 +0800,feat:介绍页开发’
+’f367e25,zhaozhuoboy,2022-03-04 14:30:43 +0800,企业微信版不显示服务费’
+’697e3f2,wanyu.wen,2022-03-03 19:12:07 +0800,style:静态’
+’b6313c4,zhaozhuoboy,2022-03-03 17:02:26 +0800,去掉开通vip权益提示’
+’151f4f7,wanyu.wen,2022-03-03 16:49:21 +0800,feat:静态’
+’4726c3a,zhaozhuoboy,2022-03-01 15:01:37 +0800,代客下单没有服务费不展示服务薇信息’
+’5efec5c,zhaozhuoboy,2022-02-24 11:38:41 +0800,调整样式’
+’f24a45a,zhaozhuoboy,2022-02-24 11:35:53 +0800,调整样式’
+’77c886c,zhaozhuoboy,2022-02-24 10:46:41 +0800,调整样式’
+’988aa6e,zhaozhuoboy,2022-02-23 18:38:47 +0800,调整移动端商品列表’
+’0977c2c,zhaozhuoboy,2022-02-23 16:57:52 +0800,ui 走查’
+’3827111,zhaozhuoboy,2022-02-23 14:53:57 +0800,调整初始化商品总价逻辑’
+’8833e7e,zhaozhuoboy,2022-02-22 18:23:39 +0800,更新geekui’
+’bc4daaf,zhaozhuoboy,2022-02-22 16:23:38 +0800,style: 调整代码’
+’47ad1a9,zhaozhuoboy,2022-02-22 15:55:44 +0800,支付’
+’df381b2,zhaozhuoboy,2022-02-22 13:26:58 +0800,支付’
+’e16567f,zhaozhuoboy,2022-02-18 14:38:03 +0800,重写商品表格’
+’63ba211,zhaozhuoboy,2022-02-16 10:11:44 +0800,merge: 合并代码’
+’6d93962,danny.zhao,2022-02-15 09:36:52 +0000,Merge branch 'develop' into 'master'’
+’d80e634,danny.zhao,2022-02-15 09:36:17 +0000,Merge branch 'feat/add_banner' into 'develop'’
+’5ccce02,zhaozhuoboy,2022-02-15 17:25:55 +0800,课程资源换图’
+’a787c22,zhaozhuoboy,2022-02-15 17:23:58 +0800,merge: 合并代码’
+’1bd5f0b,zhaozhuoboy,2022-02-15 17:23:42 +0800,799 结算台调整’
+’40cac6b,danny.zhao,2022-02-09 08:40:38 +0000,Merge branch 'develop' into 'master'’
+’1490e03,danny.zhao,2022-02-09 08:40:13 +0000,Merge branch 'feat/add_banner' into 'develop'’
+’356d4ed,zhaozhuoboy,2022-02-09 16:32:45 +0800,课程资源页面banner添加’
+’b5333a7,danny.zhao,2022-01-26 10:11:58 +0000,Merge branch 'develop' into 'master'’
+’876d697,danny.zhao,2022-01-26 10:11:15 +0000,Merge branch 'develop' into 'master'’
+’a279361,zhaozhuoboy,2022-01-26 18:10:14 +0800,课程资源也dive大会图片补充’
+’473ade8,zhaozhuoboy,2022-01-26 18:08:48 +0800,课程资源也dive大会图片补充’
+’f0c5846,danny.zhao,2022-01-14 09:38:26 +0000,Merge branch 'develop' into 'master'’
+’ed4c08d,danny.zhao,2022-01-14 09:38:05 +0000,Merge branch 'feat/course-banner-add' into 'develop'’
+’5175605,zhaozhuoboy,2022-01-14 15:14:32 +0800,替换课程资源页面banner’
+’4af7b53,danny.zhao,2021-12-27 08:52:01 +0000,Merge branch 'develop' into 'master'’
+’7363538,danny.zhao,2021-12-27 08:51:38 +0000,Merge branch 'f_update_intro' into 'develop'’
+’bbfa003,wanyu.wen,2021-12-27 15:49:09 +0800,style(公司简介):修改图片’
+’2b1c41a,danny.zhao,2021-12-23 03:20:17 +0000,Merge branch 'develop' into 'master'’
+’b052366,wanyu.wen,2021-12-22 10:30:56 +0000,Merge branch 'f_update_intro' into 'develop'’
+’ef25a75,wanyu.wen,2021-12-22 16:54:14 +0800,perf:去除console’
+’0acaa20,wanyu.wen,2021-12-22 15:53:35 +0800,feat(官方简介):类型定义修改’
+’74f39d5,wanyu.wen,2021-12-22 14:38:23 +0800,style(官网简介)：替换icon以及样式修改’
+’5cd4dee,wanyu.wen,2021-12-22 14:08:18 +0800,style（公司简介）:icon替换，样式修改’
+’30c0bbf,wanyu.wen,2021-12-21 18:48:52 +0800,style(h5):官网底部文案修改’
+’5f2c3be,wanyu.wen,2021-12-21 18:37:08 +0800,style(h5):添加媒体查询处理宽度,官网底部文案修改’
+’3ffd857,wanyu.wen,2021-12-21 16:59:47 +0800,style（ui走查）:修改样式’
+’81bcd45,wanyu.wen,2021-12-21 14:46:40 +0800,style(官网底导):添加箭头’
+’32f0ce4,wanyu.wen,2021-12-21 14:38:40 +0800,style(官网底导):小程序替换为跳转企业微信’
+’5f67e6e,wanyu.wen,2021-12-21 11:29:17 +0800,style(h5):公司简介样式以及icon修改’
+’4d2249b,wanyu.wen,2021-12-21 10:30:23 +0800,style(核心价值观):icon添加以及修改’
+’33bcac3,wanyu.wen,2021-12-20 19:20:13 +0800,style(公司简介)：文案以及一些样式修改’
+’cdae852,danny.zhao,2021-12-01 02:27:02 +0000,Merge branch 'develop' into 'master'’
+’752b72a,danny.zhao,2021-12-01 02:26:05 +0000,Merge branch 'feat/pop_win' into 'develop'’
+’295f256,zhaozhuoboy,2021-11-30 19:07:06 +0800,课程资源增加banner’
+’7b02204,zhaozhuoboy,2021-11-30 16:00:50 +0800,插屏数据源切换测试地址’
+’afbf815,danny.zhao,2021-11-22 10:36:35 +0000,Merge branch 'develop' into 'master'’
+’9e49b96,zhaozhuoboy,2021-11-22 18:27:52 +0800,feat(课程资源页): 修改轮播’
+’3259e7a,danny.zhao,2021-11-01 07:13:10 +0000,Merge branch 'develop' into 'master'’
+’1b61f78,mingyang.hao,2021-11-01 07:11:53 +0000,Merge branch 'f_update_evaluation' into 'develop'’
+’ed85edb,mingyang.hao,2021-11-01 11:31:06 +0800,更新头像’
+’10775cd,mingyang.hao,2021-10-27 10:55:59 +0800,修改联系方式’
+’d9f1abf,mingyang.hao,2021-10-26 14:41:16 +0800,测评页更新数据’
+’970b644,tommy.yang,2021-09-18 06:43:39 +0000,Merge branch 'develop' into 'master'’
+’7f9b915,lynn.zhang,2021-09-18 06:42:19 +0000,Merge branch 'feature/seo' into 'develop'’
+’816cff2,lynn.zhang,2021-09-18 14:41:31 +0800,数据’
+’7e11b7b,lynn.zhang,2021-09-18 06:39:40 +0000,Merge branch 'feature/seo' into 'develop'’
+’65ee05d,lynn.zhang,2021-09-18 14:33:36 +0800,修改数据’
+’54575d3,lynn.zhang,2021-09-18 14:14:17 +0800,Merge branch 'develop' into feature/seo’
+’4e496b2,lynn.zhang,2021-09-18 14:11:26 +0800,阻止时间冒泡’
+’aa6113b,danny.zhao,2021-09-18 05:15:45 +0000,Merge branch 'develop' into 'master'’
+’efb3117,danny.zhao,2021-09-18 05:14:46 +0000,Merge branch 'debug/article' into 'develop'’
+’86adc47,zhaozhuoboy,2021-09-18 12:34:50 +0800,bugfix’
+’de55641,zhaozhuoboy,2021-09-18 12:16:18 +0800,bugfix’
+’d907564,tommy.yang,2021-09-17 09:06:12 +0000,Merge branch 'develop' into 'master'’
+’3412780,lynn.zhang,2021-09-17 09:02:51 +0000,Merge branch 'feature/seo' into 'develop'’
+’17f65ba,lynn.zhang,2021-09-17 16:59:34 +0800,修改id’
+’6661797,lynn.zhang,2021-09-17 16:58:34 +0800,调整样式’
+’15c03c3,lynn.zhang,2021-09-17 16:51:38 +0800,ipad适配’
+’b8aa67a,lynn.zhang,2021-09-17 16:35:45 +0800,样式’
+’db62547,lynn.zhang,2021-09-17 16:13:27 +0800,补充审校’
+’d8473d7,lynn.zhang,2021-09-17 16:08:12 +0800,新增人员展示’
+’8b401b0,lynn.zhang,2021-09-17 10:56:04 +0800,取消log’
+’d570c37,tommy.yang,2021-09-17 02:32:58 +0000,Merge branch 'develop' into 'master'’
+’7ecc62c,lynn.zhang,2021-09-17 02:31:36 +0000,Merge branch 'feature/seo' into 'develop'’
+’62d7de1,lynn.zhang,2021-09-17 10:30:05 +0800,样式’
+’daad496,lynn.zhang,2021-09-17 10:27:47 +0800,引号’
+’6abd226,lynn.zhang,2021-09-17 02:23:49 +0000,Merge branch 'feature/seo' into 'develop'’
+’028a03e,lynn.zhang,2021-09-16 19:49:56 +0800,优化’
+’0bc72aa,lynn.zhang,2021-09-16 19:47:04 +0800,优化’
+’284a5f5,lynn.zhang,2021-09-16 18:45:51 +0800,fixbug’
+’f349e7a,lynn.zhang,2021-09-16 17:13:28 +0800,优化’
+’7a0daa5,lynn.zhang,2021-09-16 17:11:30 +0800,优化’
+’1123c2d,lynn.zhang,2021-09-16 17:10:40 +0800,优化’
+’310cf93,lynn.zhang,2021-09-16 17:08:56 +0800,样式’
+’0d9c8a9,lynn.zhang,2021-09-16 14:47:12 +0800,merge dev’
+’330c4ec,lynn.zhang,2021-09-16 14:42:53 +0800,Merge branch 'develop' into feature/seo’
+’9c47035,lynn.zhang,2021-09-16 14:34:13 +0800,fixbug’
+’2fb2263,lynn.zhang,2021-09-15 18:51:59 +0800,打开新页面’
+’4bff3e4,lynn.zhang,2021-09-15 18:33:02 +0800,优化’
+’8e9e84a,lynn.zhang,2021-09-15 18:30:56 +0800,fixbug’
+’58bc94e,lynn.zhang,2021-09-14 17:35:59 +0800,修改ID’
+’3e3041e,lynn.zhang,2021-09-14 17:23:43 +0800,细节’
+’96376c0,lynn.zhang,2021-09-13 19:14:10 +0800,seo’
+’cbeb386,tommy.yang,2021-09-03 09:56:50 +0000,Merge branch 'develop' into 'master'’
+’6cba041,tommy.yang,2021-09-03 09:56:30 +0000,Merge branch 'f/ui' into 'develop'’
+’9146d35,tommy.yang,2021-09-03 17:53:39 +0800,ipad适配’
+’776fb1d,tommy.yang,2021-09-03 17:33:34 +0800,调整’
+’9dba2bd,tommy.yang,2021-09-03 16:54:41 +0800,调整’
+’79e3721,tommy.yang,2021-09-03 16:27:24 +0800,调整’
+’20875c8,tommy.yang,2021-09-03 16:23:46 +0800,ipad适配’
+’16570ad,tommy.yang,2021-09-03 16:08:40 +0800,ipad适配’
+’37c8442,tommy.yang,2021-09-03 15:53:05 +0800,ipad适配’
+’13c3418,tommy.yang,2021-09-03 15:29:22 +0800,ipad适配’
+’c1e7539,tommy.yang,2021-09-03 14:12:41 +0800,区分ipad’
+’1908322,tommy.yang,2021-09-02 19:04:14 +0800,适配ipad’
+’afe1c45,danny.zhao,2021-09-02 10:52:03 +0000,Merge branch 'develop' into 'master'’
+’1789404,mingyang.hao,2021-09-02 10:50:49 +0000,Merge branch 'f_update_evaluation' into 'develop'’
+’a71b7fe,mingyang.hao,2021-09-02 18:46:36 +0800,更新测评页测评范围数据’
+’65fc47a,danny.zhao,2021-09-01 03:07:44 +0000,Merge branch 'develop' into 'master'’
+’e196ef8,danny.zhao,2021-09-01 03:06:51 +0000,Merge branch 'feat/ipad' into 'develop'’
+’6614f82,zhaozhuoboy,2021-09-01 10:19:47 +0800,调整轮播实现’
+’dd49882,zhaozhuoboy,2021-08-31 19:24:43 +0800,调整测评介绍页移动端轮播’
+’488df1b,zhaozhuoboy,2021-08-31 19:22:01 +0800,调整测评介绍页移动端轮播’
+’71b491a,zhaozhuoboy,2021-08-31 16:22:50 +0800,适配’
+’4cfda2d,monster.xu,2021-08-26 09:02:53 +0000,Merge branch 'develop' into 'master'’
+’08d075f,monster.xu,2021-08-26 09:02:16 +0000,Merge branch 'feature/login' into 'develop'’
+’409c65a,tommy.yang,2021-08-25 18:04:58 +0800,更换企业版无权限logo’
+’430771a,tommy.yang,2021-08-25 16:08:25 +0800,调整’
+’0e5989b,tommy.yang,2021-08-25 15:46:06 +0800,网页说明更改’
+’257ae1f,tommy.yang,2021-08-25 14:53:13 +0800,pc登陆之后直接重定向到控制台’
+’1f9b2a1,danny.zhao,2021-08-25 02:11:22 +0000,Merge branch 'develop' into 'master'’
+’89bff0a,danny.zhao,2021-08-25 02:10:12 +0000,Merge branch 'feat/wx_intro' into 'develop'’
+’df7c31e,zhaozhuoboy,2021-08-24 09:13:53 +0800,调整移动端背景图’
+’73ff962,zhaozhuoboy,2021-08-23 18:27:40 +0800,调整代码’
+’42e2f03,zhaozhuoboy,2021-08-23 16:16:16 +0800,调整安装链接和菜单切换体验’
+’285a18b,zhaozhuoboy,2021-08-20 18:46:01 +0800,fix: 移动端安装’
+’9729f35,zhaozhuoboy,2021-08-20 15:17:22 +0800,还原官网版介绍页’
+’ba7ff0e,zhaozhuoboy,2021-08-20 15:11:15 +0800,移动端开发’
+’0c85a96,zhaozhuoboy,2021-08-19 16:39:18 +0800,style:添加icon’
+’582e8d5,zhaozhuoboy,2021-08-19 16:35:55 +0800,PC完成’
+’3c02913,zhaozhuoboy,2021-08-19 16:18:21 +0800,调试获取url跳转’
+’131a13a,monster.xu,2021-08-13 09:48:45 +0000,Merge branch 'develop' into 'master'’
+’2610c1c,monster.xu,2021-08-13 09:48:13 +0000,Merge branch 'f_wx_link' into 'develop'’
+’893162c,Monster.Xu,2021-08-13 17:45:07 +0800,调整学习平台获取数据的逻辑’
+’c343d62,danny.zhao,2021-08-12 02:40:30 +0000,Merge branch 'develop' into 'master'’
+’958f45d,danny.zhao,2021-08-12 02:40:15 +0000,Merge branch 'feat/wxwork_download' into 'develop'’
+’e97ce0e,zhaozhuoboy,2021-08-12 10:39:36 +0800,merge:合并代码’
+’a002e63,danny.zhao,2021-08-12 02:38:35 +0000,Merge branch 'develop' into 'master'’
+’bc8e79a,danny.zhao,2021-08-12 02:37:56 +0000,Merge branch 'feat/wxwork_download' into 'develop'’
+’be4b730,zhaozhuoboy,2021-08-12 09:31:06 +0800,style: 调整样式’
+’d516511,zhaozhuoboy,2021-08-11 19:27:14 +0800,修改逻辑’
+’8df0784,monster.xu,2021-08-11 09:10:06 +0000,Merge branch 'develop' into 'master'’
+’778f064,monster.xu,2021-08-11 09:09:46 +0000,Merge branch 'feature/hidebtn' into 'develop'’
+’fa281e0,zhaozhuoboy,2021-08-11 16:46:31 +0800,添加接口’
+’0447f08,tommy.yang,2021-08-09 17:07:49 +0800,微信版隐藏课程详情页加入购物车按钮’
+’7b6607a,danny.zhao,2021-08-09 03:48:30 +0000,Merge branch 'develop' into 'master'’
+’5750a46,zhaozhuoboy,2021-08-09 11:47:33 +0800,fix:学习平台文案’
+’e9b1209,zhaozhuoboy,2021-08-05 18:25:43 +0800,style:调整样式’
+’0bdae08,zhaozhuoboy,2021-08-05 18:10:39 +0800,feat:新增安装到企业微信’
+’974663b,zhaozhuoboy,2021-08-05 16:36:08 +0800,style:调整代码’
+’9af4b89,monster.xu,2021-07-29 07:54:19 +0000,Merge branch 'develop' into 'master'’
+’90bb1b5,monster.xu,2021-07-29 07:53:44 +0000,Merge branch 'feature/wechat' into 'develop'’
+’e8f2df4,tommy.yang,2021-07-29 15:46:08 +0800,管理员停用页面适配移动端’
+’7585957,danny.zhao,2021-07-28 09:20:19 +0000,Merge branch 'develop' into 'master'’
+’e1a952a,danny.zhao,2021-07-28 09:20:01 +0000,Merge branch 'feature/wechat' into 'develop'’
+’9b90757,danny.zhao,2021-07-27 08:48:21 +0000,Merge branch 'develop' into 'master'’
+’4d4acc9,zhaozhuoboy,2021-07-27 16:35:05 +0800,修改讲师title’
+’d63da00,monster.xu,2021-07-23 02:28:57 +0000,Merge branch 'develop' into 'master'’
+’9240811,monster.xu,2021-07-23 02:28:12 +0000,Merge branch 'fix/invationtips' into 'develop'’
+’4ecfb06,tommy.yang,2021-07-22 19:42:29 +0800,调整’
+’41b21dd,tommy.yang,2021-07-22 18:56:52 +0800,添加错误码’
+’b53ec02,tommy.yang,2021-07-22 18:54:39 +0800,添加错误码’
+’316b7ba,tommy.yang,2021-07-22 14:49:55 +0800,整理代码’
+’835bc07,danny.zhao,2021-07-15 07:44:42 +0000,Merge branch 'develop' into 'master'’
+’3888226,zhaozhuoboy,2021-07-15 15:44:01 +0800,notic广告下线’
+’5ecc1be,tommy.yang,2021-07-15 14:16:58 +0800,结算台登陆账号显示调整’
+’c3826cd,tommy.yang,2021-07-13 17:21:31 +0800,增加企业员工无权限登陆页面’
+’2439497,monster.xu,2021-07-13 08:40:10 +0000,Merge branch 'develop' into 'master'’
+’681b727,monster.xu,2021-07-13 08:39:41 +0000,Merge branch 'feature/manageopt' into 'develop'’
+’14c5774,tommy.yang,2021-07-13 16:38:47 +0800,替换icon’
+’63e5b69,tommy.yang,2021-07-13 16:24:24 +0800,删除注释代码’
+’d2dae9a,monster.xu,2021-07-12 10:27:16 +0000,Merge branch 'develop' into 'master'’
+’dca33fa,monster.xu,2021-07-12 10:27:01 +0000,Merge branch 'f_checkout_weixin' into 'develop'’
+’0f028b2,Monster.Xu,2021-07-12 17:18:27 +0800,微信中隐藏微信支付渠道’
+’b8fbad9,tommy.yang,2021-07-09 17:14:53 +0800,调整’
+’3404864,tommy.yang,2021-07-09 17:11:41 +0800,调整停用登出逻辑’
+’c049b40,tommy.yang,2021-07-09 16:39:58 +0800,调整’
+’07768b2,tommy.yang,2021-07-09 10:53:57 +0800,更换重定向链接’
+’7d129c0,tommy.yang,2021-07-08 19:12:35 +0800,调整重定向逻辑’
+’b18aac7,tommy.yang,2021-07-08 19:02:37 +0800,调整重定向逻辑’
+’4029e83,tommy.yang,2021-07-06 17:45:59 +0800,管理员停用界面样式调整’
+’febd8ae,tommy.yang,2021-07-01 18:53:01 +0800,隐藏支付宝支付’
+’c747e9f,tommy.yang,2021-07-01 18:49:20 +0800,适配企业微信控制台结算台展示逻辑’
+’e62f1d1,danny.zhao,2021-06-24 10:50:10 +0000,Merge branch 'develop' into 'master'’
+’b947256,zhaozhuoboy,2021-06-24 18:47:41 +0800,更换图片’
+’003cdab,danny.zhao,2021-06-24 08:53:32 +0000,Merge branch 'develop' into 'master'’
+’1609f67,zhaozhuoboy,2021-06-24 16:48:19 +0800,跳转后 关闭’
+’85673ba,danny.zhao,2021-06-24 08:21:11 +0000,Merge branch 'develop' into 'master'’
+’ade71f3,zhaozhuoboy,2021-06-24 16:19:08 +0800,调整跳转样式’
+’0ec6e44,danny.zhao,2021-06-24 08:07:50 +0000,Merge branch 'develop' into 'master'’
+’5912c06,zhaozhuoboy,2021-06-24 16:07:29 +0800,调整样式’
+’cf30da9,zhaozhuoboy,2021-06-24 16:06:03 +0800,调整样式’
+’f5de6ae,danny.zhao,2021-06-24 06:48:13 +0000,Merge branch 'develop' into 'master'’
+’387c877,danny.zhao,2021-06-24 06:47:44 +0000,Merge branch 'f_screen_pop' into 'develop'’
+’ea3165d,zhaozhuoboy,2021-06-24 14:43:12 +0800,知己测评添加 联系客服’
+’b93e4ed,zhaozhuoboy,2021-06-24 13:50:33 +0800,插屏数据’
+’c818e29,zhaozhuoboy,2021-06-24 11:06:19 +0800,插屏’
+’b146614,xiawei.zhang,2021-06-23 07:58:36 +0000,Merge branch 'develop' into 'master'’
+’bb645b1,xiawei.zhang,2021-06-23 07:57:11 +0000,Merge branch 'f_share_0623' into 'develop'’
+’5a6dfcb,Xiawei,2021-06-23 15:56:27 +0800,修改企业官网分享文案’
+’16c5a0d,xiawei.zhang,2021-06-09 06:56:02 +0000,Merge branch 'develop' into 'master'’
+’abba2c1,xiawei.zhang,2021-06-09 06:54:48 +0000,Merge branch 'f_resource_0609' into 'develop'’
+’d184d9c,Xiawei,2021-06-09 14:46:53 +0800,课程资源页换banner图’
+’0c4ac8a,monster.xu,2021-06-08 03:14:18 +0000,Merge branch 'develop' into 'master'’
+’2891039,monster.xu,2021-06-08 03:13:37 +0000,Merge branch 'feature/checkout' into 'develop'’
+’7ce63c5,Monster.Xu,2021-06-07 17:51:20 +0800,调整充值订单的样式’
+’4f3df0c,Monster.Xu,2021-06-04 17:09:30 +0800,调整微信支付’
+’4e9b3c6,Monster.Xu,2021-06-04 16:47:56 +0800,调整微信支付’
+’ef86ab8,Monster.Xu,2021-06-04 15:59:42 +0800,调整微信支付’
+’101eb4b,Monster.Xu,2021-06-04 15:56:09 +0800,余额支付时,不显示支付状态的弹框’
+’abf984d,Monster.Xu,2021-06-04 15:08:33 +0800,调整支付订单的判断’
+’fa94758,Monster.Xu,2021-06-04 14:57:15 +0800,调整文案’
+’d4f35fd,Monster.Xu,2021-06-04 14:43:50 +0800,应付’
+’c605fd9,Monster.Xu,2021-06-04 11:59:52 +0800,调整充值适配’
+’3e03b00,monster.xu,2021-06-04 02:22:12 +0000,Merge branch 'develop' into 'master'’
+’8524521,monster.xu,2021-06-04 02:21:27 +0000,Merge branch 'feature/active' into 'develop'’
+’7d93834,xiawei.zhang,2021-06-03 10:46:08 +0000,Merge branch 'develop' into 'master'’
+’65a8760,Xiawei,2021-06-03 18:43:21 +0800,修改微信分享文案’
+’1c928e4,Xiawei,2021-06-03 18:11:24 +0800,课程资源页添加跳转、修改分享文案’
+’3ad7666,zhaozhuoboy,2021-06-03 16:19:42 +0800,调整公司简介移动端样式’
+’cae59e6,zhaozhuoboy,2021-06-03 14:16:25 +0800,Merge branch 'develop' of code.geekbang.org:fe/b.geekbang.org into develop’
+’2e988d5,zhaozhuoboy,2021-06-03 14:16:21 +0800,hover 下拉菜单’
+’11188de,Monster.Xu,2021-06-03 13:48:29 +0800,merge develop’
+’8913781,Monster.Xu,2021-06-03 13:47:47 +0800,调整获取权限的参数,调整进入页面时判断权限后的交互’
+’4f45480,Xiawei,2021-05-31 18:18:24 +0800,导航栏 hover 字色 fix’
+’1580079,zhaozhuoboy,2021-05-31 17:32:47 +0800,更换滚动logo’
+’dfe2fc8,zhaozhuoboy,2021-05-31 17:30:19 +0800,Merge branch 'develop' of code.geekbang.org:fe/b.geekbang.org into develop’
+’8f607ea,zhaozhuoboy,2021-05-31 17:30:13 +0800,更换客户头像’
+’ed582e9,Xiawei,2021-05-31 11:54:56 +0800,导航栏 hover 字色’
+’e22d063,Xiawei,2021-05-28 20:56:21 +0800,导航栏 hover 字色’
+’a1be7d4,Xiawei,2021-05-28 20:29:20 +0800,Merge branch 'develop'’
+’e12e339,Xiawei,2021-05-28 20:17:39 +0800,微信分享’
+’e374aa4,Xiawei,2021-05-28 20:13:38 +0800,微信分享’
+’d8cbfbf,Xiawei,2021-05-28 19:40:36 +0800,微信分享’
+’961c855,Xiawei,2021-05-28 18:43:40 +0800,Merge branch 'develop'’
+’b4d7ed9,Xiawei,2021-05-28 18:43:05 +0800,Merge branch 'f_home_xiawei' into develop’
+’c8f22f2,Xiawei,2021-05-28 18:42:50 +0800,首页UI、文案修改’
+’140b943,melody.gan,2021-05-28 18:29:02 +0800,选课详情页h5打开，重定向到新页面’
+’01aa337,zhaozhuoboy,2021-05-28 16:57:20 +0800,调整文案’
+’c6ea0ad,Monster.Xu,2021-05-28 15:50:58 +0800,merge develop’
+’aa9b3b7,Monster.Xu,2021-05-28 15:50:30 +0800,基本完成移动支付的流程’
+’1e7d62d,danny.zhao,2021-05-28 07:44:50 +0000,Merge branch 'develop' into 'master'’
+’c8b7113,zhaozhuoboy,2021-05-28 15:44:04 +0800,调整导航跳转’
+’0167c7d,Monster.Xu,2021-05-28 14:41:26 +0800,完成移动版支付后的 UI’
+’3114443,Xiawei,2021-05-28 12:54:27 +0800,Merge branch 'develop'’
+’5fde0ed,Xiawei,2021-05-28 12:53:42 +0800,课程资源页点击调转课程详情页’
+’f6cb3e8,danny.zhao,2021-05-28 03:42:57 +0000,Merge branch 'develop' into 'master'’
+’babb646,zhaozhuoboy,2021-05-28 11:42:10 +0800,调整代码’
+’e22fe34,danny.zhao,2021-05-28 03:32:14 +0000,Merge branch 'develop' into 'master'’
+’b27369d,danny.zhao,2021-05-28 03:31:58 +0000,Merge branch 'feature/about' into 'develop'’
+’5739c37,zhaozhuoboy,2021-05-28 11:31:19 +0800,调整代码’
+’07952d2,zhaozhuoboy,2021-05-28 10:32:04 +0800,关于我们添加客服’
+’c658204,zhaozhuoboy,2021-05-28 10:20:05 +0800,merge dev’
+’286094a,zhaozhuoboy,2021-05-28 10:18:52 +0800,调整ui’
+’b8bbb3c,Xiawei,2021-05-28 10:15:46 +0800,Merge branch 'develop'’
+’32f5d08,Xiawei,2021-05-28 10:14:46 +0800,课程资源页不展示章节数据’
+’7aaccff,zhaozhuoboy,2021-05-28 10:06:00 +0800,调整ui’
+’5f1c294,Xiawei,2021-05-27 20:13:48 +0800,Merge branch 'develop'’
+’5146611,Xiawei,2021-05-27 20:11:13 +0800,课程资源页样式调整’
+’f701700,Xiawei,2021-05-27 19:45:25 +0800,Merge branch 'develop'’
+’9cfc4c0,Xiawei,2021-05-27 19:41:19 +0800,课程资源页fix’
+’0c5be57,Xiawei,2021-05-27 19:09:47 +0800,课程资源页fix’
+’4ad6d01,Xiawei,2021-05-27 19:05:11 +0800,课程资源页轮播’
+’d2149f0,zhaozhuoboy,2021-05-27 18:57:23 +0800,添加客服按钮’
+’96768af,zhaozhuoboy,2021-05-27 18:54:21 +0800,调整样式’
+’812e5a7,monster.xu,2021-05-27 10:28:26 +0000,Merge branch 'develop' into 'master'’
+’8fb6cb6,monster.xu,2021-05-27 10:28:05 +0000,Merge branch 'feature/checkout' into 'develop'’
+’a4ddcd7,Monster.Xu,2021-05-27 18:27:38 +0800,调整文案’
+’406f6d4,zhaozhuoboy,2021-05-27 18:27:29 +0800,merge dev’
+’8bba1d0,zhaozhuoboy,2021-05-27 17:53:23 +0800,调整样式’
+’42e049a,zhaozhuoboy,2021-05-27 17:15:32 +0800,Merge branch 'develop' of code.geekbang.org:fe/b.geekbang.org into develop’
+’576fb3d,zhaozhuoboy,2021-05-27 17:15:23 +0800,调整样式’
+’480e4bd,monster.xu,2021-05-27 09:13:27 +0000,Merge branch 'develop' into 'master'’
+’fa57cca,monster.xu,2021-05-27 09:13:06 +0000,Merge branch 'feature/checkout' into 'develop'’
+’deda050,Monster.Xu,2021-05-27 17:12:17 +0800,新建移动版部分功能,调整样式’
+’8f4c5ce,zhaozhuoboy,2021-05-27 17:11:47 +0800,添加客服气泡’
+’e5b3a0b,zhaozhuoboy,2021-05-27 17:08:11 +0800,添加客服气泡’
+’3f2b606,zhaozhuoboy,2021-05-27 17:01:14 +0800,解决冲突’
+’f72e146,monster.xu,2021-05-27 08:58:30 +0000,Merge branch 'develop' into 'master'’
+’d067cbb,zhaozhuoboy,2021-05-27 16:36:09 +0800,merge dev’
+’3017787,zhaozhuoboy,2021-05-27 16:33:08 +0800,Merge branch 'develop' of code.geekbang.org:fe/b.geekbang.org into develop’
+’afa4729,zhaozhuoboy,2021-05-27 16:33:04 +0800,调整样式’
+’23228c3,zhaoml,2021-05-27 16:13:21 +0800,试看时间取值修复’
+’3e46a1e,Xiawei,2021-05-27 15:58:47 +0800,课程资源页fix’
+’7845818,Xiawei,2021-05-27 15:44:02 +0800,Merge branch 'develop' into f_home_xiawei’
+’f72c10b,Xiawei,2021-05-27 15:43:31 +0800,课程资源页’
+’483750f,melody.gan,2021-05-27 15:39:17 +0800,文章页异常处理’
+’d394f56,monster.xu,2021-05-27 06:56:25 +0000,Merge branch 'develop' into 'master'’
+’a05385c,zhaozhuoboy,2021-05-27 14:55:14 +0800,调整样式’
+’4fd7e3e,danny.zhao,2021-05-27 06:51:50 +0000,Merge branch 'feature/home_new' into 'develop'’
+’65d4bcd,zhaozhuoboy,2021-05-27 14:50:57 +0800,走查’
+’7bf932f,zhaozhuoboy,2021-05-27 14:09:34 +0800,merge dev’
+’6d58520,zhaozhuoboy,2021-05-27 14:07:57 +0800,媒体报道移动端’
+’77e7f00,zhaozhuoboy,2021-05-27 14:05:52 +0800,媒体报道移动端’
+’f0ed439,zhaozhuoboy,2021-05-27 12:31:37 +0800,公司简介移动端’
+’c9190f4,Xiawei,2021-05-27 11:27:49 +0800,修改案例页图片’
+’03fd659,Xiawei,2021-05-27 11:01:27 +0800,修复样式、隐藏header部分标签’
+’5014da2,Xiawei,2021-05-27 10:37:01 +0800,修复样式’
+’063c83a,zhaozhuoboy,2021-05-27 10:15:04 +0800,调整跳转’
+’6c4d40e,zhaozhuoboy,2021-05-27 09:59:16 +0800,测试环境文章列表’
+’4d5e10c,zhaozhuoboy,2021-05-27 09:47:53 +0800,解决冲突’
+’6dfb557,danny.zhao,2021-05-27 01:40:37 +0000,Merge branch 'feature/home_new' into 'develop'’
+’67ba67d,zhaozhuoboy,2021-05-27 09:33:57 +0800,merge dev’
+’b2b9d45,zhaozhuoboy,2021-05-27 09:33:38 +0800,移动端首页走查’
+’d111ca5,Xiawei,2021-05-26 20:52:37 +0800,已登陆时，修改按钮文案’
+’d9ef473,Xiawei,2021-05-26 20:45:41 +0800,fix’
+’9d0b27c,Xiawei,2021-05-26 20:36:51 +0800,fix’
+’b931607,Xiawei,2021-05-26 20:21:09 +0800,修改按钮样式’
+’b2c2024,Xiawei,2021-05-26 19:34:44 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’91b51b0,Xiawei,2021-05-26 19:34:26 +0800,样式修改’
+’3ca7a74,zhaozhuoboy,2021-05-26 19:21:22 +0800,merge dev’
+’e65f8c2,zhaozhuoboy,2021-05-26 19:21:12 +0800,移动端首页走查’
+’2335dce,danny.zhao,2021-05-26 11:05:05 +0000,Merge branch 'feature/home_new' into 'develop'’
+’cd33b6a,zhaozhuoboy,2021-05-26 19:04:31 +0800,merge dev’
+’f23cfd8,zhaozhuoboy,2021-05-26 19:04:03 +0800,移动端首页走查’
+’6dfaea1,Xiawei,2021-05-26 18:35:03 +0800,Merge branch 'develop' into f_home_xiawei’
+’8846d1e,Xiawei,2021-05-26 18:34:16 +0800,课程资源页 banner 图、客户服务页样式’
+’4d4a6a8,danny.zhao,2021-05-26 10:10:49 +0000,Merge branch 'feature/home_new' into 'develop'’
+’af6b423,zhaozhuoboy,2021-05-26 18:08:22 +0800,merge dev’
+’94a9bab,zhaozhuoboy,2021-05-26 18:07:39 +0800,button common color’
+’ab9f543,zhaozhuoboy,2021-05-26 18:00:15 +0800,ui走查’
+’baaa90a,Xiawei,2021-05-26 17:44:23 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’c0c6ed4,Xiawei,2021-05-26 17:44:09 +0800,课程资源页’
+’8e1aa6c,monster.xu,2021-05-26 07:42:19 +0000,Merge branch 'f_layout_ui' into 'develop'’
+’47e472e,danny.zhao,2021-05-26 07:41:19 +0000,Merge branch 'feature/home_new' into 'develop'’
+’0d14473,Monster.Xu,2021-05-26 15:40:54 +0800,调整样式’
+’b21c80d,zhaozhuoboy,2021-05-26 15:40:52 +0800,merge dev’
+’c80bab4,monster.xu,2021-05-26 07:35:57 +0000,Merge branch 'f_layout_ui' into 'develop'’
+’2d71c59,Monster.Xu,2021-05-26 15:35:15 +0800,调整样式’
+’c893654,zhaozhuoboy,2021-05-26 15:32:56 +0800,调整按钮颜色’
+’99dbeaa,Xiawei,2021-05-26 15:32:20 +0800,课程资源页’
+’83ee8c6,Monster.Xu,2021-05-26 15:29:19 +0800,添加文案’
+’c0bcb46,zhaoml,2021-05-26 15:19:13 +0800,每日及大厂设计走查’
+’eff5910,monster.xu,2021-05-26 06:59:09 +0000,Merge branch 'feature/checkout' into 'develop'’
+’39f0dff,Monster.Xu,2021-05-26 14:58:23 +0800,调整支付状态的判断’
+’1ca36b1,Xiawei,2021-05-26 14:50:32 +0800,课程资源页’
+’ea59a5f,zhaozhuoboy,2021-05-26 14:19:16 +0800,媒体报道页面完成’
+’a2fa05f,Xiawei,2021-05-26 11:27:48 +0800,课程资源页’
+’a4c924d,Xiawei,2021-05-26 11:04:15 +0800,课程资源页’
+’873b335,Xiawei,2021-05-25 18:51:30 +0800,课程资源页’
+’213a6ce,Xiawei,2021-05-25 18:32:04 +0800,课程资源页’
+’1e0a2f8,zhaozhuoboy,2021-05-25 18:22:36 +0800,合并home代码’
+’9b76f0a,danny.zhao,2021-05-25 10:18:10 +0000,Merge branch 'feature/home_new' into 'develop'’
+’8ed076f,zhaozhuoboy,2021-05-25 18:17:10 +0800,merge dev’
+’62ee777,zhaozhuoboy,2021-05-25 18:16:39 +0800,蓝色按钮’
+’1cc8051,monster.xu,2021-05-25 09:59:58 +0000,Merge branch 'feature/checkout' into 'develop'’
+’d4c5208,Monster.Xu,2021-05-25 17:59:31 +0800,调整默认支付方式’
+’1859f9d,tommy.yang,2021-05-25 17:23:59 +0800,活动’
+’d45a187,monster.xu,2021-05-25 09:23:46 +0000,Merge branch 'feature/checkout' into 'develop'’
+’9f830c2,Monster.Xu,2021-05-25 17:23:17 +0800,充值订单移除商品数量的展示文案’
+’ce50811,zhaozhuoboy,2021-05-25 17:15:33 +0800,解决冲突’
+’3cef476,zhaozhuoboy,2021-05-25 17:13:49 +0800,调整样式’
+’6df5146,zhaozhuoboy,2021-05-25 17:03:28 +0800,公司简介’
+’c55f96d,Xiawei,2021-05-25 16:53:15 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’cc18470,Xiawei,2021-05-25 16:52:57 +0800,课程资源页’
+’32a2aeb,monster.xu,2021-05-25 08:52:57 +0000,Merge branch 'feature/checkout' into 'develop'’
+’5c7b7f7,Monster.Xu,2021-05-25 16:52:22 +0800,调整充值订单的参数’
+’e0e524e,monster.xu,2021-05-25 08:37:45 +0000,Merge branch 'feature/checkout' into 'develop'’
+’2d0f6ad,Monster.Xu,2021-05-25 16:37:12 +0800,添加充值订单的逻辑’
+’5eb41ab,melody.gan,2021-05-25 15:25:13 +0800,产品验收bugfix’
+’ad3678e,Xiawei,2021-05-25 12:09:44 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’f450ed2,Xiawei,2021-05-25 12:09:17 +0800,课程资源页’
+’62b2b78,monster.xu,2021-05-25 03:50:06 +0000,Merge branch 'f_hideFreeBtn_melody' into 'develop'’
+’2ee5b25,melody.gan,2021-05-25 11:47:14 +0800,课程详情页导航隐藏免费使用按钮’
+’9a729e6,zhaoml,2021-05-25 11:11:23 +0800,优化试看提示展示逻辑’
+’88aa4db,zhaoml,2021-05-25 11:08:18 +0800,优化试看提示展示逻辑’
+’210eeee,zhaozhuoboy,2021-05-25 10:22:16 +0800,导航免费试用跳转’
+’afb96c8,zhaozhuoboy,2021-05-25 10:19:02 +0800,merge dev’
+’3af8f60,Xiawei,2021-05-24 20:04:28 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’d84c7e4,Xiawei,2021-05-24 20:04:09 +0800,课程资源页’
+’484b133,Monster.Xu,2021-05-24 17:00:01 +0800,完成结算台移动版主内容区的 UI’
+’28e6b3f,Xiawei,2021-05-24 16:16:07 +0800,课程资源页’
+’f4d1111,zhaozhuoboy,2021-05-24 16:09:44 +0800,调整课程资源导航’
+’b62d2ae,Xiawei,2021-05-24 16:05:17 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’de1f218,danny.zhao,2021-05-24 07:52:45 +0000,Merge branch 'feature/home_new' into 'develop'’
+’0514d28,zhaozhuoboy,2021-05-24 15:49:40 +0800,merge dev’
+’8e6214b,zhaozhuoboy,2021-05-24 15:49:22 +0800,调整背景图’
+’126aa57,Xiawei,2021-05-24 15:14:45 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’9819cb5,zhaoml,2021-05-24 15:08:18 +0800,每日一课及大厂案例视频增加试看提示’
+’80b420f,Xiawei,2021-05-24 12:00:27 +0800,课程资源页’
+’3d6c6fa,Xiawei,2021-05-24 11:15:06 +0800,Merge remote-tracking branch 'origin/develop' into f_home_xiawei’
+’f094dda,Xiawei,2021-05-24 11:14:55 +0800,修改主题色’
+’eb6de7b,Xiawei,2021-05-24 11:02:46 +0800,课程资源页’
+’030648c,danny.zhao,2021-05-24 02:20:02 +0000,Merge branch 'feature/home_new' into 'develop'’
+’e2b2cb2,zhaozhuoboy,2021-05-24 10:18:04 +0800,调整样式’
+’4b396c1,zhaozhuoboy,2021-05-24 10:06:54 +0800,merge dev’
+’2d19f86,zhaozhuoboy,2021-05-24 10:05:02 +0800,替换蓝色’
+’97bd42a,danny.zhao,2021-05-24 01:59:54 +0000,Merge branch 'feature/home_new' into 'develop'’
+’e52ecf1,zhaozhuoboy,2021-05-24 09:58:09 +0800,merge dev’
+’303cd0c,zhaozhuoboy,2021-05-24 09:54:01 +0800,学习平台移动端’
+’cbd0cf9,Xiawei,2021-05-23 19:23:06 +0800,课程资源页’
+’1521f5e,Xiawei,2021-05-23 15:12:47 +0800,Merge branch 'develop' into f_home_xiawei’
+’e461a7b,Xiawei,2021-05-21 19:27:36 +0800,课程资源页’
+’b3558fa,melody.gan,2021-05-21 18:42:27 +0800,设计走查’
+’65fafb1,zhaozhuoboy,2021-05-21 18:17:13 +0800,基本完成’
+’89fcfdc,zhaoml,2021-05-21 16:57:23 +0800,Merge remote-tracking branch 'origin/develop' into develop’
+’47b5121,zhaoml,2021-05-21 16:57:09 +0800,a)应产品要求,去除在线选课 专题简介 模块的收起展开功能,改为全展开’
+’11ec73f,melody.gan,2021-05-21 16:55:20 +0800,设计走查’
+’97a19a3,Xiawei,2021-05-21 16:30:59 +0800,提取Contact公共组件，添加hover效果’
+’92388a8,Xiawei,2021-05-21 15:41:46 +0800,客户服务页样式修改’
+’250b6c1,danny.zhao,2021-05-21 05:53:52 +0000,Merge branch 'feature/home_new' into 'develop'’
+’7cf4df0,zhaozhuoboy,2021-05-21 13:52:13 +0800,整理代码’
+’64d5c43,zhaozhuoboy,2021-05-21 11:48:07 +0800,merge dev’
+’7d4acf1,zhaoml,2021-05-21 11:37:06 +0800,Merge remote-tracking branch 'origin/develop' into develop’
+’39dac32,zhaoml,2021-05-21 11:36:49 +0800,每日及大厂专题与详情的跳转vip链接更改’
+’09eab56,zhaozhuoboy,2021-05-21 10:54:46 +0800,移动端header 路由跳转’
+’1d0408c,zhaozhuoboy,2021-05-21 10:43:24 +0800,merge dev’
+’3c5d1b0,melody.gan,2021-05-21 10:41:35 +0800,播放器颜色’
+’5774321,melody.gan,2021-05-20 17:55:36 +0800,设计走查’
+’2b70c84,zhaozhuoboy,2021-05-20 18:27:57 +0800,调整代码’
+’d07d15a,monster.xu,2021-05-20 10:25:31 +0000,Merge branch 'f_invitation' into 'develop'’
+’4d6eda8,Monster.Xu,2021-05-20 18:24:58 +0800,调整样式’
+’2628eae,monster.xu,2021-05-20 10:22:46 +0000,Merge branch 'f_invitation' into 'develop'’
+’f72d278,Monster.Xu,2021-05-20 18:22:15 +0800,调整结算台商品总件数的计算逻辑’
+’0549a55,monster.xu,2021-05-20 10:20:06 +0000,Merge branch 'f_invitation' into 'develop'’
+’8b8e0ec,Monster.Xu,2021-05-20 18:19:22 +0800,添加样式’
+’5324e07,zhaozhuoboy,2021-05-20 18:11:33 +0800,调整按钮样式’
+’1a8d02a,zhaozhuoboy,2021-05-20 18:04:45 +0800,调整header 激活状态  动画’
+’185a96d,melody.gan,2021-05-20 17:27:22 +0800,设计走查’
+’a0bfa83,monster.xu,2021-05-20 09:26:58 +0000,Merge branch 'f_invitation' into 'develop'’
+’232afa4,Monster.Xu,2021-05-20 17:26:33 +0800,调整样式’
+’6b7e61b,melody.gan,2021-05-20 17:18:53 +0800,设计走查’
+’581f43e,zhaoml,2021-05-20 17:08:58 +0800,Merge remote-tracking branch 'origin/develop' into develop’
+’fb5cadf,zhaoml,2021-05-20 17:08:50 +0800,设计走查,样式修改’
+’be00576,melody.gan,2021-05-20 16:34:49 +0800,留言bugfix’
+’0c1ba76,melody.gan,2021-05-20 15:35:39 +0800,设计走查’
+’da3da21,zhaoml,2021-05-20 11:50:22 +0800,删除每日一课及大厂案例专题的视频时长’
+’262ad52,zhaoml,2021-05-19 18:32:40 +0800,Merge remote-tracking branch 'origin/develop' into develop’
+’6a33276,zhaoml,2021-05-19 18:19:09 +0800,分享按钮样式修改’
+’035786e,melody.gan,2021-05-19 18:30:53 +0800,设计走查’
+’fbcdde3,monster.xu,2021-05-19 09:57:58 +0000,Merge branch 'f_invitation' into 'develop'’
+’70bfd09,Monster.Xu,2021-05-19 17:57:13 +0800,调整 store layout’
+’d7b0fff,monster.xu,2021-05-19 09:50:45 +0000,Merge branch 'f_invitation' into 'develop'’
+’05b774e,Monster.Xu,2021-05-19 17:50:21 +0800,调整课程详情页面的顶部 header 样式’
+’bc02951,Monster.Xu,2021-05-19 17:49:31 +0800,调整课程详情页面的顶部 header 样式’
+’d62a06f,monster.xu,2021-05-19 09:46:39 +0000,Merge branch 'f_invitation' into 'develop'’
+’b897acc,Monster.Xu,2021-05-19 17:46:08 +0800,调整课程详情页面的顶部 header 样式’
+’65fd1c3,monster.xu,2021-05-19 09:29:05 +0000,Merge branch 'f_invitation' into 'develop'’
+’29b1592,Monster.Xu,2021-05-19 17:28:39 +0800,merge’
+’0b11326,Monster.Xu,2021-05-19 17:26:48 +0800,结算台去充值改为新打开窗口’
+’b27846d,Monster.Xu,2021-05-19 17:26:15 +0800,调整步进器样式’
+’27aa4dd,melody.gan,2021-05-19 17:19:23 +0800,设计走查’
+’bb34fdc,monster.xu,2021-05-19 08:15:33 +0000,Merge branch 'f_invitation' into 'develop'’
+’94225c8,Monster.Xu,2021-05-19 16:15:01 +0800,补充代客下单中的优惠数据’
+’ba665f2,Monster.Xu,2021-05-19 15:52:11 +0800,调整文案’
+’6ba57e5,Monster.Xu,2021-05-19 15:45:36 +0800,merge develop’
+’894170f,monster.xu,2021-05-19 07:45:04 +0000,Merge branch 'f_invitation' into 'develop'’
+’40857de,Monster.Xu,2021-05-19 15:44:38 +0800,调整样式’
+’ef30859,danny.zhao,2021-05-19 07:43:14 +0000,Merge branch 'feature/home_new' into 'develop'’
+’104a80b,zhaozhuoboy,2021-05-19 15:42:44 +0800,调整移动端header’
+’2515cc9,Monster.Xu,2021-05-19 15:34:46 +0800,重新迁移测评介绍页面’
+’7a560ce,monster.xu,2021-05-19 07:00:06 +0000,Merge branch 'f_invitation' into 'develop'’
+’e910fcc,Monster.Xu,2021-05-19 14:59:38 +0800,调整展示去充值的逻辑’
+’17f0594,Monster.Xu,2021-05-19 14:57:31 +0800,调整样式’
+’16fc759,monster.xu,2021-05-19 06:55:59 +0000,Merge branch 'f_invitation' into 'develop'’
+’2af0199,Monster.Xu,2021-05-19 14:55:34 +0800,调整金额计算’
+’6b6aa38,Monster.Xu,2021-05-19 14:54:32 +0800,迁移活动落地页’
+’d10bce8,monster.xu,2021-05-19 06:39:25 +0000,Merge branch 'f_invitation' into 'develop'’
+’5e57054,zhaozhuoboy,2021-05-19 14:39:00 +0800,merge dev’
+’d6320c8,Monster.Xu,2021-05-19 14:38:58 +0800,调整参数’
+’5c69b53,zhaozhuoboy,2021-05-19 14:38:25 +0800,fix safari image height’
+’0d8f337,monster.xu,2021-05-19 06:19:09 +0000,Merge branch 'f_invitation' into 'develop'’
+’946169d,Monster.Xu,2021-05-19 14:18:39 +0800,调整公共样式’
+’dab5641,Monster.Xu,2021-05-19 14:17:23 +0800,迁入学习邀请函的页面’
+’957f63d,monster.xu,2021-05-19 05:57:26 +0000,Merge branch 'f_invitation' into 'develop'’
+’c31b68c,Monster.Xu,2021-05-19 13:56:17 +0800,添加手机引导页面’
+’90d3ecd,monster.xu,2021-05-19 05:43:17 +0000,Merge branch 'f_invitation' into 'develop'’
+’5bcecd1,Monster.Xu,2021-05-19 13:42:54 +0800,调整结算台数据异常的显示逻辑’
+’8306639,monster.xu,2021-05-19 05:33:09 +0000,Merge branch 'f_invitation' into 'develop'’
+’c9e05ec,Monster.Xu,2021-05-19 13:31:55 +0800,添加文件’
+’aff8cd6,monster.xu,2021-05-19 02:54:42 +0000,Merge branch 'f_checkout' into 'develop'’
+’3d15610,Monster.Xu,2021-05-19 10:53:35 +0800,添加监听路由显示支付结果的逻辑’
+’081d33d,Monster.Xu,2021-05-19 10:42:45 +0800,merge develop’
+’c867d62,Monster.Xu,2021-05-19 10:27:53 +0800,merge checkout’
+’f7d75d7,Monster.Xu,2021-05-19 10:26:08 +0800,merge home’
+’b423f58,monster.xu,2021-05-19 02:23:47 +0000,Merge branch 'feature/store' into 'develop'’
+’b1116b5,zhaozhuoboy,2021-05-18 19:01:55 +0800,调整尾部背景’
+’70529fe,Monster.Xu,2021-05-18 18:58:46 +0800,完成结算台支付逻辑’
+’51100b2,zhaozhuoboy,2021-05-18 18:50:33 +0800,合并代码’
+’ebacf39,zhaozhuoboy,2021-05-18 18:48:29 +0800,Merge branch 'feature/home_new' of code.geekbang.org:fe/b.geekbang.org into feature/home_new’
+’36bde79,zhaozhuoboy,2021-05-18 18:48:26 +0800,最后一个模块’
+’bc635d2,Xiawei,2021-05-18 18:17:48 +0800,Merge remote-tracking branch 'origin/feature/home_new' into f_home_xiawei’
+’0027ae0,Xiawei,2021-05-18 18:17:30 +0800,客户服务页移动版’
+’6457b8b,Monster.Xu,2021-05-18 18:09:55 +0800,初步完成支付逻辑’
+’c825596,zhaozhuoboy,2021-05-18 17:48:14 +0800,弹窗’
+’366635e,zhaozhuoboy,2021-05-18 17:24:41 +0800,调试断电’
+’2748132,zhaozhuoboy,2021-05-18 17:17:29 +0800,调整样式’
+’1e7cfb6,Xiawei,2021-05-18 16:24:51 +0800,Merge remote-tracking branch 'origin/feature/home_new' into f_home_xiawei’
+’6eea4db,melody.gan,2021-05-18 15:50:34 +0800,文章接口加sku’
+’0c438fe,zhaozhuoboy,2021-05-18 16:09:45 +0800,联系方式’
+’368af7f,zhaozhuoboy,2021-05-18 16:03:16 +0800,调整pc样式’
+’deb63d3,Monster.Xu,2021-05-18 15:05:05 +0800,完成结算台的新版 UI’
+’7f0558f,melody.gan,2021-05-18 14:44:01 +0800,css bugfix’
+’ac3881f,Monster.Xu,2021-05-18 14:03:50 +0800,完成结算部分的 UI’
+’f8f08ac,zhaozhuoboy,2021-05-18 10:51:52 +0800,调整pc样式’
+’09efaf7,zhaozhuoboy,2021-05-18 10:27:57 +0800,调整蓝色色值’
+’fdfd879,Xiawei,2021-05-18 10:21:19 +0800,Merge remote-tracking branch 'origin/feature/home_new' into f_home_xiawei’
+’574892f,Xiawei,2021-05-17 19:22:05 +0800,案例详情页’
+’f6a63ec,Monster.Xu,2021-05-17 18:57:59 +0800,完成结算台支付渠道的 ui’
+’9088fb6,Monster.Xu,2021-05-17 18:01:40 +0800,添加文件’
+’a84ee32,melody.gan,2021-05-17 17:55:45 +0800,bugfix’
+’dd74548,melody.gan,2021-05-17 17:12:17 +0800,切换文章时，目录高亮’
+’c9b0891,zhaozhuoboy,2021-05-17 15:35:21 +0800,调整链接’
+’90aca26,melody.gan,2021-05-17 15:34:58 +0800,bugfix’
+’9e295c4,Monster.Xu,2021-05-17 14:10:12 +0800,merge’
+’5b3eb3e,Xiawei,2021-05-17 10:42:25 +0800,Merge branch 'f_home_xiawei' into feature/home_new’
+’4311446,zhaozhuoboy,2021-05-17 10:16:03 +0800,调整弹框样式’
+’4195345,Xiawei,2021-05-14 18:17:29 +0800,PC客服服务页’
+’cb28b02,zhaozhuoboy,2021-05-14 18:50:36 +0800,调整代码’
+’0be695c,zhaoml,2021-05-14 18:49:51 +0800,修复某些情况下刚进入详情页后不展示视频的问题’
+’9bb8803,zhaoml,2021-05-14 17:39:23 +0800,监听字段改变’
+’640ff38,zhaozhuoboy,2021-05-14 17:28:33 +0800,移动端基本完成’
+’733d7c7,zhaoml,2021-05-14 16:40:10 +0800,未登录不展示分享按钮’
+’74d788a,zhaozhuoboy,2021-05-14 16:01:05 +0800,Merge branch 'feature/home_new' of code.geekbang.org:fe/b.geekbang.org into feature/home_new’
+’8bd9dce,zhaozhuoboy,2021-05-14 16:01:01 +0800,移动端开发’
+’5c237a0,zhaozhuoboy,2021-05-14 16:00:41 +0800,移动端开发’
+’787ee39,Monster.Xu,2021-05-14 16:00:09 +0800,merge’
+’72149c9,Monster.Xu,2021-05-14 15:59:03 +0800,merge’
+’d404899,Monster.Xu,2021-05-14 15:54:29 +0800,完成底部’
+’1685f24,monster.xu,2021-05-14 06:51:58 +0000,Merge branch 'f_checkout' into 'feature/store'’
+’d6b58d0,Monster.Xu,2021-05-14 14:51:20 +0800,调整返回的链接配置’
+’e55f938,Monster.Xu,2021-05-14 14:39:49 +0800,merge’
+’6e1d123,Xiawei,2021-05-14 14:16:51 +0800,修复footer样式’
+’564d5a0,Monster.Xu,2021-05-14 13:59:55 +0800,完成底部’
+’581cd7a,Monster.Xu,2021-05-14 13:51:52 +0800,调整代码’
+’4c12f8e,Monster.Xu,2021-05-14 13:51:06 +0800,完成移动端顶部餐单’
+’7e389b1,Xiawei,2021-05-14 11:41:15 +0800,修改项目配置，增加尾部版权信息’
+’09ec848,melody.gan,2021-05-14 11:15:17 +0800,专栏视频课显示摘要’
+’838885f,Monster.Xu,2021-05-13 19:08:41 +0800,初步搭建移动版顶部’
+’4bfb4c2,zhaoml,2021-05-13 18:55:25 +0800,分享弹窗链接取值修改’
+’15659aa,zhaoml,2021-05-13 18:35:41 +0800,案例与每日一课的专栏与详情,分享出去的页面不展示分享按钮’
+’397188a,zhaoml,2021-05-13 18:16:54 +0800,Merge remote-tracking branch 'origin/feature/store' into feature/store’
+’0aeb8c0,zhaoml,2021-05-13 18:16:50 +0800,bug修复’
+’8cfbf1c,zhaozhuoboy,2021-05-13 16:02:08 +0800,调整代码’
+’ff6a7aa,melody.gan,2021-05-13 15:49:57 +0800,分享出来的页面不需要再展示分享按钮’
+’4c658e2,zhaoml,2021-05-13 15:34:59 +0800,优化,当前视频置顶’
+’8657d65,zhaozhuoboy,2021-05-13 14:53:31 +0800,pc基本完成’
+’7de90e3,zhaoml,2021-05-13 14:18:38 +0800,bug修复’
+’f06cc00,zhaoml,2021-05-13 11:42:15 +0800,Merge remote-tracking branch 'origin/feature/store' into feature/store’
+’61deb54,zhaoml,2021-05-13 11:42:09 +0800,样式修复及字段增加’
+’7cc7a85,melody.gan,2021-05-13 11:29:13 +0800,接口加source参数’
+’cdbe7fe,zhaoml,2021-05-12 19:40:57 +0800,bug修复’
+’7549c4c,zhaozhuoboy,2021-05-12 14:05:40 +0800,调整Videolist多行文本省略’
+’930c89b,zhaozhuoboy,2021-05-12 14:00:27 +0800,调整代码  调整eslint’
+’25c269e,monster.xu,2021-05-11 09:29:59 +0000,Merge branch 'f_checkout' into 'feature/store'’
+’597434d,Monster.Xu,2021-05-11 17:27:56 +0800,调整步进器’
+’0a32e0b,monster.xu,2021-05-11 07:47:06 +0000,Merge branch 'f_checkout' into 'feature/store'’
+’646cbc9,Monster.Xu,2021-05-11 15:44:39 +0800,调整链接’
+’ee01882,monster.xu,2021-05-11 07:34:02 +0000,Merge branch 'feature/store' into 'develop'’
+’8ae0a94,monster.xu,2021-05-11 07:32:45 +0000,Merge branch 'f_checkout' into 'feature/store'’
+’857b24d,Monster.Xu,2021-05-11 15:32:02 +0800,调整参数’
+’019a336,monster.xu,2021-05-11 06:42:43 +0000,Merge branch 'f_checkout' into 'feature/store'’
+’1dd1e5d,Monster.Xu,2021-05-11 14:41:42 +0800,迁移结算台完毕’
+’db8e2ba,Monster.Xu,2021-05-11 13:53:11 +0800,初步迁移结算台文件’
+’75c9151,Monster.Xu,2021-05-10 18:40:58 +0800,debug’
+’f600aeb,Monster.Xu,2021-05-10 18:37:39 +0800,调整配置’
+’60a6a45,Monster.Xu,2021-05-10 18:31:47 +0800,调整引用’
+’68112b0,Monster.Xu,2021-05-10 18:18:39 +0800,调整 layout’
+’49aea40,Monster.Xu,2021-05-10 18:05:18 +0800,迁移新版在线选课的文件’
+’b68b40a,zhaozhuoboy,2021-05-06 16:45:06 +0800,轮播’
+’dd69e8e,zhaozhuoboy,2021-04-30 18:04:16 +0800,基本完成’
+’31952df,zhaozhuoboy,2021-04-28 18:08:49 +0800,pc 第三个模块’
+’3ad94c0,zhaozhuoboy,2021-04-27 15:40:39 +0800,添加home’
+’6453aaf,Monster.Xu,2021-04-26 18:48:56 +0800,重构 PC 端 Layout 完成 header’
+’4de3998,Monster.Xu,2021-04-26 13:59:52 +0800,初始化文件’
+’73f5cbd,Monster.Xu,2021-04-25 16:43:50 +0800,add README’

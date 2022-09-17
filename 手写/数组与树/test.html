@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+
+
+<body>
+  <script>
+
+    const data = [{
+      id: 'a',
+      name: 'A',
+      children: [
+        {
+          id: 'b',
+          name: 'B',
+          children: [
+            {
+              id: 'e',
+              name: 'E'
+            }
+
+          ]
+        },
+        {
+          id: 'c',
+          name: 'C',
+          children: [
+            {
+              id: 'f',
+              name: 'f'
+            }
+          ]
+        },
+        {
+          id: 'd',
+          name: 'D'
+        }
+      ]
+    }]
+
+    function dealData(arr, index) {
+      if (!result[index]?.length) {
+        result[index] = []
+      }
+      arr.forEach((val) => {
+        result[index].push({
+          id: val.id,
+          name: val.name,
+        })
+        if (val.children?.length) {
+          dealData(val.children, index + 1)
+        }
+      })
+    }
+
+    // let result = []
+    // dealData(data, 0, result)
+    // console.log(result);
+
+    function dealDataTwo(tree) {
+      let queue = []
+      let result = []
+      queue.unshift(tree)
+      while (queue.length) {
+        let dom = queue.shift()
+        result.push(dom.id)
+
+        if (dom.children?.length) {
+          for (let i = 0; i < dom.children?.length; i++) {
+            queue.push(dom.children[i])
+          }
+        }
+      }
+
+      return result
+    }
+
+    console.log(dealDataTwo(data[0]));
+    // const a = [
+    //   [
+    //     {
+    //       id: 'A',
+    //       name: 'A'
+    //     }
+    //   ],
+    //   [
+    //     {
+    //       id: 'B',
+    //       name: 'b'
+    //     },
+    //     {
+    //       id: 'C',
+    //       name: 'c'
+    //     },
+    //     {
+    //       id: 'D',
+    //       name: 'd'
+    //     }
+    //   ],
+    //   [
+    //     {
+    //       id: 'e',
+    //       name: 'e'
+    //     }
+    //   ]
+    // ]
+  </script>
+</body>
+
+</html>
