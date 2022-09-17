@@ -5,22 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
-    <style>
-      .box {
-        border: 2px dashed #cd0000;
-      }
-      span {
-        padding: 50%;
-        background-color: gray;
-        font-size: 0;
-      }
-    </style>
   </head>
   <body>
-    <div class="box">
-    <span>内有文字若干</span>
+    <script>
+      function sumFn(a, b, c) {
+        return a + b + c;
+      }
+      let sum = curry(sumFn);
 
-    </div>
+      function curry(fn) {
+        let returnFn = function (...args) {
+          if (args.length === fn.length) {
+            return fn.apply(null, args)
+          } else {
+            return (...argss) => {
+              return returnFn(...args.concat(argss))
+            }
+          }
+        }
+        return returnFn
+      }
+
+      console.log(sum(2)(3)(10))
+    </script>
   </body>
 </html>
