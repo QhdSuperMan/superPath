@@ -38,9 +38,9 @@
 
   <body>
     <div id="demo">
-      {{ currentBranch }}
+      <span v-text="val" v-for="val in branches"></span>
       <button @click='clickC'>点击</button>
-      <test :branches='branches'></test>
+      <!-- <test :branches='branches'></test> -->
     </div>
     <script src="mock.js"></script>
     <script src="app.js"></script>
