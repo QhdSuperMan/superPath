@@ -29,6 +29,24 @@
     <span>内有文字若干</span>
 
     </div>
+    <script>
+
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(1)
+        }, 200)
+      }).then(val => {
+        console.log(val);
+        return new Promise((resolve, reject)=> {
+          setTimeout(() => {
+            resolve(333)
+          }, 200)
+        })
+      }).then(val => {
+        console.log('val: ', val);
+      })
+
+    </script>
   </body>
 
 </html>
