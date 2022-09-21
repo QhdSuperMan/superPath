@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let board = [
+          ["A", "B", "C", "C"],
+          ["S", "F", "C", "E"],
+          ["A", "D", "E", "W"],
+        ],
+        word = "ABCCED";
+      var exist = function (board, word) {
+        const h = board.length,
+          w = board[0].length;
+        const directions = [
+          [0, 1],
+          [0, -1],
+          [1, 0],
+          [-1, 0],
+        ];
+        const visited = new Array(h)
+          .fill("")
+          .map((val) => new Array(w).fill(false));
+
+        function check(i, j, word, k) {
+          if (board[i][j] !== word[k]) {
+            return false;
+          } else if (k === word.length - 1) {
+            return true;
+          }
+          let result;
+          visited[i][j] = true;
+
+          for (const [x, y] of directions) {
+            let newX = x + i;
+            let newY = y + j;
+
+            if (newX >= 0 && newX < h && newY >= 0 && newY < w) {
+              if (!visited[newX][newY]) {
+                flag = check(newX, newY, word, k + 1);
+                if (flag) {
+                    result = true;
+                    break;
+                }
+
+              }
+            }
+          }
+
+          visited[i][j] = false;
+          return result;
+        }
+
+        for (let i = 0; i < h; i++) {
+          for (let j = 0; j < w; j++) {
+            if (check(i, j, word, 0)) {
+              return true;
+            }
+          }
+        }
+
+        return false;
+      };
+
+      console.log("exist: ", exist(board, word));
+    </script>
+  </body>
+</html>

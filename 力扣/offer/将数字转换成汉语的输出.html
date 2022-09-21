@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function trans (nums) {
+            let s = nums + ''
+            let box = ['万', '亿', '万亿']
+            let box2 = ['', '十', '百', '千']
+            let result = ''
+            let prev = ''
+
+            for(let i = 0; i < s.length; i++) {
+                let num = getNum(s[i])
+                
+                if (num !== '零') {
+                    result += num + getUnit(s.length - i - 1)
+                } else {
+                    if (prev == '零') {
+                        prev = num
+                        continue
+                    }
+                    prev = num
+                    result += num
+                }
+            }
+
+            function getUnit (q) {
+                if (q % 4 === 0) {
+                    return box[q / 4 - 1] ?? ''
+                } else {
+                    return box2[q % 4]
+                }
+                
+            }
+            function getNum (index) {
+                return ['零', '一', '二','三','四','五','六','七','八','九',][index]
+            }
+
+            return result
+        }
+
+        console.log(trans(410021001));
+    </script>
+</body>
+</html>
