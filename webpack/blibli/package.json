@@ -1,0 +1,49 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open",
+    "starts": "http-server dist",
+    "watch": "webpack --watch",
+    "serve": "webpack-dev-server",
+    "server": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^5.2.6",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "express": "^4.17.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.6",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.3.1",
+    "style-loader": "^3.0.0",
+    "thread-loader": "^3.0.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.69.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-middleware": "^5.0.0",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.5",
+    "html-webpack-plugin": "^5.3.2",
+    "http-server": "^0.12.3",
+    "lodash": "^4.17.20",
+    "mini-svg-data-uri": "^1.4.3",
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^6.1.5"
+  }
+}

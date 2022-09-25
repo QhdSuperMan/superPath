@@ -7,33 +7,44 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
 
   <body>
     <script>
       var a = new Promise((reslove, reject) => {
-        setTimeout(_ => {
-          reslove(2)
-        }, 50)
+        setTimeout((_) => {
+          reslove(2);
+        }, 50);
       })
-      a.then(val => {
-        return new Promise((reslove, reject) => {
-          setTimeout(_ => {
-            reslove(1)
-          }, 50)
-        }).then(val => {
-          console.log(val)
-          return 'promise里面的promise'
+        .finally(() => {
+          return Promise.reject(
+            "这里只有返回被拒绝的 promise 或者 throw 一个错误，才会影响当前 finally 返回的新 promise 的决议"
+          );
         })
-      }).then(val => {
-        console.log(val,111)
-      })
+        .then(
+          (value) => {
+            console.log("成功", value);
+          },
+          (err) => {
+            console.log("失败", err);
+          }
+        );
+      // a.then(val => {
+      //   return new Promise((reslove, reject) => {
+      //     setTimeout(_ => {
+      //       reslove(1)
+      //     }, 50)
+      //   }).then(val => {
+      //     console.log(val)
+      //     return 'promise里面的promise'
+      //   })
+      // }).then(val => {
+      //   console.log(val,111)
+      // })
     </script>
   </body>
-
 </html>

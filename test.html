@@ -7,46 +7,37 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
-      .box {
-        border: 2px dashed #cd0000;
+      * {
+        margin: 0;
+        padding: 0;
       }
-      span {
-        padding: 50%;
-        background-color: gray;
-        font-size: 0;
+
+      .box {
+        /* display: flex; */
+        height: 60px;
+      }
+
+      .a {
+        flex: 1;
+        background-color: red;
+      }
+      .b {
+        flex: 1;
+        height: calc(100vh - 40px);
+        background-color: green;
       }
     </style>
   </head>
   <body>
     <div class="box">
-    <span>内有文字若干</span>
-
+      <div class="a">1</div>
+      <div class="b">2</div>
     </div>
-    <script>
-
-      new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(1)
-        }, 200)
-      }).then(val => {
-        console.log(val);
-        return new Promise((resolve, reject)=> {
-          setTimeout(() => {
-            resolve(333)
-          }, 200)
-        })
-      }).then(val => {
-        console.log('val: ', val);
-      })
-
-    </script>
   </body>
-
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var exchange = function (nums) {
+        let left = 0;
+        let right = nums.length - 1;
+
+        while (left < right) {
+          while (nums[right] % 2 === 0 && left < right) {
+            right--;
+          }
+          while (nums[left] % 2 === 1 && left < right) {
+            left++;
+          }
+
+          if (left < right) {
+            [nums[left], nums[right]] = [nums[right], nums[left]];
+          }
+        }
+        return nums;
+      };
+
+      console.log("exist: ", exchange([4, 1, 2, 3, 5, 4]));
+    </script>
+  </body>
+</html>

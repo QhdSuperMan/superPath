@@ -7,12 +7,11 @@
 -->
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>Vue.js github commits example</title>
     <style>
       #demo {
-        font-family: 'Helvetica', Arial, sans-serif;
+        font-family: "Helvetica", Arial, sans-serif;
       }
 
       a {
@@ -29,7 +28,6 @@
       .date {
         font-weight: bold;
       }
-
     </style>
     <!-- Delete ".min" for console warnings in development -->
     <script src="../../dist/vue.js"></script>
@@ -38,12 +36,11 @@
 
   <body>
     <div id="demo">
-      <span v-text="val" v-for="val in branches"></span>
-      <button @click='clickC'>点击</button>
+      <span v-for="(val, key) in branches" :key="val" :aaa="val"> {{ val }} </span>
+      <button @click="clickC">点击</button>
       <!-- <test :branches='branches'></test> -->
     </div>
     <script src="mock.js"></script>
     <script src="app.js"></script>
   </body>
-
 </html>

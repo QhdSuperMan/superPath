@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      nums = [1, 2, 3];
+      var permute = function (nums) {
+        let result = [];
+
+        function add(stack) {
+          if (stack.length === nums.length) {
+            result.push([...stack]);
+            return;
+          }
+
+          for (let i = 0; i < nums.length; i++) {
+            if (stack.find((val) => val === nums[i]) == undefined) {
+              stack.push(nums[i]);
+              add(stack);
+              stack.pop();
+            }
+          }
+        }
+        add([]);
+        return result;
+      };
+
+      console.log("exist: ", permute(nums));
+    </script>
+  </body>
+</html>

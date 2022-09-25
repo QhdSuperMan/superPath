@@ -7,7 +7,7 @@
  */
 /* global Vue */
 
-var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
+var apiURL = "https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha=";
 
 /**
  * Actual demo
@@ -23,13 +23,11 @@ var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
 //     }
 //   }
 // })
-debugger
 var vm = new Vue({
-
-  el: '#demo',
+  el: "#demo",
   // store: store,
   data: {
-    branches: ['master', 'dev'],
+    branches: ["1", "2", "3", "4"],
     currentBranch: 0,
     // commits: null
   },
@@ -45,9 +43,9 @@ var vm = new Vue({
   // },
   components: {
     test: {
-      props: ['branches'],
-      template: '<div><p v-for="val in branches" :key >{{ val  }}</p></div>'
-    }
+      props: ["branches"],
+      template: '<div><p v-for="val in branches" :key >{{ val  }}</p></div>',
+    },
     // asyncaaa: function (resolve, reject) {
     //   setTimeout(function () {
     //     // 向 `resolve` 回调传递组件定义
@@ -59,8 +57,7 @@ var vm = new Vue({
   },
   methods: {
     clickC() {
-      this.currentBranch += 1
-      this.branches.push(this.currentBranch)
+      this.branches = ["2", "1", "4", "3"];
     },
     // fetchData: function () {
     //   var self = this
@@ -79,6 +76,6 @@ var vm = new Vue({
     //     xhr.send()
     //   }
     // }
-  }
-})
-console.log(vm)
+  },
+});
+console.log(vm);

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,140 +10,214 @@
   <body>
     <script>
       function myPromise(executor) {
-        this.value = ''
-        this.status = 'pending'
-        this.fulfilledBox = []
-        this.rejectedBox = []
+        this.value = "";
+        this.status = "pending";
+        this.fulfilledBox = [];
+        this.rejectedBox = [];
         let that = this;
 
-
-        function resolve (val) {
-
-          if (that.status === 'pending') {
-            that.status = 'fulfilled'
-            that.value = val
-  
-            that.fulfilledBox.forEach(func => {
-              func(val)
-            })
+        function resolve(val) {
+          if (that.status === "pending") {
+            that.status = "fulfilled";
+            that.value = val;
+            that.fulfilledBox.forEach((func) => {
+              func(val);
+            });
           }
         }
 
-        function reject (val) {
-          if (that.status === 'pending') {
-            that.status = 'rejected'
-            that.value = val
-  
-            that.rejectedBox.forEach(func => {
-              func(val)
-            })
+        function reject(val) {
+          if (that.status === "pending") {
+            that.status = "rejected";
+            that.value = val;
+
+            that.rejectedBox.forEach((func) => {
+              func(val);
+            });
           }
         }
 
-        executor(resolve, reject)
+        executor(resolve, reject);
       }
 
-      myPromise.prototype.resolveResult = function (result, nextPromise, resolve, reject) {
+      myPromise.prototype.resolveResult = function (
+        result,
+        nextPromise,
+        resolve,
+        reject
+      ) {
         if (result === nextPromise) {
           return reject(
             new TypeError("Chaining cycle detected for nextPromise")
           );
         }
         // 判断是不是promise
-        if (result && typeof result === 'object' && typeof result.then === 'function') {
-          result.then.call(result, val => {
-            this.resolveResult(val, result, resolve, reject)
-          }, err => {
-            reject(err)
-          })
-
+        if (
+          result &&
+          typeof result === "object" &&
+          typeof result.then === "function"
+        ) {
+          result.then.call(
+            result,
+            (val) => {
+              this.resolveResult(val, result, resolve, reject);
+            },
+            (err) => {
+              reject(err);
+            }
+          );
         } else {
-          resolve(result)
+          resolve(result);
         }
-      }
+      };
 
       myPromise.prototype.then = function (onFulfilled, onRejected) {
         onFulfilled =
           typeof onFulfilled === "function" ? onFulfilled : (value) => value;
         onRejected =
-          typeof onRejected === "function" ?
-          onRejected :
-          (err) => {
-            throw err;
-          };
-        let that = this
-        let returnPromise = new myPromise(function(resolve, reject){
-
-            if (that.status === "pending") {
-              that.fulfilledBox.push((val) => {
-                let result = onFulfilled(val)
-                dealResult(result)
-              })
+          typeof onRejected === "function"
+            ? onRejected
+            : (err) => {
+                throw err;
+              };
+        let that = this;
+        let returnPromise = new myPromise(function (resolve, reject) {
+          if (that.status === "pending") {
+            that.fulfilledBox.push((val) => {
               try {
-                that.rejectedBox.push((val) => {
-                  let result = onRejected(val)
-                  dealResult(result)
-                })
+                let result = onFulfilled(val);
+                dealResult(result);
               } catch (error) {
-                reject(error)
+                reject(error);
               }
-            }
-  
-            if (that.status === 'fulfilled') {
-              let result = onFulfilled(that.value)
-              dealResult(result)
-            }
-  
-            if (that.status === "reject") {
-              let result = onRejected(that.value)
-              dealResult(result)
-            }
-          
-
-
-          function dealResult (result) {
-            that.resolveResult(result, returnPromise, resolve, reject)
+            });
+            that.rejectedBox.push((val) => {
+              try {
+                let result = onRejected(val);
+                dealResult(result);
+              } catch (error) {
+                reject(error);
+              }
+            });
           }
 
-        })
-        return returnPromise
-      }
-      
+          if (that.status === "fulfilled") {
+            try {
+              let result = onFulfilled(that.value);
+              dealResult(result);
+            } catch (error) {
+              reject(error);
+            }
+          }
+
+          if (that.status === "rejected") {
+            try {
+              let result = onRejected(that.value);
+              dealResult(result);
+            } catch (error) {
+              reject(error);
+            }
+          }
+
+          function dealResult(result) {
+            that.resolveResult(result, returnPromise, resolve, reject);
+          }
+        });
+        return returnPromise;
+      };
+
+      myPromise.prototype.finally = function (callback) {
+        return this.then(
+          (value) => myPromise.resolve(callback()).then(() => value), // MyPromise.resolve执行回调,并在then中return结果传递给后面的Promise
+          (reason) => myPromise.resolve(callback()).then(() => { throw reason }) 
+          // myPromise.resolve(callback()).then(() => {
+
+          // }) // reject同理
+        );
+      };
+
+      myPromise.resolve = function (val) {
+        if (val instanceof myPromise) return val;
+        return new myPromise((reslove) => {
+          reslove(val);
+        });
+      };
+
+      myPromise.reject = function (val) {
+        return new myPromise((resolve, reject) => reject(val));
+      };
+
+      // var a = new Promise((reslove, reject) => {
+      //   setTimeout((_) => {
+      //     reslove(2);
+      //   }, 50);
+      // })
+      //   .finally(() => {
+      //     return Promise.reject(
+      //       "这里只有返回被拒绝的 promise 或者 throw 一个错误，才会影响当前 finally 返回的新 promise 的决议"
+      //     );
+      //   })
+      //   .then(
+      //     (value) => {
+      //       console.log("成功", value);
+      //     },
+      //     (err) => {
+      //       console.log("失败", err);
+      //     }
+      //   );
+
       var a = new myPromise((reslove, reject) => {
-          setTimeout((_) => {
-            reject(2);
-          }, 1000);
-        })
-        .then((val) => {
-          console.log(val);
-          return 1
-        })
-        .then(
-          (val) => {
-            console.log(val);
-          },
-          (err) => {
-            console.log(err);
-          }
-        );
-        var a = new Promise((reslove, reject) => {
-          setTimeout((_) => {
-            reject(2);
-          }, 1000);
-        })
-        .then((val) => {
-          console.log(val);
-          return 1
+        setTimeout((_) => {
+          reslove(2);
+        }, 500);
+      })
+        .finally(() => {
+          return myPromise.reject(
+            "这里只有返回被拒绝的 myPromise 或者 throw 一个错误，才会影响当前 finally 返回的新 myPromise 的决议"
+          );
         })
         .then(
-          (val) => {
-            console.log(val);
+          (value) => {
+            console.log("成功", value);
           },
           (err) => {
-            console.log(err);
+            console.log("失败", err);
           }
         );
+      // var a = new myPromise((reslove, reject) => {
+      //     setTimeout((_) => {
+      //       reject(2);
+      //     }, 1000);
+      //   })
+      //   .then((val) => {
+      //     console.log(val);
+      //     return 1
+      //   })
+      //   .then(
+      //     (val) => {
+      //       console.log(val);
+      //     },
+      //     (err) => {
+      //       console.log(err);
+      //     }
+      //   );
+      //   var a = new Promise((reslove, reject) => {
+      //     setTimeout((_) => {
+      //       reject(2);
+      //     }, 1000);
+      //   })
+      //   .then((val) => {
+      //     console.log(val);
+      //     return 1
+      //   })
+      //   .then(
+      //     (val) => {
+      //       console.log(val);
+      //     },
+      //     (err) => {
+      //       console.log(err);
+      //     }
+      //   );
     </script>
   </body>
-
 </html>
