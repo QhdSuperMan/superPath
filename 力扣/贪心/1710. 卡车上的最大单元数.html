@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let boxTypes = [
+          [1, 3],
+          [3, 1],
+          [2, 2],
+        ],
+        truckSize = 4;
+      var exist = function (boxTypes, truckSize) {
+        let sort = boxTypes.sort((a, b) => b[1] - a[1]);
+        console.log("sort: ", sort);
+
+        let result = 0;
+
+        for (let index = 0; index < sort.length; index++) {
+          const element = sort[index];
+
+          if (element[0] < truckSize) {
+            result = result + element[1] * element[0];
+            truckSize -= element[0];
+          } else {
+            result = result + element[1] * truckSize;
+            break;
+          }
+        }
+
+        return result;
+      };
+
+      console.log("exist: ", exist(boxTypes, truckSize));
+    </script>
+  </body>
+</html>
