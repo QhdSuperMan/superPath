@@ -1,0 +1,6 @@
+{
+	"dependencies": {
+		"bendiceshide": "workspace:^1.0.0",
+		"loadsh": "^0.0.4"
+	}
+}

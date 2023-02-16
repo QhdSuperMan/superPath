@@ -1,0 +1,20 @@
+lockfileVersion: 5.4
+
+importers:
+
+  .:
+    specifiers:
+      bendiceshide: workspace:^1.0.0
+      loadsh: ^0.0.4
+    dependencies:
+      bendiceshide: link:packages/b
+      loadsh: registry.npmmirror.com/loadsh/0.0.4
+
+packages:
+
+  registry.npmmirror.com/loadsh/0.0.4:
+    resolution: {integrity: sha512-U+wLL8InpfRalWrr+0SuhWgGt10M4OyAk6G8xCYo2rwpiHtxZkWiFpjei0vO463ghW8LPCdhqQxXlMy2qicAEw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/loadsh/-/loadsh-0.0.4.tgz}
+    name: loadsh
+    version: 0.0.4
+    deprecated: This is a typosquat on the popular Lodash package. This is not maintained nor is the original Lodash package.
+    dev: false
