@@ -1,0 +1,264 @@
+// 主题黑色
+$warningColor: #ffab27;
+$primaryColor: #5d87f6; // 主题色
+$darkPrimaryColor: #0066ff; // 深主题色
+
+$AppPrimaryColor: #3caaf4; // 主题色
+$AppDarkPrimaryColor: #349fff; // 深主题色
+
+$darkFontColor: #333333;
+
+$moreLightFontColor: #999999;
+
+$LightFontColor: #666666;
+
+$LigntBgColor: #f3f6fa;
+$BgColor: #f6faff;
+$FailBgColor: #f4f4f4;
+$SuccessBgColor: #f4f8ff;
+$redColor: #ff3232;
+$borderColor: #eff6f8;
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+// px转rem
+@function px2rem($px) {
+  @return $px/100 + rem;
+}
+
+@mixin font($size, $weight: 400) {
+  font-size: px2rem($size);
+  font-weight: $weight;
+}
+
+// 主框架的padding
+$mainContainerPadding: px2rem(0) px2rem(75) 0 px2rem(72);
+
+// header的高度
+
+$headerHeight: px2rem(113);
+
+// 重置样式
+.ant-input {
+  height: px2rem(48);
+  line-height: px2rem(48);
+}
+
+.ant-select-lg .ant-select-selection--single {
+  height: px2rem(48);
+
+  .ant-select-selection__rendered {
+    height: px2rem(48);
+    line-height: px2rem(48);
+    color: $primaryColor;
+  }
+}
+
+// 重置样式
+.ant-form {
+  .ant-form-item-label {
+    // line-height: px2rem(42);
+
+    > label {
+      color: $darkFontColor;
+    }
+  }
+}
+
+// 表单详情样式
+.custom-form-detail {
+  .ant-form-item {
+    .ant-form-item-label {
+      > label {
+        font-size: px2rem(18);
+        color: $moreLightFontColor;
+      }
+    }
+
+    .form-span-value {
+      font-size: px2rem(18);
+      color: $darkFontColor;
+    }
+
+    // .ant-form-item-control {
+    //   line-height: px2rem(42);
+    // }
+  }
+}
+
+// 列表项公共样式
+.list-common-style-container {
+  // 导航一行的样式
+  .search-input {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: px2rem(-86);
+    right: px2rem(75);
+    height: 0.85rem;
+
+    .custom-input-search {
+      width: px2rem(360);
+    }
+
+    .search-input-label {
+      margin-right: px2rem(18);
+      font-size: px2rem(18);
+      white-space: nowrap;
+      font-weight: bold;
+      color: $darkFontColor;
+    }
+
+    .ant-select {
+      width: px2rem(150);
+    }
+
+    .ant-form-item-label {
+      line-height: px2rem(48);
+
+      > label {
+        color: $darkFontColor;
+        font-size: px2rem(18);
+        font-weight: bold;
+      }
+    }
+
+    .ant-select-selection {
+      width: px2rem(150);
+      height: px2rem(48);
+
+      .ant-select-selection__rendered {
+        height: px2rem(48);
+        line-height: px2rem(48);
+        font-size: px2rem(18);
+        font-weight: bold;
+        color: $primaryColor;
+      }
+    }
+
+    .ant-input {
+      height: px2rem(48);
+      font-size: px2rem(18);
+      font-weight: bold;
+      color: $primaryColor;
+    }
+
+    .custom-button {
+      margin-right: px2rem(20);
+    }
+
+    .custom-button:last-child {
+      margin-right: px2rem(0);
+    }
+  }
+
+  // 查询表单样式
+  .search-form {
+    padding-top: px2rem(17);
+
+    .custom-button {
+      margin-right: px2rem(20);
+    }
+
+    .ant-form.ant-form-inline {
+      .ant-form-item {
+        width: px2rem(360);
+        margin: 0 px2rem(46) px2rem(17) 0;
+      }
+
+      .big-form-item {
+        width: px2rem(700);
+      }
+
+      .ant-form-item-label {
+        line-height: px2rem(48);
+
+        > label {
+          color: $darkFontColor;
+          font-size: px2rem(18);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .ant-select-selection {
+      width: px2rem(259);
+      height: px2rem(48);
+
+      .ant-select-selection__rendered {
+        height: px2rem(48);
+        line-height: px2rem(48);
+        font-size: px2rem(18);
+        font-weight: bold;
+        color: $primaryColor;
+      }
+    }
+
+    .ant-input {
+      height: px2rem(48);
+      width: px2rem(259);
+      font-size: px2rem(18);
+      font-weight: bold;
+      color: $primaryColor;
+    }
+
+    // 日期icon错位问题
+
+    .ant-calendar-range-picker-separator {
+      line-height: px2rem(48);
+    }
+  }
+
+  // 表格样式
+  .table-list {
+    padding: px2rem(27) 0 px2rem(25);
+    box-shadow: 0px 0px 28px 0px rgba(200, 200, 200, 0.26);
+
+    .table-list-btns {
+      padding: 0 0 0 px2rem(35);
+
+      .custom-button {
+        margin-right: px2rem(31);
+        margin-bottom: px2rem(21);
+        padding: 0 px2rem(22);
+        color: $primaryColor;
+        border-color: $primaryColor;
+      }
+    }
+  }
+
+  // 卡片样式
+  .list-common-card {
+    margin-top: px2rem(24);
+    box-shadow: 0px 0px 28px 0px rgba(200, 200, 200, 0.26);
+
+    > .ant-card {
+      > .ant-card-head {
+        .ant-card-head-title {
+          font-size: px2rem(19);
+          font-weight: bold;
+          color: #2d353e;
+        }
+      }
+    }
+  }
+}
+
+// 操作按钮公共样式
+.operation-btn-group {
+  margin-top: px2rem(20);
+}
+
+// 表格文字样式
+.custom-table-container {
+  .common-text-red {
+    color: $redColor;
+  }
+
+  .common-text-blue {
+    color: $darkPrimaryColor;
+  }
+}

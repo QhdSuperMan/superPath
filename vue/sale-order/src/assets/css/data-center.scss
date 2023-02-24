@@ -1,0 +1,85 @@
+// 数据中心公共样式
+.data-center-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: px2rem(28);
+
+  .data-center-card-item:nth-child(1) {
+    background: linear-gradient(90deg, #46E0D6 0%, #1099D1 100%);
+    border-radius: 9px;
+  }
+
+  .data-center-card-item:nth-child(2) {
+    background: linear-gradient(90deg, #9270FF 0%, #FD5D9F 100%);
+    border-radius: 9px;
+  }
+
+  .data-center-card-item:nth-child(3) {
+    background: linear-gradient(90deg, #F8CF8B 0%, #F35969 100%);
+    border-radius: 9px;
+  }
+
+  .data-center-card-item:nth-child(4) {
+    background: linear-gradient(90deg, #764FFD 0%, #A7CDFE 100%);
+    border-radius: 9px;
+  }
+
+  .data-center-card-item:nth-child(5) {
+    background: linear-gradient(52deg, #26E0E9 0%, #5E86F7 100%);
+    border-radius: 9px;
+  }
+
+  .data-center-card-item {
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    width: px2rem(360);
+    margin-right: px2rem(26);
+    padding: px2rem(28) 0;
+
+    .card-time {
+      font-size: px2rem(18);
+      font-weight: 400;
+      color: white;
+    }
+
+    .card-num {
+      font-size: px2rem(38);
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+
+
+  img {
+    width: px2rem(52);
+    margin-right: px2rem(7);
+  }
+}
+
+
+
+.data-center-canvas {
+  margin-top: px2rem(31);
+  // height: px2rem(556);
+  height: px2rem(800);
+
+
+  ::v-deep .custom-chart {
+    // height: px2rem(556);
+    height: px2rem(800);
+  }
+
+  ::v-deep .ant-card {
+    border: 1px solid #F2F3F5;
+    box-shadow: 3px 3px 12px 0px rgba(228, 228, 228, 0.5);
+    border-radius: 9px;
+
+    .ant-card-head-title {
+      font-size: px2rem(19);
+      font-weight: bold;
+    }
+  }
+}
