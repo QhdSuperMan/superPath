@@ -1,0 +1,59 @@
+{
+  "name": "@vue/devtools",
+  "version": "6.5.0",
+  "description": "StandAlone vue-devtools",
+  "repository": {
+    "url": "https://github.com/vuejs/vue-devtools.git",
+    "type": "git",
+    "directory": "packages/shell-electron"
+  },
+  "bin": {
+    "vue-devtools": "./bin.js"
+  },
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "start": "node bin.js",
+    "dev:client": "webpack --watch",
+    "dev:node": "webpack --watch --config webpack.node.config.js",
+    "build": "npm run build:client && npm run build:node",
+    "build:client": "rimraf ./build && cross-env NODE_ENV=production webpack",
+    "build:node": "rimraf ./build-node && cross-env NODE_ENV=production webpack --config webpack.node.config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "electron": "^21.0.1",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "socket.io": "^4.4.0",
+    "socket.io-client": "^4.4.1",
+    "utf-8-validate": "^5.0.9"
+  },
+  "devDependencies": {
+    "@vue-devtools/app-backend-core": "^0.0.0",
+    "@vue-devtools/app-frontend": "^0.0.0",
+    "@vue-devtools/build-tools": "^0.0.0",
+    "@vue-devtools/shared-utils": "^0.0.0",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "files": [
+    "build",
+    "build-node",
+    "icons",
+    "types",
+    "app.html",
+    "app.js",
+    "bin.js",
+    "index.js",
+    "README.md",
+    "server.js"
+  ]
+}
