@@ -3,9 +3,9 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-02-23 15:45:07
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-02-27 17:19:20
+ * @LastEditTime: 2023-02-28 17:41:58
 -->
-<script setup lang="ts">
+<script setup lang="tsx">
 import { reactive, ref } from 'vue';
 let table = ref(null)
 
@@ -16,35 +16,35 @@ const tableData: Array<any> = reactive(new Array(10).fill('').map((val, index) =
 	}
 }))
 
-const column: Array<any> = reactive(new Array(10).fill('').map((val, index) => {
-	return {
-		label: '你好' + index,
+const column: Array<unknown> = reactive([
+	{
+		label: '你好',
 		prop: "val"
+	},
+	{
+		label: '你好',
+		prop: "val",
+		customRender: (a: any) => {
+			console.log('a: ', a);
+			return (<el-button>哈哈</el-button>)
+		},
+		customHeaderRender: () => {
+			return (<el-button>哈哈</el-button>)
+		}
+	},
+	{
+		label: '你好',
+		prop: "val",
+		
 	}
-}))
+])
 
 
-const clickFunction = function () {
-	console.log(111)
-}
-
-let currentPage = ref<Number>(0)
-let pageSize = ref<Number>(10)
-function handleSizeChange () {
-
-}
-
-function handleCurrentChange () {
-	
-}
 </script>
 
 <template>
 	<div class="table">
 		<CustomTable :data="tableData" :column="column"></CustomTable>
-		<el-pagination v-model:current-page="currentPage" v-model:page-size="pageSize" :page-sizes="[100, 200, 300, 400]"
-			layout="total, sizes, prev, pager, next, jumper" :total="400" @size-change="handleSizeChange"
-			@current-change="handleCurrentChange" />
 	</div>
 </template>
 
