@@ -30,15 +30,17 @@ export default defineComponent({
      * @description: 渲染分页组件
      * @author: wuyurong
      */
+    let pagination = reactive({
+      currentPage: 1,
+      pageSize: 10,
+      total: 400,
+    })
     function renderPagination(): VNode {
-      let pagination = reactive({
-        currentPage: 1,
-        pageSize: 10,
-        total: 400,
-      })
+      
       let paginationConfig = usePagination()
       // v-model={[pagination.pageSize, 'page-size']}
       return <div>
+        { pagination.currentPage }
         <el-pagination
           {...paginationConfig.value}
           total={pagination.total}
@@ -67,6 +69,7 @@ export default defineComponent({
         {
           renderPagination()
         }
+        
         {/* <el-pagination
           v-model:current-page="currentPage4"
           v-model:page-size="pageSize4"
