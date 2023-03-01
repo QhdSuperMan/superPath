@@ -51,10 +51,19 @@ export default defineComponent({
       pageSize: 10,
       total: 400,
     })
+<<<<<<< HEAD
     let paginationConfig = usePagination(props.paginationConfig)
     function renderPagination(): VNode {
       // v-model={[pagination.pageSize, 'page-size']}
       return <div class="table-pagination">
+=======
+    function renderPagination(): VNode {
+      
+      let paginationConfig = usePagination()
+      // v-model={[pagination.pageSize, 'page-size']}
+      return <div>
+        { pagination.currentPage }
+>>>>>>> 8fdb8506a169489c8e92fa7b2e05729431716cc3
         <el-pagination
           {...paginationConfig.value}
           total={pagination.total}
@@ -93,6 +102,22 @@ export default defineComponent({
         {
           renderPagination()
         }
+<<<<<<< HEAD
+=======
+        
+        {/* <el-pagination
+          v-model:current-page="currentPage4"
+          v-model:page-size="pageSize4"
+      page-sizes="[100, 200, 300, 400]"
+        :small="small"
+        :disabled="disabled"
+        :background="background"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="400"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+    /> */}
+>>>>>>> 8fdb8506a169489c8e92fa7b2e05729431716cc3
       </div>
     );
   },
