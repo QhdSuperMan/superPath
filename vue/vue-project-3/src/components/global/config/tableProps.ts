@@ -3,10 +3,13 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-02-28 14:08:33
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-01 17:32:31
+ * @LastEditTime: 2023-03-03 17:36:15
  */
+import type { PropType } from 'vue'
 import { definePropType } from '@/utils/ts/runtime.js'
+import type { GetPropsTypes } from '@/utils/ts/index.js'
 import type { PaginationProps, Column, TableProps } from 'element-plus'
+
 
 // column类型
 export type ColumnType = {
@@ -15,7 +18,7 @@ export type ColumnType = {
 } & Column<any>
 
 // 数据代理类型
-export interface DataProxy  {
+export type DataProxy = {
   api: string, // 接口地址
   params?: object, // 查询参数
   total?: string, // 接口返回的总数地址
@@ -33,6 +36,7 @@ const props = {
       return {}
     }
   },
+  str: String as PropType<string>,
   paginationConfig: {
     type: definePropType<PaginationProps>([Object]),
     default: () => {
@@ -42,9 +46,10 @@ const props = {
 }
 
 type a = {
-  column: Array<ColumnType>,
-  dataProxy: DataProxy,
-  paginationConfig: PaginationProps
+  str: string,
+  DataProxy?: DataProxy
 }
-export type CustomTableProps = a & TableProps<unknown>
+
+export type CustomTableProps = GetPropsTypes<typeof props> & TableProps<unknown>
+// export type CustomTableProps = a & TableProps<unknown>
 export default props

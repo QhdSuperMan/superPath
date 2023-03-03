@@ -3,7 +3,7 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-02-23 15:45:07
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-01 17:28:17
+ * @LastEditTime: 2023-03-03 16:26:08
 -->
 <script setup lang="tsx">
 import { reactive, ref } from 'vue';
@@ -47,7 +47,7 @@ function test() {
 
 <template>
 	<div class="table">
-		<CustomTable :data="tableData" :dataProxy="{ api: '1'}" ref="table" :column="column"></CustomTable>
+		<CustomTable :data="tableData"  ref="table" str="1" :dataProxy="{ api: '1' }" :column="column"></CustomTable>
 	</div>
 
 	<el-button @click="test">点击</el-button>
