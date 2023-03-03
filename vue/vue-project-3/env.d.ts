@@ -19,3 +19,7 @@ declare module '*.yaml'
 declare module '*.json'
 declare module 'vue-count-to'
 
+
+
+
+

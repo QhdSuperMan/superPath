@@ -7,7 +7,6 @@
  */
 import type { PropType } from 'vue'
 import { definePropType } from '@/utils/ts/runtime.js'
-import type { GetPropsTypes } from '@/utils/ts/index.js'
 import type { PaginationProps, Column, TableProps } from 'element-plus'
 
 
@@ -36,7 +35,6 @@ const props = {
       return {}
     }
   },
-  str: String as PropType<string>,
   paginationConfig: {
     type: definePropType<PaginationProps>([Object]),
     default: () => {
@@ -45,11 +43,11 @@ const props = {
   },
 }
 
-type a = {
-  str: string,
-  DataProxy?: DataProxy
+type PropsTypes = {
+  DataProxy?: DataProxy,
+  column?: Array<ColumnType>,
+  paginationConfig?: PaginationProps
 }
 
-export type CustomTableProps = GetPropsTypes<typeof props> & TableProps<unknown>
-// export type CustomTableProps = a & TableProps<unknown>
+export type CustomTableProps = PropsTypes & TableProps<unknown>
 export default props
