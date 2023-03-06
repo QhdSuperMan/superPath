@@ -3,7 +3,7 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-02-23 15:45:07
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-02-27 16:57:48
+ * @LastEditTime: 2023-03-06 17:51:27
  */
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -16,7 +16,7 @@ import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
 
-import './assets/main.css'
+import '@/assets/styles/reset.scss'
 
 const app = createApp(App)
 

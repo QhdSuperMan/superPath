@@ -1,0 +1,21 @@
+// 主题黑色
+$primaryColor: #5d87f6; // 主题色
+
+// px转rem
+@function px2rem($px) {
+  @return $px/100 + rem;
+}
+
+@mixin font($size, $weight: 400) {
+  font-size: px2rem($size);
+  font-weight: $weight;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+// 主框架的padding
+$mainContainerPadding: px2rem(0) px2rem(75) 0 px2rem(72);
+

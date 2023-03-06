@@ -3,9 +3,9 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-02-27 14:45:49
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-03 17:59:01
+ * @LastEditTime: 2023-03-05 11:42:19
  */
-import type { CustomTableProps } from '@/components/global/config/tableProps.js'
+import type { CustomTableProps, ColumnType } from '@/components/global/config/tableProps.js'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
@@ -17,5 +17,6 @@ declare module '@vue/runtime-core' {
   // }
 }
 
-
-type HaHa = string;
+declare global {
+  type GlobalColumnType = ColumnType
+}
