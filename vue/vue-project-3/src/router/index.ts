@@ -1,22 +1,25 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+/*
+ * @Author: wuyurong 1065229722@qq.com
+ * @Date: 2023-02-23 15:45:07
+ * @LastEditors: wuyurong 1065229722@qq.com
+ * @LastEditTime: 2023-03-07 15:13:16
+ */
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { dealRouter } from './utils.js'
+
+const routePages: any = import.meta.glob('./page/*.ts', { eager: true })
+let routes = []
+for (const item in routePages) {
+  routes.push(routePages[item].default)
+}
+routes = dealRouter(routes)
+console.log('routes: ', routes);
+
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
+    ...routes
   ]
 })
 
