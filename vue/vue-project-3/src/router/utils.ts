@@ -6,7 +6,7 @@ for (const item in routePages) {
   routes.push(routePages[item].default)
 }
 
-export let routes
+export const baseRoutes = routes
 
 // export const notFound = {
 //   path: "*",

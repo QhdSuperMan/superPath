@@ -2,19 +2,13 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-02-23 15:45:07
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-07 15:13:16
+ * @LastEditTime: 2023-03-16 10:23:15
  */
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { dealRouter } from './utils.js'
+import { dealRouter, baseRoutes } from './utils.js'
 
-const routePages: any = import.meta.glob('./page/*.ts', { eager: true })
-let routes = []
-for (const item in routePages) {
-  routes.push(routePages[item].default)
-}
-routes = dealRouter(routes)
+let routes = dealRouter(baseRoutes)
 console.log('routes: ', routes);
-
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),

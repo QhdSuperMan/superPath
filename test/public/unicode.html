@@ -1,0 +1,41 @@
+<!--
+ * @Description: 
+ * @Author: wuyurong 1065229722@qq.com
+ * @Date: 2023-03-16 14:10:49
+ * @LastEditors: wuyurong 1065229722@qq.com
+ * @LastEditTime: 2023-03-16 14:16:48
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isChinese(s) {
+        return /[\u4e00-\u9fa5]/.test(s);
+      }
+
+      function ch2Unicode(str) {
+        if (!str) {
+          return;
+        }
+        var unicode = "";
+        for (var i = 0; i < str.length; i++) {
+          var temp = str.charAt(i);
+          if (isChinese(temp)) {
+            unicode += "\\u" + temp.charCodeAt(0).toString(16);
+          } else {
+            unicode += temp;
+          }
+        }
+        return unicode;
+      }
+
+      console.info(ch2Unicode(''))
+    </script>
+  </body>
+</html>
