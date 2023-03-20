@@ -1,0 +1,72 @@
+<!--
+ * @Description: 
+ * @Author: wuyurong 1065229722@qq.com
+ * @Date: 2023-03-17 14:12:52
+ * @LastEditors: wuyurong 1065229722@qq.com
+ * @LastEditTime: 2023-03-17 15:22:27
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const test = (promise) => {
+        return new Promise((resolve, reject) => {
+          promise
+            .then((data) => {
+              resolve({ res: data, err: null });
+            })
+            .catch((err) => {
+              reject({ res: null, err: err });
+            });
+        });
+      };
+
+      const ajax = () => Promise.resolve(11);
+
+      (async function () { // async  await
+        var params = 1
+        try {
+          var res = await ajax();
+          console.log('res: ', res);
+          params = res
+          // 逻辑代码
+        } catch (error) {
+          console.log("error: ", error);
+          params = 1
+        }
+
+        try {
+          var res = await ajax2({params});
+          console.log('res: ', res);
+          // 逻辑代码
+        } catch (error) {
+          console.log("error: ", error);
+        }
+
+      })();
+
+      (function () { // promise
+        var params = 1
+        ajax()
+          .then((res) => {
+            console.log('res: ', res);
+            // 逻辑代码
+            params = res
+            ajax2({params}).then(() => {
+
+            })
+          })
+          .catch((err) => {
+            // 错误处理在这
+            console.log("err: ", err);
+          });
+      })();
+    </script>
+  </body>
+</html>
