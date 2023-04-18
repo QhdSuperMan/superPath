@@ -3,7 +3,7 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2022-11-27 14:04:58
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-01-09 22:53:05
+ * @LastEditTime: 2023-03-25 16:17:33
  */
 import axios from "axios";
 import store from '@/store/index.js'
@@ -78,8 +78,8 @@ export function createAxios(config) {
     function (response) {
       switch (response.data.code) {
         case 401:
-          message.error(response.data.msg || "登录已失效，请重新登录！");
-          logout();
+          // message.error(response.data.msg || "登录已失效，请重新登录！");
+          // logout();
           return;
           break;
       }
@@ -91,7 +91,7 @@ export function createAxios(config) {
       }
 
       if (response.data.code !== 200) {
-        message.error(response.data.msg || "请联系系统管理员");
+        // message.error(response.data.msg || "请联系系统管理员");
       }
       return response;
     },

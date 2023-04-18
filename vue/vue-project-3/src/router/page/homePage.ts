@@ -3,10 +3,11 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2022-11-20 15:30:13
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-07 14:27:43
+ * @LastEditTime: 2023-03-24 15:01:01
  */
 export default {
   path: "/",
+  name: '',
   meta: {
     title: "首页",
   },
@@ -18,7 +19,6 @@ export default {
       name: "data-center",
       meta: {
         title: "菜单0",
-        icon: "zhihu",
       },
       children: [
         {

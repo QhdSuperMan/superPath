@@ -1,0 +1,36 @@
+<!--
+ * @Description: 
+ * @Author: wuyurong 1065229722@qq.com
+ * @Date: 2023-03-31 17:27:24
+ * @LastEditors: wuyurong 1065229722@qq.com
+ * @LastEditTime: 2023-03-31 17:44:23
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function demo () {
+    //   var mapmapmap = new Map()
+    //   mapmapmap.set('mapmapmapid','释放不')
+    // }
+    // demo()
+    var obj = {id: 1}
+    var mapKey = {}
+    var map = new WeakMap()
+    map.set(mapKey, obj)
+    obj.id = 2
+    console.log('obj.id: ', obj.id);
+    map.get(mapKey).id
+    console.log('Map.get(mapKey).id: ', map.get(mapKey).id);
+    obj = null
+    console.log('obj: ', obj);
+    console.log('map.get(mapKey)', map.get(mapKey));
+  </script>
+</body>
+</html>

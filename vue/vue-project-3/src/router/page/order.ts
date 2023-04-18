@@ -3,10 +3,11 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-03-07 09:49:43
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-07 14:28:04
+ * @LastEditTime: 2023-03-25 16:30:33
  */
 export default {
   path: "/order",
+  name: "order",
   meta: {
     title: "订单",
   },
@@ -18,6 +19,7 @@ export default {
       name: "my-order",
       meta: {
         title: "菜单1",
+        keepAlive: true
       },
       component: () => import("@/views/order/order/My.vue"),
     },
@@ -26,6 +28,7 @@ export default {
       name: "all-order",
       meta: {
         title: "菜单2",
+        keepAlive: true
       },
       component: () => import("@/views/order/order/All.vue"),
     },

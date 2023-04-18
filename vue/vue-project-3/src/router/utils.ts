@@ -1,5 +1,6 @@
 
 
+import { deepCopy } from '@/utils/index.js'
 const routePages: any = import.meta.glob('./page/*.ts', { eager: true })
 let routes = []
 for (const item in routePages) {
@@ -7,6 +8,44 @@ for (const item in routePages) {
 }
 
 export const baseRoutes = routes
+
+export const menuRoutes = dealMenuRouter(routes, [])
+console.log('menuRoutes: ', menuRoutes);
+
+
+//  处理菜单路由的path 拼接name  拼接path
+export function dealMenuRouter(router: any, fatherRoutes: unknown[]) {
+  return router.map((item: any) => {
+    let routeArray = deepCopy(fatherRoutes)
+    let route = routeArray[routeArray.length - 1] || {
+      paths: [],
+      names: []
+    }
+    if (item.path === '/') {
+      route.paths.push('')
+    } else {
+      if (item.path.indexOf('/') === -1) {
+        route.paths.push(item.path)
+      } else {
+        route.paths = [item.path]
+      }
+    }
+
+    route.names.push(item.name)
+    routeArray.push(route)
+
+    let result = {
+      ...item,
+      sourcePath: item.path,
+      name: route.names.join('-'),
+      path: route.paths.join('/'),
+      children: dealMenuRouter(item.children || [], routeArray),
+    }
+    // result.redirect = result?.children[0]?r(item..path || result.redirect
+    return result;
+  });
+}
+
 
 // export const notFound = {
 //   path: "*",
@@ -30,6 +69,7 @@ export const baseRoutes = routes
 //   ],
 // };
 
+         
 //  处理菜单路由为vue路由
 function dealAction(arr: any, result: any, father = []) {
   arr.forEach((item: any) => {
@@ -62,7 +102,7 @@ function dealAction(arr: any, result: any, father = []) {
 
   return result;
 }
-//  处理菜单路由为vue路由
+// //  处理菜单路由为vue路由
 export function dealRouter(router: any) {
   return router.map((item: any) => {
     let result = {

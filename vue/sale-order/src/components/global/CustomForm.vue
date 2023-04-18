@@ -39,11 +39,6 @@ export default {
   data() {
     return {
       formModel: {},
-      ruleForm: {
-        pass: "",
-        checkPass: "",
-        age: "",
-      },
     };
   },
   props: {

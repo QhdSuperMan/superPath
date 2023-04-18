@@ -3,7 +3,7 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2022-11-20 14:36:29
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-01-09 22:50:09
+ * @LastEditTime: 2023-03-25 16:15:19
  */
 import Vue from "vue";
 import VueRouter from "vue-router";
@@ -63,9 +63,9 @@ VueRouter.prototype.replace = function push(location, onResolve, onReject) {
 
 router.beforeEach((to, from, next) => {
   if (to.meta) {
-    document.title = to.meta.title || "销易通";
+    document.title = to.meta.title || "";
   }
-  if (!getToken() && !to.meta.noToken) {
+  if (!getToken() && !to.meta.noToken && false) {
     next("login");
   } else {
     if (!to.meta.noToken) {

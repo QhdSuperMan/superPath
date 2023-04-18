@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login-content">
-      <div class="login-title">销易通</div>
+      <div class="login-title"></div>
       <div class="login-tab">
         <div
           :class="form.login_type === 2 ? 'active' : ''"

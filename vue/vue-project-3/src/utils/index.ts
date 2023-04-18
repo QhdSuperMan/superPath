@@ -3,7 +3,7 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2022-11-27 14:39:45
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-06 16:12:49
+ * @LastEditTime: 2023-04-12 09:46:16
  */
 import router from "@/router/index.js";
 // import store from "@/store/index.js";
@@ -140,6 +140,18 @@ export function mergeConfig(target: any, ...arg: any) {
   }, target);
 }
 
+
+/**
+ * @description: 过滤新对象
+ * @author: 吴玉荣
+ */
+export function filterObj (sourceObj: ObjectType, keys: Array<string>) {
+  let result:ObjectType = {} 
+  for (let i = 0; i < keys.length; i++) {
+    result[keys[i]]  = sourceObj[keys[i]]
+  }
+  return result
+}
 
 /**
  * @description: 深克隆

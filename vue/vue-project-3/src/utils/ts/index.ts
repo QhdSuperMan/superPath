@@ -10,3 +10,11 @@ export type GetPropsTypes<T> = {
   [i in keyof T]: GetPropsType<T[i]>
 }
 
+/**
+ * @description: 取消必填
+ * @return {*}
+ * @author: wuyurong
+ */
+ export type DelRequired<T> = {
+  [i in keyof T]?: T[i]
+}

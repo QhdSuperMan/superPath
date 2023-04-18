@@ -1,7 +1,7 @@
 <template>
   <div class="sider">
     <a-layout-sider>
-      <div class="logo">销易通</div>
+      <div class="logo"></div>
       <div class="sider-menu">
         <a-menu
           mode="inline"

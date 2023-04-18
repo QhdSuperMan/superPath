@@ -3,26 +3,19 @@
  * @Author: wuyurong 1065229722@qq.com
  * @Date: 2023-02-24 15:08:03
  * @LastEditors: wuyurong 1065229722@qq.com
- * @LastEditTime: 2023-03-03 17:06:49
+ * @LastEditTime: 2023-04-11 16:03:31
 -->
 <script lang="tsx">
 import { defineComponent, reactive, getCurrentInstance, ref } from 'vue'
 import type { VNode } from 'vue'
 
-import { usePagination, useColumn, useDataProxy } from './config/CustomTable.js'
-import tableProps from './config/tableProps'
+import { usePagination, useColumn, useDataProxy } from './tableConfig/CustomTable.js'
+import tableProps from './tableConfig/tableProps'
 
 export default defineComponent({
   name: 'CustomTable',
 
   inheritAttrs: false,
-
-  // props: {
-  //   column: { // 表格的列配置
-  //     type: definePropType<Array<any>>(Array),
-  //     required: true,
-  //   },
-  // },
 
   props: tableProps,
 
@@ -71,14 +64,14 @@ export default defineComponent({
     }
 
     // 表格的配置
-    let columnConfig = useColumn(props.column)
+    let columnsConfig = useColumn(props.columns)
     let dataProxyConfig = useDataProxy(props.dataProxy)
     console.log('dataProxyConfig: ', dataProxyConfig);
     return () => (
       <div >
         <el-table {...context.attrs} ref={tableRef}>
           {
-            columnConfig.value.map(item => {
+            columnsConfig.value.map(item => {
               return <el-table-column {...item} >
                 {
                   {
